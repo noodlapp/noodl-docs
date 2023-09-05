@@ -1,0 +1,57 @@
+:root {
+    /* Colors */
+    --doc-color-noodl-black: #1f1f1f;
+    --doc-color-noodl-black-dark: #141416;
+    --doc-color-noodl-black-darker: #0e0e0e;
+    --doc-color-noodl-black-darkest: #000000;
+    --doc-color-noodl-black-light: #232326;
+
+    --doc-color-noodl-white: #f6f6f6;
+    --doc-color-noodl-white-85: #dcdcdc;
+    --doc-color-noodl-white-65: #a5a5a5;
+
+    --doc-color-noodl-orange: #f5bc41;
+    --doc-color-noodl-orange-80: #f7c967;
+    --doc-color-noodl-orange-60: #f9d78d;
+    --doc-color-noodl-orange-40: #fbe4b3;
+    --doc-color-noodl-orange-20: #fce9c2;
+    --doc-color-noodl-orange-180: #f3b224;
+    --doc-color-noodl-orange-160: #f3ac15;
+    --doc-color-noodl-orange-140: #ce900b;
+
+    --doc-color-noodl-green: #1ca5b8;
+    --doc-color-noodl-green-80: #49b7c6;
+    --doc-color-noodl-green-60: #77c9d4;
+    --doc-color-noodl-green-40: #92d4dd;
+    --doc-color-noodl-green-20: #a8dde4;
+    --doc-color-noodl-green-180: #1994a6;
+    --doc-color-noodl-green-160: #188c9c;
+    --doc-color-noodl-green-140: #147381;
+
+    --doc-color-noodl-blue: #5836f5;
+    --doc-color-noodl-blue-80: #795ef7;
+    --doc-color-noodl-blue-60: #9b86f9;
+    --doc-color-noodl-blue-40: #bcaffb;
+    --doc-color-noodl-blue-20: #c9bffc;
+    --doc-color-noodl-blue-180: #401af4;
+    --doc-color-noodl-blue-160: #350cf2;
+    --doc-color-noodl-blue-140: #2c0ac7;
+
+    --doc-color-visual-node: #324e6b;
+    --doc-color-data-node: #697844;
+    --doc-color-custom-node: #8c436c;
+    --doc-color-logic-node: #3b3e48;
+    --doc-color-connection-node: #5f3789;
+
+    --doc-color-title: var(--doc-color-noodl-white);
+    --doc-color-text: var(--doc-color-noodl-white-85);
+
+    /* Typography */
+    --doc-font-title: 'Poppins', sans-serif;
+    --doc-font-supertitle: 'PolySans', sans-serif;
+    --doc-font-text: 'Inter', sans-serif;
+    --doc-font-semibold: 600;
+
+    /* Sizes */
+    --doc-size-page-top-spacing-l: 120px;
+}

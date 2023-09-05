@@ -1,0 +1,47 @@
+{
+  "items": [{
+      "supertitle": "New Feature",
+      "title": "Noodl AI (Beta)",
+      "text": "Noodl AI is now in open beta! Generate your building blocks from prompts. Checkout the guide bellow to get started",
+      "action": {
+        "kind": "link",
+        "linkUrl": "https://docs.noodl.net/2.9/docs/getting-started/noodl-ai/",
+        "label": "Noodl AI Documentation"
+      },
+      "imageUrl": "news/noodl_ai.png 2x"
+    },
+    {
+      "supertitle": "Feature Highlight",
+      "title": "Accelerate development with Prefabs",
+      "text": "Import pre-made UI components (Prefabs) in to your project. Prefabs are build with core nodes and can easly be customized.",
+      "action": {
+        "kind": "action",
+        "action": "tab:Prefabs",
+        "label": "Explore Prefabs"
+      },
+      "imageUrl": "news/prefabs.gif 2x"
+    },
+    {
+      "supertitle": "Prefab Highlight",
+      "title": "OpenAI Prefab",
+      "text": "Bring AI and chatbot capabilities, based on ChatGPT, into your apps by using the OpenAi Prefab.",
+      "action": {
+        "kind": "link",
+        "linkUrl": "https://docs.noodl.net/2.9/library/prefabs/openai/",
+        "label": "Open docs"
+      },
+      "imageUrl": "news/openai_prefab.png 2x"
+    },
+    {
+      "supertitle": "Node Highlight",
+      "title": "States node: Animations",
+      "text": "Did you know that you can use the States node to create custom animations?",
+      "action": {
+        "kind": "link",
+        "linkUrl": "https://docs.noodl.net/2.9/docs/guides/user-interfaces/states/",
+        "label": "Open docs"
+      },
+      "imageUrl": "news/states.gif 2x"
+    }
+  ]
+}

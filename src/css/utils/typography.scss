@@ -1,0 +1,98 @@
+%font-smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%title-base {
+    font-family: var(--doc-font-title);
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    [data-theme='dark'] & {
+        @extend %font-smoothing;
+        color: var(--doc-color-title);
+    }
+}
+
+@mixin h1 {
+    @extend %title-base;
+    font-family: var(--doc-font-supertitle);
+    font-size: 48px;
+    line-height: 48px;
+}
+
+@mixin h1-bottom-spacing {
+    padding-bottom: 40px;
+}
+
+@mixin h2 {
+    @extend %title-base;
+    font-family: var(--doc-font-supertitle);
+    font-size: 32px;
+    line-height: 40px;
+}
+
+@mixin h2-bottom-spacing {
+    padding-bottom: 40px;
+}
+
+@mixin h2-top-spacing {
+    margin-top: 120px;
+}
+
+@mixin h3 {
+    @extend %title-base;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+@mixin h3-top-spacing {
+    margin-top: 40px;
+}
+
+@mixin h3-bottom-spacing {
+    padding-bottom: 24px;
+}
+
+@mixin h4 {
+    @extend %title-base;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin h4-bottom-spacing {
+    padding-bottom: 8px;
+}
+
+%body-base {
+    font-family: var(--doc-font-text);
+
+    [data-theme='dark'] & {
+        @extend %font-smoothing;
+    }
+}
+
+@mixin body {
+    @extend %body-base;
+
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin body-bottom-spacing {
+    padding-bottom: 40px;
+}
+
+@mixin body-small {
+    @extend %body-base;
+
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@mixin body-small-bottom-spacing {
+    padding-bottom: 14px;
+}

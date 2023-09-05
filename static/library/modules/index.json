@@ -1,0 +1,210 @@
+[
+  {
+    "label": "PDF Viewer",
+    "desc": "A UI component for rendering PDFs from an URL.",
+    "icon": "library/modules/pdf-viewer/pdf-viewer.png",
+    "project": "library/modules/pdf-viewer/pdf-viewer-1.0.0.zip",
+    "docs": "/library/modules/pdf-viewer/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Mapbox",
+    "desc": "Use this module to add maps and location visualisations to your app.",
+    "icon": "library/modules/mapbox/mapbox.png",
+    "project": "library/modules/mapbox/mapbox-2-0-0.zip",
+    "docs": "/library/modules/mapbox/",
+    "tags": ["UI", "Service"]
+  },
+  {
+    "label": "Chart.js",
+    "desc": "A module with components to build charts.",
+    "icon": "library/modules/chartjs/chartjs.png",
+    "project": "library/modules/chartjs/chartjs-module-1-4-3.zip",
+    "docs": "/library/modules/chartjs/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Google Sheets",
+    "desc": "Use your google sheets as a data source for your applications.",
+    "icon": "library/modules/gsheets/googlesheet.png",
+    "project": "library/modules/gsheets/gsheets-1-7.zip",
+    "docs": "/library/modules/gsheets/",
+    "tags": ["Service", "Data"]
+  },
+  {
+    "label": "GraphQL",
+    "desc": "A module to help quering data using GraphQL.",
+    "project": "library/modules/graphql/graphql-module-1-0-1.zip",
+    "icon": "library/modules/graphql/graphql.png",
+    "docs": "/library/modules/graphql/",
+    "tags": ["Data", "Networking"]
+  },
+  {
+    "label": "QR Scanner",
+    "desc": "Scan QR codes from camera or images.",
+    "icon": "library/modules/qr-scanner/qr.png",
+    "project": "library/modules/qr-scanner/qr-scanner-1-4.zip",
+    "docs": "/library/modules/qr-scanner/",
+    "tags": ["Device"]
+  },
+  {
+    "label": "Custom HTML",
+    "desc": "Write your own HTML and pass values to it with template strings. Useful for embeds.",
+    "project": "library/modules/custom-html/custom-html-module-1-0-2.zip",
+    "icon": "library/modules/custom-html/html.png",
+    "docs": "/library/modules/custom-html/",
+    "tags": ["UI", "Code"]
+  },
+  {
+    "label": "Simple Tooltips",
+    "desc": "Add simple tooltips to your Noodl App.",
+    "project": "library/modules/simple-tooltips/simple-tooltips-v1-0-0.zip",
+    "icon": "library/modules/simple-tooltips/simple-tooltips.png",
+    "docs": "/library/modules/simple-tooltips/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Marquee",
+    "desc": "Add a marquee container to your Noodl App.",
+    "project": "library/modules/marquee/marquee-v1-0-0.zip",
+    "icon": "library/modules/marquee/marquee.png",
+    "docs": "/library/modules/marquee/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Form Validation",
+    "desc": "A utility node that makes different kind of form validation easier.",
+    "project": "library/modules/validation/validation-1-3.zip",
+    "icon": "library/modules/validation/formvalidation.png",
+    "docs": "/library/modules/validation/",
+    "tags": ["Data", "Utility"]
+  },
+  {
+    "label": "Material Icons",
+    "desc": "The latest material icon set library.",
+    "icon": "library/modules/material-icons/material-icons.png",
+    "project": "library/modules/material-icons/material-icons-1-1.zip",
+    "docs": "/library/modules/material-icons/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Font Awesome Brands",
+    "desc": "The Font Awesome 6 brand icon library.",
+    "icon": "library/modules/font-awesome-brands/font-awesome-brands.png",
+    "project": "library/modules/font-awesome-brands/font-awesome-brands-1-0.zip",
+    "docs": "/library/modules/font-awesome-brands/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Font Awesome Solid",
+    "desc": "The Font Awesome 6 solid icon library.",
+    "icon": "library/modules/font-awesome-solid/font-awesome-solid.png",
+    "project": "library/modules/font-awesome-solid/font-awesome-solid-1-0.zip",
+    "docs": "/library/modules/font-awesome-solid/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Markdown",
+    "desc": "Use Markdown in Noodl and style it with CSS.",
+    "project": "library/modules/markdown/noodl-markdown-1-0-1.zip",
+    "icon": "library/modules/markdown/markdown.png",
+    "docs": "/library/modules/markdown/",
+    "tags": ["Code"]
+  },
+  {
+    "label": "Avatar",
+    "desc": "A module with components to build avatars.",
+    "icon": "library/modules/avatar/avatars.png",
+    "project": "library/modules/avatar/avatar-module-1-0-1.zip",
+    "docs": "/library/modules/avatar/",
+    "tags": ["UI"]
+  },  
+  {
+    "label": "Image Cropper",
+    "desc": "Image Cropper Module. Mainly intended for cropping profile pictures.",
+    "icon": "library/modules/image-cropper/image-crop.png",
+    "project": "library/modules/image-cropper/image-cropper-1-4.zip",
+    "docs": "/library/modules/image-cropper/",
+    "tags": ["UI", "Utility"]
+  },
+  {
+    "label": "Panning and Zooming Control",
+    "desc": "A control that implements a pan and zoom view on large images.",
+    "icon": "library/modules/panning-and-zooming/panning-and-zooming.png",
+    "project": "library/modules/panning-and-zooming/panning-and-zoom-1-0.zip",
+    "docs": "/library/modules/panning-and-zooming/",
+    "tags": ["UI", "Utility"]
+  },
+  {
+    "label": "i18next Translation",
+    "desc": "A module for using i18next in Noodl.",
+    "project": "library/modules/i18next/i18next-1-0-3.zip",
+    "icon": "library/modules/i18next/translate.png",
+    "docs": "/library/modules/i18next/",
+    "tags": ["Data", "Utility"]
+  },
+  {
+    "label": "MQTT Module",
+    "desc": "Send and receive messages over the MQTT protocol in web apps.",
+    "project": "library/modules/mqtt/mqtt-module-1-0-3.zip",
+    "icon": "library/modules/mqtt/mqtt.png",
+    "docs": "/library/modules/mqtt/",
+    "tags": ["Device", "Networking"]
+  },
+  {
+    "label": "Shake Detector",
+    "desc": "A small module to detect a device shake with the accelerometer.",
+    "icon": "library/modules/shake-detector/shake-detector.png",
+    "project": "library/modules/shake-detector/shake-detector-1.0.2.zip",
+    "docs": "/library/modules/shake-detector/",
+    "tags": ["Device"]
+  },
+  {
+    "label": "Google Analytics",
+    "desc": "Track user behavior with Google Analytics.",
+    "project": "library/modules/google-analytics/google-analytics-1-0-7.zip",
+    "icon": "library/modules/google-analytics/googleanalytics.png",
+    "docs": "/library/modules/google-analytics/",
+    "tags": ["Service", "Analytics"]
+  },
+  {
+    "label": "Lottie",
+    "desc": "A module for using Lottie animations in Noodl.",
+    "project": "library/modules/lottie/lottie-1-0-1.zip",
+    "icon": "library/modules/lottie/lottie.png",
+    "docs": "/library/modules/lottie/",
+    "tags": ["UI", "Animation"]
+  },
+  {
+    "label": "Web Camera",
+    "desc": "Support for accessing the camera in web apps.",
+    "icon": "library/modules/webcamera/webcam.png",
+    "project": "library/modules/webcamera/webcamera-1-0-4.zip",
+    "docs": "/library/modules/webcamera/",
+    "tags": ["Device"]
+  },
+  {
+    "label": "Parse Cloud Function",
+    "desc": "Call Parse Platform cloud functions.",
+    "icon": "library/modules/parse-cloud-function/parse-cloud-function.png",
+    "project": "library/modules/parse-cloud-function/parse-cloud-function-1-0-0.zip",
+    "docs": "/library/modules/parse-cloud-function/",
+    "tags": ["Data", "Networking"]
+  },
+  {
+    "label": "Geospatial Analysis",
+    "desc": "A module for using Turf.js to making it easy to working with GeoJSON.",
+    "icon": "library/modules/geospatial-analysis/geospatial-analysis.png",
+    "project": "library/modules/geospatial-analysis/geospatial-analysis-module-1-0-0.zip",
+    "docs": "/library/modules/geospatial-analysis/",
+    "tags": ["Data"]
+  },
+  {
+    "label": "Data Context",
+    "desc": "Share data between all child components.",
+    "icon": "library/modules/data-context/banner.png",
+    "project": "library/modules/data-context/data-context-1-0-2.zip",
+    "docs": "/library/modules/data-context/",
+    "tags": ["Data"]
+  }
+]

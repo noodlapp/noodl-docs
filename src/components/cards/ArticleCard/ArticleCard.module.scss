@@ -1,0 +1,105 @@
+@use '../../../css/utils/mixins.scss';
+
+.Root {
+    display: flex;
+
+    &.is-horisontal {
+        flex-direction: row;
+    }
+
+    &.is-vertical {
+        flex-direction: column;
+    }
+}
+
+.ImageContainer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    background-color: #ffffff;
+
+    .Root.is-horisontal & {
+        @include mixins.aspect-ratio(1, 1);
+        width: 156px;
+    }
+
+    .Root.is-vertical & {
+        @include mixins.aspect-ratio(354, 200);
+    }
+}
+
+.Image {
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .Root.is-vertical &:not(.has-no-padding) {
+        background-size: contain;
+        top: 12px;
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .Root.is-horisontal & {
+        background-size: cover;
+    }
+}
+
+.Content {
+    background-color: var(--doc-color-noodl-black-light);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .Root.is-horisontal & {
+        padding: 25px 32px;
+    }
+
+    .Root.is-vertical & {
+        padding: 16px 24px;
+    }
+}
+
+.PrimaryAction {
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 24px;
+    border-bottom: none !important;
+    font-family: var(--doc-font-title);
+
+    span {
+        color: var(--doc-color-noodl-orange);
+        transition: color var(--ifm-transition-fast)
+            var(--ifm-transition-timing-default);
+
+        &:hover {
+            color: var(--doc-color-noodl-orange-140);
+        }
+    }
+}
+
+.SecondaryAction {
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    border-bottom: none !important;
+    font-family: var(--doc-font-title);
+
+    span {
+        color: var(--doc-color-text);
+        transition: color var(--ifm-transition-fast)
+            var(--ifm-transition-timing-default);
+
+        &:hover {
+            color: var(--doc-color-noodl-orange);
+        }
+    }
+}

@@ -1,0 +1,855 @@
+<!-- A step with just a popup -->
+<div data-template="popup">
+  <image src="lesson-02_00_introimg.png"></image>
+  <h2>Welcome back!</h2>
+  <p>In this second lesson we will look closer at building layouts using the visual nodes.
+  </p>
+  <p>You already have a simple page but not much content. At the end of this lesson you will have built a card to display items in your task manager app.
+  </p>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Lesson tasks</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <image src="../01_task.png"></image>
+        <h2>Time to get your hands dirty!</h2>
+        <p>During this lesson, you will be given multiple tasks. Spot them in the lesson timeline by the <i>Task</i> label.</p>
+        <p>If you get stuck you can get a hint by clicking the card in the timeline.</p>
+        <p>Some of the nodes graphs will already be set up for you beforehand. This is to keep the lessons short so that you can focus on learning one concept at a time. If it feels like magic at times, don't worry. It's just a concept you will learn in a later lesson.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item" style="width: 260px">
+    <header>&nbsp;</header>
+    <h2>Select page to preview</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_01_pageselector.mp4"></video>
+    <h2>Select page to preview</h2>
+    <p>At the top of the editor you have the <strong>Path Dropdown</strong>. It's similar to the URL-bar in a browser and is used to jump directly to a specific page of your app while you develop.</p>
+    <p>In this lesson we will be working on the page called <i>Task Page</i>. Let's jump to it.</p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "viewerpatheq":"/task-page"
+        }
+    ]'
+>
+  <div data-template="item" style="width: 280px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      Select the <i><strong>/task-page</strong></i> path in the <strong>Path Dropdown</strong>
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_01_pageselector.mp4"></video>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item" style="width: 260px">
+    <header>&nbsp;</header>
+    <h2>Select page to preview</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_01_pageselector.mp4"></video>
+    <h2>Select page to preview</h2>
+    <p>At the top of the editor you have the <strong>Path Dropdown</strong>. It's similar to the URL-bar in a browser and is used to jump directly to a specific page of your app while you develop.</p>
+    <p>In this lesson we will be working on the page called <i>Task Page</i>. Let's jump to it.</p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "activecomponentnameeq":"/Task Page"
+        }
+    ]'
+>
+  <div data-template="item" style="width: 280px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      Select the <strong><i>Task Page</i></strong> component in the <strong>Component Panel</strong>
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_02_selecttaskpage.mp4"></video>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>The Group node</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_03_group.mp4"></video>
+    <h2>The Group node</h2>
+    <p>The <strong>Group</strong> node is the most basic visual element and is used to structure layouts, group content, and create visual shapes.</p>
+    <p>If you are familiar with HTML code, a Group is similar to a &lt;div&gt;-tag in HTML.</p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Nested visual nodes</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_04_nestedvisual.mp4"></video>
+    <h2>Nested visual nodes</h2>
+    <p>You can nest visual elements as children of a Group node to start creating more advanced layouts.</p>
+    <p>This is a pattern you will see over and over again, so let's use it to build the card.</p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:%Group",
+            "exists":true
+        }
+    ]'
+>
+  <div data-template="item" style="width: 280px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>Place a <strong>Group</strong> node as a child to the <strong>Content Container</strong> Group</h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_05_placegroup.mp4"></video>
+    <p>Open the Node Picker by <strong>clicking</strong> the <i>plus</i> icon in the Topbar, or <strong>right click</strong> on an empty space in the Node Canvas.</p>
+    <p>You can find the Group node in the UI Elements category.</p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+    {
+        "path":"/Task Page:%Page:%Group:#Content Container:%Group",
+        "haslabel": "Card Item"
+    }
+    ]'
+>
+  <div data-template="item" style="width: 260px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>Rename the Group to <strong><i>Card Item</i></strong></h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_06_carditem.mp4"></video>
+    <p>Select the Group node and change its name by pressing the <strong>enter</strong> key. You can also <strong>double click</strong> the node title in the Property Panel, or <strong>click</strong> the edit icon as shown in the video.</p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:%Group",
+            "paramseq":{
+                "backgroundColor": "Primary Subtle"
+            }
+        }
+    ]'
+>
+  <div data-template="item" style="width: 320px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>Set the <strong>background color</strong> of the new Group to the color style <strong><i>Primary Subtle</i></strong></h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_07_change-bgcolor.mp4"></video>
+    <p>You open the Color Style list by clicking the text in the <strong>background color</strong> input.</p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item" style="width: 320px">
+    <header>&nbsp;</header>
+    <h2>
+      Dimension mode:
+      <br />
+      Explicit width & content height
+    </h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_08_explicit-width-height.mp4"></video>
+    <h2>Dimension Mode: Explicit width & content height</h2>
+    <p>
+      By default Group nodes are set to a <strong>dimension mode</strong> with an explicit width
+      and height of 100%. This means that they will take up all available space
+      in both directions.
+    </p>
+    <p>
+      Often we want a Group's height to resize to the height of the children
+      inside of it. We can achieve that with the dimension mode
+      <strong><i>Explicit width & content height</i></strong>.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:%Group",
+            "paramseq": {
+                "sizeMode":"contentHeight",
+                "paddingTop": { "value": 24, "unit": "px" },
+                "paddingBottom": { "value": 24, "unit": "px" },
+                "paddingLeft": { "value": 24, "unit": "px" },
+                "paddingRight": { "value": 24, "unit": "px" }
+            }
+        }
+    ]'
+>
+  <div data-template="item" style="width: 450px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      On the <strong>Card Item</strong> Group, set the <strong>dimension mode</strong> to
+      <strong><i>Explicit width & content height</i></strong>, and set all <strong>paddings</strong>
+      to <strong><i>24px</i></strong>
+    </h3>
+  </div>
+  <div data-template="popup">
+    <video src="lesson-02_09_paddings.mp4"></video>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:%Group",
+            "paramseq": {
+                "borderRadius": {"value": 4, "unit": "px"}
+            }
+        }
+    ]'
+>
+  <div data-template="item">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>On the <strong>Card Item</strong> Group, set the <strong>corner radius</strong> to <strong><i>4px</i></strong></h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_10_cornerradius.mp4"></video>
+    <p>Select the Group to bring up the Property Panel. Find the <strong>Corner Radius</strong>
+      property and set it to <strong><i>4px</i></strong>.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Images and media</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_11_images.mp4"></video>
+    <h2>Images and media</h2>
+    <p>
+      Noodl comes with different nodes for displaying images and video. They
+      have a <strong>source</strong> property where you set the path to the file you want to show.
+    </p>
+    <p>
+      Clicking the <strong>Source</strong> input will show all available images and videos that are uploaded to the
+      project. You can also input an external URL to a media file.
+    </p>
+    <p>
+      You can add images and videos to the project by simply <strong>dragging and dropping</strong> them into
+      the editor. In this lesson we already added some images for you to use.
+    </p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:%Image",
+            "exists":true
+        }
+    ]'
+>
+  <div data-template="item" style="width: 320px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      Open the Node Picker and place an <strong>Image</strong> node as a child to the <strong>Card Item</strong> Group.
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_12_addimages.mp4"></video>
+    <p>
+      Open the Node Picker by <strong>clicking </strong> the <i>plus</i> icon in the Topbar, or <strong>right click</strong> on an empty space in the Node Canvas.
+    </p>
+    <p>
+      You can search for the <strong>Image</strong> node in the Node Picker's search field, or find it in the UI Elements category.
+    </p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:%Image",
+            "paramseq": {
+                "src": "work.png"
+            }
+        }
+    ]'
+>
+  <div data-template="item" style="width: 280px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>Set the <strong>image source</strong> to <strong><i>work.png</i></strong></h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_13_setimagesrc.mp4"></video>
+    <p>
+      Click the <strong>source</strong> property to see a list of available images in the project.
+    </p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:%Image",
+            "paramseq": {
+                "sizeMode": "explicit"
+            }
+        }
+    ]'
+>
+  <div data-template="item" style="width: 280px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      Set the <strong>Image</strong> node's <strong>dimension</strong> mode to
+      <strong><i>Explicit width and height</i></strong>
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_14_setimagesize.mp4"></video>
+    <p>
+      Click the <strong>Image</strong> node to open its Property Panel and scroll down to the <strong>dimension mode</strong>
+      property. <strong>Hover</strong> over the different options to see what they are called.
+    </p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:%Image",
+            "paramseq": {
+                "width": {"value": 80, "unit": "px"},
+                "height": {"value": 80, "unit": "px"}
+            }
+        }
+    ]'
+>
+  <div data-template="item" style="width: 280px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>Set the <strong>image size</strong> to <strong><i>80px</i></strong> width and <strong><i>80px</i></strong> height</h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_14_setimagesize.mp4"></video>
+    <p>
+      Click the <strong>Image</strong> node to open its Property Panel and scroll to the <strong>size</strong> property. Set the
+      width and height to <strong><i>80px</i></strong>.
+    </p>
+  </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:1",
+            "exists":true
+        }
+    ]'
+>
+  <div data-template="item" style="width: 250px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>Place a new <strong>Group</strong> node as a sibling below the <strong>Image</strong> node</h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_15_addgroup.mp4"></video>
+    <p>
+      Open the Node Picker by <strong>clicking</strong> the <i>plus</i> icon in the Topbar, or <strong>right click</strong> on an empty space in the Node Canvas.
+    </p>
+    <p>
+      You can search for the <strong>Group</strong> node in the Node Picker's search field, or find it in the UI Elements category.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:1:%Text",
+            "exists":true
+        },
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:1:1",
+            "exists":true
+        },
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:1:2",
+            "exists":true
+        }
+    ]'
+>
+  <div data-template="item" style="width: 280px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      Place three <strong>Text</strong> nodes as a children to the new <strong>Group</strong>
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_16_text.mp4"></video>
+    <p>
+      Open the Node Picker by <strong>clicking</strong> the <i>plus</i> icon in the Topbar, or <strong>right click</strong> on an empty space in the Node Canvas.
+    </p>
+    <p>
+      You can search for the <strong>Text</strong> node in the Node Picker's search field, or find it in the UI Elements category.
+    </p>
+    <p>Use <strong>Ctrl/Cmd + C</strong> to copy a selected node, and <strong>Ctrl/Cmd + V</strong> to paste it.</p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:1:%Text",
+            "haslabel": "Card Title"
+        }
+    ]'
+>
+  <div data-template="item" style="width: 280px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>Rename the first <strong>Text</strong> node to <strong><i>Card Title</i></strong></h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_17_card title.mp4"></video>
+    <p>Select the first <strong>Text</strong> node and change its name by pressing the <strong>enter</strong> key. You can also <strong>double click</strong> the node title in the Property Panel, or <strong>click</strong> the edit icon.</p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:1:1",
+            "haslabel": "Category"
+        },
+        {
+          "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:1:2",
+          "haslabel": "Date"
+      }
+    ]'
+>
+  <div data-template="item" style="width: 350px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      Rename the second <strong>Text</strong> node to <strong><i>Category</i></strong>, and the third Text node to <strong><i>Date</i></strong>
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_17_card title.mp4"></video>
+    <p>Select the second or third <strong>Text</strong> node and change its name by pressing the <strong>enter</strong> key. You can also <strong>double click</strong> the node title in the Property Panel, or <strong>click</strong> the edit icon.</p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Horizontal layouts</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_18_horizontal.mp4"></video>
+    <h2>Horizontal layouts</h2>
+    <p>By default all visual nodes are stacked vertically inside of their parent node.</p>
+    <p>We can change this by changing the parent's <strong>layout direction</strong> property to <strong><i>Horizontal</i></strong> instead of <strong><i>Vertical</i></strong></p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item",
+            "paramseq": {
+                "flexDirection": "row"
+            }
+        }
+    ]'
+>
+  <div data-template="item" style="width: 300px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>On the <strong>Card Item</strong> Group node, set the <strong>layout direction</strong> to <strong><i>Horizontal</i></strong>
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_18_horizontal.mp4"></video>
+    <p>
+      Click the <strong>Group</strong> node named <i>Card Item</i> to open its Property Panel. Find the <strong>layout direction</strong> property and set it to <strong><i>Horizontal</i></strong>.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:%Image",
+            "paramseq": {
+                "marginRight": { "value": 24, "unit": "px" }
+            }
+        }
+    ]'
+>
+  <div data-template="item" style="width: 220px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      Give the <strong>Image</strong> node a right margin of <strong><i>24px</i></strong>
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_19_imagemargin.mp4"></video>
+    <p>
+      Click the <strong>Image</strong> node to open its Property Panel. At the top you will find the <strong>margin
+      settings</strong>. Set the right margin to <strong><i>24px</i></strong>.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Text and color styles</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_20_textstyles.mp4"></video>
+    <h2>Text and color Styles</h2>
+    <p>
+      We can create styles for text and colors to quickly reference them and
+      reuse them throughout our app. This can be done in every input property
+      that deals with text or color.
+    </p>
+    <p>
+      Every Noodl project comes with a set of predefined styles, all of them can
+      be modified.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+  data-conditions='[
+        {
+            "path":"/Task Page:%Page:%Group:#Content Container:#Card Item:%Group:#Card Title",
+            "paramseq": {
+                "textStyle": "Title Medium"
+            }
+        }
+    ]'
+>
+  <div data-template="item" style="width: 340px">
+    <header>
+      Task
+      <span class="lesson-checkmark"></span>
+    </header>
+    <h3>
+      On the <strong>Card Title</strong> Text node, set the <strong>text style</strong> property to <strong><i>Title Medium</i></strong>
+    </h3>
+  </div>
+
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="lesson-02_20_textstyles.mp4"></video>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+  <div data-template="item">
+    <header>Outro</header>
+    <h2>Congratulations!</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <!--<img src="tutorial_card.png" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')"> -->
+    <h2>Congratulations!</h2>
+    <p>You've completed this lesson, we hope you liked it!</p>
+    <p>
+      To take your Noodl skills to the next level we recommend our next lesson
+      on how to create lists from data.
+    </p>
+    <p>Keep on Noodling!</p>
+    <!--<button style="width: 150px" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')">WATCH TUTORIAL</button>-->
+    <button style="width: 150px" data-click="exitEditor">EXIT LESSON</button>
+  </div>
+</div>
+<!-- # -->

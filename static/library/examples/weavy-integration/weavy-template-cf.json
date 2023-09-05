@@ -1,0 +1,11 @@
+{
+    "formation":[
+      {
+        "type":"collection",
+        "name":"_User",
+        "properties":{
+          "name":{"type":"String"}
+        }
+      }
+    ]
+  }

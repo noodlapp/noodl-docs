@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Pages and Navigation",
+        "description": "Learn how to build navigation systems, browser url’s and more.",
+        "href": "/docs/guides/navigation/basic-navigation",
+        "imageUrl": "/img/featured-content-images/navigation.png"
+    },
+    {
+        "title": "Layout",
+        "description": "Learn about Noodls powerful layout system and how to use it to create responsive UI.",
+        "href": "/docs/guides/user-interfaces/layout",
+        "imageUrl": "/img/featured-content-images/layout.png"
+    },
+    {
+        "title": "UI Controls and Data",
+        "description": "Learn how connect UI Controls to data nodes to create forms and more.",
+        "href": "/docs/guides/data/ui-controls-and-data",
+        "imageUrl": "/img/featured-content-images/list.png"
+    },
+    {
+        "title": "Creating a Backend",
+        "description": "Learn how to set up a backend for your App, to store and read persistant data.",
+        "href": "/docs/guides/cloud-data/creating-a-backend",
+        "imageUrl": "/img/featured-content-images/data.png"
+    },
+    {
+        "title": "Javascript in Noodl",
+        "description": "Learn how to use Javascript in Noodl and combine nodes with code.",
+        "href": "/docs/guides/business-logic/javascript",
+        "imageUrl": "/img/featured-content-images/code.png"
+    },
+    {
+        "title": "Custom UI Components",
+        "description": "Learn how to create your own re-usable components.",
+        "href": "/docs/guides/business-logic/custom-ui-components",
+        "imageUrl": "/img/featured-content-images/list.png"
+    }
+]

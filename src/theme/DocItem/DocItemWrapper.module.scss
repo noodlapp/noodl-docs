@@ -1,0 +1,79 @@
+.Root {
+    > div {
+        justify-content: center;
+        padding-top: var(--doc-size-page-top-spacing-l);
+
+        > div:first-child {
+            :global(html:not(.docs-doc-id-overview):not(.docs-doc-id-modules\/overview):not(.docs-doc-id-prefabs\/overview):not(.docs-doc-id-getting-started\/overview):not(.docs-doc-id-learn):not(.docs-doc-id-examples\/overview))
+                & {
+                max-width: var(--ifm-container-width) !important;
+            }
+        }
+    }
+
+    > div > div {
+        max-width: 100% !important;
+    }
+}
+
+.Lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(30,30,30, 0.7);
+    z-index: 666;
+    animation: show 200ms ease-out both;
+}
+
+.Lightbox,
+.LightboxImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.LightboxImageContainer {
+    position: relative;
+    width: 85%;
+    height: 85%;
+    background: linear-gradient(45deg, var(--doc-color-noodl-orange), var(--doc-color-noodl-blue));
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px rgba(0,0,0,0.3), 0 0 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.LightboxClose {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--doc-color-noodl-black-light);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    transition: color var(--speed-turbo) var(--easing-base);
+
+    &:hover {
+        color: var(--doc-color-noodl-black-darkest);
+    }
+}
+
+.LightboxAsset {
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+border-radius: 5px;
+box-shadow: -5px 5px 30px -5px rgba(56, 52, 28, 0.6666666667), 5px -5px 30px -5px rgba(32, 60, 44, 0.6666666667);
+}

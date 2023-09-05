@@ -1,0 +1,36 @@
+@use '../../../css/utils/typography.scss';
+
+.Root {
+    font-family: var(--doc-font-text);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    max-width: 860px;
+
+    [data-theme='dark'] & {
+        @extend %font-smoothing;
+    }
+
+    &.is-size-default {
+        @include typography.body;
+
+        &.has-bottom-spacing {
+            @include typography.body-bottom-spacing;
+        }
+    }
+
+    &.is-size-small {
+        @include typography.body-small;
+
+        &.has-bottom-spacing {
+            @include typography.body-small-bottom-spacing;
+        }
+    }
+
+    &.is-inline {
+        display: inline;
+    }
+
+    &.is-centered {
+        text-align: center;
+    }
+}

@@ -1,0 +1,250 @@
+[
+  {
+    "label": "Date Picker",
+    "desc": "A date picker component.",
+    "icon": "library/prefabs/date-picker/date-picker.png",
+    "project": "library/prefabs/date-picker/date-picker-1-3.zip",
+    "docs": "/library/prefabs/date-picker/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Time Picker",
+    "desc": "A time picker component.",
+    "icon": "library/prefabs/time-picker/time-picker.png",
+    "project": "library/prefabs/time-picker/time-picker-1-2.zip",
+    "docs": "/library/prefabs/time-picker/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Multi Choice with Pills",
+    "desc": "A multi select drop down, showing the selected items as pills.",
+    "icon": "library/prefabs/multi-choice-with-pills/multi-choice-with-pills.png",
+    "project": "library/prefabs/multi-choice-with-pills/multi-choice-with-pills-0-8.zip",
+    "docs": "/library/prefabs/multi-choice-with-pills/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Multi Choice",
+    "desc": "A component that allows for multi selection in a group of checkboxes.",
+    "icon": "library/prefabs/multi-choice/multi-choice.png",
+    "project": "library/prefabs/multi-choice/multi-choice-0-5.zip",
+    "docs": "/library/prefabs/multi-choice/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Table",
+    "desc": "Component for creating tables from data.",
+    "icon": "library/prefabs/table/table.png",
+    "project": "library/prefabs/table/table-0-6.zip",
+    "docs": "/library/prefabs/table/",
+    "tags": ["UI", "Data"]
+  },
+  {
+    "label": "Form",
+    "desc": "Component for creating dynamic forms.",
+    "icon": "library/prefabs/form/form.png",
+    "project": "library/prefabs/form/form-0-4.zip",
+    "docs": "/library/prefabs/form/",
+    "tags": ["UI", "Data"]
+  },
+  {
+    "label": "List With Icons",
+    "desc": "A simple list component with icons and labels.",
+    "icon": "library/prefabs/list-with-icons/list-with-icons.png",
+    "project": "library/prefabs/list-with-icons/list-with-icons-1-0.zip",
+    "docs": "/library/prefabs/list-with-icons/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Navigation Menu",
+    "desc": "Component for creating navigation menus.",
+    "icon": "library/prefabs/navigation-menu/navigation-menu.png",
+    "project": "library/prefabs/navigation-menu/navigation-menu-0-1.zip",
+    "docs": "/library/prefabs/navigation-menu/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Media Query",
+    "desc": "Contains a handy component to create responsive interfaces.",
+    "icon": "library/prefabs/media-query/media-query.png",
+    "project": "library/prefabs/media-query/media-query-0-2.zip",
+    "docs": "/library/prefabs/media-query/",
+    "tags": ["UI", "Utility"]
+  },
+  {
+    "label": "Progress Circle",
+    "desc": "Contains an animating progress visualization in percentage.",
+    "icon": "library/prefabs/progress-circle/progress-circle.png",
+    "project": "library/prefabs/progress-circle/progress-circle-0-1.zip",
+    "docs": "/library/prefabs/progress-circle/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Popup Modal",
+    "desc": "Contains a classic popup modal for simple confirm popups.",
+    "icon": "library/prefabs/modal/modal.png",
+    "project": "library/prefabs/modal/modal-0-1.zip",
+    "docs": "/library/prefabs/modal/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Toast",
+    "desc": "Contains Toast messages for success, warnings, errors, and neutral.",
+    "icon": "library/prefabs/toast/toast.png",
+    "project": "library/prefabs/toast/toast-0-1.zip",
+    "docs": "/library/prefabs/toast/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Toggle Switch",
+    "desc": "A toggle switch UI component.",
+    "icon": "library/prefabs/toggle/toggle.png",
+    "project": "library/prefabs/toggle/toggle-0-1.zip",
+    "docs": "/library/prefabs/toggle/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Tab Bar",
+    "desc": "A tab bar component, useful for creating tab navigation.",
+    "icon": "library/prefabs/tab-bar/tab-bar.png",
+    "project": "library/prefabs/tab-bar/tab-bar-0-1.zip",
+    "docs": "/library/prefabs/tab-bar/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Rating",
+    "desc": "An interactive star rating component.",
+    "icon": "library/prefabs/rating/rating.png",
+    "project": "library/prefabs/rating/rating-0-2.zip",
+    "docs": "/library/prefabs/rating/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Loading Spinner",
+    "desc": "A loading spinner that can be shown when requesting data etc.",
+    "icon": "library/prefabs/loading-spinner/loading-spinner.png",
+    "project": "library/prefabs/loading-spinner/loading-spinner-0-1.zip",
+    "docs": "/library/prefabs/loading-spinner/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Tags",
+    "desc": "Display a list of tags, with nice auto generated colors.",
+    "icon": "library/prefabs/tags/tags.png",
+    "project": "library/prefabs/tags/tags-0-1.zip",
+    "docs": "/library/prefabs/tags/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Selection Pills",
+    "desc": "A list of selection pills, select one or many.",
+    "icon": "library/prefabs/selection-pills/selection-pills.png",
+    "project": "library/prefabs/selection-pills/selection-pills-0-1.zip",
+    "docs": "/library/prefabs/selection-pills/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Send Grid",
+    "desc": "A simple prefab for sending emails with Send Grid.",
+    "icon": "library/prefabs/sendgrid/sendgrid.png",
+    "project": "library/prefabs/sendgrid/sendgrid-0-2.zip",
+    "docs": "/library/prefabs/sendgrid/",
+    "tags": ["Cloud"]
+  },
+  {
+    "label": "Mail Gun",
+    "desc": "A simple prefab for sending emails with Mail Gun.",
+    "icon": "library/prefabs/mailgun/mailgun.png",
+    "project": "library/prefabs/mailgun/mailgun-0-2.zip",
+    "docs": "/library/prefabs/mailgun/",
+    "tags": ["Cloud"]
+  },
+  {
+    "label": "Email Verification",
+    "desc": "Cloud functions for email verification and reset password.",
+    "icon": "library/prefabs/email-verification/email-verification.png",
+    "project": "library/prefabs/email-verification/email-verification-0-4.zip",
+    "docs": "/library/prefabs/email-verification/",
+    "tags": ["Cloud"]
+  },
+  {
+    "label": "OAuth2",
+    "desc": "Cloud functions for oauth2 user authentication.",
+    "icon": "library/prefabs/oauth2/oauth2.png",
+    "project": "library/prefabs/oauth2/oauth2-0-2.zip",
+    "docs": "/library/prefabs/oauth2/",
+    "tags": ["Cloud"]
+  },
+  {
+    "label": "TOTP",
+    "desc": "Cloud functions for auth with timebased one time passwords like Google Auth.",
+    "icon": "library/prefabs/totp/totp.png",
+    "project": "library/prefabs/totp/totp-0-2.zip",
+    "docs": "/library/prefabs/totp/",
+    "tags": ["Cloud"]
+  },
+  {
+    "label": "Stripe",
+    "desc": "Some helpers to make cloud functions for accepting payments and subscriptions.",
+    "icon": "library/prefabs/stripe/stripe.png",
+    "project": "library/prefabs/stripe/stripe-0-4.zip",
+    "docs": "/library/prefabs/stripe/",
+    "tags": ["Cloud"]
+  },
+  {
+    "label": "Pagination",
+    "desc": "A component for pagination, showing available pages and letting user switch.",
+    "icon": "library/prefabs/pagination/pagination.png",
+    "project": "library/prefabs/pagination/pagination-0-2.zip",
+    "docs": "/library/prefabs/pagination/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Pages And Rows",
+    "desc": "A component for pagination, letting user pick page and number of rows per page.",
+    "icon": "library/prefabs/pagesandrows/pagesandrows.png",
+    "project": "library/prefabs/pagesandrows/pagesandrows-0-2.zip",
+    "docs": "/library/prefabs/pagesandrows/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "Filters",
+    "desc": "A prefab for creating filter controls that work well with query records.",
+    "icon": "library/prefabs/filters/filters.png",
+    "project": "library/prefabs/filters/filters-0-1.zip",
+    "docs": "/library/prefabs/filters/",
+    "tags": ["UI"]
+  },
+  {
+    "label": "OpenAI",
+    "desc": "A prefab with cloud functions for creating chat bots with the OpenAI API.",
+    "icon": "library/prefabs/openai/openai.png",
+    "project": "library/prefabs/openai/openai-0-5.zip",
+    "docs": "/library/prefabs/openai/",
+    "tags": ["Cloud"]
+  },
+  {
+    "label": "PDF Export",
+    "desc": "A prefab for creating a PDF file from a web page",
+    "icon": "library/prefabs/pdf/pdf.png",
+    "project": "library/prefabs/pdf/pdf-0-1.zip",
+    "docs": "/library/prefabs/pdf/",
+    "tags": ["Cloud"]
+  },
+  {
+    "label": "Xano",
+    "desc": "Connects to Xano and handles queries, users and authTokens. Built by @gmaison.",
+    "icon": "library/prefabs/xano/xano-thumb.png",
+    "project": "library/prefabs/xano/xano-prefab-1.zip",
+    "docs": "/library/prefabs/xano/",
+    "tags": ["Data"]
+  },
+  {
+    "label": "Supabase",
+    "desc": "Connects to Supabase and handles queries, users and authTokens. Built by @gmaison and @RicoTrevisan.",
+    "icon": "library/prefabs/supabase/thumb.png",
+    "project": "library/prefabs/supabase/supabase-prefab-1.zip",
+    "docs": "/library/prefabs/supabase/",
+    "tags": ["Data"]
+  }
+]

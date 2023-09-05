@@ -1,0 +1,1113 @@
+---
+title: Responsive Design
+hide_title: true
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import CopyToClipboardButton from '/src/components/copytoclipboardbutton';
+
+# Responsive Design
+
+## What you will learn in this guide
+
+In this guide we will take a look at a couple of different techiques you can use to build responsive UIs in your Noodl app.
+
+## Simple grids with the Columns node
+
+One of the most common situations where responsiveness is needed is in grids of items. The easiest way to create responsive grids is through the **Min Column Width** input on the **Columns** node. This approach works best when dealing with grids where the items should have the same width, like cards or images. Let's focus on the two key inputs for this technique:
+
+### Layout String
+
+A layout string is simply a string of numbers with spaces between them. Every number represents a fraction of the full container width and is converted to a column. A **Columns** node with the layout string `1 2 1` that contains 5 children will be rendered like this:
+
+<div className="ndl-image-with-background l">
+
+![](/nodes/basic-elements/columns/columns_example.png)
+
+</div>
+
+### Min Column Width
+
+The **Min Column Width** sets the minimum width for each column. It first checks if the columns can fit based on the provided **Layout String**. If the container cannot hold the columns at their minimum width, the layout will automatically fold into a grid with fewer columns.
+
+> Make sure the children you pass are set to a width of `100%` of their parent.
+
+### Strategy
+
+The most common way of using this method is to set the **Layout String** to the maximum amount of columns we want the layout to have. Then set the **Min Column Width** to the value where the grid items starts looking broken. This will produce a result like this:
+
+<div className="ndl-image-with-background xl">
+  <video
+    width="100%"
+    autoPlay
+    muted
+    loop
+    src={useBaseUrl(
+      '/docs/guides/user-interfaces/responsive-design/responsive-columns.mp4'
+    )}
+  />
+</div>
+
+## Media Query prefab and States node
+
+The techique above works great for grids that are even, but what if we have a more advanced layout? Maybe we need to add more padding, change the font size or even change the **Layout String** altogether?
+
+For this we can use the **[Media Query](/library/prefabs/media-query/)** prefab, together with the **[States](/nodes/utilities/logic/states/)** node. It's a good idea to read the documentation for these, but for now you'll get a quick introduction. Let's begin by understanding the **States** node.
+
+The **States** node is a really useful and flexible tool in Noodl. In this guide however, we'll only need to focus on its most basic features. In essence, it allows us to set up different `Values` that hold different data depending on the `State` of the node. This can be found in the three main sections of the **States** node's property panel. Let's look at an example.
+
+### With properties
+
+First we setup the different `States` we want. These can be named anything, but since we are working with screen size responsiveness, let's make it descriptive:
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/user-interfaces/responsive-design/setup-states.png)
+
+</div>
+
+Now we can create the `Values` we want this node to output. In this example we will be working with a bottom margin for a header, so let's name it that:
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/user-interfaces/responsive-design/values.png)
+
+</div>
+
+Now we can fill in what data we want the `Value` to output for the different states:
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/user-interfaces/responsive-design/set-values.png)
+
+</div>
+
+Now that we have the states set up, we need to determine when a specific state is active. The **Media Query** prefab's **Match Media Query** component checks the active screen size breakpoint and outputs `true` or `false` based on matches. We can use these outputs to trigger our defined states:
+
+<div className="ndl-image-with-background xl">
+  <CopyToClipboardButton
+  json={{"nodes":[{"id":"9b84f2b6-4750-8fb4-441e-9ee60f23de4f","type":"Group","label":"Container","x":20,"y":46,"parameters":{"sizeMode":"contentHeight"},"ports":[],"children":[{"id":"14102446-21a4-a200-6372-bc6665106a08","type":"Group","label":"Header","x":40,"y":106,"parameters":{"paddingTop":{"value":16,"unit":"px"},"paddingLeft":{"value":16,"unit":"px"},"paddingRight":{"value":16,"unit":"px"},"paddingBottom":{"value":16,"unit":"px"},"sizeMode":"contentHeight","backgroundColor":"#EBE8FF"},"ports":[],"children":[{"id":"e3b108ae-642e-b751-fb24-5d26215e7953","type":"Text","label":"Page Title","x":60,"y":202,"parameters":{"textStyle":"Headline","text":"The release of the Commodore 64"},"ports":[],"children":[]},{"id":"00e8146c-c7dc-633e-d1b1-b4a6b2064edf","type":"Text","label":"Date","x":60,"y":262,"parameters":{"text":"August 1982"},"ports":[],"children":[]}]},{"id":"5408aecc-536a-3142-41b3-d6e6d109d990","type":"Group","label":"Content","x":40,"y":322,"parameters":{"height":{"value":1000,"unit":"px"},"sizeMode":"contentHeight","paddingTop":{"value":16,"unit":"px"},"paddingLeft":{"value":16,"unit":"px"},"paddingRight":{"value":16,"unit":"px"},"paddingBottom":{"value":16,"unit":"px"}},"ports":[],"children":[{"id":"136e4711-47e5-e1e4-ae2a-2d53ab001e04","type":"Text","x":60,"y":382,"parameters":{"text":"Commodore International is proud to announce the launch of the highly anticipated Commodore 64, the ultimate home computer that will revolutionize the way you live, work, and play. This groundbreaking machine combines unparalleled power, versatility, and affordability, setting a new standard in personal computing.\n\nThe Commodore 64 represents a quantum leap in technology, packing an impressive 64 kilobytes of RAM, a stunning graphics chip, and an advanced sound processor into a sleek and compact design. It is truly a complete computing solution that will bring the future to your fingertips.\n\nExperience the power of the Commodore 64 as you embark on a journey of endless possibilities. With its blazing fast 1 MHz processor, you'll be able to tackle complex tasks, create stunning graphics, and run sophisticated software with ease. The Commodore 64 is not just a computer; it's a gateway to a world of exploration and creativity."},"ports":[],"children":[]}]}]},{"id":"bd267e25-66ca-fb04-8f13-a4b3784c1d3c","type":"States","x":329.5,"y":59,"parameters":{"states":"Mobile,Tablet,Desktop","values":"Header Bottom Margin","useTransitions":false,"value-Mobile-Header Bottom Margin":8,"value-Tablet-Header Bottom Margin":16,"value-Desktop-Header Bottom Margin":32},"ports":[],"children":[]},{"id":"6df449fd-a96c-88cb-beef-bcd8496c999e","type":"/Utils/Media Queries/Match Media Query","x":329.5,"y":202,"parameters":{},"ports":[],"children":[]}],"connections":[{"fromId":"6df449fd-a96c-88cb-beef-bcd8496c999e","fromProperty":"Matches All Mobile","toId":"bd267e25-66ca-fb04-8f13-a4b3784c1d3c","toProperty":"to-Mobile"},{"fromId":"6df449fd-a96c-88cb-beef-bcd8496c999e","fromProperty":"Matches Tablet","toId":"bd267e25-66ca-fb04-8f13-a4b3784c1d3c","toProperty":"to-Tablet"},{"fromId":"6df449fd-a96c-88cb-beef-bcd8496c999e","fromProperty":"Matches All Desktop","toId":"bd267e25-66ca-fb04-8f13-a4b3784c1d3c","toProperty":"to-Desktop"},{"fromId":"bd267e25-66ca-fb04-8f13-a4b3784c1d3c","fromProperty":"Header Bottom Margin","toId":"14102446-21a4-a200-6372-bc6665106a08","toProperty":"marginBottom"}],"comments":[]}}
+/>
+
+![](/library/prefabs/media-query/media-query.png)
+
+</div>
+
+> This method can be used with any trigger, to set any value - even text in buttons!
+
+### With Columns
+
+This technique becomes really powerful when we use it to send different **Layout Strings** to the **Columns** node. Here's an example where we change the layout between `1 1 2 1`, `2 1 1` and `1 2` depending on viewport size:
+
+<div className="ndl-image-with-background xl">
+  <CopyToClipboardButton
+    json={{
+      nodes: [
+        {
+          id: '43730d76-194b-624c-067f-720c5c800970',
+          type: 'Group',
+          x: 20,
+          y: 46,
+          parameters: {},
+          ports: [],
+          children: [
+            {
+              id: 'c4bcfdef-be4c-d3bc-0b86-ae3238101dcb',
+              type: 'net.noodl.visual.columns',
+              x: 40,
+              y: 92,
+              parameters: {
+                layoutString: '1 2 1',
+                constraintString: '100 none',
+                minWidths: '100 0',
+                maxWidths: '300 none',
+              },
+              ports: [],
+              children: [
+                {
+                  id: '453b065f-69e9-38c5-d482-bcaf54027e31',
+                  type: 'Group',
+                  x: 60,
+                  y: 174,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: 'de1f5918-5e6a-9e32-1e3f-68bb754a5726',
+                  type: 'Group',
+                  x: 60,
+                  y: 220,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: 'c92cf79a-cfee-c3b3-78f9-856a4425f482',
+                  type: 'Group',
+                  x: 60,
+                  y: 266,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: 'a40148eb-4f3a-446d-a54b-1704b2882253',
+                  type: 'Group',
+                  x: 60,
+                  y: 312,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: '51bd22e5-a490-44f5-c95d-d5e943a0836d',
+                  type: 'Group',
+                  x: 60,
+                  y: 358,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: 'bd5b3c77-85c5-69e4-0a19-17d50aedc6eb',
+                  type: 'Group',
+                  x: 60,
+                  y: 404,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: '35e7d6be-5f81-a2fb-2ed3-aa019982e1c3',
+                  type: 'Group',
+                  x: 60,
+                  y: 450,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: '2cd62008-61ce-5a7f-a43a-71a8a4dea4fe',
+                  type: 'Group',
+                  x: 60,
+                  y: 496,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: 'ccb69426-0b17-3bb4-46e9-a9621e67422a',
+                  type: 'Group',
+                  x: 60,
+                  y: 542,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: 'd2b1b678-5a65-5082-a362-3eaa7c04b9c2',
+                  type: 'Group',
+                  x: 60,
+                  y: 588,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: 'e0eaa302-f3b7-7fcf-a837-e15047739b88',
+                  type: 'Group',
+                  x: 60,
+                  y: 634,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+                {
+                  id: '3c9a88b6-b3c1-c2cd-4a70-51e8c4eb692a',
+                  type: 'Group',
+                  x: 60,
+                  y: 680,
+                  parameters: {
+                    height: { value: 300, unit: 'px' },
+                    backgroundColor: 'Primary',
+                    alignY: 'bottom',
+                    justifyContent: 'center',
+                  },
+                  ports: [],
+                  children: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'fec2c5df-636c-6a8f-4ed3-01d865720828',
+          type: 'States',
+          x: 320,
+          y: 56,
+          parameters: {
+            states: 'Mobile,Tablet,Desktop',
+            values: 'Layout String',
+            useTransitions: false,
+            'type-Layout String': 'string',
+            'value-Mobile-Layout String': '1 2',
+            'value-Tablet-Layout String': '2 1 1',
+            'value-Desktop-Layout String': '1 1 2 1',
+          },
+          ports: [],
+          children: [],
+        },
+        {
+          id: '895a8def-9aca-3766-ac49-c1908cad853b',
+          type: '/Utils/Media Queries/Match Media Query',
+          x: 320,
+          y: 200,
+          parameters: {},
+          ports: [],
+          children: [],
+        },
+      ],
+      connections: [
+        {
+          fromId: '895a8def-9aca-3766-ac49-c1908cad853b',
+          fromProperty: 'Matches All Mobile',
+          toId: 'fec2c5df-636c-6a8f-4ed3-01d865720828',
+          toProperty: 'to-Mobile',
+        },
+        {
+          fromId: '895a8def-9aca-3766-ac49-c1908cad853b',
+          fromProperty: 'Matches Tablet',
+          toId: 'fec2c5df-636c-6a8f-4ed3-01d865720828',
+          toProperty: 'to-Tablet',
+        },
+        {
+          fromId: '895a8def-9aca-3766-ac49-c1908cad853b',
+          fromProperty: 'Matches All Desktop',
+          toId: 'fec2c5df-636c-6a8f-4ed3-01d865720828',
+          toProperty: 'to-Desktop',
+        },
+        {
+          fromId: 'fec2c5df-636c-6a8f-4ed3-01d865720828',
+          fromProperty: 'Layout String',
+          toId: 'c4bcfdef-be4c-d3bc-0b86-ae3238101dcb',
+          toProperty: 'layoutString',
+        },
+      ],
+      comments: [],
+    }}
+  />
+  <video
+    width="100%"
+    autoPlay
+    muted
+    loop
+    src={useBaseUrl(
+      '/docs/guides/user-interfaces/responsive-design/layout-string-change.mp4'
+    )}
+  />
+</div>
+
+### With Mounted
+
+Responsive layouts can vary a lot at different screen sizes. For example, header menus can look _totally_ different on desktop and mobile, making it hard (or messy) to use the above technique. For this we can use the breakpoint outputs on **Match Media Query** and send them to the `Mounted` input on any visual node, to show/hide different parts of our visual tree:
+
+<div className="ndl-image-with-background xl">
+
+<CopyToClipboardButton
+  json={{
+    nodes: [
+      {
+        id: '6a8f4350-211c-4398-f725-22d08d063189',
+        type: 'Group',
+        x: -71.4681915301291,
+        y: 747.4376377651179,
+        parameters: {},
+        ports: [],
+        children: [
+          {
+            id: 'a8f8654d-f996-ea86-ee00-d710422e0eeb',
+            type: 'Text',
+            x: -51.468191530129104,
+            y: 793.4376377651179,
+            parameters: { text: 'Mobile and Tablet\n' },
+            ports: [],
+            children: [],
+          },
+          {
+            id: '28c23615-0fff-0e90-db89-d5b4f80cb55d',
+            type: 'Text',
+            x: -51.468191530129104,
+            y: 889.4376377651179,
+            parameters: { text: 'Desktop' },
+            ports: [],
+            children: [],
+          },
+        ],
+      },
+      {
+        id: '6b2cc359-161c-faef-dff2-1240d2ae8577',
+        type: '/Utils/Media Queries/Match Media Query',
+        x: -504,
+        y: 761,
+        parameters: {},
+        ports: [],
+        children: [],
+      },
+      {
+        id: '406733d1-c3d7-fcf4-aa93-0506bbc12b93',
+        type: 'Or',
+        x: -300,
+        y: 754,
+        parameters: {},
+        ports: [],
+        children: [],
+      },
+    ],
+    connections: [
+      {
+        fromId: '6b2cc359-161c-faef-dff2-1240d2ae8577',
+        fromProperty: 'Matches All Mobile',
+        toId: '406733d1-c3d7-fcf4-aa93-0506bbc12b93',
+        toProperty: 'input 0',
+      },
+      {
+        fromId: '6b2cc359-161c-faef-dff2-1240d2ae8577',
+        fromProperty: 'Matches Tablet',
+        toId: '406733d1-c3d7-fcf4-aa93-0506bbc12b93',
+        toProperty: 'input 1',
+      },
+      {
+        fromId: '406733d1-c3d7-fcf4-aa93-0506bbc12b93',
+        fromProperty: 'result',
+        toId: 'a8f8654d-f996-ea86-ee00-d710422e0eeb',
+        toProperty: 'mounted',
+      },
+      {
+        fromId: '6b2cc359-161c-faef-dff2-1240d2ae8577',
+        fromProperty: 'Matches All Desktop',
+        toId: '28c23615-0fff-0e90-db89-d5b4f80cb55d',
+        toProperty: 'mounted',
+      },
+    ],
+    comments: [],
+  }}
+/>
+
+![](/docs/guides/user-interfaces/responsive-design/mounted-example.png)
+
+</div>
+
+In the case above, we have created two components that have a `Mounted` in their **Comonent Inputs** node. That value is being passed to the `Mounted` input on the root node of the component:
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/user-interfaces/responsive-design/passing-along-mounted.png)
+
+</div>
+
+## Container queries
+
+So far we've been making our UI responsive by checking the size of the screen. This is the most traditional approach, and it still works well. However, as app architecture and design has evolved, the industry has found a need for more hands-off component systems that work well in any context.
+
+One solution to this is a concept called **Container Queries**. Here we check for the size of the component in question, and set the responsiveness based on that (instead of the viewport).
+
+Here's a very basic example using an **Expression** node to check a components witdth and set different `Layout Strings`:
+
+<div className="ndl-image-with-background l">
+
+<CopyToClipboardButton
+  json={{
+    nodes: [
+      {
+        id: '9bb3b01d-56f0-2ad0-ded6-3db55487800f',
+        type: 'Group',
+        label: 'Grid container',
+        x: 0,
+        y: 0,
+        parameters: {},
+        ports: [],
+        children: [
+          {
+            id: '2c51662f-1cc1-1fe7-fee7-f6c0a2805790',
+            type: 'net.noodl.visual.columns',
+            x: 20,
+            y: 96,
+            parameters: {},
+            ports: [],
+            children: [
+              {
+                id: '16371695-9a59-4f4a-a0e7-c7739d3bfe4b',
+                type: 'Group',
+                x: 40,
+                y: 178,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: '9bcd72b8-eb0e-7b81-ce29-5a22604163a1',
+                type: 'Group',
+                x: 40,
+                y: 224,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: '1bc9108b-2ecd-1795-dc7e-dd92022503b1',
+                type: 'Group',
+                x: 40,
+                y: 270,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: 'd602be2c-e32b-00f9-be32-033dee41fe37',
+                type: 'Group',
+                x: 40,
+                y: 316,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: '072d8bde-e96d-ff8d-b543-c6741afefbbb',
+                type: 'Group',
+                x: 40,
+                y: 362,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: 'cccbfb7c-7b15-a3dd-8bf8-e197c86837fd',
+                type: 'Group',
+                x: 40,
+                y: 408,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: '2b38420e-fdf4-b19b-1cae-07825eab1479',
+                type: 'Group',
+                x: 40,
+                y: 454,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: 'd686287d-9325-efd9-5ed1-1a12849954f4',
+                type: 'Group',
+                x: 40,
+                y: 500,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: 'c207bff1-55aa-f0b8-313a-d5358af923ce',
+                type: 'Group',
+                x: 40,
+                y: 546,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: '1d034b8e-ae18-7310-8557-c008fc9924c7',
+                type: 'Group',
+                x: 40,
+                y: 592,
+                parameters: {
+                  height: { value: 300, unit: 'px' },
+                  backgroundColor: 'Primary',
+                  alignY: 'bottom',
+                  justifyContent: 'center',
+                },
+                ports: [],
+                children: [],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: '58d44711-c688-c7ce-cdee-19824ebc79e9',
+        type: 'Expression',
+        x: 282.5,
+        y: 15,
+        parameters: { expression: 'width > 300' },
+        ports: [],
+        children: [],
+        metadata: { merge: { soureCodePorts: ['expression'] } },
+      },
+      {
+        id: 'fa2dc82a-10da-f34f-a1ed-3e4c328dc9a6',
+        type: 'States',
+        x: 283.5,
+        y: 161,
+        parameters: {
+          values: 'Layout String',
+          states: 'Is Single Column,Is Double Column',
+          useTransitions: false,
+          'type-Layout String': 'string',
+          'value-Is Single Column-Layout String': '1',
+          'value-Is Double Column-Layout String': '1 1',
+        },
+        ports: [],
+        children: [],
+      },
+    ],
+    connections: [
+      {
+        fromId: '58d44711-c688-c7ce-cdee-19824ebc79e9',
+        fromProperty: 'isTrueEv',
+        toId: 'fa2dc82a-10da-f34f-a1ed-3e4c328dc9a6',
+        toProperty: 'to-Is Double Column',
+      },
+      {
+        fromId: '58d44711-c688-c7ce-cdee-19824ebc79e9',
+        fromProperty: 'isFalseEv',
+        toId: 'fa2dc82a-10da-f34f-a1ed-3e4c328dc9a6',
+        toProperty: 'to-Is Single Column',
+      },
+      {
+        fromId: '9bb3b01d-56f0-2ad0-ded6-3db55487800f',
+        fromProperty: 'boundingWidth',
+        toId: '58d44711-c688-c7ce-cdee-19824ebc79e9',
+        toProperty: 'width',
+      },
+      {
+        fromId: 'fa2dc82a-10da-f34f-a1ed-3e4c328dc9a6',
+        fromProperty: 'Layout String',
+        toId: '2c51662f-1cc1-1fe7-fee7-f6c0a2805790',
+        toProperty: 'layoutString',
+      },
+    ],
+    comments: [],
+  }}
+/>
+
+![](/docs/guides/user-interfaces/responsive-design/container-query.png)
+
+</div>
+
+We can now use this item grid everywhere, without caring if it's in a page-wide or column-narrow container. It will always render in a layout we know works.
+
+<div className="ndl-image-with-background xl">
+  <video
+    width="100%"
+    autoPlay
+    muted
+    loop
+    src={useBaseUrl(
+      '/docs/guides/user-interfaces/responsive-design/container-query-example.mp4'
+    )}
+  />
+</div>
+
+This is great for both responsivity and reusability. Here's an example of a profile card in two different sized containers. It can be placed in any context and still look good:
+
+<div className="ndl-image-with-background l">
+  <CopyToClipboardButton
+  json={{"nodes":[{"id":"f249c883-27e1-75a2-61b4-ec99fb1d61ef","type":"Group","label":"User Card","x":-56,"y":-7,"parameters":{"sizeMode":"contentHeight"},"ports":[],"children":[{"id":"f90ec1a3-f3bd-e4d8-2b91-441d98c14390","type":"Group","label":"Container","x":-36,"y":89,"parameters":{"backgroundColor":"#EBE8FF","clip":true,"borderRadius":{"value":16,"unit":"px"},"boxShadowEnabled":true,"boxShadowBlurRadius":{"value":10,"unit":"px"},"boxShadowSpreadRadius":{"value":-5,"unit":"px"},"boxShadowColor":"#000000"},"ports":[],"children":[{"id":"bdc08a99-6875-c3b3-ef8f-46602117807b","type":"net.noodl.visual.columns","x":-16,"y":149,"parameters":{"marginX":{"value":0,"unit":"px"},"marginY":{"value":0,"unit":"px"}},"ports":[],"children":[{"id":"a2d62a44-50c0-31e5-6c93-3fadb629367d","type":"Group","label":"Profile image","x":4,"y":231,"parameters":{},"ports":[],"children":[{"id":"1fe019b7-2f49-8295-c113-25d05cc80e99","type":"Image","x":24,"y":291,"parameters":{"src":"generated-images/image-edf34931-7f05-697e-a686-6048623b9c26.png","sizeMode":"explicit","objectFit":"cover"},"ports":[],"children":[]}]},{"id":"24df50db-ba10-cc89-7aef-d2a534bbe517","type":"Group","label":"Details","x":4,"y":337,"parameters":{"paddingTop":{"value":16,"unit":"px"},"paddingBottom":{"value":16,"unit":"px"},"paddingRight":{"value":16,"unit":"px"},"paddingLeft":{"value":16,"unit":"px"}},"ports":[],"children":[{"id":"6ad5f879-fd56-4d60-6106-51f285dd155c","type":"Group","label":"Name + title container","x":24,"y":397,"parameters":{},"ports":[],"children":[{"id":"4ec2fb3a-ac56-736c-8e15-7ecbca03ec84","type":"Text","x":44,"y":471,"parameters":{"text":"Mr Alpaca","fontSize":{"value":24,"unit":"px"}},"ports":[],"children":[]},{"id":"756e68be-7588-9337-9e46-5284ca5d497f","type":"Text","x":44,"y":531,"parameters":{"text":"Head of Responsive Growth","fontSize":{"value":14,"unit":"px"},"lineHeight":{"value":1.1,"unit":""}},"ports":[],"children":[]}]},{"id":"91682046-a82f-fec9-adb7-1a9058ad03d0","type":"Text","x":24,"y":605,"parameters":{"fontSize":{"value":12,"unit":"px"},"marginTop":{"value":24,"unit":"px"},"textTransform":"none","text":"Last online 4h ago","color":"Grey - 600"},"ports":[],"children":[]}]}]}]}]},{"id":"a6a654ee-44c6-01f1-701a-bf8842b73d8b","type":"States","x":261,"y":142.90136517347258,"parameters":{"states":"Single Column,Double Column","useTransitions":false,"value-Desktop-Header Bottom Margin":32,"value-Tablet-Header Bottom Margin":16,"value-Mobile-Header Bottom Margin":8,"values":"Layout String","type-Layout String":"string","value-Tablet-Layout String":"2 1 1","value-Mobile-Layout String":"1 2","value-Single Column-Layout String":"1","value-Double Column-Layout String":"1 2"},"ports":[],"children":[]},{"id":"9a964091-4cad-4847-3389-e4484ebac77f","type":"Expression","x":261,"y":-1.098634826527416,"parameters":{"expression":"width > 300 "},"ports":[],"children":[],"metadata":{"merge":{"soureCodePorts":["expression"]}}}],"connections":[{"fromId":"9a964091-4cad-4847-3389-e4484ebac77f","fromProperty":"isTrueEv","toId":"a6a654ee-44c6-01f1-701a-bf8842b73d8b","toProperty":"to-Double Column"},{"fromId":"9a964091-4cad-4847-3389-e4484ebac77f","fromProperty":"isFalseEv","toId":"a6a654ee-44c6-01f1-701a-bf8842b73d8b","toProperty":"to-Single Column"},{"fromId":"f249c883-27e1-75a2-61b4-ec99fb1d61ef","fromProperty":"boundingWidth","toId":"9a964091-4cad-4847-3389-e4484ebac77f","toProperty":"width"},{"fromId":"a6a654ee-44c6-01f1-701a-bf8842b73d8b","fromProperty":"Layout String","toId":"bdc08a99-6875-c3b3-ef8f-46602117807b","toProperty":"layoutString"}],"comments":[]}}
+/>
+
+![](/docs/guides/user-interfaces/responsive-design/responsive-card.png)
+
+</div>
+
+### Generating checks with AI
+
+In the container query example, we used an **Expression** node to check the size. It worked great because we only needed to switch between two states when the container was larger or smaller than 300px.
+
+If we want to do more advanced queries we can use the **Function** node to output different signals. This can either be written by hand, or generated by the AI assistant, using the `/Function` command:
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/user-interfaces/responsive-design/ai-generated.png)
+
+</div>
+
+(Note that the AI assumed that we wanted to use this function with a screen width. Since we asked for a `Width` input, that doesn't matter. It will work with any number sent to it.)
+
+## Limiter component
+
+So far we've mainly talked about making content fit smaller screens. But it's also important to limit the content when the screen gets bigger. To do this, we can use a Limiter component. The basic version uses two **Group** nodes: one for centering and padding, and another with a `max-width` to hold the content:
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/user-interfaces/responsive-design/simple-limiter.png)
+
+</div>
+
+This will provide the following result:
+
+<div className="ndl-image-with-background xl">
+  <video
+    width="100%"
+    autoPlay
+    muted
+    loop
+    src={useBaseUrl(
+      '/docs/guides/user-interfaces/responsive-design/limiter.mp4'
+    )}
+  />
+</div>
+
+This component will allow us to keep the content size and spacing consistent across the app.
+
+A more advanced and configurable version of this component can be copied by pressing the "Copy nodes" button below:
+
+<div className="ndl-image-with-background xl">
+
+<CopyToClipboardButton
+  json={{
+    nodes: [
+      {
+        id: 'afa88ce5-0d3f-b38b-dc99-8bb67f67c07d',
+        type: 'Group',
+        x: -65,
+        y: 47,
+        parameters: { alignItems: 'center' },
+        ports: [],
+        children: [
+          {
+            id: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+            type: 'Group',
+            x: -45,
+            y: 93,
+            parameters: {
+              maxWidth: { value: 1200, unit: 'px' },
+              paddingLeft: { value: 32, unit: 'px' },
+              paddingRight: { value: 32, unit: 'px' },
+              paddingTop: { value: 32, unit: 'px' },
+              paddingBottom: { value: 32, unit: 'px' },
+            },
+            ports: [],
+            children: [
+              {
+                id: '66176540-2e6d-5fd9-1739-4a334a4dead0',
+                type: 'Component Children',
+                x: -25,
+                y: 315,
+                parameters: {},
+                ports: [],
+                children: [],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: '5798026e-a06e-bcd7-8fc6-d99c34adad01',
+        type: 'States',
+        label: 'flex-direction',
+        x: -406,
+        y: -150.5,
+        parameters: {
+          useTransitions: false,
+          'type-Vertical': 'string',
+          'type-Direction': 'string',
+          'value-Layout-Vertical': 'vertical',
+          values: 'Layout',
+          states: 'Vertical,Horizontal',
+          'type-Layout': 'string',
+          'value-Vertical-Layout': 'column',
+          'value-Horizontal-Layout': 'row',
+        },
+        ports: [],
+        children: [],
+      },
+      {
+        id: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        type: 'Component Inputs',
+        x: -798,
+        y: 82.5,
+        parameters: {},
+        ports: [
+          {
+            name: 'Layout direction',
+            plug: 'output',
+            type: { name: '*' },
+            group: 'Layout',
+            index: 1,
+          },
+          {
+            name: 'Justify content',
+            plug: 'output',
+            type: { name: '*' },
+            group: 'Layout',
+            index: 2,
+          },
+          {
+            name: 'Align items',
+            plug: 'output',
+            type: { name: '*' },
+            group: 'Layout',
+            index: 3,
+          },
+          {
+            name: 'Max width (px)',
+            plug: 'output',
+            type: { name: '*' },
+            group: 'Size',
+            index: 0,
+          },
+          {
+            name: 'Top',
+            plug: 'output',
+            type: { name: '*' },
+            group: 'Padding (px)',
+            index: 4,
+          },
+          {
+            name: 'Bottom',
+            plug: 'output',
+            type: { name: '*' },
+            group: 'Padding (px)',
+            index: 5,
+          },
+          {
+            name: 'Left',
+            plug: 'output',
+            type: { name: '*' },
+            group: 'Padding (px)',
+            index: 6,
+          },
+          {
+            name: 'Right',
+            plug: 'output',
+            type: { name: '*' },
+            group: 'Padding (px)',
+            index: 7,
+          },
+        ],
+        children: [],
+      },
+      {
+        id: '6ef34161-146e-5792-b92f-6b63275ca5f8',
+        type: 'States',
+        label: 'justify-content',
+        x: -406,
+        y: -50.833333333333314,
+        parameters: {
+          states: 'Start,Center,End,Space around,Space between',
+          currentState: 'Start',
+          values: 'Justify content',
+          useTransitions: false,
+          'type-Justify content': 'string',
+          'value-Start-Justify content': 'flex-start',
+          'value-Center-Justify content': 'center',
+          'value-End-Justify content': 'flex-end',
+          'value-Space around-Justify content': 'space-around',
+          'value-Space between-Justify content': 'space-between',
+        },
+        ports: [],
+        children: [],
+      },
+      {
+        id: '698603ad-1ceb-fb64-9df9-b78bb21faf3a',
+        type: 'States',
+        label: 'align-items',
+        x: -406,
+        y: 68.16666666666669,
+        parameters: {
+          states: 'Start,Center,End,Stretch',
+          values: 'Align items',
+          useTransitions: false,
+          'type-Align items': 'string',
+          'value-Start-Align items': 'flex-start',
+          'value-Center-Align items': 'center',
+          'value-End-Align items': 'flex-end',
+          'value-Stretch-Align items': 'stretch',
+        },
+        ports: [],
+        children: [],
+      },
+      {
+        id: 'fa63e8f3-4158-672d-f95f-b343cfb3a4e2',
+        type: 'Number',
+        label: 'max-width',
+        x: -405.20000000000005,
+        y: 184.9666666666667,
+        parameters: { value: 1200 },
+        ports: [],
+        children: [],
+      },
+      {
+        id: '33c7a186-d782-6793-8444-7d2426b55e67',
+        type: 'Number',
+        label: 'padding-top',
+        x: -406.20000000000005,
+        y: 284.05,
+        parameters: { value: 32 },
+        ports: [],
+        children: [],
+      },
+      {
+        id: '411d83ca-4824-b28f-6a7b-a0bbdeeb4914',
+        type: 'Number',
+        label: 'padding-bottom',
+        x: -407.20000000000005,
+        y: 379.04999999999995,
+        parameters: { value: 32 },
+        ports: [],
+        children: [],
+      },
+      {
+        id: 'a3cb46c7-90ad-c9ed-7bf6-81751297e946',
+        type: 'Number',
+        label: 'padding-left',
+        x: -408.20000000000005,
+        y: 477.04999999999995,
+        parameters: { value: 32 },
+        ports: [],
+        children: [],
+      },
+      {
+        id: 'e7f583e9-2dfb-5b6e-8cee-0693301a670f',
+        type: 'Number',
+        label: 'padding-right',
+        x: -406.20000000000005,
+        y: 575.05,
+        parameters: { value: 32 },
+        ports: [],
+        children: [],
+      },
+    ],
+    connections: [
+      {
+        fromId: '5798026e-a06e-bcd7-8fc6-d99c34adad01',
+        fromProperty: 'Layout',
+        toId: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+        toProperty: 'flexDirection',
+      },
+      {
+        fromId: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        fromProperty: 'Layout direction',
+        toId: '5798026e-a06e-bcd7-8fc6-d99c34adad01',
+        toProperty: 'currentState',
+      },
+      {
+        fromId: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        fromProperty: 'Justify content',
+        toId: '6ef34161-146e-5792-b92f-6b63275ca5f8',
+        toProperty: 'currentState',
+      },
+      {
+        fromId: '6ef34161-146e-5792-b92f-6b63275ca5f8',
+        fromProperty: 'Justify content',
+        toId: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+        toProperty: 'justifyContent',
+      },
+      {
+        fromId: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        fromProperty: 'Align items',
+        toId: '698603ad-1ceb-fb64-9df9-b78bb21faf3a',
+        toProperty: 'currentState',
+      },
+      {
+        fromId: '698603ad-1ceb-fb64-9df9-b78bb21faf3a',
+        fromProperty: 'Align items',
+        toId: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+        toProperty: 'alignItems',
+      },
+      {
+        fromId: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        fromProperty: 'Max width (px)',
+        toId: 'fa63e8f3-4158-672d-f95f-b343cfb3a4e2',
+        toProperty: 'value',
+      },
+      {
+        fromId: 'fa63e8f3-4158-672d-f95f-b343cfb3a4e2',
+        fromProperty: 'savedValue',
+        toId: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+        toProperty: 'maxWidth',
+      },
+      {
+        fromId: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        fromProperty: 'Top',
+        toId: '33c7a186-d782-6793-8444-7d2426b55e67',
+        toProperty: 'value',
+      },
+      {
+        fromId: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        fromProperty: 'Bottom',
+        toId: '411d83ca-4824-b28f-6a7b-a0bbdeeb4914',
+        toProperty: 'value',
+      },
+      {
+        fromId: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        fromProperty: 'Left',
+        toId: 'a3cb46c7-90ad-c9ed-7bf6-81751297e946',
+        toProperty: 'value',
+      },
+      {
+        fromId: 'c5f3e5bf-3ee7-2e4e-da92-f1a9aca0b519',
+        fromProperty: 'Right',
+        toId: 'e7f583e9-2dfb-5b6e-8cee-0693301a670f',
+        toProperty: 'value',
+      },
+      {
+        fromId: '33c7a186-d782-6793-8444-7d2426b55e67',
+        fromProperty: 'savedValue',
+        toId: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+        toProperty: 'paddingTop',
+      },
+      {
+        fromId: '411d83ca-4824-b28f-6a7b-a0bbdeeb4914',
+        fromProperty: 'savedValue',
+        toId: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+        toProperty: 'paddingBottom',
+      },
+      {
+        fromId: 'a3cb46c7-90ad-c9ed-7bf6-81751297e946',
+        fromProperty: 'savedValue',
+        toId: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+        toProperty: 'paddingLeft',
+      },
+      {
+        fromId: 'e7f583e9-2dfb-5b6e-8cee-0693301a670f',
+        fromProperty: 'savedValue',
+        toId: 'd1f8376f-cbe3-916f-9193-49ff74b48db9',
+        toProperty: 'paddingRight',
+      },
+    ],
+    comments: [
+      {
+        text: 'DEFAULT VALUES\n\nUpdate these if you dont like the defaults but dont want to do overwrites for every instance of the limiter',
+        width: 301,
+        height: 1077,
+        fill: true,
+        x: -479,
+        y: -357,
+        id: '14dd3e1b-c627-b0a7-73be-6f313dc93f2f',
+        color: 'visual',
+        largeFont: true,
+      },
+    ],
+  }}
+/>
+
+![](/docs/guides/user-interfaces/responsive-design/advanced-limiter.png)
+
+</div>
+
+It features the following options in the property panel:
+
+<div className="ndl-image-with-background ">
+
+![](/docs/guides/user-interfaces/responsive-design/limiter-propertypanel.png)
+
+</div>
+
+## Get building!
+
+Now you know all of the techniques we use when building responsive designs. However, Noodl is flexible, and we always learn new things from the community. If you have any tips and tricks that you use, but that we havent touched upon here and feel like sharing it, feel free to hop on in to on our [Discord server](https://discord.com/invite/23xU2hYrSJ). We are always happy to hear your ideas and feedback.
+
+Happy Noodling!

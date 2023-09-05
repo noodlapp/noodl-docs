@@ -1,0 +1,75 @@
+[
+  {
+    "url": "ai_walkthrough",
+    "thumb": "lessons/ai_walkthrough.png",
+    "category": "Lessons",
+    "name": "lesson_ai_walkthrough",
+    "header": "Feature Highlight (15min)",
+    "title": "Noodl AI Walkthrough",
+    "completionBadge": "lessons/lesson-complete-badge.png",
+    "type": "highlight"
+  },
+  {
+    "url": "01_basics",
+    "thumb": "lessons/01lesson.png",
+    "category": "Lessons",
+    "name": "lesson_01_basics",
+    "header": "Lesson 01 (15min)",
+    "title": "Noodl Basics",
+    "completionBadge": "lessons/lesson-complete-badge.png"
+  },
+  {
+    "url": "02_layout",
+    "thumb": "lessons/02lesson.png",
+    "category": "Lessons",
+    "name": "lesson_02_layout",
+    "header": "Lesson 02 (15min)",
+    "title": "Layout",
+    "completionBadge": "lessons/lesson-complete-badge.png"
+  },
+  {
+    "url": "03_components",
+    "thumb": "lessons/03lesson.png",
+    "category": "Lessons",
+    "name": "lesson_03_components",
+    "header": "Lesson 03 (15min)",
+    "title": "Reusable Components",
+    "completionBadge": "lessons/lesson-complete-badge.png"
+  },
+  {
+    "url": "04_data-driven-components",
+    "thumb": "lessons/04lesson.png",
+    "category": "Lessons",
+    "name": "lesson_04_data-driven-components",
+    "header": "Lesson 04 (15min)",
+    "title": "Data-driven Components",
+    "completionBadge": "lessons/lesson-complete-badge.png"
+  },
+  {
+    "url": "05_page-navigation",
+    "thumb": "lessons/05lesson.png",
+    "category": "Lessons",
+    "name": "lesson_05_page-navigation",
+    "header": "Lesson 05 (15min)",
+    "title": "Data-driven Pages",
+    "completionBadge": "lessons/lesson-complete-badge.png"
+  },
+  {
+    "url": "06_store-user-data",
+    "thumb": "lessons/06lesson.png",
+    "category": "Lessons",
+    "name": "lesson_06_store-user-data",
+    "header": "Lesson 06 (15min)",
+    "title": "User created data",
+    "completionBadge": "lessons/lesson-complete-badge.png"
+  },
+  {
+    "url": "07_logic-components",
+    "thumb": "lessons/07lesson.png",
+    "category": "Lessons",
+    "name": "lesson_07_logic-components",
+    "header": "Lesson 07 (15min)",
+    "title": "States & Logic Components",
+    "completionBadge": "lessons/lesson-complete-badge.png"
+  }
+]

@@ -1,0 +1,13 @@
+{
+    "formation":[
+      {
+        "type":"collection",
+        "name":"_User",
+        "properties":{
+          "firstName":{"type":"String"},
+          "lastName":{"type":"String"},
+          "profileImage":{"type":"File"}
+        }
+      }
+    ]
+  }

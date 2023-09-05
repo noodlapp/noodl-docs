@@ -1,0 +1,45 @@
+[
+    {
+        "title": "Suatch Google Sheets Example",
+        "description": "A cool color picker that can helps a designer to pick good colors. Uses the Google Sheet Module.",
+        "href": "/library/examples/suatch",
+        "imageUrl": "/library/examples/suatch/suatch_1-1-thumb.png",
+        "project": "/library/examples/suatch/suatch_1-2.zip"
+    },
+    {
+        "title": "Custom Survey App",
+        "description": "This app is a simple user survey. It shows how to work with navigation, visual and interaction states and custom components.",
+        "href": "/library/examples/survey-app",
+        "imageUrl": "/library/examples/survey-app/survey_thumbnail2.png",
+        "project": "/library/examples/survey-app/survey_app_1-4.zip"
+    },
+    {
+        "title": "Modal Wizard",
+        "description": "This example shows how to use a Component Stack in combination with a Popup to create a simple modal wizard-type of form.",
+        "href": "/library/examples/modal-wizard",
+        "imageUrl": "/library/examples/modal-wizard/final-1.png",
+        "project": "/library/examples/modal-wizard/component-stack-1.zip"
+    },
+    {
+        "title": "Task List App",
+        "description": "This example implements a small task list app that stores task in a database.",
+        "href": "/library/examples/task-list-app",
+        "imageUrl": "/library/examples/task-list-app/task_list_thumbnail.png",
+        "project": "/library/examples/task-list-app/task-app-1-2.zip",
+        "backend":"/library/examples/task-list-app/task-app-cf.json"
+    },
+    {
+        "title": "Mapbox Example",
+        "description": "A small app that makes use of the MapBox module to implement a map with markers.",
+        "href": "/library/examples/mapbox",
+        "imageUrl": "/library/examples/mapbox/markers-1.png",
+        "project": "/library/examples/mapbox/markers.zip"
+    },
+    {
+        "title": "Star Rating Component",
+        "description": "A small example that implements an animated interactive star rating component.",
+        "href": "/library/examples/star-rating-component",
+        "imageUrl": "/library/examples/star-rating-component/star-rating-thumb.png",
+        "project": "/library/examples/star-rating-component/star-rating-1-1.zip"
+    }
+]

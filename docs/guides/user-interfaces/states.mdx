@@ -1,0 +1,525 @@
+---
+title: States Node
+hide_title: true
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import CopyToClipboardButton from '../../../src/components/copytoclipboardbutton';
+
+# States Node
+
+A common concept in Noodl is the use of different visual states. In this guide we will cover states with an example of how to create a simple reusable switch component, and an example of hovering effects.
+
+<div className="ndl-image-with-background s">
+
+![](/docs/guides/user-interfaces/states/switch.gif)
+
+</div>
+
+The examples will cover how to use a **States** node for handling transitions and interactions.
+
+## The visuals
+
+First let's start with the basic visual nodes that make up the switch. This is simply a **Group** and a **Circle** with proper styling. You can copy the nodes below and paste into your own project.
+
+<div className="ndl-image-with-background xl">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/switch-nodes.png"
+    className="ndl-image med"
+  ></img>
+  <CopyToClipboardButton
+    json={{
+      nodes: [
+        {
+          id: 'beeb6388-461b-f1fe-d64e-be798e4b1b4d',
+          type: 'Group',
+          x: 441.71346128847347,
+          y: 300.98375737190554,
+          parameters: { backgroundColor: '#FFFFFF' },
+          ports: [],
+          children: [
+            {
+              id: '9677d929-9a49-7fc5-ae14-27a1b48e883f',
+              type: 'Group',
+              x: 461.71346128847347,
+              y: 346.98375737190554,
+              parameters: {
+                width: { value: 80, unit: 'px' },
+                height: { value: 40, unit: 'px' },
+                backgroundColor: '#F0F0F0',
+                borderRadius: 20,
+                alignX: 'center',
+                marginTop: { value: 20, unit: 'px' },
+              },
+              ports: [],
+              children: [
+                {
+                  id: 'aeda33bf-10cb-1e76-07b2-4a368140ca65',
+                  type: 'Circle',
+                  x: 481.71346128847347,
+                  y: 392.98375737190554,
+                  parameters: {
+                    fillColor: '#E8E8E8',
+                    size: 40,
+                    strokeWidth: 2,
+                    strokeColor: '#454545',
+                    strokeEnabled: true,
+                  },
+                  ports: [],
+                  children: [],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      connections: [],
+    }}
+  />
+</div>
+
+Below you can see the styling of the two nodes. The first image shows the Circle node's properties and the second image shows the Group node's properties. Don't forget that you can hover the nodes in the graph to see their placement in the preview.
+
+<div className="ndl-image-with-background l">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/style-props1.png"
+    className="ndl-image small"
+  ></img>
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/style-props2.png"
+    className="ndl-image small"
+  ></img>
+</div>
+
+## The states node
+
+A very common pattern is to represent states visually. In this example we want our switch to have two states **On** and **Off**, and we want it to have different visuals for these states. This is achieved with the **States** node. Start by creating a new [States](/nodes/utilities/logic/states) node.
+
+Next, create the two states.
+
+<div className="ndl-image-with-background l">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/create-states.gif"
+    className="ndl-image med"
+  ></img>
+</div>
+
+The **States** node will be in one of the states that we just defined. It starts in the state specified by the **State** property that shows up when you add states. Later we will switch state by connecting a signal.
+
+We will also specify **Values** for each of our states. In the same way you added states, add a single value and call it **Knob X**. It doesn't really matter what you call it, as long as you know what it is for. In this case it's for moving the knob's (the Circle node) X position to its correct position for the two states.
+
+<div className="ndl-image-with-background">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/values-1.png"
+    className="ndl-image med"
+  ></img>
+</div>
+
+Specify the value for each state. The X position should be **40** when the switch is in the **On** state and **0** when the switch is in the **Off** state. Enter these values in the **States** node properties.
+
+<div className="ndl-image-with-background">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/on-values.png"
+    className="ndl-image med"
+  ></img>
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/off-values.png"
+    className="ndl-image med"
+  ></img>
+</div>
+
+Connect the **Knob X** output of the **States** node to the **Pos X** input of the **Circle** node.
+
+<div className="ndl-image-with-background xl">
+  <img src="/2.8/docs/guides/user-interfaces/states/knob-x-connected.png"></img>
+</div>
+
+As you can see the **States** node will get an output corresponding to each value that is defined under **Values**. This output will transition to the specified values when the **States** node changes state. One way to see the different states and transitions is to play with the **State** dropdown menu in the properties panel.
+
+<div className="ndl-image-with-background xl">
+    <video width="100%" autoPlay muted loop src={useBaseUrl("/docs/guides/user-interfaces/states/change-state.mp4")}/>
+</div>
+
+If you hover over the output connection of the **States** node a small popup will show the current value that is being outputted. If you click this small popup, you pin the popup so that it stays visible. Now you can see the output value change as it transitions from one state to another.
+
+You can connect the outputs of the **States** node to anything you like. In this example we connected the output to an input where they were both of the type **Number**. You can use different types than numbers. Add a new **Value** to the **States** node. Call it "Background Color" and give it a **Color** type instead of the default **Number** type. Then choose two different colors for the two states and connect the output to the **Background Color** of the **Group** node containing the **Circle**.
+
+<div className="ndl-image-with-background">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/color-type.png"
+    className="ndl-image med"
+  ></img>
+</div>
+
+Finally, we can make the **States** node toggle state when the switch **Group** node is clicked. This is achieved by connecting the **Click** signal from the **Group** to the **Toggle** input of the **States** node. This will make the **States** node jump to the next state in the list and when the last one is reached it will jump to the first one again. In this case we only have two states, so it will toggle between **On** and **Off**.
+
+<div className="ndl-image-with-background xl">
+  <img src="/2.8/docs/guides/user-interfaces/states/click-toggle.png"></img>
+  <CopyToClipboardButton
+    json={{
+      nodes: [
+        {
+          id: 'f0d8169f-90ca-9cd9-bc88-af4c2ed631d0',
+          type: 'Group',
+          x: 441.71346128847347,
+          y: 300.98375737190554,
+          parameters: { backgroundColor: '#FFFFFF' },
+          ports: [],
+          children: [
+            {
+              id: 'f2461a9d-49c6-f184-1ac1-a75450a7c856',
+              type: 'Group',
+              x: 461.71346128847347,
+              y: 346.98375737190554,
+              parameters: {
+                width: { value: 80, unit: 'px' },
+                height: { value: 40, unit: 'px' },
+                backgroundColor: '#F0F0F0',
+                borderRadius: 20,
+                alignX: 'center',
+                marginTop: { value: 20, unit: 'px' },
+              },
+              ports: [],
+              children: [
+                {
+                  id: 'c66997cc-19d2-630c-692e-0caafdf37dd7',
+                  type: 'Circle',
+                  x: 481.71346128847347,
+                  y: 448.98375737190554,
+                  parameters: {
+                    fillColor: '#E8E8E8',
+                    size: 40,
+                    strokeWidth: 2,
+                    strokeColor: '#454545',
+                    strokeEnabled: true,
+                  },
+                  ports: [],
+                  children: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: '5d631656-dea2-b5d7-f5ee-ee27e220463b',
+          type: 'States',
+          x: 232.07664638676232,
+          y: 376.3848345864951,
+          parameters: {
+            states: 'On,Off',
+            values: 'Knob X,Background Color',
+            'type-Background Color': 'color',
+            'value-On-Knob X': 40,
+            'value-Off-Knob X': 0,
+            'value-Off-Background Color': '#F0F0F0',
+            'value-On-Background Color': '#CCE6CE',
+            startState: 'Off',
+          },
+          ports: [],
+          children: [],
+        },
+      ],
+      connections: [
+        {
+          fromId: '5d631656-dea2-b5d7-f5ee-ee27e220463b',
+          fromProperty: 'Knob X',
+          toId: 'c66997cc-19d2-630c-692e-0caafdf37dd7',
+          toProperty: 'transformX',
+        },
+        {
+          fromId: '5d631656-dea2-b5d7-f5ee-ee27e220463b',
+          fromProperty: 'Background Color',
+          toId: 'f2461a9d-49c6-f184-1ac1-a75450a7c856',
+          toProperty: 'backgroundColor',
+        },
+        {
+          fromId: 'f2461a9d-49c6-f184-1ac1-a75450a7c856',
+          fromProperty: 'onClick',
+          toId: '5d631656-dea2-b5d7-f5ee-ee27e220463b',
+          toProperty: 'toggle',
+        },
+      ],
+    }}
+  />
+</div>
+
+## Transitions
+
+For _number_ and _color_ types the **States** node will try to smoothly transition between the states. Sometimes this is not the desired behaviour, and sometimes you want to change how the transition behaves. Noodl let's you edit the transition curves to change the transition behaviour. Take a look at the example below. You can copy the nodes and replace the old nodes in your project or create a new component.
+
+<div className="ndl-image-with-background xl">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/hover-fx-nodes.png"
+    className="ndl-image med"
+  ></img>
+  <CopyToClipboardButton
+    json={{
+      nodes: [
+        {
+          id: '4c6ec6bd-2ba3-807a-9177-da451a835ec2',
+          type: 'Group',
+          x: 410.63681490171115,
+          y: 392,
+          parameters: { backgroundColor: '#FFFFFF' },
+          ports: [],
+          children: [
+            {
+              id: '56e1ec26-a280-b297-baf3-f5365f6a6124',
+              type: 'Group',
+              x: 430.63681490171115,
+              y: 438,
+              parameters: {
+                width: { value: 80, unit: 'px' },
+                height: { value: 80, unit: 'px' },
+                backgroundColor: '#E6DD39',
+                borderRadius: 20,
+                alignX: 'center',
+                marginTop: { value: 70, unit: 'px' },
+              },
+              ports: [],
+              children: [],
+            },
+          ],
+        },
+        {
+          id: '34a39ad5-0999-133a-5f7e-6943ebd8d899',
+          type: 'States',
+          label: 'Hover',
+          x: 177.3701941946174,
+          y: 432.9317475959747,
+          parameters: {
+            states: 'Yes,No',
+            startState: 'No',
+            values: 'Size,Color',
+            'type-Color': 'color',
+            'value-Yes-Color': '#D4CE35',
+            'value-No-Color': '#323975',
+            'value-Yes-Size': 1.5,
+            'value-No-Size': 1,
+          },
+          ports: [],
+          children: [],
+        },
+      ],
+      connections: [
+        {
+          fromId: '56e1ec26-a280-b297-baf3-f5365f6a6124',
+          fromProperty: 'hoverStart',
+          toId: '34a39ad5-0999-133a-5f7e-6943ebd8d899',
+          toProperty: 'to-Yes',
+        },
+        {
+          fromId: '56e1ec26-a280-b297-baf3-f5365f6a6124',
+          fromProperty: 'hoverEnd',
+          toId: '34a39ad5-0999-133a-5f7e-6943ebd8d899',
+          toProperty: 'to-No',
+        },
+        {
+          fromId: '34a39ad5-0999-133a-5f7e-6943ebd8d899',
+          fromProperty: 'Color',
+          toId: '56e1ec26-a280-b297-baf3-f5365f6a6124',
+          toProperty: 'backgroundColor',
+        },
+        {
+          fromId: '34a39ad5-0999-133a-5f7e-6943ebd8d899',
+          fromProperty: 'Size',
+          toId: '56e1ec26-a280-b297-baf3-f5365f6a6124',
+          toProperty: 'transformScale',
+        },
+      ],
+    }}
+  />
+</div>
+
+This simple graph has a **States** node that controls the hover state of a **Group**. As you can see the **Group** sends a signal when it is hovered which transitions the **States** node to the **Yes** state. A different signal is sent when the mouse leaves (you stop hovering), which changes the **States** node to the **No** state. The **States** node changes the **Scale** and **Color** of the **Group** node when it goes between its states. The effect is shown below:
+
+<div className="ndl-image-with-background">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/hover-fx1.gif"
+    className="ndl-image small"
+  ></img>
+</div>
+
+Both transitions (color and size) have the default transition curves. You can edit the transition curves in the properties of the **States** node. Look for the transitions when moving to the **Yes** state (i.e. the hovered state).
+
+<div className="ndl-image-with-background">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/transition-props.png"
+    className="ndl-image med"
+  ></img>
+</div>
+
+The **Default** property is a transition curve that is used for all values if they don't have a specific transition curve set for themselves. If you want to change the curve for all transitions use this.
+
+In this case we want to change the curve for the **Size** transition. You can edit the curve via the curve editor.
+
+<div className="ndl-image-with-background l">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/change-size-curve.gif"
+    className="ndl-image med"
+  ></img>
+</div>
+
+You can play with different settings for the curves and see them working when you hover the rectangle in the preview. Here is one example with a little bounce in the **Size** transition and a linear **Color** transition. Don't forget that you can use the preset icons on the right in the curve editor to choose between four presets:
+
+- **Ease In** Slower in the beginning and accelerating towards the end.
+- **Ease Out** Decelerates towards the end.
+- **Ease In and Out** Smooth/slower start and end.
+- **Linear** Linear animation, starts instantly and keeps constant speed.
+
+<div className="ndl-image-with-background">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/hover-fx2.gif"
+    className="ndl-image small"
+  ></img>
+</div>
+
+## Chaining States
+
+You can also connect several **States** nodes together to create more complex types of animations. In the node graph below we have a second **States** node that expands the **Group** node (changes the width). The second **States** node labeled **Expand** changes the width between the states **Yes** and **No**. The neat thing is that it is triggered when the first states node (the hover states) has reached the **Yes** state. It is returned to **No** when the mouse leaves (the hover end), just like the first node.
+
+<div className="ndl-image-with-background xl">
+  <img src="/2.8/docs/guides/user-interfaces/states/chaining-states.png"></img>
+  <CopyToClipboardButton
+    json={{
+      nodes: [
+        {
+          id: '31b24415-e1ef-7480-db67-f8c3d9df8965',
+          type: 'Group',
+          x: 410.63681490171115,
+          y: 392,
+          parameters: { backgroundColor: '#FFFFFF' },
+          ports: [],
+          children: [
+            {
+              id: '2255f3f8-c7c6-a195-9e20-22204968c916',
+              type: 'Group',
+              x: 430.63681490171115,
+              y: 438,
+              parameters: {
+                width: { value: 80, unit: 'px' },
+                height: { value: 80, unit: 'px' },
+                backgroundColor: '#E6DD39',
+                borderRadius: 20,
+                alignX: 'center',
+                marginTop: { value: 70, unit: 'px' },
+              },
+              ports: [],
+              children: [],
+            },
+          ],
+        },
+        {
+          id: 'dadabea3-2a7f-ca23-a71d-79fae0cfff6e',
+          type: 'States',
+          label: 'Hover',
+          x: 173.3701941946174,
+          y: 343.9317475959747,
+          parameters: {
+            states: 'Yes,No',
+            startState: 'No',
+            values: 'Size,Color',
+            'type-Color': 'color',
+            'value-Yes-Color': '#D4CE35',
+            'value-No-Color': '#323975',
+            'value-Yes-Size': 1.5,
+            'value-No-Size': 1,
+            'transition-Yes-Size': {
+              curve: [0, 0, 0.39, 2.31],
+              dur: 300,
+              delay: 0,
+            },
+            'transition-Yes-Color': {
+              curve: [0, 0, 1, 1],
+              dur: 300,
+              delay: 0,
+            },
+            'transition-No-Color': {
+              curve: [0, 0, 1, 1],
+              dur: 300,
+              delay: 0,
+            },
+          },
+          ports: [],
+          children: [],
+        },
+        {
+          id: '82a0d318-ac00-eb50-653e-bf2aa4344425',
+          type: 'States',
+          label: 'Expand',
+          x: 181.5019645647742,
+          y: 554.7158737979873,
+          parameters: {
+            states: 'Yes,No',
+            values: 'Width',
+            'value-Yes-Width': 200,
+            'value-No-Width': 90,
+            startState: 'No',
+            'transition-Yes-Width': {
+              curve: [0, 0, 0.58, 1],
+              dur: 500,
+              delay: 0,
+            },
+          },
+          ports: [],
+          children: [],
+        },
+      ],
+      connections: [
+        {
+          fromId: '2255f3f8-c7c6-a195-9e20-22204968c916',
+          fromProperty: 'hoverStart',
+          toId: 'dadabea3-2a7f-ca23-a71d-79fae0cfff6e',
+          toProperty: 'to-Yes',
+        },
+        {
+          fromId: '2255f3f8-c7c6-a195-9e20-22204968c916',
+          fromProperty: 'hoverEnd',
+          toId: 'dadabea3-2a7f-ca23-a71d-79fae0cfff6e',
+          toProperty: 'to-No',
+        },
+        {
+          fromId: 'dadabea3-2a7f-ca23-a71d-79fae0cfff6e',
+          fromProperty: 'Color',
+          toId: '2255f3f8-c7c6-a195-9e20-22204968c916',
+          toProperty: 'backgroundColor',
+        },
+        {
+          fromId: 'dadabea3-2a7f-ca23-a71d-79fae0cfff6e',
+          fromProperty: 'Size',
+          toId: '2255f3f8-c7c6-a195-9e20-22204968c916',
+          toProperty: 'transformScale',
+        },
+        {
+          fromId: '82a0d318-ac00-eb50-653e-bf2aa4344425',
+          fromProperty: 'Width',
+          toId: '2255f3f8-c7c6-a195-9e20-22204968c916',
+          toProperty: 'width',
+        },
+        {
+          fromId: 'dadabea3-2a7f-ca23-a71d-79fae0cfff6e',
+          fromProperty: 'reached-Yes',
+          toId: '82a0d318-ac00-eb50-653e-bf2aa4344425',
+          toProperty: 'to-Yes',
+        },
+        {
+          fromId: '2255f3f8-c7c6-a195-9e20-22204968c916',
+          fromProperty: 'hoverEnd',
+          toId: '82a0d318-ac00-eb50-653e-bf2aa4344425',
+          toProperty: 'to-No',
+        },
+      ],
+    }}
+  />
+</div>
+
+This will result in the behaviour shown below. As you can see the first **States** node triggers the bouncy size change, which is immediately followed by the second **Expand** states node that changes the state to **Yes** and transitions the width to the expanded state.
+
+<div className="ndl-image-with-background">
+  <img
+    src="/2.8/docs/guides/user-interfaces/states/hover-fx3.gif"
+    className="ndl-image small"
+  ></img>
+</div>
+
+The **States** node is one of the most commonly used nodes in Noodl apps, and mastering it will let you create many great interactions. Have fun!

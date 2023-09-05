@@ -1,0 +1,95 @@
+[
+    {
+        "title": "Task List App",
+        "description": "This example implements a small task list app that stores task in a database.",
+        "href": "/library/examples/task-list-app",
+        "imageUrl": "/library/examples/task-list-app/task_list_thumbnail.png",
+        "project": "/library/examples/task-list-app/task-app-1-2.zip",
+        "backend": "/library/examples/task-list-app/task-app-cf.json"
+    },
+    {
+        "title": "Custom Survey App",
+        "description": "This app is a simple user survey. It shows how to work with navigation, visual and interaction states and custom components.",
+        "href": "/library/examples/survey-app",
+        "imageUrl": "/library/examples/survey-app/survey_thumbnail2.png",
+        "project": "/library/examples/survey-app/survey_app_1-4.zip"
+    },
+    {
+        "title": "Star Rating Component",
+        "description": "A small example that implements an animated interactive star rating component.",
+        "href": "/library/examples/star-rating-component",
+        "imageUrl": "/library/examples/star-rating-component/star-rating-thumb.png",
+        "project": "/library/examples/star-rating-component/star-rating-1-1.zip"
+    },
+    {
+        "title": "Navigation with URL encoded parameters",
+        "description": "This example demonstrated how to use **Multiple levels of navigation stacks** and how to **Encode Parameters in the URL** to pass values between pages.",
+        "href": "/library/examples/navigation-url-encoding",
+        "imageUrl": "/library/examples/navigation-url-encoding/show-products-page-4.png",
+        "project": "/library/examples/navigation-url-encoding/param-encoding-url.zip"
+    },
+    {
+        "title": "Suatch Google Sheets Example",
+        "description": "A cool color picker that can helps a designer to pick good colors. Uses the Google Sheet Module.",
+        "href": "/library/examples/suatch",
+        "imageUrl": "/library/examples/suatch/suatch_1-1-thumb.png",
+        "project": "/library/examples/suatch/suatch_1-2.zip"
+    },
+    {
+        "title": "Travel App",
+        "description": "This app for travelers shows a number of destinations in a card like **horizontal list**. It also includes a simple **Navigation** system..",
+        "href": "/library/examples/travel-app",
+        "imageUrl": "/library/examples/travel-app/travel_app_thumbnail.png",
+        "project": "/library/examples/travel-app/travel_app_1-2.zip"
+    },
+    {
+        "title": "Mapbox Example",
+        "description": "A small app that makes use of the MapBox module to implement a map with markers.",
+        "href": "/library/examples/mapbox",
+        "imageUrl": "/library/examples/mapbox/markers-1.png",
+        "project": "/library/examples/mapbox/markers.zip"
+    },
+    {
+        "title": "Recipe App",
+        "description": "A small app that makes use of the MapBox module to implement a map with markers.",
+        "href": "/library/examples/recipe-app",
+        "imageUrl": "/library/examples/recipe-app/thumbnail-1.png",
+        "project": "/library/examples/recipe-app/arrays.zip"
+    },
+    {
+        "title": "Modal Wizard",
+        "description": "This example shows how to use a Component Stack in combination with a Popup to create a simple modal wizard-type of form.",
+        "href": "/library/examples/modal-wizard",
+        "imageUrl": "/library/examples/modal-wizard/final-1.png",
+        "project": "/library/examples/modal-wizard/component-stack-1.zip"
+    },
+    {
+        "title": "CRUD Form",
+        "description": "An example of a CRUD form. CRUD stands for Create, Read, Update and Delete, and the example shows how to do these actions using the Noodl data nodes.",
+        "href": "/library/examples/crud-form",
+        "imageUrl": "/library/examples/crud-form/final-crud-thumb.png",
+        "project": "/library/examples/crud-form/final-crud-1.zip"
+    },
+    {
+        "title": "Conditional Form",
+        "description": "An example of a form using Noodl logical nodes to change contents depending on what options the user picks in the form.",
+        "href": "/library/examples/conditional-form",
+        "imageUrl": "/library/examples/conditional-form/final-2.png",
+        "project": "/library/examples/conditional-form/conditional-form-1.zip"
+    },
+    {
+        "title": "Javascript Example",
+        "description": "An example that shows how you can mix and match nodes with Javascript in Noodl. It implements a multi select list with a couple of operations on the list, such as batch delete and copy.",
+        "href": "/library/examples/javascript-example",
+        "imageUrl": "/library/examples/javascript-example/final-1.png",
+        "project": "/library/examples/javascript-example/biz-logic-js.zip"
+    },
+    {
+        "title": "Sign Up / Sign In Form",
+        "description": "This app includes a simple Sign Up / Sign In form, including buttons for requesting a new password and validating your email.",
+        "href": "/library/examples/sign-up",
+        "imageUrl": "/library/examples/sign-up/signup_thumbnail.png",
+        "project": "/library/examples/sign-up/signuptemplate-1-2.zip",
+        "backend": "/library/examples/sign-up/signup-app-cf.json"
+    }
+]

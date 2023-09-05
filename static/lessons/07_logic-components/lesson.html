@@ -1,0 +1,1036 @@
+<!-- A step with just a popup -->
+<div>
+    <div data-template="popup"> 
+        <video src="lesson-07_00-intro.mp4"></video>
+        <h2>States & Logic Components</h2>
+        <p>Welcome back! This is the seventh and last lesson where you will finish up the remaining details of your task manager.</p>
+        <p>In this lesson you will learn how to create a handy reusable logic component, work with the States node, and format date strings.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Formatting dates</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_01-createtask.mp4"></video>
+        <h2>Formatting dates</h2>
+        <p>In the last lesson you built a flow where users could create new task cards. But something that immediately got clear is how the selected date is showing way too much information in our cards.</p>
+        <p>This is because our Date Picker outputs a full JavaScript date with all the related date information. We only want to show <strong>day</strong>, <strong>month</strong> and <strong>year</strong>.</p>
+        <p>An easy fix is to the use <strong>Date To String</strong> node. </p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Date To String node</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_03-add-datetostringnode.mp4"></video>
+        <h2>Date To String node</h2>
+        <p>This node takes in a <strong>Date</strong> value and outputs a formatted string with your specified format. The default format is <i>{year}-{month}-{date}</i>.</p>
+        <p>You can change this in any way you want, but for now let's just use the default formatting.</p>
+        <p>Let's use this node in all the places where dates are displayed!</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Lesson tasks</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <image src="../01_task.png"></image>
+        <h2>Time to get your hands dirty!</h2>
+        <p>During this lesson, you will be given multiple tasks. Spot them in the lesson timeline by the <i>Task</i> label.</p>
+        <p>If you get stuck you can get a hint by clicking the card in the timeline.</p>
+        <p>Some of the nodes graphs will already be set up for you beforehand. This is to keep the lessons short so that you can focus on learning one concept at a time. If it feels like magic at times, don't worry. It's just a concept you will learn in a later lesson.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "viewerpatheq":"/task-page"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Select the <strong><i>/task-page path</i></strong> in the <strong>Path Dropdown</strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_02-selecttaskpage.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "activecomponentnameeq":"/Card Item"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Select the <strong><i>Card Item</i></strong> component in the <strong>Component Panel</strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_02-selectcarditem.mp4"></video>
+        <p>Select the Create Card Page component in the Component Panel to show its node graph</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Item:%Date To String",
+            "exists":true
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 340px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>In the <strong>Card Item</strong> component, open the <strong>Node Picker</strong> and create a <strong>Date To String</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_03-add-datetostringnode.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Card Item:%Model2",
+            "to":"/Card Item:%Date To String",
+            "hasconnection": "prop-Date, input"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 380px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Date To String</strong> node and send the <strong><i>date</i></strong> output to the <strong><i>date</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_03-object-to-date.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Card Item:%Date To String",
+            "to":"/Card Item:%Group:%Group:#Date",
+            "hasconnection": "currentValue, text"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 440px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Date To String</strong> node to the <strong>Date</strong> Text node and send the <strong><i>date string</i></strong> output to the <strong><i>text</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_03-date-to-text.mp4"></video>
+        <p>Create a Logic Component called "Card Category Styler"</p>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Image and background color</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <h2>Image and background color</h2>
+        <p>The date is fixed. Now you need to match the cards <strong>image</strong> and <strong>background color</strong> to the selected <strong>category</strong>.</p>
+        <p>To make it more user friendly (and prevent any user errors) we don't want the user to set the image and color manually. It's better if there is some logic that can pick the correct ones automatically depending on the selected category.</p>
+        <p>There are several places in your app where such logic would be good to have. This makes it a perfect case to use a <strong>logic component</strong>.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Logic components</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_04-logiccomponent.mp4"></video>
+        <h2>Logic components</h2>
+        <p>Just like you can create visual components and place instances of them in multiple places in your UI, you can create logic components and reuse that logic across your project.</p>
+        <p>You create a new logic component by <strong>clicking</strong> the <i>plus</i> button in the <strong>Components</strong> section in the Component Panel and select <strong>Logic Component</strong>.</p>
+        <p>Every logic component comes with <strong>Component Inputs</strong> and <strong>Component Outputs</strong> nodes by default. This is handy as most cases for a logic component involves data going in to it, and a result going out.</p>
+        <p>Let's try to create a logic component that controls the <strong>image</strong> and <strong>background color</strong> styles of the Card Items.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+    {
+        "activecomponentnameeq":"/Card Category Styler"
+    }
+            
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a <strong>logic component</strong> called <strong><i>Card Category Styler</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_04-logiccomponent.mp4"></video>
+        <p>Remember that component names are case sensitive</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%Component Inputs",
+            "hasport":"Category"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>On the <strong>Component Inputs</strong> node, create a port called <strong><i>Category</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_05-component-input.mp4"></video>
+        <p>Remember that port names are case sensitive</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%Component Outputs",
+            "hasport":"Background Color",
+            "hasport":"Image"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>On the <strong>Component Outputs</strong> node, create a port called <strong><i>Background Color</i></strong>, and a port called <strong><i>Image</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_05-component-output.mp4"></video>
+        <p>Remember that port names are case sensitive</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>The States node</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-node.mp4"></video>
+        <h2>The States node</h2>
+        <p>One of the most powerful nodes when it comes to interactivity is the <strong>States</strong> node.</p>
+        <p>It allows you to define your own custom states (both logical and visual), and easily switch between them. Every state can hold a unique set of values. This makes it ideal for controlling UI states with animations, making items hide or show, or return specific values based on the current active state.</p>
+        <p>This is once again a node that is easier to explain in practice, so let's try it out.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "exists": true
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 320px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>In the <strong>Card Category Styler</strong> component, create a <strong>States</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-node.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "states":"work,study,shopping,appointment"
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Add the following <strong>states</strong> on the States node: <strong><i>work</i></strong>, <strong><i>study</i></strong>, <strong><i>shopping</i></strong>, <strong><i>appointment</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-node.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Creating State Values</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-addvalues.mp4"></video>
+        <h2>Creating State Values</h2>
+        <p>All the states in the node share the same <strong>output ports</strong> (called <i>values</i>). Every <strong>value</strong> port can output a different <strong>value</strong> depending on the current <strong>active state</strong>. You can change the current active state with a <strong>signal</strong>.</p>
+        <p>The States node in this component will contain two value ports: <strong><i>Image</i></strong> and <strong><i>Background Color</i></strong>. These value ports will output different values depending on which one the four states (work, study, shopping, appointment) is active.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "values":"Background Color,Image"
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create the following <strong>value</strong> ports on the States node: <strong><i>Background Color</i></strong>, <strong><i>Image</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-addvalues.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "type-Background Color":"color"
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Set the <strong>value type</strong> of <strong>Background Color</strong> to <strong><i>Color</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-value_types.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "type-Image":"string"
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Set the <strong>value type</strong> of <strong>Image</strong> to <strong><i>String</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-value_types.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item" style="width: 320px">
+        <header>&nbsp;</header>
+        <h2>Adding color and images to States node values</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-setvalue_work.mp4"></video>
+        <h2>Adding color and images to States node values</h2>
+        <p>The value ports are now created and and listed under every state in the Property Panel.</p>
+        <p>It's now time to assign the color and image source for each state.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "value-work-Background Color":"Work",
+                "value-work-Image":"work.png"
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 410px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Under the <strong>work</strong> state, set the <strong>background color</strong> to the <strong><i>Work</i></strong> color style and the <strong>image</strong> to <strong><i>work.png</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-setvalue_work.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "value-study-Background Color":"Study",
+                "value-study-Image":"study.png"
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 410px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Under the <strong>study</strong> state, set the <strong>background color</strong> to the <strong><i>Study</i></strong> color style and the <strong>image</strong> to <strong><i>study.png</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-setvalue_study.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "value-shopping-Background Color":"Shopping",
+                "value-shopping-Image":"shopping.png"
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Under the <strong>shopping</strong> state, set the <strong>background color</strong> to the <strong><i>Shopping</i></strong> color style and the <strong>image</strong> to <strong><i>shopping.png</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-setvalue_shopping.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "value-appointment-Background Color":"Appointment",
+                "value-appointment-Image":"appointment.png"
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Under the <strong>appointment</strong> state, set the <strong>background color</strong> to the <strong><i>Appointment</i></strong> color style and the <strong>image</strong> to <strong><i>appointment.png</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_06-states-setvalue_appointment.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item" style="width: 320px">
+        <header>&nbsp;</header>
+        <h2>States node and transitions</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_07-states-and-transitions.mp4"></video>
+        <h2>States node and transitions</h2>
+        <p>By default the States node is set to smoothly animate the transitions between the values on a state change. This is a very useful behavior for things like interactivity in a UI, but in the case of the <strong>Card Items</strong> it will be unnecessary. The state will only be set once to style the card correctly, and never change after that. You can uncheck the <strong>transition checkbox</strong> in the State nodes Property Panel to remove the transition. </p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Category Styler:%States",
+            "paramseq":{
+                "useTransitions":false
+            }
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>On the <strong>States</strong> node, uncheck the <strong>use transitions</strong> checkbox</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_07-uncheck.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item" style="width: 320px">
+        <header>&nbsp;</header>
+        <h2>Connecting the States node</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_08-connect-statesnode.mp4"></video>
+        <h2>Connecting the States node</h2>
+        <p>The next step is to connect the <strong>Component Inputs</strong> and <strong>Component Outputs</strong> with the <strong>States</strong> node.</p>
+        <p>For now, this logic component will be used in the <strong>Card Item</strong> component, which gets generated each time a new task is created. The selected category should be read by the States node, which in turn should return the correct image and color.</p>
+        <p>Let's connect it all up!</p>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Card Category Styler:%Component Inputs",
+            "to":"/Card Category Styler:%States",
+            "hasconnection": "Category, currentState"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Component Inputs</strong> node to the <strong>States</strong> node and send the <strong><i>category</i></strong> output to the <strong><i>state</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_08-connect-componentinput.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Card Category Styler:%States",
+            "to":"/Card Category Styler:%Component Outputs",
+            "hasconnection": "Background Color, Background Color"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 490px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>States</strong> node to the <strong>Component Outputs</strong> node and send the <strong><i>background color</i></strong> output to the <strong><i>background color</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_08-connect-componentoutput.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Card Category Styler:%States",
+            "to":"/Card Category Styler:%Component Outputs",
+            "hasconnection": "Image, Image"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 460px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>States</strong> node to the <strong>Component Outputs</strong> node and send the <strong><i>image</i></strong> output to the <strong><i>image</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_08-connect-componentoutput.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "activecomponentnameeq":"/Card Item"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 330px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Select the <strong>Card Item</strong> in the <strong>Component Panel</strong> to open its node graph</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_09-place-card-category-styler.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Card Item:%/Card Category Styler",
+            "exists": true
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 550px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a new instance of the <strong>Card Category Styler</strong> component by <strong>dragging</strong> it in from the <strong>Component List</strong>, or by finding it in the <strong>Node Picker</strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_09-place-card-category-styler.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Card Item:%Model2",
+            "to":"/Card Item:%/Card Category Styler",
+            "hasconnection": "prop-Category, Category"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Card Category Styler</strong> and send the <strong><i>category</i></strong> output to the <strong><i>category</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_09-connect-category-styler.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Card Item:%/Card Category Styler",
+            "to":"/Card Item:%Group:%Image",
+            "hasconnection": "Image, src"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Card Category Styler</strong> to the <strong>Image</strong> node and send the <strong><i>image</i></strong> output to the <strong><i>source</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_09-connect-to-image.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Card Item:%/Card Category Styler",
+            "to":"/Card Item:%Group",
+            "hasconnection": "Background Color, backgroundColor"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Card Category Styler</strong> to the <strong>Card</strong> group node and send the <strong><i>background color</i></strong> output to the <strong><i>background color</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_09-connect-to-backgroundcolor.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item" style="width: 320px">
+        <header>&nbsp;</header>
+        <h2>Updating the Details Page</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_10-update-details.mp4"></video>
+        <h2>Updating the Details Page</h2>
+        <p>Great work! If you create a new card now, you can see it render with the correctly formatted date, color and image in the <i>Task Page</i>.</p>
+        <p>However, if you click on a card to navigate to its <i>Details Page</i>, you can see that the styles are nowhere to be found.</p>
+        <p>This can quickly be fixed by using the new <strong>Card Category Styler</strong> component, and the <strong>Date To String</strong> node.</p>
+        <p>Let's connect it up, and celebrate!</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Details Page:%/Card Category Styler",
+            "exists":true
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Open the node graph for the <strong>Details Page</strong>, and create an instance of the <strong>Card Category Styler</strong> component</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_10-add-card-styler.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Details Page:%Model2",
+            "to":"/Details Page:%/Card Category Styler",
+            "hasconnection": "prop-Category, Category"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Card Category Styler</strong> and send the <strong><i>category</i></strong> output to the <strong><i>category</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_10-connect-object-to-styler.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Details Page:%/Card Category Styler",
+            "to":"/Details Page:%Page:%Group:%Image",
+            "hasconnection": "Image, src"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Card Category Styler</strong> to the <strong>Image</strong> node and send the <strong><i>image</i></strong> output to the <strong><i>source</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_10-styler-to-image.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Details Page:%/Card Category Styler",
+            "to":"/Details Page:%Page:%Group",
+            "hasconnection": "Background Color, backgroundColor"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Card Category Styler</strong> to the <strong>Hero</strong> Group node and send the <strong><i>background color</i></strong> output to the <strong><i>background color</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_10-styler-to-color.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Details Page:%Date To String",
+            "exists":true
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 240px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Open the <strong>Node Picker</strong> and create a <strong>Date To String</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_11-place-datetostring.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Details Page:%Model2",
+            "to":"/Details Page:%Date To String",
+            "hasconnection": "prop-Date, input"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 360px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Date To String</strong> node and send the <strong><i>date</i></strong> output to the <strong><i>date</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_11-place-datetostring.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Details Page:%Date To String",
+            "to":"/Details Page:%Page:1:%Group:1:#Date",
+            "hasconnection": "currentValue, text"
+        }  
+    ]'
+>
+    <div data-template="item" style="width: 420px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Date To String</strong> node to the <strong>Date</strong> Text node and send the <strong><i>date string</i></strong> output to the <strong><i>text</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-07_11-datetostring-to-text.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>Outro</header>
+        <h2>Congratulations!</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <img src="task-manager-cloud-services_play.png" style="cursor: pointer;" onclick="window.open('https://youtu.be/ecas2QPbr0g')">
+        <h2>Congratulations!</h2>
+        <p>You've built a task app! Hope you had fun. As you may have noticed, the app we just built is only working locally, and will reset on every refresh.</p>
+        <p>If you want to turn the task manager app into a real working app that saves tasks to a backend, click the image above to watch our video tutorial on how to turn the task manager app into a cloud based app using <strong>Noodl Cloud Services</strong>. After watching that, you will be truly ready to start building your own apps.</p>
+        <p>Feel free to reach out to us in our Discord server. You can find links to them in the bottom right corner of the <strong>Node Canvas</strong>.</p>
+        <p>Until then - Happy Noodling!</p>
+        <!--<button style="width: 150px" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')">WATCH TUTORIAL</button>-->
+        <button style="width: 150px" data-click="exitEditor">EXIT LESSON</button>
+    </div>
+</div>
+<!-- # -->
+
+

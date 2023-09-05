@@ -1,0 +1,17 @@
+[
+  {
+    "supertitle": "How to",
+    "title": "Set up a navigation system",
+    "linkUrl": "docs/guides/navigation/basic-navigation"
+  },
+  {
+    "supertitle": "How to",
+    "title": "Create custom UI controls",
+    "linkUrl": "docs/guides/user-interfaces/basics"
+  },
+  {
+    "supertitle": "How to",
+    "title": "Capture user data in the cloud",
+    "linkUrl": "docs/build-alongs/task-list-app"
+  }
+]

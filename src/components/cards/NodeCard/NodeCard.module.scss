@@ -1,0 +1,51 @@
+.Root {
+    display: block;
+    padding: 13px 18px;
+    font-weight: 600;
+    color: var(--doc-color-noodl-white) !important;
+    border: 2px solid transparent !important;
+    position: relative;
+    line-height: 1;
+    height: 100%;
+    font-size: 14px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--doc-color-noodl-white);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &.has-hoverstate:hover {
+        border: 2px solid var(--doc-color-noodl-white) !important;
+
+        &:after {
+            opacity: 0.3;
+        }
+    }
+
+    &.is-visual {
+        background-color: var(--doc-color-visual-node);
+    }
+
+    &.is-data {
+        background-color: var(--doc-color-data-node);
+    }
+
+    &.is-custom {
+        background-color: var(--doc-color-custom-node);
+    }
+
+    &.is-logic {
+        background-color: var(--doc-color-logic-node);
+    }
+
+    &.is-connection {
+        background-color: var(--doc-color-connection-node);
+    }
+}

@@ -1,0 +1,74 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('../assets/fonts/PolySans-Bulky.woff');
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* You can override the default Infima variables here. */
+:root {
+    --ifm-color-primary: var(--doc-color-noodl-orange);
+    --ifm-color-primary-dark: var(--doc-color-noodl-orange-180);
+    --ifm-color-primary-darker: var(--doc-color-noodl-orange-160);
+    --ifm-color-primary-darkest: var(--doc-color-noodl-orange-140);
+    --ifm-color-primary-light: var(--doc-color-noodl-orange-80);
+    --ifm-color-primary-lighter: var(--doc-color-noodl-orange-60);
+    --ifm-color-primary-lightest: var(--doc-color-noodl-orange-40);
+
+    --ifm-link-color: var(--doc-color-noodl-blue-40);
+    --ifm-link-hover-color: var(--doc-color-noodl-blue-60);
+
+    --ifm-leading: 0;
+
+    --ifm-code-font-size: 95%;
+    --ifm-container-width-xl: 1100px;
+    --ifm-container-width: 670px;
+}
+
+.docusaurus-highlight-code-line {
+    background-color: rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 calc(-1 * var(--ifm-pre-padding));
+    padding: 0 var(--ifm-pre-padding);
+}
+
+body {
+    font-size: 100%;
+    line-height: 1.5;
+    color: var(--doc-color-text);
+}
+
+.main-wrapper {
+    background-color: var(--doc-color-noodl-black-dark);
+}
+
+.container {
+    max-width: 1100px;
+}
+
+* {
+    text-decoration: none !important;
+}
+
+a {
+    transition: all 0.1s linear;
+}
+
+.github-corner {
+    z-index: 5;
+}
+
+.is-hidden {
+    display: none;
+}

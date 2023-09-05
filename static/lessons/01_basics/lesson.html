@@ -1,0 +1,618 @@
+<!-- A step with just a popup -->
+<div data-template="popup">
+    <video src="lesson-01_01-intro.mp4"></video>
+    <h2>Fancy seeing you here!</h2>
+
+    <p>In this first lesson series you will learn the basic concepts of Noodl.</p>
+    <p>Every lesson will build on the previous one, and in the end you will have a fully functioning task manager app.</p>
+    <p>Once you learn these fundamentals and how to combine them you will be able to build powerful web applications.</p>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>The node graph</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_02-nodegraph.mp4"></video>
+        <h2>The node canvas</h2>
+        <p>The building blocks of Noodl are called <strong>nodes</strong>. They are all arranged as graphs in the <strong>Node Canvas</strong>.</p>
+        <p>A node represents an element of your app. It can be a visual element, like a <strong>button</strong>, or a block of logic, like performing a <strong>navigation</strong> between the pages of your app.</p>
+        <p>We will take a closer look at the nodes in a minute, but first let's look at the other essential parts of the Noodl editor.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Zooming and panning</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_03-zoompan.mp4"></video>
+        <h2>Zooming and panning</h2>
+        <p>You can navigate around the Node Canvas by panning around with <strong>space + left mouse drag</strong>, or <strong>scrolling</strong> on a trackpad.</p>
+        <p>The Node Canvas can also be zoomed with </strong>Ctrl/Cmd + scroll</strong>, or <strong>pinch</strong> on a trackpad. </p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Component Panel</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_04-componentpanel.mp4"></video>
+        <h2>Component Panel</h2>
+        <p>Every node graph lives inside a component. When you select a component, its node graph is shown.</p>
+        <p>You can see all of your components in the <strong>Component Panel</strong>.</p>
+        <p>Try to select the page component called <i>Start Page</i> in the <strong>Component Panel</strong>.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Lesson tasks</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <image src="../01_task.png"></image>
+        <h2>Time to get your hands dirty!</h2>
+        <p>During this lesson, you will be given multiple tasks. Spot them in the lesson timeline by the <i>Task</i> label.</p>
+        <p>If you get stuck you can get a hint by clicking the card in the timeline.</p>
+        <p>Some of the nodes graphs will already be set up for you beforehand. This is to keep the lessons short so that you can focus on learning one concept at a time. If it feels like magic at times, don't worry. It's just a concept you will learn in a later lesson.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "activecomponentnameeq":"/Start Page"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 310px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Select the page component called <i>Start Page</i> in the <strong>Component Panel</strong> list</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_06-select-start-page.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Preview Canvas</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_07-previewcanvas.mp4"></video>
+        <h2>Preview Canvas</h2>
+        <p>The <strong>Preview Canvas</strong> is showing your app in real time. All changes done to the node graph will be shown instantly. This canvas has two modes:</p>
+        <p>The default is the <strong>preview mode</strong>, letting you interact with the app.</p>
+        <p>Switching to <strong>design mode</strong> lets you inspect the elements of the UI and quickly jump to the underlying node.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Visual nodes</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_08-visual.mp4"></video>
+        <h2>Visual nodes</h2>
+        <p>Every app needs a visual user interface.</p>
+        <p>For that we use visual nodes, like the <strong>Group</strong> or <strong>Text</strong> nodes. Visual nodes are blue and are arranged in a hierarchy called the <strong>DOM tree</strong>. The top node acts as the <strong>root</strong>, and all visual nodes nested within it will be a part of the interface of your app.</p>
+        <p>You can move nodes with a <strong>left mouse drag</strong>. Visual nodes can be dragged in and out of the visual hierarchy. Visual nodes outside the hierarchy won't be a part of your interface.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Start Page:%Page:%Group:1:1",
+            "exists":false
+        }
+    ]'
+>
+    <div data-template="item" style="width: 300px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Drag the <strong>Text</strong> node called <i>Description</i> away from the DOM tree</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_09-drag-description-away.mp4"></video>
+        <p>Dragging the last text node away from the hierarchy using the <strong>left mouse button</strong>. This will make the text disappear from the preview.</p>
+    </div>
+</div>
+
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Start Page:%Page:%Group:1:1",
+            "exists":true
+        }
+    ]'
+>
+    <div data-template="item">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Drag the <strong>Text</strong> node back to make it visible again</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_10-drag-description-back.mp4"></video>
+        <p>You can add a node as a child to another node by dragging it onto that node. This will place it as the last child. Drag the text node onto the root group using the <strong>left mouse button</strong>. The text will reappear in the preview.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>The Node Picker</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_11-nodepicker.mp4"></video>
+        <h2>The Node Picker</h2>
+        <p>The <strong>Node Picker</strong> is where you can browse all the nodes in Noodl. They are arranged in categories. Hovering a node will show you a quick summary of how to use it.</p>
+        <p>Clicking a node in the Node Picker will add it to the graph that is currently open in the Node Canvas.</p>
+        <p>Open the Node Picker by <strong>clicking the "plus" icon</strong> in the top bar, or <strong>right click</strong> an empty space in the Node Canvas.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.button",
+            "exists":true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 360px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Open the Node Picker, find the <strong>Button</strong> node and insert it below the <i>Description</i> <strong>Text</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_12-addbutton.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>The Property Panel</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_13-propertpanel.mp4"></video>
+        <h2>The Property Panel</h2>
+        <p>All nodes have properties that you can edit to make them behave the way you want. For instance, visual nodes have parameters that affect their appearance like size, color and position.</p>
+        <p><strong>Clicking</strong> a node will show you its properties in the sidebar.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Visual alignment</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_13-propertpanel.mp4"></video>
+        <h2>Visual Alignment</h2>
+        <p>With the <strong>visual alignment</strong> property we can control how a visual element should be aligned inside of its parent.</p>
+        <p>This is easier shown than explained, so see the video above how the button can be aligned.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+    {
+        "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.button",
+        "paramseq":{
+            "alignY":"bottom"
+        }
+    }
+    ]'
+>
+    <div data-template="item">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Align the <strong>Button</strong> to the <strong><i>bottom</i></strong> of the page</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_18-alignbutton.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Dimension modes</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_14-dimensionmodes.mp4"></video>
+        <h2>Dimension modes</h2>
+        <p>With <strong>dimension modes</strong>, we can set rules for how visual elements should take up space.</p>
+        <p>If we want our button to have a fixed height (in pixels), but take up 100% of the available width, we can set the dimension mode of the Button node to <strong><i>Explicit width & height</i></strong> in the Property Panel.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+    {
+        "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.button",
+        "paramseq":{
+            "sizeMode":"explicit"
+        }
+    }
+    ]'
+>
+    <div data-template="item" style="width: 260px;">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Set the Button's <strong>dimension mode</strong> to <strong><i>Explicit width & height</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_15-set-dimension-mode.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+    {
+        "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.button",
+        "paramseq":{
+            "sizeMode":"explicit",
+            "height": {"value": 56, "unit": "px"}
+        }
+    }
+    ]'
+>
+    <div data-template="item" style="width: 260px;">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Set the Button's <strong>height</strong> to <strong><i>56px</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_16-set-button-height.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.button",
+            "paramseq": {
+                "label": "Get Started"
+            }
+        }
+    ]'
+>
+    <div data-template="item">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Change the Button's <strong>label</strong> to <strong><i>Get Started</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_19-buttonlabel.mp4"></video>
+    </div>
+</div>
+
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Naming nodes</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_20-getstartedbutton.mp4"></video>
+        <h2>Naming nodes</h2>
+        <p>As you build your app it's a good practice to give the nodes descriptive names. This makes it easier for you (and any potential collaborators) to understand what the different nodes are doing.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+    {
+        "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.button",
+        "haslabel": "Get started button"
+    }
+    ]'
+>
+    <div data-template="item">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Rename the Button node to <strong><i>Get started button</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_20-getstartedbutton.mp4"></video>
+        <p>Select the Button node and change its name by pressing the <strong>enter</strong> key. You can also <strong>double click</strong> the node title in the <strong>Property Panel</strong>, or <strong>click</strong> the edit icon as shown in the video.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+    {
+        "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.textinput",
+        "exists":true
+    }
+    ]'
+>
+    <div data-template="item" style="width: 340px;">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Open the Node Picker and place a <strong>Text Input</strong> node above the <strong>Button</strong> node</i></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_21-inserttextinput.mp4"></video>
+        <p><strong>Right click</strong> an empty space in the Node Canvas. Find the <strong>Text Input</strong> node, click to create it and then drag it <strong>above the Button</strong> node in the DOM tree.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+    {
+        "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.textinput",
+        "paramseq": {
+            "marginTop": { "value": 16, "unit": "px" }
+        }
+    }
+    ]'
+>
+    <div data-template="item" style="width: 240px;">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Change the Text Input's <strong>Top Margin</strong> to <strong><i>16px</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_22-inputmargin.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+    {
+        "path":"/Start Page:%Page:%Group:1:%net.noodl.controls.textinput",
+        "paramseq": {
+            "label": "Username"
+        }
+    }
+    ]'
+>
+    <div data-template="item" style="width: 240px;">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Change the Text Input's <strong>Label</strong> to <strong><i>Username</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_23-inputlabel.mp4"></video>
+        <p><strong>Click</strong> the Text Input node that you created to open its Property Panel. Find the <strong>Label</strong> property and change it to read <strong><i>Username</i></strong>. Remember that property values are case sensitive.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Creating connections</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_24-connections.mp4"></video>
+        <h2>Creating connections</h2>
+        <p>A UI is nice, but it also needs to be interactive. In Noodl you do this by creating <strong>connections</strong> between nodes.</p>
+        <p>When you hover over a node in the Node Canvas a small dot appears in its top right corner. <strong>Click and drag</strong> from the dot to start creating a connection.</p>
+        <p><strong>Drag</strong> the connection on top of another node and <strong>release</strong> to bring up the Connection Panels. Pick an <strong>output</strong> from the source node, then select an <strong>input</strong> on the target node. This will create a connection between them.</p>
+        <p>Let's see this in action by finishing up the navigation flow. In this lesson we've set all the nodes up for you, so you can focus on the connections. You will learn more about how the navigation nodes work in a later lesson.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Start Page:%Page:%Group:1:%net.noodl.controls.button",
+            "to": "/Start Page:%RouterNavigate",
+            "hasconnection": "onClick, navigate"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Button</strong> node to the <strong>Navigate</strong> node and send the <strong><i>click</i></strong> output to the <strong><i>navigate</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_24-connections.mp4"></video>
+        <p>Hover the Button node, <strong>Click and hold</strong> the dot, <strong>Drag</strong> the connection to the Navigate node and release. Choose the <strong><i>Click</i></strong> property in the first panel and then the <strong><i>Navigate</i></strong> property in the second panel.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Start Page:%Page:%Group:1:%net.noodl.controls.textinput",
+            "to": "/Start Page:%RouterNavigate",
+            "hasconnection": "onTextChanged, pm-User Name"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Text Input</strong> node to the <strong>Navigate</strong> node and send the <strong><i>text</i></strong> output to the <strong><i>user name</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="IT_16_connect_button-to-counter.mp4"></video>
+        <p>Hover the Text Input node,  <strong>Click and hold</strong> the dot, <strong>Drag</strong> the connection to the Navigate node and <strong>release</strong>. Choose the <strong><i>Text</i></strong> property in the first panel and then the <strong><i>User Name</i></strong> property in the second panel.</p>
+    </div>
+</div>
+<!-- # -->
+
+<video src="lesson-01_25-connection2.mp4"></video>
+
+
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Connection types</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_26-inspecting.mp4"></video>
+        <h2>Connection types</h2>
+        <p>There are two types of connections in Noodl. <strong>Data</strong> connections and <strong>signal</strong> connections.</p>
+        <p>Data connections are used to pass data between nodes, like strings, numbers or objects. These connections are colored orange in the node graph.</p>
+        <p>Signal connections are used to trigger events. They can be triggered by the user (like clicking a button), or by the app itself (when a visual component mounts, when a data request is successful, etc). These connections are colored green in the node graph.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Inspecting connections</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_26-inspecting.mp4"></video>
+        <h2>Inspecting connections</h2>
+        <p>A powerful feature of Noodl is how data and signals are visualized.</p>
+        <p><strong>Hover</strong> over a connection to see the current value. <strong>Clicking</strong> the tooltip pins it in place, so it stays visible even when you stop hovering. This makes it easy to debug your app.</p>
+        <p>When data or a signal is passed through a connection it lights up, letting you see the data flow in real time.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "viewerpatheq":"/task-page"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 420px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Type a name in the <strong>Text Input</strong> and click the <strong>Get Started</strong> button to navigate and see the connections come to life</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-01_26-inspecting.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>Outro</header>
+        <h2>Congratulations!</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <!--<img src="tutorial_card.png" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')"> -->
+        <h2>Congratulations!</h2>
+        <p>You've completed this lesson, we hope you liked it!</p>
+        <p>In the next lesson we will dive deeper into building layouts in Noodl. We hope to see you there.</p>
+        <p>Happy Noodling!</p>
+        <!--<button style="width: 150px" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')">WATCH TUTORIAL</button>-->
+        <button style="width: 150px" data-click="exitEditor">EXIT LESSON</button>
+    </div>
+</div>
+<!-- # -->
+
+

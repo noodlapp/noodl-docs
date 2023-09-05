@@ -1,0 +1,57 @@
+@function _get-pseudo($pseudo) {
+    @if ($pseudo == false) {
+        $pseudo: '&::after';
+    } @else if
+        (
+            _contains(
+                ('after', ':after', '::after', '&:after', '&::after'),
+                $pseudo
+            )
+        )
+    {
+        $pseudo: '&::after';
+    } @else if
+        (
+            _contains(
+                ('before', ':before', '::before', '&:before', '&::before'),
+                $pseudo
+            )
+        )
+    {
+        $pseudo: '&::before';
+    }
+
+    @return $pseudo;
+}
+
+@function _is-pseudo($pseudo) {
+    @return ($pseudo == '&::after' or $pseudo == '&::before');
+}
+
+@function _contains($list, $item) {
+    @return index($list, $item) != null;
+}
+
+/**
+ * aspect-ratio()
+ *
+ * Give a heightless element a height based on its width.
+ * Always follows the set width:height ratio.
+ *
+ * @param {number} $width - Without CSS unit
+ * @param {number} $height - Without CSS unit
+ * @param {string} $pseudo - Optional selector to use insted of default pseudo-element
+ */
+
+@mixin aspect-ratio($width, $height, $pseudo: false) {
+    $pseudo: _get-pseudo($pseudo);
+
+    #{$pseudo} {
+        @if (_is-pseudo($pseudo)) {
+            content: '';
+        }
+        display: block;
+        height: 0;
+        padding-bottom: calc((100% / $width) * $height);
+    }
+}

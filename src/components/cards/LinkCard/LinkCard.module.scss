@@ -1,0 +1,42 @@
+@use '../../../css/utils/typography.scss';
+
+.Root {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    justify-content: space-between;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity var(--ifm-transition-fast)
+            var(--ifm-transition-timing-default);
+        background-color: var(--doc-color-noodl-white);
+    }
+
+    &:hover:before {
+        opacity: 0.5;
+    }
+}
+
+.IconContainer {
+    position: relative;
+}
+
+.Label {
+    @include typography.h3;
+    color: var(--doc-color-noodl-black) !important;
+    max-width: 131px;
+    display: block;
+    position: relative;
+    padding-bottom: 20px;
+}

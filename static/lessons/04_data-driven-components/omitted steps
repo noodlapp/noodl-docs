@@ -1,0 +1,70 @@
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Numbers</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <h2>Numbers</h2>
+        <p>A number is (unsurprisingly) a number. It can only contain numbers, and is used anytime you want to store values that can be increased/decreased or be used in a calculation.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Strings</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <h2>Strings</h2>
+        <p>A string is a piece of text. It starts and ends with a single <strong><i>"</i></strong>. Anything in between will be treated as written text, so it can not be used for calculations (even if it contains numbers).</p>
+        <p>In fact, adding one string to another just results in one longer string. Examples include <strong>"Hello" + "world" = "Helloworld"</strong> or (the slightly dumber) <stong>"13" + "37" = "1337"</stong>.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Booleans</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <h2>Booleans</h2>
+        <p>A boolean is simply a value that is either <strong><i>true</i></strong> or <strong><i>false</i></strong>. It is very useful when building logic.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Arrays</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <h2>Arrays</h2>
+        <p>An array is a list of <strong>items</strong> (that can be of any data type, even another array). It starts with a <strong><i>[</i></strong> and ends with a <strong><i>]</i></strong>. The array can be of any length, an the items are separated with a <strong><i>,</i></strong> between them.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Objects</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <h2>Objects</h2>
+        <p>An object is a list of <strong>properties</strong>. It starts with a <strong><i>{</i></strong> and ends with a <strong><i>}</i></strong>. Every property has a <strong>key</strong> and a <strong>value</strong>, with a <strong><i>:</i></strong> between them. The key is the "name" of the property and the value is the data that the property holds. We use the keys to be able to get specific data from the object. The value can be of any type (even another object).</p>
+    </div>
+</div>
+<!-- # -->

@@ -1,0 +1,65 @@
+[
+  {
+    "category": "Guides",
+    "thumb": "tutorials/guide_basics.png",
+    "url": "docs/getting-started/fundamentals"
+  },
+  {
+    "category": "Guides",
+    "thumb": "tutorials/guide_layout.png",
+    "url": "docs/guides/user-interfaces/layout"
+  },
+  {
+    "category": "Guides",
+    "thumb": "tutorials/guide_lists.png",
+    "url": "docs/guides/data/list-basics"
+  },
+  {
+    "category": "Guides",
+    "thumb": "tutorials/guide_navigation.png",
+    "url": "docs/guides/navigation/basic-navigation"
+  },
+  {
+    "category": "Guides",
+    "thumb": "tutorials/guide_backend.png",
+    "url": "docs/guides/cloud-data/creating-a-backend"
+  },
+  {
+    "category": "Guides",
+    "thumb": "tutorials/guide_more.png",
+    "url": "docs/learn"
+  },
+
+  {
+    "category": "Video tutorials",
+    "thumb": "tutorials/introduction_to_noodl.png",
+    "url": "https://www.youtube.com/watch?v=zWsr1SAtrB4"
+  },
+
+  {
+    "category": "Video tutorials",
+    "thumb": "tutorials/basic_concepts.png",
+    "url": "https://www.youtube.com/watch?v=1n0MXSbmTQk"
+  },
+
+  {
+    "category": "Video tutorials",
+    "thumb": "tutorials/tasklist_app_01.png",
+    "url": "https://www.youtube.com/watch?v=TNnn0Gzj-H4&t=2s"
+  },
+  {
+    "category": "Video tutorials",
+    "thumb": "tutorials/survey_app_01.png",
+    "url": "https://www.youtube.com/watch?v=ntKTCC7eEk0&t=4s"
+  },
+  {
+    "category": "Video tutorials",
+    "thumb": "tutorials/figma_plugin.png",
+    "url": "https://www.youtube.com/watch?v=titAgD6L6no"
+  },
+  {
+    "category": "Video tutorials",
+    "thumb": "tutorials/more_videos.png",
+    "url": "https://www.youtube.com/channel/UCLkJ8XYV1J1RqrZKY-o1YWg/videos"
+  }
+]

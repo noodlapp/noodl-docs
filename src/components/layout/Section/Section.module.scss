@@ -1,0 +1,22 @@
+@use '../../../css/utils/typography.scss';
+
+.Root {
+    padding-bottom: 120px;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.Link {
+    @include typography.h3;
+
+    color: var(--doc-color-noodl-white-65) !important; // ajajaj
+
+    &:hover {
+        color: var(--doc-color-noodl-white) !important;
+        border-bottom-color: transparent !important;
+    }
+}

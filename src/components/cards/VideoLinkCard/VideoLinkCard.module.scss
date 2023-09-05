@@ -1,0 +1,75 @@
+@use '../../../css/utils/mixins.scss';
+@use '../../../css/utils/typography.scss';
+
+$_hover-background: var(--doc-color-noodl-black-light);
+
+.Root {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    outline: 10px solid transparent;
+    transition: outline var(--ifm-transition-fast)
+        var(--ifm-transition-timing-default);
+
+    &:hover {
+        outline: 10px solid $_hover-background;
+    }
+}
+
+.Thumb {
+    @include mixins.aspect-ratio(560, 315);
+    position: relative;
+    overflow: hidden;
+    width: calc(50% - 24px);
+    background-size: cover;
+    background-position: center;
+}
+
+.Details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(50% + 24px);
+    padding-left: 24px;
+    transition: background-color var(--ifm-transition-fast)
+        var(--ifm-transition-timing-default);
+
+    .Root:hover & {
+        background-color: $_hover-background;
+    }
+}
+
+.Title {
+    @include typography.h4;
+    padding-bottom: 10px;
+}
+
+.Description {
+    @include typography.body-small;
+}
+
+.VideoLength {
+    font-size: 12px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    span {
+        margin-left: 5px;
+        line-height: 1;
+    }
+}
+
+.Link {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

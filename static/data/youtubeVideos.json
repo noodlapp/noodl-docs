@@ -1,0 +1,32 @@
+[
+    {
+        "videoId": "titAgD6L6no",
+        "title": "Using the Noodl Figma plugin",
+        "description": "This video shows how to use the Noodl Figma plugin.",
+        "videoLength": "06.56"
+    },
+    {
+        "videoId": "u04KnVju4KU",
+        "title": "Building AirBnB Clone",
+        "description": "Casually building an AirBnB clone and testing some new upcoming features of 2.8.2",
+        "videoLength": "2:09:22"
+    },
+    {
+        "videoId": "zFJLPNCZGV8",
+        "title": "Noodl 2.8 release overview",
+        "description": "A look at the new features of 2.8 most norably cloud functions.",
+        "videoLength": "04:15"
+    },
+    {
+        "videoId": "ATyqeK_deu4",
+        "title": "Noodl Basics - Visual States",
+        "description": "Learn how to use Noodl visual interaction states.",
+        "videoLength": "1:54"
+    },
+    {
+        "videoId": "ecas2QPbr0g",
+        "title": "Intro to cloud services",
+        "description": "Continue the learning journey from the intro lessons in this video guide.",
+        "videoLength": "22:08"
+    }
+]

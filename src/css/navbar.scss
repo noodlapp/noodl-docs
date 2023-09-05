@@ -1,0 +1,105 @@
+@use './utils/mixins.scss';
+
+:root {
+    --ifm-navbar-background-color: var(--doc-color-noodl-black-darker);
+    --ifm-navbar-link-color: var(--doc-color-noodl-white-65);
+    --ifm-navbar-padding-horizontal: 28px;
+    --ifm-navbar-height: 64px;
+}
+
+.navbar {
+    border-bottom: 1px solid var(--doc-color-noodl-black-light);
+    padding: 0;
+
+    &__toggle {
+        @media (max-width: 996px) {
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+        }
+    }
+
+    &__logo {
+        height: 2.5rem;
+    }
+
+    &__inner {
+        padding: 0 var(--ifm-navbar-padding-horizontal);
+    }
+
+    &__title {
+        margin-left: 10px;
+        font-size: 18px;
+        color: var(--doc-color-noodl-white);
+    }
+
+    &__items {
+        align-items: stretch;
+    }
+
+    &__item {
+        padding: calc(var(--ifm-navbar-padding-vertical) + 10px) 20px
+            calc(var(--ifm-navbar-padding-vertical) + 5px);
+        font-size: 16px;
+        font-weight: var(--doc-font-semibold);
+
+        &:not(.is-download-button) {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        &.has-divider {
+            padding-right: 50px;
+            margin-right: 30px;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 12px;
+                bottom: 12px;
+                right: 0;
+                width: 1px;
+                background-color: var(--doc-color-noodl-white-65);
+            }
+        }
+
+        &.is-download-button {
+            background-color: var(--doc-color-noodl-orange);
+            color: var(--doc-color-noodl-black);
+            padding: 0 40px;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            margin-right: calc(var(--ifm-navbar-padding-horizontal) * -1);
+            transition-duration: 100ms;
+
+            &:hover {
+                background-color: var(--doc-color-noodl-orange-140);
+            }
+        }
+
+        &.is-discord {
+            display: block;
+            font-size: 0;
+            width: 36px;
+            box-sizing: content-box;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+            opacity: 0.65;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:after {
+                content: '';
+                height: 36px;
+                width: 36px;
+                background-image: url('../../static/img/discord.svg');
+            }
+        }
+    }
+}

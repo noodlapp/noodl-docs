@@ -1,0 +1,758 @@
+<!-- A step with just a popup -->
+<div data-template="popup"> 
+    <video src="lesson-06_08-create-task.mp4"></video>
+    <h2>User created data</h2>
+    <p>Welcome back! In this sixth lesson you will learn how to use the UI nodes to build a form, save the users data and display that data somewhere else in the app.</p>
+    <p>You will be using the "objects in array" method that you learned in the previous lesson, but this time you will not only read, but also write to it.</p>
+    <p>We will be working on a new page called "Create Cards Page" where we will build a form for creating new task cards that we will display on the Task page.</p>
+</div>
+<!-- # -->
+
+<!-- Talk about lists -->
+<div> 
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Creating forms</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_08-create-task.mp4"></video>
+        <h2>Creating forms</h2>
+        <p>Noodl comes with multiple ways of capturing user data. The simplest way is to build a form with the UI controls in Noodls core nodes.</p>
+        <p>You already have some experience with Buttons and Text Inputs, but you can also add Dropdowns, Sliders, Checkboxes, Date Pickers and much more.</p>
+        <p>In this lesson you will build a simple form page that enables the user to create their own task cards. Let's get in to it!.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- Talk about lists -->
+<div> 
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Create Card Page</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_01-create-new-task-page.mp4"></video>
+        <h2>Create Card Page</h2>
+        <p>If you look in the Component List, you will find a new page called <strong>Create Card Page</strong>. It contains the start of the card creation UI. It will be your job to finish it. We'll guide you through the process.</p>
+        <p>You will be adding a few new inputs and connect them up to some data nodes to store the data.</p>
+        <p>Let's navigate to the page and check out what's already there.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Lesson tasks</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <image src="../01_task.png"></image>
+        <h2>Time to get your hands dirty!</h2>
+        <p>During this lesson, you will be given multiple tasks. Spot them in the lesson timeline by the <i>Task</i> label.</p>
+        <p>If you get stuck you can get a hint by clicking the card in the timeline.</p>
+        <p>Some of the nodes graphs will already be set up for you beforehand. This is to keep the lessons short so that you can focus on learning one concept at a time. If it feels like magic at times, don't worry, It's just a concept you will learn in a later lesson.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "viewerpatheq":"/create-card-page"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Select the <strong><i>/create-card-page</i></strong> path in the <strong>Path Dropdown</strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_01-create-new-task-page.mp4"></video>
+        <p>You will start with wokring on the new page we created for you so select the <strong><i>/create-card-page</i></strong> path in the Path Dropdown.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "activecomponentnameeq":"/Create Card Page"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Select the <strong>Create Card Page</strong> component in the <strong>Component Panel</strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_01-create-new-task-page.mp4"></video>
+        <p>Select the <strong>Create Card Page</strong> component in the component panel to open its node graph.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Talk about lists -->
+<div> 
+    <div data-template="item" style="width: 220px">
+        <header>&nbsp;</header>
+        <h2>Building the form</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_02-new-form.mp4"></video>
+        <h2>Building the form</h2>
+        <p>If we take a look at the page we can see two <strong>Text Inputs</strong>, one for capturing the name of the task, and one for capturing the description.</p>
+        <p>There are also a few buttons. One is called <i>Cancel</i> and will navigate back to the Task Page. The other is called <i>Create Task</i>. You will use that a little later to trigger the logic to create a task.</p>
+        <p>A thing that is missing is an input that the user can use to set the <strong>category</strong> of the task. This is a perfect use case for the <strong>Dropdown</strong> node.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Talk about lists -->
+<div> 
+    <div data-template="item" style="width: 220px">
+        <header>&nbsp;</header>
+        <h2>The Dropdown node</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_03-dropdown-node.mp4"></video>
+        <h2>The Dropdown node</h2>
+        <p>The <strong>Dropdown</strong> node is perfect for cases where the user needs to pick one of multiple predefined values.</p>
+        <p>The node needs an array of options. Each option needs a <strong>label</strong> (the text shown in the UI), and a <strong>value</strong> (that is sent from the node when an option is selected).</p>
+        <p>Take a look at the video above on how to set it up.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Create Card Page:%Page:%Group:%Group:1",
+            "hastype":"net.noodl.controls.options"
+        },
+        {   
+            "path":"/Create Card Page:%Page:%Group:%Group:1",
+            "paramseq":{
+                "label": "Task Category"
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 420px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a <strong>Dropdown</strong> node and add it inbetween the two <strong>Text Input</strong> nodes, then set its label to <strong><i>Task Category</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_03-dropdown-node.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Create Card Page:%Page:%Group:%Group:1",
+            "hastype":"net.noodl.controls.options"
+        },
+        {   
+            "path":"/Create Card Page:%Page:%Group:%Group:1",
+            "paramseq":{
+                "marginBottom":{"value":16,"unit":"px"}
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 340px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Give the <strong>Dropdown</strong> a <strong>bottom margin</strong> of <strong><i>16px</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_03-dropdown-margin.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+data-conditions='[
+        {
+            "path":"/Create Card Page:%Page:%Group:%Group:1",
+            "hastype":"net.noodl.controls.options"
+        },
+        {
+            "path":"/Create Card Page:%Page:%Group:%Group:1",
+            "paramseq":{
+                "items": "[\n    {\"Label\":\"Work\", \"Value\":\"work\"},\n    {\"Label\":\"Study\", \"Value\":\"study\"},\n    {\"Label\":\"Shopping\", \"Value\":\"shopping\"},\n    {\"Label\":\"Appointment\", \"Value\":\"appointment\"},\n]"
+            }
+        }
+]'
+>
+    <div data-template="item" style="width: 740px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Fill the <strong>Items</strong> array with objects containing the following <strong>Label</strong> and <strong>Value</strong> pairs: <strong><i>Label: Work</i></strong>:<strong><i>Value: work</i></strong>, <strong><i>Label: Study</i></strong>:<strong><i>Value: study</i></strong>, <strong><i>Label: Shopping</i></strong>:<strong><i>Value: shopping</i></strong>, <strong><i>Label: Appointment</i></strong>:<strong><i>Value: appointment</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_03-dropdown-items.mp4"></video>
+        <p>Take a closer look at how the array looks in the video above.</p>
+        <p>Remember to set the Label in Capitalized and the Value with lowercase as in the video</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item" style="width: 200px">
+        <header>&nbsp;</header>
+        <h2>Datepicker and other Prefabs</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_04-datepicker-node.mp4"></video>
+        <h2>Datepicker and other prefabs</h2>
+        <p>Besides the core nodes, Noodl comes with a bunch of pre-made components called prefabs. They are advanced components, built with regular core nodes. You can customize them to fit your needs, just like the components you build yourself.</p>
+        <p>Prefabs are not in your component list by default, but can be cloned through the Node Picker. When you clone a prefab a new copy of it gets added to your component list and can be dragged into your node graph.</p>
+        <p>In the next step we will be importing the <strong>Date Picker</strong> prefab, so that the user can set a date on their new task cards.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path": "/Create Card Page:%Page:%Group:%Group:%/Date Picker",
+            "exists": true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 500px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Open the Node Picker, go to the <strong>Prefabs Tab</strong>, clone the <strong>Date Picker</strong> prefab and insert it as a sibling below the <strong>Dropdown</strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_04-datepicker-node.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Create Card Page:%Page:%Group:%Group:%/Date Picker",
+            "paramseq":{
+                "Margin Bottom":{"value":16,"unit":"px"},
+                "Label":"Task Date"
+            }
+        
+        }
+    ]'
+>
+    <div data-template="item" style="width: 330px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Set the Date Picker's <strong>label</strong> to <strong><i>Task Date</i></strong> and <strong>bottom margin</strong> to <strong><i>16px</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_04-datepicker-margin.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- # -->
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Creating new objects</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_05-create-new-object.mp4"></video>
+        <h2>Creating new objects</h2>
+        <p>You have previously used the <strong>Object</strong> node to access data defined in a <strong>Static Array</strong> node. Since the users will be creating the data themselves a Static Array will not do. Instead, you can use the <strong>Create New Object</strong> node.</p> 
+        <p>On this node you define the properties you want the Object to have, connect the UI controls data outputs to the property inputs, and send a signal when you want the new Object to be created.</p>
+        <p>It's easier to show then tell, so let's set it up!</p>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Create Card Page:%NewModel", 
+            "exists":true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 300px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a <strong>Create New Object</strong> node in the node graph of <strong>Create Card Page</strong></h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_05-create-new-object.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Create Card Page:%NewModel", 
+            "paramseq":{
+                "properties":"Title,Category,Date,Description"
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Add the following properties to the Create New Object node: <strong>Title</strong>, <strong>Category</strong>, <strong>Date</strong>, <strong>Description</strong></h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_05-create-new-object.mp4"></video>
+        <p>Remember that names are case sentitive</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Talk about lists -->
+<div> 
+    <div data-template="item" style="width: 300px">
+        <header>&nbsp;</header>
+        <h2>Adding form UI controls</h2>
+    </div>
+    <div data-template="popup">
+        <h2>Adding form UI controls</h2>
+        <p>Now we have both the UI and the Object to capture a Title, a Category, a Date and a Description.</p>
+        <p>In the previous lessons we also worked with an <strong>image</strong> and <strong>background color</strong> for each task. Ideally those properties should be controlled by the selected <strong>Category</strong>. We will get back to this in a bit.</p>
+        <p>First, let's connect the UI controls up to the Create New Object node.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Create Card Page:%Page:%Group:%Group:%net.noodl.controls.textinput",
+            "to": "/Create Card Page:%NewModel", 
+            "hasconnection": "onTextChanged,prop-Title"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 420px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the first <strong>Text Input</strong> to the <strong>Create New Object</strong> node and send the <strong><i>Text</i></strong> output to the <strong><i>Title</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_05-connect-title.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Create Card Page:%Page:%Group:%Group:%net.noodl.controls.options",
+            "to": "/Create Card Page:%NewModel", 
+            "hasconnection": "value,prop-Category"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 420px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Dropdown</strong> to the <strong>Create New Object</strong> node and send the <strong><i>Value</i></strong> output to the <strong><i>Category</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_05-connect-category.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Create Card Page:%Page:%Group:%Group:%/Date Picker",
+            "to": "/Create Card Page:%NewModel", 
+            "hasconnection": "Value,prop-Date"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 420px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Date Picker</strong> to the <strong>Create New Object</strong> node and send the <strong><i>Value</i></strong> output to the <strong><i>Date</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_05-connect-date.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Create Card Page:%Page:%GrouP:%Group:3",
+            "to": "/Create Card Page:%NewModel", 
+            "hasconnection": "onTextChanged,prop-Description"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 450px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the last <strong>Text Input</strong> node to the <strong>Create New Object</strong> node and send the <strong><i>Text</i></strong> output to the <strong><i>Description</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_05-connect-description.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Store Objects in Arrays</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_06-insert-object-to-array.mp4"></video>
+        <h2>Store Objects in Arrays</h2>
+        <p>To actually create an object, we need to trigger the <i>Do</i> action on the <strong>Create New Object</strong> node.</p>
+        <p>When the <i>Do</i> action is triggered, a new object is created with whatever data is on the inputs of the Create New Object node. The created Object also gets a unique <strong>id</strong> that can be used anywhere in your app to access the information.</p>
+        <p>To easily find the Object <i>id</i> you can store the objects in an array, using the <strong>Array</strong> and <strong>Insert Object Into Array</strong> nodes.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path": "/Create Card Page:%CollectionInsert",
+            "exists": true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 300px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a <strong>Insert Object Into Array</strong> node in the <strong>Create Card Page</strong> node graph</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_06-insert-object-to-array.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path": "/Create Card Page:%CollectionInsert",
+            "paramseq": {
+                "collectionId":"Tasks"
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 340px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Select the <strong>Insert Object Into Array</strong> node and set the <strong>array id</strong> to <strong><i>Tasks</i></strong></h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_06-insert-object-to-array.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Create Card Page:%NewModel",
+            "to": "/Create Card Page:%CollectionInsert", 
+            "hasconnection": "id,modifyId"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 440px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Create New Object</strong> node to the <strong>Insert Object Into Array</strong> node and send the <strong><i>id</i></strong> output to the <strong><i>object id</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_06-connect-object-id.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Create Card Page:%NewModel",
+            "to": "/Create Card Page:%CollectionInsert", 
+            "hasconnection": "created,add"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 440px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Create New Object</strong> node to the <strong>Insert Object Into Array</strong> node and send the <strong><i>done</i></strong> output to the <strong><i>do</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_06-connect-done-to-do.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item" style="width: 180px;">
+        <header>&nbsp;</header>
+        <h2>Make it happen</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_07-action-button-to-do.mp4"></video>
+        <h2>Make it happen</h2>
+        <p>You're almost there, but before anything can happen you need some way to trigger the <i>Do</i> action on the Create New Object node. Let's do that using the <strong>click</strong> event from the Create Task button.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Create Card Page:%Page:%Group:#Button Container:0",
+            "to": "/Create Card Page:%NewModel", 
+            "hasconnection": "onClick,new"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Create Task</strong> button to the <strong>Create New Object</strong> node and send the <strong><i>click</i></strong> output to the <strong><i>do</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_07-action-button-to-do.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Navigating back</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_07-insert-object-navigate.mp4"></video>
+        <h2>Navigating back</h2>
+        <p>Now you can create new tasks, but seeing them requires some manual navigation. It would be nice that could happen automatically.</p>
+        <p>The <strong>Insert Object Into Array</strong> node has a <strong>success</strong> output that can be used just for this!</p>
+        <p>Let's hook it up to a <strong>Navigate</strong> node and try it out.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":  "/Create Card Page:%CollectionInsert",
+            "to": "/Create Card Page:%RouterNavigate", 
+            "hasconnection": "modified,navigate"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 440px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong> Insert Object Into Array</strong> node to the <strong>Navigate</strong> node and send the <strong><i>done</i></strong> output to the <strong><i>navigate</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-06_07-insert-object-navigate.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Using the Tasks Array</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_08-array-node.mp4"></video>
+        <h2>Using the Tasks Array</h2>
+        <p>Now the app automatically takes you to the Task Page when a new task has been created, but where are all the created tasks?</p>
+        <p>Before we can see them, the <strong>Static Array</strong> node needs to be swapped out for an <strong>Array</strong> node with the same id (<i>Tasks</i>) as the <strong>Insert Object Into Array</strong> node.</p>
+        <p>Because Array ID's are global we can access the data of an array everywhere we have an Array node with the same Id.</p>
+        <p>A quick note on Arrays and Objects is that they only hold data locally and are reset when the page or project is refreshed. We will go through how to make your data persistant in a later lesson.</p>
+        <p>For now, let's go and swap out the Static Array node with an Array node.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path": "/Task Page:%Static Data",
+            "exists": false
+        },
+        {
+            "path": "/Task Page:%Collection2",
+            "exists": true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 390px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Open the <strong>Task Page</strong> node graph and <strong>delete</strong> the <strong>Static Array</strong> node and add an <strong>Array</strong> node instead</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_08-array-node.mp4"></video>
+        <p>Select the Task Page component in the component panel to get to its node graph</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path": "/Task Page:%Collection2",
+            "paramseq": {
+                "collectionId":"Tasks"
+            }
+        },
+                
+        {
+            "from":  "/Task Page:%Collection2",
+            "to": "/Task Page:%Page:%Group:%Group:%For Each", 
+            "hasconnection": "items,items"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 340px">
+        
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Set the <strong>array id</strong> to <strong><i>Tasks</i></strong> and connect the <strong><i>items</i></strong> output to the <strong>Repeater</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_08-array-to-repeater.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item" style="width: 280px;">
+        <header>&nbsp;</header>
+        <h2>Category image and Color</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-06_08-create-task.mp4"></video>
+        <h2>Category image and color</h2>
+        <p>Great Job! You now have a working flow. Clicking the <i>plus</i> button will navigate you to the Create Card Page. From there you can create a new task and navigate back to the Task Page to see the task cards.</p>
+        <p>However, the tasks are still missing an image and a color, and the date value is not formatted. When it comes to color and image, we don't want the user to pick that in the form. Rather we want the selected category to set what image and color to show.</p>
+        <p>We will save those last missing pieces for the last lesson.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>Outro</header>
+        <h2>Congratulations!</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <!--<img src="tutorial_card.png" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')"> -->
+        <h2>Congratulations!</h2>
+        <p>You've completed sixth tutorial! The longest one yet.</p>
+        <p>See you in the last lesson, where you will learn how to work with the <strong>States</strong> node and logic components.</p>
+        <p>Happy Noodling!</p>
+        <!--<button style="width: 150px" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')">WATCH TUTORIAL</button>-->
+        <button style="width: 150px" data-click="exitEditor">EXIT LESSON</button>
+    </div>
+</div>
+<!-- # -->
+
+
+

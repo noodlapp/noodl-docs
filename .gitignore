@@ -1,0 +1,7 @@
+build/*
+node_modules/*
+.docusaurus
+static/docs/guides/user-interfaces/layout/.DS_Store
+static/docs/guides/user-interfaces/.DS_Store
+static/docs/guides/.DS_Store
+.DS_Store

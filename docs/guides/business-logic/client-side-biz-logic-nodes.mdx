@@ -1,0 +1,376 @@
+---
+title: Client Side Business Logic in Nodes
+hide_title: true
+---
+import CopyToClipboardButton from '/src/components/copytoclipboardbutton'
+import ImportButton from '../../../src/components/importbutton'
+
+# Client Side Business Logic Using Nodes
+
+## What you will learn in this guide
+This guide will show some examples on how to use different logical nodes in Noodl to build simple business logic. The guide will use a conditional form (i.e. a form where different fields need to be filled out based on other fields are filled out) but the concepts are general. In this guide we will not use any Javascript but rely only on existing nodes in Noodl.
+
+We will use the nodes [Expression](/nodes/math/expression), [Condition](/nodes/utilities/logic/condition), [Switch](/nodes/logic/switch) and [States](/nodes/utilities/logic/condition) as well as the boolean nodes [And](/nodes/logic/and) and [Or](/nodes/logic/or) to implement the logic.
+
+## Overview
+
+The guide will show the following ways to implement logic
+* Using a **Switch** and **States** node with **Mounted** attribute to control what's visible on the screen
+* Using **Expression** and **Condition** to validate the content of a text input
+* Using boolean operators to build logic
+
+Another way to build logic is to use the Javascript nodes [Function](/nodes/javascript/function) and [Script](/nodes/javascript/script) this is covered in [this guide](/docs/guides/business-logic/client-side-biz-logic-js).
+
+## Building a conditional form
+Let's build one of those complicated forms that changes progressively depending on what you enter in the form. In our case, it will be a form for registering returns, for example clothes that your ordered online.
+
+### The form logic
+In words, we want to build a form that works like this:
+
+* You start the form by _either_ entering a order number _or_ an email address.
+* If you entered a order number, the order number need to be exactly 8 digits, otherwise the form should warn the user.
+* You also have to give a reason for the return. The options are **The product did not fit**, **The product did not meet my expectations**, or **Other**.
+* If you selected **The product did not fit** you have to select whether the product was **too large** or **too small**.
+* If you selected **The product did not meet my expectations** you will ge a given an optional text field to fill out with more details.
+* If you selected **Other** you will also be given an optional text field to fill out with more details.
+
+There is a "Submit" button at the end of the form. It will only be available if all necessary information has been given, otherwise it will be disabled.
+
+All the data should be stored in an [Object](/nodes/data/object/object-node) with the following properties:
+```json
+ {
+ 	"email":<the user email>,
+ 	"order_nbr":<the order_nbr>,
+ 	"reason":<either "bad_fit","did_not_meet_exp" or "other">,
+ 	"bad_fit_reason":<"too_small" or "too_large">,
+ 	"did_not_meet_exp_reason":<any text>,
+ 	"other_reason":<any text>
+ }
+```
+
+Naturally, you have to have either and email or an order_nbr. Also, if you have selected `bad_fit` as reason you also need a `bad_fit_reason` to be able to submit.
+
+Ok, lets go!
+
+## The static content of the form
+We will start with the content of the form that are unconditional. These are 
+* A [Radio Button Group](/nodes/ui-controls/radio-button-group) with the options `order_nbr` or `email`.
+* Another [Radio Button Group](/nodes/ui-controls/radio-button-group) with the label `Reason of return` and the options `The product did not fit`, `The product did not meet my expectations` and `Other`
+* A submit [Button](/nodes/ui-controls/button)
+* A few titles to seperate the different sections
+
+With the labels filled out and some padding and margins the form will look something like below. You can copy the nodes using the Copy/Paste button below and paste into a new Project if you don't want to create the nodes yourself.
+
+<div className="ndl-image-with-background">
+
+<CopyToClipboardButton json={{"nodes":[{"id":"39432217-a038-f111-df49-5ba7a4f2cf8b","type":"Group","x":-111.4681915301291,"y":311.4376377651178,"parameters":{"backgroundColor":"#FFFFFF","paddingLeft":{"value":10,"unit":"px"},"paddingRight":{"value":10,"unit":"px"},"paddingTop":{"value":10,"unit":"px"},"paddingBottom":{"value":10,"unit":"px"}},"ports":[],"children":[{"id":"4c2ba3b6-2904-17e6-6e21-0ab10109a6ee","type":"Text","label":"Title","x":-91.4681915301291,"y":357.4376377651178,"parameters":{"text":"Returns Form","fontSize":{"value":24,"unit":"px"},"marginBottom":{"value":20,"unit":"px"}},"ports":[],"children":[]},{"id":"957d16f0-d103-b5d5-a063-4f52dbfcef05","type":"Radio Button Group","x":-91.4681915301291,"y":417.4376377651178,"parameters":{"marginBottom":{"value":20,"unit":"px"},"value":"order_nbr"},"ports":[],"children":[{"id":"51f788c1-e7b8-ece9-e652-1733257af649","type":"net.noodl.controls.radiobutton","label":"Order Nbr","x":-71.4681915301291,"y":463.4376377651178,"parameters":{"label":"Use Order Nbr","marginBottom":{"value":5,"unit":"px"},"value":"order_nbr"},"ports":[],"children":[]},{"id":"e680625e-765d-0b0e-b2ab-9c413010eac8","type":"net.noodl.controls.radiobutton","label":"Email","x":-71.4681915301291,"y":523.4376377651179,"parameters":{"label":"Use Email","value":"email"},"ports":[],"children":[]}]},{"id":"7e1dfbef-46b7-afa8-6771-71d11812beb8","type":"Radio Button Group","x":-91.4681915301291,"y":583.4376377651179,"parameters":{"marginBottom":{"value":30,"unit":"px"}},"ports":[],"children":[{"id":"f5895b0e-51ce-649c-10c2-026b8312fda6","type":"Text","label":"Subtitle","x":-71.4681915301291,"y":629.4376377651179,"parameters":{"text":"Reason for returning the product","marginBottom":{"value":10,"unit":"px"}},"ports":[],"children":[]},{"id":"ac6c75f3-e869-06cd-bb7b-31a368b05ff8","type":"net.noodl.controls.radiobutton","label":"The Product didnt fit me","x":-71.4681915301291,"y":689.4376377651179,"parameters":{"marginBottom":{"value":5,"unit":"px"},"label":"The Product didn't fit me","value":"bad_fit"},"ports":[],"children":[]},{"id":"737e5a63-0094-1c4b-c235-9d50f50226a4","type":"net.noodl.controls.radiobutton","label":"The Product didnt meet my exp","x":-71.4681915301291,"y":763.4376377651179,"parameters":{"marginBottom":{"value":6,"unit":"px"},"label":"The Product didn't meet my expectations","value":"did_not_meet_exp"},"ports":[],"children":[]},{"id":"be100b59-91f0-fa60-55c6-3dd6b9929515","type":"net.noodl.controls.radiobutton","label":"Other","x":-71.4681915301291,"y":837.4376377651179,"parameters":{"label":"Other","value":"other"},"ports":[],"children":[]}]},{"id":"b646e42a-19ca-6c1a-861e-aa175f3c3954","type":"net.noodl.controls.button","label":"Submit Button","x":-91.4681915301291,"y":897.4376377651179,"parameters":{"label":"Submit"},"ports":[],"children":[]}]}],"connections":[]}} />
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/nodes-1.png)
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/form-1.png)
+
+</div>
+
+Note that the `value` of the [Radio Buttons](/nodes/ui-controls/radio-button) was also filled out (`email`/`order_nbr` and `bad_fit`/`did_not_meet_exp`/`other`). We will use these values to determine our logic later. We've also set the initial value of the first **Radio Button** group to `order_nbr` as we want this to be the default option.
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/radio-button-group-panel-1.png)
+
+</div>
+
+## Conditional UI using a **Switch**
+The first conditional part of the form is whether the user fills out an order nr or an email. Let's create that. Often a good way to handle this type of conditional UI is to create both cases and add then into the node tree and then use the **Mounted** property on the root group for each case to pick which one that should be shown.
+
+We need a **Switch** that can encode the state, for example the **Switch** could be `true` if the order number is active, otherwise `false`. To do the actual check of the **Value** of the **Radio Button Group** we will use an **Expression** node. This is a simple way to write logical statements. It uses a Javascript format. We will check if the **Value** of the **Radio Button Group** equals the string `order_nbr` and in that case return `true`, otherwise `false`. We write this in the expression node as below:
+```javascript
+order_or_email_selection === "order_nbr"
+```
+This will create a new input on the **Expression** node called `order_or_email_selection`. We connect the output **Value** of the **Radio Button Group** to that input. Our output `Result` on the **Expression** node will now be either `true` or `false`. This value will control the state of a **Switch**. So create a **Switch**, call it `Order Nbr selected` and connect it to the **State** input of the **Switch**.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/nodes-2.png)
+
+</div>
+
+Now the **Switch** will be either **On** or **Off** based on what the user picks in the first **Radio Button Group**. Now we want to use this to control the conditional UI. Add two [Text Input](/nodes/ui-controls/text-input) nodes below the first **Radio Button Group**. One is for the order number, make that one type `Number`, and one for email. That one shold be of type `Email`. Give them a good label. Also make the width 300 px. For the order number, we also add an addtional tip in the place holder text, that it should be 8 digits.
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/nodes-3.png)
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/form-2.png)
+
+</div>
+
+We want these text field to be mutual exclusive, that is, only one to be visible at a time. For the order number one it's super straight forward. Just connect the **Current State** of the **Switch** to **Mounted** input of the **Text Input**. We need to invert the state (`true`=>`false` and `false`=>`true`) for the other **Text Input**. So add in an [Inverter](/nodes/logic/inverter) node and connect it in-between the **Switch** and the **Text Input** for the email.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/nodes-4.png)
+
+</div>
+
+As you can see, the two different **Text Inputs** are now visible depending on the selection in the first **Radio Button Group**.
+
+## Conditional UI using a **States** node
+Now let's build the logic for the second part, the "Reason for returning the product" **Radio Button Group**. Here we actually have four different states we need to keep track of so a **Switch** won't do. The four states are:
+
+* No selection
+* `The product did not fit`
+* `The product did not meet my expectations`
+* `Other`
+
+We can easily encode these states in a **States** node. Add one to your App. Then create the four states. We will use the names so they match the value in our property `reason` in our data **Object** above, hence the states will be called `no_selection`, `bad_fit`, `did_not_meet_exp` and `other`.
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/states-1.png)
+
+</div>
+
+We will not add any values to this **States** node. If you used the **States** node before, for example to animate different values, you might find this strange - why don't we need any values that changes when we change states? Well, we are only interested in the state properties of the **States** node, more specifically `At bad_fit`, `At did_not_meet_exp` and `At other`. Again we will use the trick where we add all UI states in the tree and use the **Mounted** signal to control which one is visible.
+
+Hence we add our different UI components to the tree. Another **Radio Button Group** to select whether the product was too small or too large, and two **Text Input** nodes that we set as type **Text Areas**. This is how the bottom of the tree looks, with some additional titles and small tweaks on margins. If you want you can copy the nodes to get the exact layuot.
+
+<div className="ndl-image-with-background l">
+
+<CopyToClipboardButton json={{"nodes":[{"id":"0a831752-9c2d-dfbb-64d1-5ba562e1ba9f","type":"Group","x":-111.4681915301291,"y":311.4376377651178,"parameters":{"backgroundColor":"#FFFFFF","paddingLeft":{"value":10,"unit":"px"},"paddingRight":{"value":10,"unit":"px"},"paddingTop":{"value":10,"unit":"px"},"paddingBottom":{"value":10,"unit":"px"}},"ports":[],"children":[{"id":"9bf375d7-9e4a-3b4a-6c99-0762d758439b","type":"Text","label":"Title","x":-91.4681915301291,"y":357.4376377651178,"parameters":{"text":"Returns Form","fontSize":{"value":24,"unit":"px"},"marginBottom":{"value":20,"unit":"px"}},"ports":[],"children":[]},{"id":"673408b5-f3b3-b275-f211-57c941a6a1e1","type":"Radio Button Group","x":-91.4681915301291,"y":417.4376377651178,"parameters":{"marginBottom":{"value":20,"unit":"px"},"value":"order_nbr"},"ports":[],"children":[{"id":"94ab0fea-0fe3-8aae-4c08-74675718b95b","type":"net.noodl.controls.radiobutton","label":"Order Nbr","x":-71.4681915301291,"y":499.4376377651178,"parameters":{"label":"Use Order Nbr","marginBottom":{"value":5,"unit":"px"},"value":"order_nbr"},"ports":[],"children":[]},{"id":"1c99665e-4985-e3aa-603b-5a8c6b93ef15","type":"net.noodl.controls.radiobutton","label":"Email","x":-71.4681915301291,"y":559.4376377651179,"parameters":{"label":"Use Email","value":"email"},"ports":[],"children":[]}]},{"id":"88ddaa9f-2beb-4797-bfa1-6370ea34caed","type":"net.noodl.controls.textinput","label":"Order Number","x":-91.4681915301291,"y":619.4376377651179,"parameters":{"type":"number","label":"Order Nbr","width":{"value":300,"unit":"px"},"placeholder":"Type here (8 digits)"},"ports":[],"children":[]},{"id":"c9422cd9-c560-3015-cc35-6396713747fa","type":"net.noodl.controls.textinput","label":"Email","x":-91.4681915301291,"y":715.4376377651179,"parameters":{"type":"email","label":"Email","width":{"value":300,"unit":"px"}},"ports":[],"children":[]},{"id":"3bec2d59-9437-f662-28c4-20cdd964b119","type":"Radio Button Group","x":-91.4681915301291,"y":811.4376377651179,"parameters":{"marginBottom":{"value":10,"unit":"px"},"marginTop":{"value":20,"unit":"px"}},"ports":[],"children":[{"id":"6f76c504-9fb5-8e98-84d6-22c766650edb","type":"Text","label":"Subtitle","x":-71.4681915301291,"y":857.4376377651179,"parameters":{"text":"Reason for returning the product","marginBottom":{"value":10,"unit":"px"}},"ports":[],"children":[]},{"id":"e154b320-462d-a62a-5432-1e310c55ef06","type":"net.noodl.controls.radiobutton","label":"The Product didnt fit me","x":-71.4681915301291,"y":917.4376377651179,"parameters":{"marginBottom":{"value":5,"unit":"px"},"label":"The Product didn't fit me","value":"bad_fit"},"ports":[],"children":[]},{"id":"d8f1b931-b3ef-2719-40ee-6b4eeb9df929","type":"net.noodl.controls.radiobutton","label":"The Product didnt meet my exp","x":-71.4681915301291,"y":991.4376377651179,"parameters":{"marginBottom":{"value":6,"unit":"px"},"label":"The Product didn't meet my expectations","value":"did_not_meet_exp"},"ports":[],"children":[]},{"id":"80f76451-1739-e97f-38c6-cbcc7c6b65a7","type":"net.noodl.controls.radiobutton","label":"Other","x":-71.4681915301291,"y":1065.4376377651179,"parameters":{"label":"Other","value":"other"},"ports":[],"children":[]}]},{"id":"d675e9e2-6592-ca67-d019-04c62ad0e7f5","type":"Radio Button Group","x":-91.4681915301291,"y":1125.4376377651179,"parameters":{},"ports":[],"children":[{"id":"8b19cd42-e17a-2ae7-02a8-06e7831d136c","type":"Text","label":"Subtitle","x":-71.4681915301291,"y":1171.4376377651179,"parameters":{"text":"What was wrong with the size?","marginBottom":{"value":10,"unit":"px"}},"ports":[],"children":[]},{"id":"f9409c26-0bd6-c692-f685-763a54629745","type":"net.noodl.controls.radiobutton","label":"Too small","x":-71.4681915301291,"y":1231.4376377651179,"parameters":{"label":"It was too small","value":"too_small"},"ports":[],"children":[]},{"id":"4b3e89a3-4753-b43c-e522-9ef12230a226","type":"net.noodl.controls.radiobutton","label":"Too large","x":-71.4681915301291,"y":1291.4376377651179,"parameters":{"marginTop":{"value":6,"unit":"px"},"label":"It was too large","value":"too_large"},"ports":[],"children":[]}]},{"id":"b0308aad-f672-9ef7-55fc-0ae49a05151f","type":"net.noodl.controls.textinput","label":"What was wrong","x":-91.4681915301291,"y":1351.4376377651179,"parameters":{"type":"textArea","label":"What was wrong with the product (optional)","height":{"value":80,"unit":"px"}},"ports":[],"children":[]},{"id":"3ec39b0d-89fd-2190-6794-7b75129d3231","type":"net.noodl.controls.textinput","label":"Other info","x":-91.4681915301291,"y":1411.4376377651179,"parameters":{"type":"textArea","label":"Other info (optional)","height":{"value":80,"unit":"px"}},"ports":[],"children":[]},{"id":"faab78c7-15c3-e13f-59ac-302ac15dfd3f","type":"net.noodl.controls.button","label":"Submit Button","x":-91.4681915301291,"y":1471.4376377651179,"parameters":{"label":"Submit","marginTop":{"value":20,"unit":"px"}},"ports":[],"children":[]}]},{"id":"a80b7cee-3faa-b48c-fc8d-a821087e2d21","type":"Expression","x":175.53180846987084,"y":394.4376377651178,"parameters":{"expression":"order_or_email_selection === \"order_nbr\""},"ports":[],"children":[]},{"id":"53ff4b78-b87c-6dac-0798-b4cbfa97b5df","type":"Switch","label":"Order Nbr Selected","x":470.53180846987084,"y":418.4376377651178,"parameters":{},"ports":[],"children":[]},{"id":"d8dd88f9-cb5e-3331-b7a8-d3415674074d","type":"Inverter","x":284.53180846987084,"y":622.4376377651179,"parameters":{},"ports":[],"children":[]},{"id":"cf9925a5-e728-aa70-01e1-f09a4191f0f1","type":"States","label":"Return Reason State","x":299.91232707102847,"y":935.3790036453898,"parameters":{"states":"none,bad_fit,did_not_meet_exp,other"},"ports":[],"children":[]}],"connections":[{"fromId":"a80b7cee-3faa-b48c-fc8d-a821087e2d21","fromProperty":"result","toId":"53ff4b78-b87c-6dac-0798-b4cbfa97b5df","toProperty":"onFromStart"},{"fromId":"673408b5-f3b3-b275-f211-57c941a6a1e1","fromProperty":"value","toId":"a80b7cee-3faa-b48c-fc8d-a821087e2d21","toProperty":"order_or_email_selection"},{"fromId":"53ff4b78-b87c-6dac-0798-b4cbfa97b5df","fromProperty":"state","toId":"88ddaa9f-2beb-4797-bfa1-6370ea34caed","toProperty":"mounted"},{"fromId":"53ff4b78-b87c-6dac-0798-b4cbfa97b5df","fromProperty":"state","toId":"d8dd88f9-cb5e-3331-b7a8-d3415674074d","toProperty":"value"},{"fromId":"d8dd88f9-cb5e-3331-b7a8-d3415674074d","fromProperty":"result","toId":"c9422cd9-c560-3015-cc35-6396713747fa","toProperty":"mounted"}]}} />
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/nodes-5.png)
+
+</div>
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/form-3.png)
+
+</div>
+
+We now need to let the **Radio Button Group** for the reason to do the return control the state of the **States** node. Since we named the states the same as the **Value** coming out of the **Radio Button Group** we can connect the **Value** directly to the **State**.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/nodes-6.png)
+
+</div>
+
+We then use the `At <state>` outputs of the **States** node to control when the respective controls are mounted. Note that only on of the `At <state>` outputs can be `true` at any given moment, so we don't need to use an **Inverter** here.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/nodes-7.png)
+
+</div>
+
+If you click around now, you should see the different controls being mounted depending on the settings of the radio buttons.
+
+## Validating the form contents using **Conditions** and boolean logic nodes
+
+Ok, next step is to do some simple validation that the input in the form is coherent, for example that if you said that the product didn't fit you, that you also filled out whether the goods was too small or too large. If you haven't filled out the form properly the "Submit" button should be greyed out. Of course the rules will be different for different scenarios. If you use your email, you won't be forced to fill out an 8 digit order number, etc.
+
+Let's first summarize the validation rules:
+
+For the order reference:
+* If you fill out a order number, it has to be exactly 8 digits.
+* If you fill out an email it cannot be empty.
+
+For the reason of return:
+* You have to pick a reason for the return.
+* If you picked "Product didn't fit" as a reason, you also have to state whether the product was too small or too large.
+
+We need to encode this logic in nodes and then let that control whether the **Button** is **Enabled** or not.
+
+Let's start with the two first ones regarding the order reference. We already know if order number was selected in our previously added **Switch**. We also need to check whether the order number is 8 digits. We do this by passing the content to a **String** node. We can then extract the length of the **String** and see if it's exactly 8.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-1.png)
+
+</div>
+
+We also check the length of the email string in the same way. Of course, we could also check the email address if valid, but we will leave this for now. Actually, if you do many of these string validations it's probably a good idea to use a specialized module for it like the [Form Validation Module](/library/modules/validation). In this example we will not focus on the string validation but rather the logic to control the state of the button.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-2.png)
+
+</div>
+
+Ok, now we are ready to build our logic namely _the order reference is valid IF (the email is selected AND the email has more than 0 characters) OR (the order number is selected AND the order number is exactly 8 digits)_. Note the parenthesises to clarify in what order the different expressions should be evaluated (it makes a difference!). We encode this using **And** and **Or** nodes.
+
+<div className="ndl-image-with-background xl">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-3.png)
+
+</div>
+
+Note how the **Inverted** is used to encode "order number is selected", actually saying "email is not selected". Try it out by entering order numbers and emails, switching back and forth. It works!
+As you can see, for these boolean constructs, the node tree can be pretty big and messy. So let's clean it up by putting it all in a component.
+
+Create a new logic component.
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/logic-component-1.png)
+
+</div>
+
+Call it "Valid Reference". As you can see you will already have a **Component Input** and **Component Output** node defined here. We need to define the inputs. To do the validation we need the following inputs: `Order Number Selected`. `Order Number` and `Email`. Remove the existing `Do` input and add those in.
+
+
+<div className="ndl-image-with-background xl">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-4.png)
+
+</div>
+
+The output of the component should be one boolean value, let's call it `Reference Valid`. So remove the two existing ports from the **Component Output** and add that in. Now we cut the existing logic from our root component and add into this component.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/copy-paste-1.png)
+
+</div>
+
+The component should look like below when the inputs and outputs have been connected properly. You can also copy and paste the nodes below into the components.
+
+<div className="ndl-image-with-background xl">
+
+<CopyToClipboardButton json={{"nodes":[{"id":"637aac97-3421-6fec-4c05-b003a251960b","type":"Component Inputs","x":-287,"y":295,"parameters":{},"ports":[{"name":"Order Number Selected","plug":"output","type":{"name":"*"},"index":1},{"name":"Order Number","plug":"output","type":{"name":"*"},"index":2},{"name":"Email","plug":"output","type":{"name":"*"},"index":3}],"children":[]},{"id":"d4d0f698-22cb-c43d-a5dd-290ebfbbab87","type":"Component Outputs","x":1292.8423935237263,"y":331.3884408802785,"parameters":{},"ports":[{"name":"Reference Valid","plug":"input","type":{"name":"*"},"index":1}],"children":[]},{"id":"d2024637-8e72-a6c8-c42c-b4f2ab976e1a","type":"String","x":6,"y":459.62243548423316,"parameters":{},"ports":[],"children":[]},{"id":"3306c3b3-d858-24d1-5bf9-8256d23a4c8d","type":"Expression","x":225,"y":417.62243548423316,"parameters":{"expression":"order_number_length === 8"},"ports":[],"children":[]},{"id":"c4bd66d9-e267-86ca-7636-c80b7abc462f","type":"String","x":10,"y":562.6224354842332,"parameters":{},"ports":[],"children":[]},{"id":"aa33b4df-00f8-c285-04c4-7d1e4a4aabb6","type":"Expression","x":224,"y":555.6224354842332,"parameters":{"expression":"email_length > 0"},"ports":[],"children":[]},{"id":"87267823-be74-27a9-9191-e0662af19f50","type":"And","x":605.4401471748379,"y":202,"parameters":{},"ports":[],"children":[]},{"id":"45561d30-705c-50e5-adfd-6c6e5d6f6c69","type":"Inverter","x":218.44014717483788,"y":315,"parameters":{},"ports":[],"children":[]},{"id":"0340a6e9-471f-6b11-2a38-2905e669b6ba","type":"And","x":602.4401471748379,"y":383,"parameters":{},"ports":[],"children":[]},{"id":"2bfa14b7-c9bd-a85a-d89b-ddab05eadaa0","type":"Or","x":844.4401471748379,"y":318,"parameters":{},"ports":[],"children":[]},{"id":"fa0eb4b6-cf7a-7897-8dce-5b9edc5aa6f4","type":"Boolean","x":1077.2997086893442,"y":322.44948030643695,"parameters":{},"ports":[],"children":[]}],"connections":[{"fromId":"d2024637-8e72-a6c8-c42c-b4f2ab976e1a","fromProperty":"length","toId":"3306c3b3-d858-24d1-5bf9-8256d23a4c8d","toProperty":"order_number_length"},{"fromId":"45561d30-705c-50e5-adfd-6c6e5d6f6c69","fromProperty":"result","toId":"0340a6e9-471f-6b11-2a38-2905e669b6ba","toProperty":"input 0"},{"fromId":"87267823-be74-27a9-9191-e0662af19f50","fromProperty":"result","toId":"2bfa14b7-c9bd-a85a-d89b-ddab05eadaa0","toProperty":"input 0"},{"fromId":"0340a6e9-471f-6b11-2a38-2905e669b6ba","fromProperty":"result","toId":"2bfa14b7-c9bd-a85a-d89b-ddab05eadaa0","toProperty":"input 1"},{"fromId":"c4bd66d9-e267-86ca-7636-c80b7abc462f","fromProperty":"length","toId":"aa33b4df-00f8-c285-04c4-7d1e4a4aabb6","toProperty":"email_length"},{"fromId":"aa33b4df-00f8-c285-04c4-7d1e4a4aabb6","fromProperty":"result","toId":"0340a6e9-471f-6b11-2a38-2905e669b6ba","toProperty":"input 1"},{"fromId":"fa0eb4b6-cf7a-7897-8dce-5b9edc5aa6f4","fromProperty":"savedValue","toId":"d4d0f698-22cb-c43d-a5dd-290ebfbbab87","toProperty":"Reference Valid"},{"fromId":"637aac97-3421-6fec-4c05-b003a251960b","fromProperty":"Order Number","toId":"d2024637-8e72-a6c8-c42c-b4f2ab976e1a","toProperty":"value"},{"fromId":"637aac97-3421-6fec-4c05-b003a251960b","fromProperty":"Email","toId":"c4bd66d9-e267-86ca-7636-c80b7abc462f","toProperty":"value"},{"fromId":"637aac97-3421-6fec-4c05-b003a251960b","fromProperty":"Order Number Selected","toId":"45561d30-705c-50e5-adfd-6c6e5d6f6c69","toProperty":"value"},{"fromId":"637aac97-3421-6fec-4c05-b003a251960b","fromProperty":"Order Number Selected","toId":"87267823-be74-27a9-9191-e0662af19f50","toProperty":"input 0"},{"fromId":"3306c3b3-d858-24d1-5bf9-8256d23a4c8d","fromProperty":"result","toId":"87267823-be74-27a9-9191-e0662af19f50","toProperty":"input 1"},{"fromId":"2bfa14b7-c9bd-a85a-d89b-ddab05eadaa0","fromProperty":"result","toId":"fa0eb4b6-cf7a-7897-8dce-5b9edc5aa6f4","toProperty":"value"}]}} />
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-5.png)
+
+</div>
+
+With the old logic replaced with our new component it will look like this:
+
+<div className="ndl-image-with-background xl">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-6.png)
+
+</div>
+
+Now we have to do something similar for the reason part of the form. This time we will start with a separate component. So create another logic component, call it `Valid Reason`. We know that the inputs we need to look at are `Return Reason` and `Bad Fit Reason`. The logic would be _The reason is valid if (the reason is `did_not_meet_exp` OR `other`) OR (if the reason is `bad_fit` AND the bad fit reason is EITHER `too_small` OR `too_large`)_. Note that there are other ways to express this logic, this is just one way. Lets build this logic in out new component.
+
+We add the **Component Inputs** and a **Component Output** port called `Return Reason Valid`. The built out logic looks like below.
+
+<div className="ndl-image-with-background xl">
+
+<CopyToClipboardButton json={{"nodes":[{"id":"80188047-a875-ee70-6f2d-81d43855e9a0","type":"Component Inputs","x":-756,"y":-31,"parameters":{},"ports":[{"name":"Return Reason","plug":"output","type":{"name":"*"},"index":1},{"name":"Bad Fit Reason","plug":"output","type":{"name":"*"},"index":2}],"children":[]},{"id":"b2370c36-389f-a2eb-6334-8ba0c027cbbf","type":"Component Outputs","x":536,"y":-21,"parameters":{},"ports":[{"name":"Return Reason Valid","plug":"input","type":{"name":"*"},"index":1}],"children":[]},{"id":"08f8b655-d69d-8e03-27ab-a4c46b4cd832","type":"Or","x":237,"y":-36,"parameters":{},"ports":[],"children":[]},{"id":"8bc9af72-9625-95a8-76fa-e1aa36e998bd","type":"Expression","x":-277,"y":-141,"parameters":{"expression":"reason === \"did_not_meet_exp\" || reason === \"other\""},"ports":[],"children":[]},{"id":"d548fdf0-d181-20cf-92f8-6947951b6bc3","type":"Expression","x":-269,"y":40,"parameters":{"expression":"reason === \"bad_fit\""},"ports":[],"children":[]},{"id":"61405e5d-856e-64df-1834-20bd82e2a48c","type":"Expression","x":-260,"y":189,"parameters":{"expression":"bad_fit_reason === \"too_small\" || bad_fit_reason === \"too_large\""},"ports":[],"children":[]},{"id":"670045e7-86f3-7b75-0844-53638007c152","type":"And","x":-5,"y":37,"parameters":{},"ports":[],"children":[]}],"connections":[{"fromId":"80188047-a875-ee70-6f2d-81d43855e9a0","fromProperty":"Return Reason","toId":"8bc9af72-9625-95a8-76fa-e1aa36e998bd","toProperty":"reason"},{"fromId":"8bc9af72-9625-95a8-76fa-e1aa36e998bd","fromProperty":"result","toId":"08f8b655-d69d-8e03-27ab-a4c46b4cd832","toProperty":"input 0"},{"fromId":"80188047-a875-ee70-6f2d-81d43855e9a0","fromProperty":"Return Reason","toId":"d548fdf0-d181-20cf-92f8-6947951b6bc3","toProperty":"reason"},{"fromId":"80188047-a875-ee70-6f2d-81d43855e9a0","fromProperty":"Bad Fit Reason","toId":"61405e5d-856e-64df-1834-20bd82e2a48c","toProperty":"bad_fit_reason"},{"fromId":"61405e5d-856e-64df-1834-20bd82e2a48c","fromProperty":"result","toId":"670045e7-86f3-7b75-0844-53638007c152","toProperty":"input 0"},{"fromId":"d548fdf0-d181-20cf-92f8-6947951b6bc3","fromProperty":"result","toId":"670045e7-86f3-7b75-0844-53638007c152","toProperty":"input 1"},{"fromId":"670045e7-86f3-7b75-0844-53638007c152","fromProperty":"result","toId":"08f8b655-d69d-8e03-27ab-a4c46b4cd832","toProperty":"input 1"},{"fromId":"08f8b655-d69d-8e03-27ab-a4c46b4cd832","fromProperty":"result","toId":"b2370c36-389f-a2eb-6334-8ba0c027cbbf","toProperty":"Return Reason Valid"}]}} />
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-7.png)
+
+</div>
+
+As you can see, you can use the **Expression** node to build more complex tests. In this case we use the `||` (or) operator. In fact, you could have built the whole test in one large **Expression** 
+```javascript
+
+(return_reason === "did_not_meet_exp" || return_reason === "other") || (return_reason === "bad_fit" && (bad_fit_reason === "too_large" || bad_fit_reason === "too_small"))
+
+```
+
+however, the nice thing with splitting it up is that you can see how each sub expression is evaluated which makes it easier to debug if you need to.
+
+With the logic component added into the main App it now looks like below:
+
+<div className="ndl-image-with-background xl">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-8.png)
+
+</div>
+
+Ok, we are almost there. We have two components that will tell us if the reference is valid and if the reason is valid. Both of these have to be `true`, so we feed them both into an **And** node. If the result is `true` the "Submit" Button should be enabled, otherwise not. Easy peasy!
+
+<div className="ndl-image-with-background xl">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/validation-9.png)
+
+</div>
+
+## Storing the content of the form in an **Object**
+
+Ok, the form is done. We now need to store the values in an **Object** so it can be used elsewhere in an App. While most of this logic is easy, just connect the values to the **Object** and use **Set Object Properties** to store them there is one complication. Let's look at the format again
+
+```json
+ {
+    "email":<the user email>,
+    "order_nbr":<the order_nbr>,
+    "reason":<either "bad_fit","did_not_meet_exp" or "other">,
+    "bad_fit_reason":<"too_small" or "too_large">,
+    "did_not_meet_exp_reason":<any text>,
+    "other_reason":<any text>
+ }
+```
+
+We need to be careful when storing the `email` and `order_nbr`. If we store both we will not know which one to use. So we need to make sure that only one is stored and the other one is empty. The other values are simple, if `reason` is set to `bad_fit` we know that `bad_fit_reason` is valid, otherwise we will just ignore it. Same for `did_not_meet_exp` and `other` for their respective properties.
+
+But let's start with the basice. We want to create a new **Object** when the form is mounted. So we start by connecting the **Did Mount** signal from the root **Group** to a [Create New Object](/nodes/data/object/create-new-object) and its **Do** signal. 
+
+<div className="ndl-image-with-background xl">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/save-1.png)
+
+</div>
+
+The **Id** of this new **Object** is what we will use going forward. Then lets tackle the other problem, either `email` or `order_nbr` should be stored, never both. So we create two **Set Object Properties** nodes. One with the properties `email`, `reason`, `bad_fit_reason`, `did_not_meet_exp_reason` and `other_reason`. The other have `order_nbr`, `reason`, `bad_fit_reason`, `did_not_meet_exp_reason` and `other_reason`. We connect the **Id** from our **Create New Object** node to the **Ids** of the **Set Object Properties**.
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/set-obj-1.png)
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/set-obj-2.png)
+
+</div>
+
+<div className="ndl-image-with-background xl">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/set-obj-3.png)
+
+</div>
+
+Let's connect all the values from the form components to the **Set Object Properties**.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/save-2.png)
+
+</div>
+
+We also need to make sure that for the two cases, the value that's not stored (`email` when using an order number, and `order_nbr` when using an email) is set to an empty string. So we create those properties and connect an empty **String** node to the respective value. Not assigning a value to the **String** node will make it be an empty string.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/save-3.png)
+
+</div>
+
+## Using a **Condition** node to trigger different nodes
+
+What's left to do is to trigger one of the two **Set Object Properties** depending on the **Switch** we use to determine the two reference cases. We will use a **Condition** node. It's very good when you want to evaluate something at one particular moment - in our case when the "Submit" Button is clicked. You will get either of two signals **On True** or **On False** depending on if the value to evaluate is `true` or `false`. Let's build it!
+
+Create a **Condition** node. We connect the **Current State** output of our `Order Nbr Selected` **Switch** to the **Condition** input of the **Condition** node. This is _what_ we want to evaluate. We then connect the **Click** signal of the "Submit" Button to the **Evaluate** action on th **Condition** node. This is _when_ we want to evaluate it. Finally we connect the **On True** and **On False** signals from the **Condition** node to the respective **Set Object Properties** nodes. **On True** means "Order Number Selected" is `true` so naturally that signal should be connected to the **Set Object Properties** that has `email` set to empty. And vice versa for **On False**.
+
+<div className="ndl-image-with-background xl">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/save-4.png)
+
+</div>
+
+Let's connect an **Object** to the **Id** so we can see what's going on.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/result-1.png)
+
+</div>
+
+We are done, we implemented our conditional form with custom logic. You can download the full project below.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/client-side-biz-logic-nodes/final-2.png)
+
+<ImportButton zip="/docs/guides/business-logic/client-side-biz-logic-nodes/conditional-form-1.zip" name="Conditional Form" thumb="/docs/guides/business-logic/client-side-biz-logic-nodes/final-2.png"/>
+
+</div>
+
+

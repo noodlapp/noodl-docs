@@ -1,0 +1,42 @@
+@use '../css/utils/typography.scss';
+
+.pagination-nav {
+    border-top: 1px solid var(--doc-color-noodl-white-65);
+    padding-bottom: 180px;
+
+    &__link {
+        border: none;
+    }
+
+    &__sublabel,
+    &__label {
+        @include typography.h3;
+    }
+
+    &__label {
+        &:after,
+        &:before {
+            content: '' !important;
+        }
+    }
+
+    &__sublabel {
+        color: var(--doc-color-noodl-white-65) !important;
+        padding-top: 32px;
+        opacity: 0.5;
+        transition: opacity var(--ifm-transition-fast)
+            var(--ifm-transition-timing-default);
+
+        .pagination-nav__link:hover & {
+            opacity: 0.65;
+        }
+
+        .pagination-nav__item--next &:after {
+            content: ' →';
+        }
+
+        .pagination-nav__item:not(.pagination-nav__item--next) &:before {
+            content: '← ';
+        }
+    }
+}

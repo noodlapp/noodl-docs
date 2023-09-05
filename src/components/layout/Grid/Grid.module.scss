@@ -1,0 +1,103 @@
+$_gutter: 24px;
+
+.Root {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    margin-top: $_gutter * -1;
+    margin-left: $_gutter * -1;
+
+    &.has-equal-height-items {
+        align-items: stretch;
+    }
+}
+
+.GridItem {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-top: $_gutter;
+    padding-left: $_gutter;
+    pointer-events: none;
+
+    > * {
+        pointer-events: all;
+    }
+
+    .Root.has-equal-height-items & > * {
+        height: 100%;
+    }
+
+    .Root.is-grid-half > & {
+        width: 100%;
+
+        @media (min-width: 850px) {
+            width: 50%;
+        }
+    }
+
+    .Root.is-grid-thirds > & {
+        width: 100%;
+
+        @media (min-width: 600px) {
+            width: 50%;
+        }
+
+        @media (min-width: 900px) {
+            width: 33.333%;
+        }
+    }
+
+    .Root.is-grid-fifths > & {
+        width: 100%;
+
+        @media (min-width: 350px) {
+            width: 50%;
+        }
+
+        @media (min-width: 520px) {
+            width: 33.333%;
+        }
+
+        @media (min-width: 800px) {
+            width: 25%;
+        }
+
+        @media (min-width: 1250px) {
+            width: 20%;
+        }
+    }
+
+    .Root.is-grid-2-1-1 > & {
+        width: 100%;
+
+        @media (min-width: 400px) {
+            &:nth-child(3n-2) {
+                width: 100%;
+            }
+
+            &:not(:nth-child(3n-2)) {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 800px) {
+            &:nth-child(3n-2) {
+                width: 50%;
+            }
+
+            &:not(:nth-child(3n-2)) {
+                width: 25%;
+            }
+        }
+    }
+
+    .Root.is-grid-2-3 > & {
+        &:nth-child(odd) {
+            width: 40%;
+        }
+
+        &:nth-child(even) {
+            width: 60%;
+        }
+    }
+}

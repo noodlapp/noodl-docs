@@ -1,0 +1,418 @@
+<div data-position="right"
+data-attachto="nodegrapheditor"
+style="width:300px; height: 190px;">
+
+<h3>Welcome to Noodl!</h3>
+<p>Noodl is a visual codeless tool for prototyping and experimenting with new technology. In this lesson we will take you through the basic concepts, one of the greatest things about Noodl is that once you learn these concepts there will be virtually no limit to what you can create.</p>
+<p>So bear with us, some of these concepts might feel like a big learning threshold, but hang on, you will be rewarded in the end!</p>
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+data-attachto="nodegrapheditor"
+style="width:300px; height: 190px;">
+
+<h3>The node graph</h3>
+<p>One of the core concepts of Noodl is the node graph. It sounds scary, but it is simply a collection of nodes (think of them like LEGO blocks) and connections between these nodes. </p>
+<p>A node represents an element of your prototype, it can be a visual element like a <strong>Rectangle</strong> or something that is not immediately visible like a logical <strong>State</strong>.</p>
+<img  style="width:100%;" src="a-node.png"></img>
+<p>When we put these nodes together with connections it becomes a node graph. With it we can make interactions for user interface protoypes, or logic for responding to voice requests. Well anything really. This is the single most important concept in Noodl. Check out the graph below, don't worry if it looks complicated now. But this is actually something we will build in this lesson.</p>
+<img  style="width:100%;" src="state-changes-connected.png"></img>
+</div>
+
+<!-- # -->
+
+<div data-position="left"
+    data-attachto="viewer"
+    style="width:300px; height: 430px;"
+    >
+
+<h3>Visuals</h3>
+<p>Almost all prototypes you will be creating have some sort of visual user interface, be it a mobile or desktop app, or simply a way for you to communicate what the prototype is doing.</p>
+
+<p>For that we use visual nodes, such as <strong>images</strong> and <strong>text</strong>. These nodes are blue in color and can be arranged in a hierarchy.</p>
+<p>What you see now in the node graph editor is a collection of visual nodes. The root node is marked with an orange star. This node and everything that is placed under it will be shown in the preview.</p>
+<img  style="width:100%;" src="root-node.png"></img>
+
+<p> The preview, at the right side of the editor, shows your visual nodes live and let's you interact with it as you are editing.</p>
+<img  style="width:100%;" src="preview.png"></img>
+<p>A quick tip, if you find  that the preview is in the way click the <strong>detach icon</strong> and you can move it out of your way.</p>
+</div>
+
+
+<!-- # -->
+
+<div data-position="left"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 660px;"
+    
+    data-conditions='[
+        {"path":"/App:%Group:0",
+         "exists":false}
+      ]'>
+
+<h3>Visual hierarchy</h3>
+<p>Let's get down to business. You can move nodes by dragging them around with the <strong>left</strong> mouse button. You can drag a node in and out of the visual heirarchy as you please.</p>
+
+<h3>Drag the text from the root node</h3><i data-checkmark="0"></i>
+<p>Try dragging the text node away from the hierarchy. As you can see, the text disappears from the preview.</p>
+<img  style="width:100%;" src="drag-text-out.gif"></img>
+
+</div>
+
+<!-- # -->
+
+
+<div data-position="left"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 390px;"
+    
+    data-conditions='[
+        {"path":"/main:#root:1",
+         "hastype":"Text"}
+      ]'>
+
+<h3>Drag the text back to make it visible</h3>
+<p>You can add a node as a child to another node by dragging it onto that node. Then it will be added as the last child. Try dragging the text node onto the root group.</p>
+<img  style="width:100%;" src="drag-text-back.gif"></img>
+<p>The text will now be visible again in the preview.</p>
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+    data-attachto="sidebar"
+    style="width:300px; height: 410px;"
+    >
+
+<h3>The sidebar</h3>
+<p>All nodes have parameters that you can edit to make them behave the way you want. For instance visual nodes have parameters that affect it's appearance, position etc.</p>
+<p>If you select a node by <strong>left clicking</strong> it you will see the parameters of the node in the sidebar to the left.</p>
+
+<img  style="width:100%;" src="show-parameters.gif"></img>
+
+</div>
+
+
+
+<!-- # -->
+
+<div data-position="left"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 340px;"
+    >
+
+<h3>Move all nodes</h3>
+<p>You can move all nodes (panning) by pressing the <strong>right mouse</strong> button and dragging.</p>
+<img  style="width:100%;" src="move-all-nodes.gif"></img>
+
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 220px;"
+    
+    data-conditions='[
+        {"path":"/main:#root:1",
+         "exists":false}
+      ]'>
+
+<h3>Delete the text node</h3>
+<p>We will not be needing the text node, so delete it. Click it to show its parameters then click the trashcan icon.</p>
+<img  style="width:90%;" src="trashcan.png"></img>
+<p>If you make a mistake when editing you can use <strong>Cmd-Z (or Ctrl-Z)</strong> to Undo your latest edit.</p>
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 350px;",
+    data-suggested-nodes="Circle",
+    
+    data-conditions='[
+        {"path":"/main:#root:#background",
+         "hasparams":"color"}
+      ]'>
+
+<h3>Change the color of the background</h3>
+<p>Edit the parameters of the background, find the color parameter and click the color square to select a nice color.</p>
+<img  style="width:100%;" src="change-color.png"></img>
+
+</div>
+
+<!-- # -->
+
+<div data-position="left"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 370px;"
+    
+    data-conditions='[
+        {"path":"/main:#root:1",
+         "hastype":"Circle"}
+      ]'>
+
+<h3>Create a circle</h3>
+<p>You can create a node by dragging it from the node panel to the right. If you want to add it as a child to another visual node, simply drop it onto that node.</p>
+<p>Create a <strong>Circle</strong> by dragging it.</p>
+<img  style="width:100%;" src="create-circle.gif"></img>
+<p>Tip. If you can find the node you want, try searching with the search bar.</p>
+<img  style="width:100%;" src="search-node.gif"></img>
+</div>
+
+<!-- # -->
+
+<div data-position="bottom"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 260px;"
+    
+    data-conditions='[
+        {"path":"/main:#root:1",
+         "paramseq":{"alignX":"center","alignY":"center"}},
+        {"path":"/main:#root:1",
+         "hasparams":"color"},
+        {"path":"/main:#root:1",
+         "paramseq":{"width":{"value":300,"unit":"px"}}}
+      ]'>
+
+<h3>Edit parameters</h3>
+<h3>Center the circle</h3><i data-checkmark="0"></i>
+<p>Edit the parameters of the circle and set <strong>Align X</strong> and <strong>Align Y</strong> both to <strong>center</strong>.</p>
+
+<h3>Change the color of the cirle</h3><i data-checkmark="1"></i>
+<p>Change the <strong>color</strong> of the circle to another nice color.</p>
+
+<h3>Change the size of the circle</h3><i data-checkmark="2"></i>
+<p>Set the <strong>size</strong> of the <strong>Circle</strong> to <strong>300</strong>.</p>
+
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 450px;"
+
+    data-suggested-nodes="States",
+    
+    data-conditions='[
+        {"path":"/main:1",
+         "hastype":"States"},
+        {"path":"/main:#size states",
+         "hastype":"States"}
+      ]'>
+
+      <h3>Interactions</h3>
+<p>Now when we have a nice centered circle it's time to make it interactive. A simple way to make your designs interactive is to use states. We want two states for the circle <strong>Big</strong> and <strong>Small</strong>.</p>
+
+<h3>Create a states node</h3><i data-checkmark="0"></i>
+<p>Create a states node by dragging it from the node library to the right.</p>
+
+<h3>Change the label of the states node</h3><i data-checkmark="1"></i>
+<p>Its good practice to label your nodes to make it easier to know whats going on in your prototypes. <strong>Left click</strong> your states node and give it a new label by clicking the relabel button and changing the label to <strong>Size states</strong></p>
+<img  style="width:90%;" src="relabel.png"></img>
+
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 580px;"
+    
+    data-conditions='[
+         {"path":"/main:#size states",
+         "paramseq":{"states":"Small,Big"}},
+         {"path":"/main:#size states",
+         "paramseq":{"values":"Size"}}         
+      ]'>
+
+<h3>The states</h3>
+<h3>Create the states</h3><i data-checkmark="0"></i>
+<p>First we need to create the two states that the circle can be in. <strong>Left click</strong> to show the parameters editor, under the <strong>States</strong> section click the <strong>+</strong> icon and name the state <Strong>Small</strong>. Repeat for the other state, call it <strong>Big</strong>. (Note this tutorial is case sensitive)</p>
+<img  style="width:100%;" src="adding-states.gif"></img>
+<h3>Create the value</h3><i data-checkmark="1"></i>
+<p>Rememeber back when we changed the size of the circle. Now we want the size of the circle to change depending on which state it is in. Each state can have multiple values but we only need one. <strong>Left click</strong> to show the parameters editor, under the <strong>Values</strong> section click the <strong>+</strong> icon and name the value <Strong>Size</strong>. </p>
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 480px;"
+    
+    data-conditions='[
+         {"path":"/main:#size states",
+         "paramseq":{"value-Small-Size":100}},
+         {"path":"/main:#size states",
+         "paramseq":{"value-Big-Size":300}}                    
+      ]'>
+
+<h3>Specify state values</h3>
+<p>Let's specify the values that we want for each state. When the circle is <strong>Small</strong> it should have a size of <strong>100</strong>, and when it is <strong>Big</strong> it should have the size value <strong>300</strong>. Edit the parameters as shown below:</p>
+<img  style="width:70%;" src="state-values.png"></img>
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 720px;"
+    
+    data-conditions='[
+        {"from":"/main:#size states",
+        "to":"/main:#root:1",
+         "hasconnection":"size,width"}
+      ]'>
+
+<h3>Connect the state output to the circle</h3>
+<p>Its time to create our first connection. Connections are an essential part of Noodl, they can connect an output parameter of one node with an input parameter of another, so that when the value of the output changes it will be sent to the connection input parameter. A connection is made by hovering the border of a node and <strong>left dragging</strong> to the node that should be the target of the connection.</p>
+<img  style="width:100%;" src="connect.gif"></img>
+<p>The connection editor should now show up, connect the <strong>Size</strong> output of the <strong>States</strong> node to the <strong>Size</strong> input of the <strong>Circle</strong>.</p>
+
+<img  style="width:100%;" src="connect2.gif"></img>
+
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+    data-attachto="nodegrapheditor"
+    style="width:300px; height: 700px;"
+    
+    data-conditions='[
+        {"to":"/main:#size states",
+        "from":"/main:#root",
+         "hasconnection":"touch.press,to-Big"},
+        {"to":"/main:#size states",
+        "from":"/main:#root",
+         "hasconnection":"touch.release,to-Small"}
+      ]'>
+
+<h3>Interactions</h3>
+<h3>Change state on touch</h3><i data-checkmark="0"></i>
+<p>We need to initiate a state change on user interaction, in this case if the user touches anywhere on the screen. To do this we need to do a connection from the <strong>Root</strong> to the <strong>States</strong> node.</p>
+<p>Connect the <strong>Press</strong> output to the <strong>To Big</strong> input.</p>
+<img  style="width:100%;" src="connect3.gif"></img>
+
+<h3>Restore on release</h3><i data-checkmark="1"></i>
+<p>When the user lifts their finger the circle should return to the <strong>Small</strong> state. Connect the <strong>Release</strong> output to the <strong>To Small</strong> input.</p>
+<img  style="width:100%;" src="state-changes-connected.png"></img>
+
+</div>
+
+<!-- # -->
+
+<div data-position="left"
+      data-attachto="viewer"
+      
+      style="width:300px; height: 160px;">
+
+
+<h3>Test the interaction</h3>
+
+<p>You can now test the interaction in the preview. When pressing anywhere in the preview the circle should become bigger, when releasing again it should animate back.</p>
+
+
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+      data-attachto="nodegrapheditor",
+
+      data-suggested-nodes="Circle",
+      
+      style="width:300px; height: 460px;",
+      data-conditions='
+      [
+        {"path":"/main:#root:2",
+         "haslabel":"Shadow circle"},
+        {"path":"/main:#root:2",
+         "hastype":"Circle"},
+        {"path":"/main:#root:#shadow circle",
+         "paramseq":{"color":"#000000","width":{"value":300,"unit":"px"},"opacity":0.5,"blur":30,"alignX":"center","alignY":"center"}}
+      ]
+      '>
+
+
+<h3>Let's add a shadow circle</h3>
+<p>Let's add a drop shadow to our circle, this will be done with a new circle that is slightly blurred.</p>
+
+<h3>Create a new circle</h3><i data-checkmark="0,1"></i>
+<p>Create a new circle node, drag it onto the root group node. The circle will end up at the bottom of the hierarcy.</p>
+<p>The change it's label to <strong>Shadow circle</strong>.</p>
+
+<h3>Make it a shadow</h3><i data-checkmark="2"></i>
+<p>Edit the parameters of the circle. </p>
+<p>Set <strong>Size</strong> to <strong>300</strong>.</p>
+<p>Set <Strong>Color</strong> to <strong>#000000</strong> (black).</p>
+<p>Set <Strong>Blur Length</strong> to <strong>30</strong>.</p>
+<p>Set <Strong>Opacity</strong> to <strong>0.5</strong>.</p>
+<p>Center the circle on the screen like the previous one with <strong>Align X</strong> and <strong>Align Y</strong>.</p>
+
+</div>
+
+<!-- # -->
+
+<div data-position="left"
+      data-attachto="nodegrapheditor"
+      
+      style="width:300px; height: 390px;",
+      data-conditions='
+      [
+        {"path":"/main:#root:1",
+         "haslabel":"Shadow circle"}
+      ]
+      '>
+
+
+<h3>Move it behind the other circle</h3>
+<p>As you can see the shadow circle is in front of our other circle. To move it behind simply drag and drop it above the original circle in the visual hierarcy.</p>
+
+<img  style="width:100%;" src="move-circle-behind.gif"></img>
+
+</div>
+
+<!-- # -->
+
+<div data-position="right"
+      data-attachto="nodegrapheditor"
+      
+      style="width:300px; height: 370px;",
+      data-conditions='
+      [
+        {"from":"/main:#size states",
+        "to":"/main:#root:#shadow circle",
+         "hasconnection":"size,width"}
+      ]
+      '>
+
+
+<h3>Connect the state size</h3>
+<p>Right now the state change only affects the size of the first circle, to make it change the size of the shadow as well the shadow's size must also be connected to the states size output. Like you did before connect the <strong>Size</strong> port from the <strong>States</strong> node to the <strong>Size</strong> port of the <Strong>Shadow Circle</strong>.</p>
+<img  style="width:100%;" src="shadow-circle-connected.png"></img>
+
+</div>
+
+<!-- # -->
+
+<div data-position="left"
+      data-attachto="viewer"
+      
+      style="width:300px; height: 350px;">
+
+
+<h3>Lesson completed!</h3>
+
+<p>Congratulations you have completed the getting started lesson! Try the interaction again in the preview and see that both the shadow and circle moves on the interactions.</p>
+<p>You have learned the most important concepts of Noodl, nodes and connections. This is the basis for all future stuff you will learn, so give yourself a good pat on the back!</p>
+<p>You can exit the editor and go back to the project view by clicking the Noodl logo. How about a second lesson now that you got the basics?</p>
+<img  style="width:100%;" src="exit.png"></img>
+
+
+</div>
+

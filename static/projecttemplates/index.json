@@ -1,0 +1,46 @@
+[
+    {
+        "iconURL": "hello_world/helloWorld.png",
+        "title": "Hello World",
+        "desc": "A simple application template with just a Group and a Text node.",
+        "projectURL": "hello_world/hello-1-12.zip",
+        "category": "Basic"
+    },
+    {
+        "iconURL": "sidebar/sidebar.png",
+        "title": "Sidebar navigation",
+        "desc": "A simple project containing a sidebar with menu navigation.",
+        "projectURL": "sidebar/sidebar-0-3.zip",
+        "category": "Basic"
+    },    
+    {
+        "iconURL": "tab_navigation/tabNavigation.png",
+        "title": "Tab navigation",
+        "desc": "A simple project containing a tab menu with navigation.",
+        "projectURL": "tab_navigation/tab_navigation_example_1-4.zip",
+        "category": "Basic"
+    },
+    {
+        "iconURL": "navigation_template/navigation.png",
+        "title": "Top bar navigation",
+        "desc": "A simple project containing a header with menu navigation.",
+        "projectURL": "navigation_template/navigation_example_1-7.zip",
+        "category": "Basic"
+    },
+    {
+        "iconURL": "signup_template/signup_thumbnail.png",
+        "title": "Sign up and log in",
+        "desc": "A project with a full sign up and log in flow.",
+        "projectURL": "signup_template/signuptemplate-2-5.zip",
+        "category": "Basic",
+        "useCloudServices": true,
+        "cloudServicesTemplateURL": "signup_template/signup-app-cf.json"
+    },
+    {
+        "iconURL": "task_manager_template/taskmanager.png",
+        "title": "Task Manager App",
+        "desc": "The final task manager app from the interactive lessons",
+        "projectURL": "task_manager_template/task-manager-app-1-0.zip",
+        "category": "Basic"
+    }
+]

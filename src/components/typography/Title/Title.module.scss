@@ -1,0 +1,42 @@
+@use '../../../css/utils/typography.scss';
+
+.Root {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    &.is-size-default {
+        @include typography.h2;
+
+        &.has-bottom-spacing {
+            @include typography.h2-bottom-spacing;
+        }
+    }
+
+    &.is-size-large {
+        @include typography.h1;
+
+        &.has-bottom-spacing {
+            @include typography.h1-bottom-spacing;
+        }
+    }
+
+    &.is-size-small {
+        @include typography.h3;
+
+        &.has-bottom-spacing {
+            @include typography.h3-bottom-spacing;
+        }
+    }
+
+    &.is-size-smaller {
+        @include typography.h4;
+
+        &.has-bottom-spacing {
+            @include typography.h4-bottom-spacing;
+        }
+    }
+
+    &.is-centered {
+        text-align: center;
+    }
+}

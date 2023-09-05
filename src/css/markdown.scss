@@ -1,0 +1,326 @@
+@use '../css/utils/typography.scss';
+
+.markdown h1:first-child {
+    margin-bottom: 0;
+}
+
+.theme-doc-markdown,
+.markdown,
+.markdown section {
+    margin: 0 auto;
+
+    > h1 {
+        @include typography.h1;
+
+        &:not(:last-child) {
+            @include typography.h1-bottom-spacing;
+        }
+    }
+
+    > h2 {
+        @include typography.h2;
+
+        &:not(:last-child) {
+            @include typography.h2-bottom-spacing;
+        }
+
+        &:not(:first-child) {
+            @include typography.h2-top-spacing;
+        }
+    }
+
+    > h3 {
+        @include typography.h3;
+
+        &:not(:last-child) {
+            @include typography.h3-bottom-spacing;
+        }
+
+        &:not(:first-child) {
+            @include typography.h3-top-spacing;
+        }
+    }
+
+    > h4 {
+        @include typography.h4;
+
+        &:not(:last-child) {
+            @include typography.h4-bottom-spacing;
+        }
+    }
+
+    > p,
+    > ol,
+    > ul {
+        @include typography.body;
+
+        &:not(:last-child) {
+            @include typography.body-bottom-spacing;
+        }
+    }
+
+    > p,
+    > ol,
+    > ul {
+        max-width: 830px;
+    }
+
+    > a {
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-bottom: 1px solid var(--ifm-link-hover-color);
+        }
+    }
+
+    .prism-code {
+        margin-bottom: 40px;
+    }
+
+    p code {
+        border-radius: 5px;
+        padding-left: 4px;
+        padding-right: 2px;
+        background-color: rgb(52, 56, 72);
+        letter-spacing: 0.03em;
+        font-weight: normal;
+
+        @extend %font-smoothing;
+    }
+
+    > table {
+        margin-bottom: 40px;
+
+        th {
+            text-align: left;
+        }
+    }
+}
+
+/****** COPY TO CLIPBOARD ******/
+.docsify-copy-code-button {
+    font-size: 0.7em !important;
+}
+
+/****** IMAGES ******/
+.ndl-images {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ndl-image {
+    height: auto;
+    margin: 5px;
+    align-self: flex-start;
+}
+
+.ndl-image.small {
+    width: 30%;
+}
+
+.ndl-image.med {
+    width: 50%;
+}
+
+.ndl-image.large {
+    width: 100%;
+}
+
+.ndl-image-with-background,
+.ndl-video {
+    background: linear-gradient(
+        45deg,
+        var(--doc-color-noodl-orange),
+        var(--doc-color-noodl-blue)
+    );
+    text-align: center;
+    position: relative;
+    margin-bottom: 40px;
+
+    p {
+        padding-bottom: 0 !important;
+    }
+
+    img,
+    video {
+        height: auto;
+
+        border-radius: 4px;
+        box-shadow: -5px 5px 30px -5px #38341caa, 5px -5px 30px -5px #203c2caa;
+    }
+}
+
+.ndl-video {
+    video {
+        margin: 2.5%;
+        width: 95%;
+    }
+}
+
+.ndl-image-with-background {
+    video,
+    img {
+        width: 50%;
+        margin: 50px;
+    }
+
+    &.xl {
+        img,
+        video {
+            width: 95%;
+            margin: 2.5%;
+        }
+    }
+    &.l {
+        video,
+        img {
+            width: 80%;
+        }
+    }
+    &.s {
+        video,
+        img {
+            width: 30%;
+        }
+    }
+}
+
+.ndl-image-with-background .ndl-copy-nodes-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+    box-shadow: 0px 0px 10px 0px #38341ceaa;
+}
+
+.tutorial-img-link:hover {
+    opacity: 75%;
+}
+
+/****** COPY NODES BUTTON ******/
+.ndl-copy-nodes-button {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow: visible;
+    padding: 0.65em 0.8em;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    font-size: 10px;
+    background: #808080;
+    background: var(--doc-color-noodl-orange);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 200ms ease-in-out;
+}
+
+.ndl-copy-nodes-button:hover {
+    transform: scale(1.05);
+}
+
+.ndl-copy-nodes-button::after {
+    content: 'COPY NODES';
+}
+
+.ndl-copy-nodes-button:active {
+    background: var(--doc-color-noodl-orange-140);
+}
+
+.ndl-import-button {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow: visible;
+    padding: 0.65em 0.8em;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    font-size: 14px;
+    background: var(--doc-color-noodl-orange);
+    color: var(--doc-color-noodl-black-darkest);
+    cursor: pointer;
+}
+
+.ndl-import-button::after {
+    content: 'IMPORT';
+}
+
+.ndl-import-button.no-content::after {
+    content: '';
+}
+
+.ndl-import-button:active {
+    background: var(--doc-color-noodl-orange-140);
+}
+
+.img-size-xs {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+
+.img-size-s {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.img-size-m {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.img-size-l {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.johan-test {
+    font-weight: bold;
+}
+
+/* Modules table */
+.modules-table img {
+    width: 150px;
+}
+
+.ndl-data {
+    font-weight: bold;
+    color: var(--doc-color-noodl-orange-80);
+}
+
+.ndl-signal {
+    font-weight: bold;
+    color: var(--doc-color-noodl-green-80);
+}
+
+.ndl-deprecated {
+    font-weight: bold;
+    color: rgb(228, 57, 57);
+}
+
+.hidden-props-for-editor {
+    display: none;
+}
+
+.ndl-table-35-65 table {
+    display: table;
+    width: 100%;
+}
+.ndl-table-35-65 table td:nth-child(1) {
+    width: 35%;
+}
+.ndl-table-35-65 table td:nth-child(2) {
+    width: 65%;
+}

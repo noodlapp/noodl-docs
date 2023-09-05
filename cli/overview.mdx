@@ -1,0 +1,44 @@
+---
+title: CLI Overview
+hide_title: true
+---
+
+# CLI Overview
+
+Noodl CLI, or `@noodl/noodl-cli`, is a command-line interface to Noodl for use in your terminal or your scripts.
+
+## Installation
+
+```bash
+$ npm install -g @noodl/noodl-cli
+```
+
+We have a few guides to help you get started with the Noodl CLI.
+To get more information about the Noodl CLI, you can call `noodl-cli help` to see the possible commands.
+
+## Authentication
+
+Some commands in `noodl-cli` require you to authenticate with Noodl.
+
+Set the credentials via environment variables:
+
+```bash
+$ export NOODL_USERNAME=<my-email>
+$ export NOODL_PASSWORD=<my-password>
+```
+
+You can also pass in the email and password via the command that requires it.
+
+```
+$ noodl-cli project clone <project-id> <path> --username <my-email> --password <my-password>
+```
+
+## Retrieving workspace id or project id
+
+```bash
+$ noodl-cli workspace list --username <my-email> --password <my-password>
+```
+
+```bash
+$ noodl-cli project list <workspace-id> --username <my-email> --password <my-password>
+```

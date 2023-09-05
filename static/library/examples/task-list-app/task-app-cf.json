@@ -1,0 +1,12 @@
+{
+    "formation":[
+      {
+        "type":"collection",
+        "name":"Todo",
+        "properties":{
+          "task_description":{"type":"String"},
+          "completed":{"type":"Boolean", "defaultValue":false}
+        }
+      }
+    ]
+  }

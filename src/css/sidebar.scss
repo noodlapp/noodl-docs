@@ -1,0 +1,115 @@
+// This file has a lot of messy overwrites as
+// we dont really want change the markup of the sidebar
+// component if we would have to update docusaurus in the
+// future. Future me: I hope that is a good desicion.
+
+:root {
+    --ifm-menu-color-background-hover: none;
+    --ifm-menu-color-background-active: ;
+}
+
+.menu {
+    background-color: var(--doc-color-noodl-black-darker);
+    padding: 0 0 30px !important;
+    height: 100vh;
+
+    .theme-doc-sidebar-menu {
+        padding: 0;
+
+        > li {
+            border-bottom: 1px solid var(--doc-color-noodl-black-light);
+
+            > div > .menu__link {
+                padding: 13px var(--ifm-menu-link-padding-horizontal);
+            }
+        }
+
+        > .theme-doc-sidebar-item-link > .menu__link {
+            padding: 13px var(--ifm-menu-link-padding-horizontal);
+        }
+    }
+
+    .theme-doc-sidebar-item-link-level-3 {
+        border-left: 1px solid var(--doc-color-noodl-white-65);
+        padding-bottom: 5px;
+    }
+
+    &__list {
+        margin: 0 !important;
+
+        & & {
+            background-color: var(--doc-color-noodl-black-darkest);
+
+            a:not(.menu__link--active) {
+                color: var(--doc-color-noodl-white-65) !important;
+
+                &:hover {
+                    color: var(--doc-color-noodl-white) !important;
+                }
+            }
+        }
+    }
+
+    &__list-item {
+        margin: 0 !important;
+
+        &:not(.theme-doc-sidebar-item-link-level-3):not(.theme-doc-sidebar-item-category-level-1) {
+            &:last-child {
+                padding-bottom: 13px;
+            }
+        }
+
+        &.theme-doc-sidebar-item-link-level-3 {
+            &:first-child {
+                margin-top: 13px !important;
+            }
+
+            &:last-child {
+                margin-bottom: 13px !important;
+            }
+        }
+    }
+
+    &__list-item-collapsible {
+        &--active {
+            background: transparent;
+        }
+    }
+
+    &__link {
+        transition: color var(--ifm-transition-fast)
+                var(--ifm-transition-timing-default),
+            background-color var(--ifm-transition-fast)
+                var(--ifm-transition-timing-default) !important;
+
+        &[aria-expanded='true'] {
+            &,
+            &:hover {
+                background-color: var(
+                    --doc-color-noodl-black-darkest
+                ) !important;
+            }
+        }
+
+        &--active {
+            color: var(--doc-color-noodl-orange) !important;
+        }
+    }
+
+    &__caret {
+        margin-left: 0;
+        transition: background-color var(--ifm-transition-fast)
+            var(--ifm-transition-timing-default) !important;
+        display: flex;
+        align-items: center;
+
+        .menu__list-item:not(.menu__list-item--collapsed) & {
+            background-color: var(--doc-color-noodl-black-darkest);
+        }
+    }
+
+    &__link--sublist-caret:after,
+    &__caret:before {
+        background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+    }
+}

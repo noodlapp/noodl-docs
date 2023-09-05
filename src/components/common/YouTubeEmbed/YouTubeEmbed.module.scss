@@ -1,0 +1,15 @@
+@use '../../../css/utils/mixins.scss';
+
+.Root {
+    @include mixins.aspect-ratio(560, 315);
+    position: relative;
+    overflow: hidden;
+
+    iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+}

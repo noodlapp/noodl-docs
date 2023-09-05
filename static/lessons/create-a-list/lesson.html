@@ -1,0 +1,542 @@
+<!--Intro popup -->
+<div data-template="popup"> 
+    <video src="01_intro.mp4"></video>
+    <h2>Learn how to create a list from data</h2>
+    <p>This lesson will guide you through the steps to create a list in Noodl that's based on a data set.</p>
+    <p>You'll learn some important concepts along the way, including how to create reusable components and work with data.</p>
+    <p>Click "next" to get started!</p>
+</div>
+
+<!-- # -->
+<!-- Talk about lists -->
+
+<div> 
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Key elements of a list</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <h2>Key elements of a list</h2>
+        <p>A list is built out of three elements:</p>
+        <p>1. A <b>dataset</b> with data to populate our list with items</p>
+        <p>2. A <b>visual component</b> that controls how the list item looks and behaves.</p>
+        <p>3. A <b>repeater node</b> that creates one list item component per data record</p>
+        <p>Let's start by looking at the data</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Static data</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="02_static-array.mp4"></video>
+        <h2>Static data</h2>
+        <p>There are many ways that we can get datasets into our project. An easy way is to use the <B>Static Array node.</B></p>
+        <p>This node acts as a text file and supports two standard data formats, JSON and CSV. The node in this lesson comes with a small dataset following the <b>JSON format.</b> 
+        <p>The dataset contains images from the image site Unsplash.com along with the names of the artists behind the images.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Visual Components</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="04_components.mp4"></video>
+        <h2>Visual Components</h2>
+        <p>We learned how to break the ui into reusable components in the last lesson. But another powerful way for us to use components is as visual templates for data-driven content.</p>
+        <p>To accomplish this we need another node called the Repeater node.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Repeater node</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="09_repeater.mp4"></video>
+        <h2>Repeater node</h2>
+        <p>With our new List item component, we can insert multiple instances into our layout.</p>
+        <p>We can use our dataset from the Static Array node to do so, and generate instances from each record in the data.</p>
+        <p>This is handled by the <b>Repeater</b> node. A Repeater is placed in the visual hierarchy, and we can set what component the repeater should repeat from the property panel.</p>
+        <p>Then we'll connect the data from the Static Array node to the Repeater's items input.</p>
+        <p>Let's continue to the next step to create a Repeater.</p>
+    </div>
+</div>
+<!-- Ask user to look at the static data -->
+
+
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Visual components</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="04_visual-component.mp4"></video>
+        <h2>Visual components</h2>
+        <p>A few visual nodes have already been added to this lesson. They define a layout of an image and a text node with the artist's name.</p>
+        <p>We want to use this layout as a list item, and repeat it for each record in our dataset. Let's start with extracting the layout into a new visual component.</p>
+        <p>Creating a visual component is done by clicking the "+" icon in the component section of the sidebar. Let's do that in the next step.</p>
+    </div>
+</div>
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Tutorial tasks</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="task-intro-video.mp4"></video>
+        <h2>Tutorial tasks</h2>
+        <p>During this tutorial, you will be given multiple tasks. Spot them in the tutorial timeline by the “Task” label.</p>
+        <p>Click on the card to get a hint of how to complete the task.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/List item", 
+            "exists":true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 250px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a new visual component called <i>List item</i></h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="05_create-component.mp4"></video>
+        <p>Create a new visual component by clicking the "+" icon in the component panel and naming it <i>List item</i>.</p>
+    </div>
+</div>
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/List item:%Group", 
+            "exists":false
+        }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Delete the default Group node that was created with the new component.</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="07_delete_node.mp4"></video>
+        <p>A component can only have one visual hierarchy, so we will need to delete the default Group that came with the Visual component when we created it.</p>
+    </div>
+</div>
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/List item:#Image layout", 
+            "exists":true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 490px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Cut (Cmd/Ctrl + X) the group called <i>Image layout</i> in the App component, and paste it into the newly created component.</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="06_cut_nodes.mp4"></video>
+        <p>Cut and paste the nodes that make up the image layout and insert them into our newly created component.</p>
+    </div>
+</div>
+
+<!-- # -->
+<div
+    data-conditions='[
+        {
+            "path":"/App:%Group:#List item", 
+            "exists":true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Insert the new component into the visual hierarchy in the App component.</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="08_add-listitem.mp4"></video>
+    </div>
+</div>
+
+-->
+
+
+<!-- # -->
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Repeater node</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="09_repeater.mp4"></video>
+        <h2>Repeater node</h2>
+        <p>With our new List item component, we can insert multiple instances into our layout.</p>
+        <p>We can use our dataset from the Static Array node to do so, and generate instances from each record in the data.</p>
+        <p>This is handled by the <b>Repeater</b> node. A Repeater is placed in the visual hierarchy, and we can set what component the repeater should repeat from the property panel.</p>
+        <p>Then we'll connect the data from the Static Array node to the Repeater's items input.</p>
+        <p>Let's continue to the next step to create a Repeater.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!--
+<div
+    data-conditions='[
+        {
+            "path":"/App:%Group:#List item", 
+            "exists":false
+        }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Delete the List item from the visual hierarchy in the App component </h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="10_delete_listitem.mp4"></video>
+        <p></p>
+    </div>
+</div>
+-->
+
+
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/App:%Group:%For Each", 
+            "exists":true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Place a repeater at the bottom of the visual hierarchy in the App component.</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="11_place-repeater_1.mp4"></video>
+    </div>
+</div>
+
+
+
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/App:%Group:%For Each", 
+            "paramseq":{
+                "template": "/List item"
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Set the Repeater node's Template property to use the List item component</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="11_repeater_settemplate.mp4"></video>
+    </div>
+</div>
+
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/App:%Static Data",
+            "to": "/App:%Group:%For Each",
+            "hasconnection": "items,items"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <i>Items</i> output from the Static array node to the <i>Items</i> input on the repeater node.</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="12_connect-data.mp4"></video>
+    </div>
+</div>
+
+
+<!-- # -->
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Connecting data</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="12_connect-data.mp4"></video>
+        <h2>Connecting data</h2>
+        <p>Now we got 5 images! One for each image + author pair in the dataset.</p>
+        <p>However, the repeater node is repeating our List item component with the same image and text in every instance.</p>
+        <p>Our next step is to connect the data values in the dataset to the visual nodes in our List item component. To do that we will be using an <b>Object node</b>.</p>
+    </div>
+</div>
+
+
+<!-- # -->
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>The Object node</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="13_connecting-data.mp4"></video>
+        <h2>The Object node</h2>
+        <p>The Object node lets us access data from objects. The Static array node automatically creates data objects for each record in the dataset. Each object gets a unique identifier.</p>
+        <p>When we use an Object node inside of a component generated by a Repeater node, the Repeater can provide us with the identifier for each of the data objects.</p>
+        <p>Once we have set the Object node to get its Id from the Repeater, we can hover over the object node and it will show its content.</p>
+        <p>We'll be setting this up in the next step.</p>
+    </div>
+</div>
+
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/List item:%Model2", 
+            "paramseq": {
+                "idSource": "foreach"
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 420px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create an Object node inside the <i>List item </i>component and set the "Get Id from" property to "From repeater"</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="14_place-object.mp4"></video>
+    </div>
+</div>
+
+
+
+<!-- # -->
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item" style="width: 320px">
+        <header>&nbsp;</header>
+        <h2>Data and the Preview window </h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="15_previewwindow.mp4"></video>
+        <h2>Data and the Preview window </h2>
+        <p>It's important to note that when we work with data, especially data shared between components, we need to have the <b>Preview</b> window running. </p>
+        <p>This is because logic and data is only active when the Preview window is running.</p>
+    </div>
+</div>
+
+
+
+<!-- # -->
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Object properties</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="15_object-properties.mp4"></video>
+        <h2>Object properties</h2>
+        <p>When we hover over the object we can see the available data properties. We send these properties through outputs on the Object node by clicking the plus icon in the Object's property panel</p>
+        <p>Type in the property name so it's identical to what we have in the dataset. It's case sensitive.</p>
+        <p>Now the data properties are available as outputs and we can connect them to other nodes in the component.</p>
+    </div>
+</div>
+
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/List item:%Model2", 
+            "paramseq": {
+                "properties": "url"
+              }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 250px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a property on the Object node called <i>url</i></h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="15_object-properties.mp4"></video>
+    </div>
+</div>
+
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/List item:%Model2", 
+            "paramseq": {
+                "properties": "url,author"
+              }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 250px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a property on the Object node called <i>author</i></h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="15_object-properties.mp4"></video>
+    </div>
+</div>
+
+
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/List item:%Model2",
+            "to": "/List item:%Group:%Image",
+            "hasconnection": "prop-url,src"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <i>url</i> property of the Object node to the <i>Source</i> input on the image node</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="16_connect-properties.mp4"></video>
+    </div>
+</div>
+
+
+
+<!-- # -->
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/List item:%Model2",
+            "to": "/List item:%Group:%Group:#Artist name",
+            "hasconnection": "prop-author,text"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <i>author</i> property to the <i>text</i> input on the Text node named <i>Artist name</i></h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="16_connect-properties.mp4"></video>
+    </div>
+</div>
+
+
+
+<!-- # -->
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Refresh the viewer</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="17_refresh_viewer.mp4"></video>
+        <h2>Refresh the viewer</h2>
+        <p>Sometimes we need to refresh the preview window in order to see the latest changes. Just a friendly reminder :).</p>
+    </div>
+</div>
+
+
+
+<!-- # -->
+
+<div>
+    <div data-template="item">
+        <header>Outro</header>
+        <h2>Congratulations!</h2>
+    </div>
+    <div data-template="popup">
+        <!--<img src="tutorial_card.png" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')"> -->
+        <h2>Congratulations!</h2>
+        <p>You've completed this lesson, we hope you liked it!</p>
+        <p>To take your Noodl skills to the next level we recommend our video tutorial that shows how to build a to-do app with a real backend.</p>
+        <p>Happy Noodling!</p>
+        <button style="width: 150px" data-click="exitEditor">EXIT LESSON</button>
+    </div>
+</div>
+<!-- # -->
+
+

@@ -1,0 +1,28 @@
+---
+title: Library Overview
+hide_title: true
+---
+
+import { ModuleListing } from '../src/blocks/ModuleListing.tsx';
+import { PrefabListing } from '../src/blocks/PrefabListing.tsx';
+
+# Library overview
+
+Noodl has a lot of nodes available out of the box, but it can never include a node for everything. For that reason you can extend your project with specific modules or prefabs containing nodes and components to capture specfic functionality or UI controls.
+
+The main difference between **Modules** and **Prefabs** is that modules install new nodes to the editor, while prefabs clones components built with the core nodes, and stores them as if you created them yourself. Prefabs can be imported as many times as you want, and each clone can be modified how you see fit.
+
+## Prefabs
+
+Noodl's library of prefabs is optimized for quickly building great data rich applications. Use them as is, or make them your own by customizing their internal building blocks.
+
+<PrefabListing
+  title="Popular prefabs"
+  isFeaturedOnly
+/>
+
+## Modules
+
+Modules extend your project in some way, most commonly by adding new **core nodes** to your project. These nodes are added to the Node Picker and work like any other core node in Noodl.
+
+<ModuleListing title="Popular modules" isFeaturedOnly />

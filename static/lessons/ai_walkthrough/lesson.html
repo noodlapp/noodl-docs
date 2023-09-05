@@ -1,0 +1,290 @@
+<!-- A step with just a popup -->
+<div data-template="popup">
+  <h2>Welcome!</h2>
+  <img src="intro.png" />
+  <p>
+    In this lesson, we will explore some practical examples of Noodl AI's capabilities.
+  </p>
+  <p>
+    Noodl incorporates modern AI technologies like large language models to offer a range of different features. Although currently in "early beta" stage, Noodl AI is highly functional and will continue to see improvements in future iterations.
+  </p>
+  <p>
+    Noodl AI is available in two versions: "Limited Beta" and "Full Beta". The default is the "Limited Beta", which utilizes AI technology from OpenAI, specifically the "GPT3.5" model.
+  </p>
+  <p>
+    If you have your own OpenAI API key with access to the GPT4 model, you can integrate it with Noodl to unlock the "Full Beta" version. This offers enhanced performance for the Function command and additional features.
+  </p>
+
+  <p>Let's get started!</p>
+</div>
+
+<!-- # -->
+
+<div
+  data-actions='[
+    {"action":"selectComponent", "componentName":"/Examples/Book Search Page"},
+    {"action":"navigatePreview", "url":"/book-search-page"}
+]'
+>
+  <div data-template="item" style="width: 290px">
+    <header>&nbsp;</header>
+    <h2>Accessing AI Features: AI Bar</h2>
+  </div>
+  <div data-template="popup">
+    <style>
+      .lesson-item-popup {
+        width: 600px !important;
+      }
+    </style>
+    <video src="01-ai-bar.mp4"></video>
+    <h2>AI Bar</h2>
+    <p>
+      Noodl's AI capabilities are easily accessible through the AI Bar. In this guide, we will focus on using the "/Function" command, which allows you to create a Noodl node by simply describing its purpose in plain English, without writing any code.
+    </p>
+    <p>Continue to the next section to explore specific examples of how the "/Function" command can be utilized in your projects.</p>
+  </div>
+</div>
+
+<!-- # -->
+
+<div>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Exploring Examples</h2>
+  </div>
+  <div data-template="popup">
+    <h2>The examples</h2>
+    <p>We will examine three practical examples:<br>
+      - Searching for books using the OpenLibrary external API<br>
+      - Recording and playing audio<br>
+      - Applying a word limit to a text area
+    </p>
+    <p>Click next to dive into the first example</p>
+  </div>
+</div>
+
+<!-- # -->
+
+<div
+  data-actions='[
+    {"action":"selectComponent", "componentName":"/Examples/Book Search Page"},
+    {"action":"navigatePreview", "url":"/book-search-page"}
+]'
+>
+  <div data-template="item" style="width: 290px">
+    <header>&nbsp;</header>
+    <h2>Example 1: Book Search</h2>
+  </div>
+  <div data-template="popup">
+    <video src="book-app.mp4"></video>
+    <h2>External API example</h2>
+    <p>
+      In this example, we will examine a Noodl component that allows users to search for books using an external API.
+    </p>
+    <p>
+      The book search is performed through the OpenLibrary API, accessible at
+      <a href="https://openlibrary.org" target="_blank"
+        >https://openlibrary.org</a
+      >. The entire logic for this functionality was created using Noodl's "/Function" command.
+    </p>
+    <p>
+      Continue to the next section to learn how the Noodl AI Function command can be utilized to generate a node that manages the OpenLibrary search process.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<div
+  data-actions='[
+    {"action":"selectComponent", "componentName":"/Examples/Book Search Page"},
+    {"action":"navigatePreview", "url":"/book-search-page"}
+]'
+>
+  <div data-template="item" style="width: 260px">
+    <header>&nbsp;</header>
+    <h2>Understanding the AI Function Command</h2>
+  </div>
+  <div data-template="popup">
+    <h2>The AI Function command</h2>
+    <video src="book-prompt.mp4" ></video>
+    <p>
+      The AI Function command in Noodl allows you to create an AI Function node by providing a prompt that describes the desired functionality.
+    </p>
+    <p>
+      By simply explaining what you want, the AI Function command generates a node that performs the specified task or process.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<div
+  data-actions='[
+    {"action":"selectNode", "nodeId":"e4644b52-7968-bba6-bfe6-ed5f823cd8a7"},
+    {"action":"navigatePreview", "url":"/book-search-page"}
+]'
+>
+  <div data-template="item" style="width: 260px">
+    <header>&nbsp;</header>
+    <h2>Working with AI Function Nodes</h2>
+  </div>
+  <div data-template="popup">
+    <h2>The AI Function node</h2>
+    <img src="book-node.png" >
+    <p>
+      AI Function nodes are marked with an "AI" icon, distinguishing them within the Noodl platform.
+      Despite this distinction, AI nodes function similarly to regular nodes, featuring inputs and outputs.
+      However, the AI nodes leverage large language models to handle the task's implementation details.
+      By specifying your requirements, the AI will generate inputs, outputs, and the necessary logic to accomplish your goals.
+    </p>
+    <p>Proceed to the next section to explore the chat interface of an AI Function node.</p>
+  </div>
+</div>
+
+<!-- # -->
+
+<div
+  data-actions='[
+    {"action":"selectNode", "nodeId":"e4644b52-7968-bba6-bfe6-ed5f823cd8a7"}
+]'
+>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Utilizing the AI Chat Interface</h2>
+  </div>
+  <div data-template="popup">
+    <h2>Utilizing the AI Chat Interface</h2>
+    <img src="02-book-chat.png" />
+    <p>
+      The AI Chat interface empowers users to iteratively develop, extend, and modify AI nodes to gradually build up the required logic.
+      The chat history is saved and version-controlled, allowing you, your team members, and the AI to revisit and continue refining the node at any point in the future.
+    </p>
+    <p>
+      As instructions are provided, the AI generates code and logic behind the scenes while also offering an explanation of its actions.
+      This helps users understand the AI's interpretation of the prompts and ensure it aligns with their expectations.
+    </p>
+    <p>
+      For those who want a deeper understanding of the generated code, users can view and even modify the AI-created code to better meet their specific requirements.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<div>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Explore the example</h2>
+  </div>
+  <div data-template="popup">
+    <p>
+      Feel free to thoroughly investigate the book search example. Experiment with follow-up prompts, such as:
+      <blockquote>- "Include 25 results"</blockquote>
+    </p>
+    <p>
+      Once you have completed your exploration, click "Next" to proceed to the next example.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- Micophone example -->
+
+<div
+  data-actions='[
+{"action":"selectComponent", "componentName":"/Examples/Record and Play Audio Page"},
+{"action":"navigatePreview", "url":"/record-and-play-audio-page"}
+]'
+>
+  <div data-template="item" style="width: 330px">
+    <header>&nbsp;</header>
+    <h2>Example 2: Microphone Recording</h2>
+  </div>
+  <div data-template="popup">
+    <img src="03-microphone-graph.png" />
+    <p>
+      Let's dive into another practical example to further familiarize yourself with Noodl AI's capabilities.
+    </p>
+    <p>
+      In this case, we will leverage AI to create custom functionality for recording and playing audio.
+    </p>
+    <p>
+      This example consists of two separate AI nodes: one for recording audio from the user's microphone, and another for playing the recorded audio.
+    </p>
+    <p>
+      It is a best practice to create AI nodes with specific, individual tasks and then combine them to build more complex functionality.
+      Creating nodes with single tasks makes them easier to iterate, improves the visibility of data and connections, enhances reusability, and simplifies the AI generation process.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<div>
+  <div data-template="item" style="width: 290px">
+    <header>&nbsp;</header>
+    <h2>Investigating the Microphone Recording Example</h2>
+  </div>
+  <div data-template="popup">
+    <p>Select the AI nodes and examine the chat interface to gain a deeper understanding of the microphone recording and playback example.</p>
+    <p>
+      Once you have completed your exploration, click "Next" to continue.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<!-- Word count example -->
+
+<div
+  data-actions='[
+{"action":"selectNode", "nodeId":"fc8b3d84-0f63-1644-d5b3-060ed1f1ab93"},
+{"action":"navigatePreview", "url":"/word-limit-page"}
+]'
+>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Example 3: World Limit</h2>
+  </div>
+  <div data-template="popup">
+    <img src="04-word-count.png" />
+    <p>
+      In our final example, we will explore a text area implementation where the text color changes to red if the user types more than 20 words.
+    </p>
+    <p>
+      Although the prompt for this example is somewhat vague, Noodl AI is still able to interpret the requirements and generate the desired functionality.
+    </p>
+  </div>
+</div>
+
+<!-- # -->
+
+<div data-actions='[{"action":"selectNode", "nodeId":"fc8b3d84-0f63-1644-d5b3-060ed1f1ab93"}]'>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Examining the Word Limit Example</h2>
+  </div>
+  <div data-template="popup">
+    <p>Select the AI node and explore the chat. Click "Next" to proceed.</p>
+  </div>
+</div>
+
+
+<!-- # -->
+
+<div>
+  <div data-template="item">
+    <header>&nbsp;</header>
+    <h2>Conclusion</h2>
+  </div>
+  <div data-template="popup">
+    <h2>That's it for now</h2>
+    <p>
+      This brings our exploration of Noodl AI to an end! While we haven't covered every detail, there is a more information available for you to dive deeper, and explore the other AI features.
+      Please refer to the <a href="https://docs.noodl.net/2.8/docs/getting-started/noodl-ai/" target="_blank">documentation</a>. 
+    </p>
+  </div>
+</div>

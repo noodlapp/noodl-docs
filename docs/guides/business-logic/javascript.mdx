@@ -1,0 +1,969 @@
+---
+id: javascript
+title: Javascript in Noodl
+hide_title: true
+---
+
+import CopyToClipboardButton from "../../../src/components/copytoclipboardbutton";
+
+# Javascript in Noodl
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/script-inline-code.png ":class=img-size-l")
+
+</div>
+
+## What you will learn in this guide
+
+This guide will introduce you to how to use Javascript in Noodl.
+While almost everything can be achieved in Noodl using Nodes,
+if you know your way around Javascript it's sometimes just more convenient to add in Javascript code directly.
+Noodl make the mix of nodes and code very easy using the [Function](/nodes/javascript/function) and [Script](/nodes/javascript/script) nodes.
+
+### Overview
+
+The guide will first go through the **Function** node,
+which is excellent for simple, single function, Javascript code.
+Then it will show a more extensive Javascript example using the **Script** node.
+The two nodes can also be seen used combined in the [Business Logic using Javascript Guide](/docs/guides/business-logic/client-side-biz-logic-js)
+
+## Using the **Function** node
+
+The easiest way to write Javascript in Noodl is using the **Function** node.
+There is literally no overhead at all - you just open the code editor and write code! Let's try it!
+
+Create a new project using the "Hello World" template. Add in two [Text Input](/nodes/ui-controls/text-input) nodes before the text node.
+Give them the labels "First String" and "Second String". Then add in a **Function** node. Call the function node "Merge Strings".
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/function-node-1.png)
+
+</div>
+
+Now click the **Function** node and edit the script. Paste in the Javascript below:
+
+```javascript
+if (Inputs.String1 !== undefined && Inputs.String2 !== undefined) {
+  let length = Math.max(Inputs.String1.length, Inputs.String2.length);
+  let outputString = "";
+  for (let i = 0; i < length; i++) {
+    if (i < Inputs.String1.length) {
+      outputString = outputString + Inputs.String1.charAt(i);
+    }
+    if (i < Inputs.String2.length) {
+      outputString = outputString + Inputs.String2.charAt(i);
+    }
+  }
+  Outputs.MergedString = outputString;
+}
+```
+
+## Inputs and Outputs in the Function node
+
+This little function merges two strings called `String1` and `String2`.
+They are declared as `Inputs.String1` and `Inputs.String2` and will become inputs on the **Function** node.
+You can also declare inputs manually on the function node - if you click it you will see that you can add inputs and outputs.
+By adding them manually you can be a bit more precise on which type an input is,
+but generally is not needed. One reason to explicitly state type of input is for example when you connect a **Function** node to a **Component Inputs**.
+By knowing the type Noodl can present the right control in the property of the Component.
+
+There is also an output defined in the code, `Outputs.MergedString`.
+
+We can now connect the **Function** node.
+Connect the **Text** property from the **Text Inputs** to `String1` and `String2` and connect the output `MergedString` to the **Text**.
+Now if you start writing in the **Text Fields** you will see the two strings merged on the screen.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/function-node-2.png)
+
+</div>
+
+## Running the **Function** node on change or on a signal
+
+There are two ways to make the **Function** run.
+
+1. If **Run** signal is not connected, the **Function** will run as soon as any of its inputs are changed. This is the case with our current example.
+2. If **Run** signal is connected, the **Function** will only run when triggered.
+
+Let's try to change to number two. We only want to merge the string once the user clicks a button.
+So add a [Button](/nodes/ui-controls/button) after the **Text Inputs**. Give it the label **Merge**.
+Then connect **Click** to **Run** on the function.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/function-node-3.png)
+
+</div>
+
+## Sending Signals on Outputs
+
+A **Function** node can also send signals. This is very useful for many scenarions,
+for example to trigger something that should happen once the **Function** is executed.
+For example, if we would want to store our merged string, we would want to trigger a [Set Variable](/nodes/data/variable/set-variable) node.
+Let's add in the signal, once the merging is done:
+
+Now click the **Function** node and edit the script. Paste in the Javascript below:
+
+```javascript
+if (Inputs.String1 !== undefined && Inputs.String2 !== undefined) {
+  let length = Math.max(Inputs.String1.length, Inputs.String2.length);
+  let outputString = "";
+  for (let i = 0; i < length; i++) {
+    if (i < Inputs.String1.length) {
+      outputString = outputString + Inputs.String1.charAt(i);
+    }
+    if (i < Inputs.String2.length) {
+      outputString = outputString + Inputs.String2.charAt(i);
+    }
+  }
+  Outputs.MergedString = outputString;
+  Outputs.Done();
+}
+```
+
+Note the additional line `Outputs.Done()`. That's all you need to send a signal.
+So add in a **Set Variable** node and save the value in an **Variable** called `Merged String`.
+You might think that connecting directly from the **Button** to the **Do** action on the **Set Variable** might have worked, but it actually doesn't.
+You cannot know if the **Function** node have executed so the **Do** signal may trigger at the wrong time.
+Instead explicitly triggering `Done` once you've set the output to the correct value takes care of this.
+
+Another common way of using outgoing signals could be to trigger two different paths going forward.
+Perhaps the **Function** validates a data value and triggers a `Valid` signal if the value is ok,
+that saves then triggers a database save, while a `Invalid` signal would open an error popup.
+
+Now let's look at the more powerful **Script** node.
+
+## JavaScript using the **Script** node
+
+This part of the guide will cover the functionality of the [Script](/nodes/javascript/script) node.
+The **Script** node is a great way to implement logic and calculations that are easier to express in code than in nodes and connections.
+It's also a great way to get access to useful JavaScript APIs in the browser, for example `Date` for date functionality or `Math` for advanced math-functionality.
+
+The **Script** node is a bit more powerful than the [Function](/nodes/javascript/function) node that also can be used to write JavaScript.
+The **Script** node can have multiple methods and functions, as well as a well defined lifespan with callbacks when the node is created and destroyed.
+For simpler JavaScript for processing inputs, usually the **Function** node is a simpler choice as you have seen above.
+
+A **Script** node works as any other node in Noodl, in the sense that it has inputs and outputs that can be connected to other nodes.
+All inputs and outputs are available to the developer in their JavaScript code.
+In a **Script** node you can call any JavaScript function normally available in a browser environment.
+
+## The Script source file
+
+You can either edit the JavaScript code directly in the built-in editor in Noodl or you can use an external file with an external editor.
+While it's easy to write code snippets in the inline editor, the external file option might be better if you are working on larger files or even multiple files and modules.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/script-inline-code.png ":class=img-size-l")
+
+</div>
+
+An external file needs to be located in your project folder for Noodl to find it. You can copy a file to your project folder by dragging the file onto the Noodl window.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/script-pick-file.png ":class=img-size-l")
+
+</div>
+
+The source code provided for the **Script** is executed as soon as the node is created. In order to specify inputs, outputs and receive and send signals from the node the `Node` object must be used.
+
+## Inputs and outputs
+
+There are a number of ways to specify the inputs and outputs of the **Script** node. One way is to use the property panel and explicitly add them there. You can also provide the type.
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/business-logic/javascript/function-3.png)
+
+</div>
+
+Another way is to specify them programmatically in the source code. The inputs are defined in the `Script.Inputs` object. Each input also specifies what type it is. The available types are:
+
+- `number`
+- `string`
+- `boolean`
+- `color`
+- `object`
+- `array`. This is for Noodl Arrays, not JavaScript arrays.
+- `reference`. A reference to a Noodl node, accessible through the _This_ output of visual nodes.
+- `cloudfile`
+
+Note that there is no signal type for inputs, as the signals are handled by using the `Script.Signals` object (more on that later).
+
+The outputs work in the same way as the inputs except that there's one more type you can use: `signal`. The signal type is used for triggering a pulse on an output rather than outputting a specific value. Below we have added outputs to a **Script** node.
+
+Since the inputs and outputs are members of an object, they should be separated by a comma. Below is an example of a **Script** node with two inputs and one output.
+
+```javascript
+Script.Inputs = {
+  RangeLow: "number",
+  RangeHigh: "number",
+};
+
+Script.Outputs = {
+  RandomNumber: "number",
+};
+```
+
+Lets use the two inputs `RangeLow` and `RangeHigh` to generate a random number on the `RandomNumber` output. To execute the code, we will introduce a signal, `Generate`.
+
+## Input signals
+
+Input signals are mapped to functions in the `Script.Signals` object in the JavaScript node. A signal function is called when the signal with the same name is triggered. Here's the implementation of the `Generate` signal. You can copy this code and add it to the **Script** source code.
+
+```javascript
+Script.Signals.Generate = function () {
+  let randomNumber =
+    Math.random() * (Script.Inputs.RangeHigh - Script.Inputs.RangeLow) +
+    Script.Inputs.RangeLow;
+  Script.Outputs.RandomNumber = randomNumber;
+};
+```
+
+Let's connect the the inputs, outputs and signals to some nodes.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/random1.gif)
+
+<CopyToClipboardButton json={{"nodes":[{"id":"20e7a891-e750-3d60-058f-804e324722eb","type":"Javascript2","x":-588.8750006232499,"y":331.12222156165456,"parameters":{"code":"Script.Inputs = {\n    RangeLow: \"number\",\n    RangeHigh: \"number\",\n}\n\nScript.Outputs = {\n    RandomNumber: \"number\",\n}\n\nScript.Signals.Generate = function() {\n  let randomNumber = Math.random() * (Script.Inputs.RangeHigh - Script.Inputs.RangeLow) + Script.Inputs.RangeLow;\n  Script.Outputs.RandomNumber = randomNumber;\n}\n","RangeLow":0},"ports":[],"children":[]},{"id":"42ca61a1-d015-69dc-48ed-a13e76818194","type":"Group","x":-365.17777825429016,"y":268.1043044317845,"parameters":{"backgroundColor":"#FFFFFF","paddingTop":{"value":20,"unit":"px"},"paddingLeft":{"value":20,"unit":"px"},"paddingRight":{"value":20,"unit":"px"}},"ports":[],"children":[{"id":"a15e91b8-5f23-47ce-446c-fea6760a8058","type":"Group","x":-345.17777825429016,"y":314.1043044317845,"parameters":{"flexDirection":"row","sizeMode":"contentHeight","marginBottom":{"value":10,"unit":"px"}},"ports":[],"children":[{"id":"c2e35d8b-c32a-8d1b-754e-6d33a90e9a8f","type":"Text","label":"Click Text","x":-325.17777825429016,"y":360.1043044317845,"parameters":{"text":"Click here to generate number","fontSize":{"value":15,"unit":"px"},"alignY":"bottom","sizeMode":"contentSize"},"ports":[],"children":[]}]},{"id":"94d50d6a-1dc6-876f-39fb-2dfddf0749ef","type":"Group","label":"Arena","x":-345.17777825429016,"y":456.1043044317845,"parameters":{"borderStyle":"solid","borderWidth":{"value":2,"unit":"px"},"marginBottom":{"value":0,"unit":"px"},"flexDirection":"column","sizeMode":"explicit","height":{"value":35,"unit":"px"}},"ports":[],"children":[{"id":"7ccbd282-8a7a-1589-edac-acacf54cea24","type":"Circle","x":-325.17777825429016,"y":552.1043044317845,"parameters":{"size":30,"position":"absolute"},"ports":[],"children":[]}]}]},{"id":"60c3158a-64a2-7664-abb1-02dae2731e9d","type":"Expression","label":"arenawidth-circlewidth","x":-590.8015248634624,"y":443.9881840161512,"parameters":{"expression":"arenawidth-circlewidth"},"ports":[],"children":[]}],"connections":[{"fromId":"94d50d6a-1dc6-876f-39fb-2dfddf0749ef","fromProperty":"boundingWidth","toId":"60c3158a-64a2-7664-abb1-02dae2731e9d","toProperty":"arenawidth"},{"fromId":"7ccbd282-8a7a-1589-edac-acacf54cea24","fromProperty":"boundingWidth","toId":"60c3158a-64a2-7664-abb1-02dae2731e9d","toProperty":"circlewidth"},{"fromId":"60c3158a-64a2-7664-abb1-02dae2731e9d","fromProperty":"result","toId":"20e7a891-e750-3d60-058f-804e324722eb","toProperty":"RangeHigh"},{"fromId":"20e7a891-e750-3d60-058f-804e324722eb","fromProperty":"RandomNumber","toId":"7ccbd282-8a7a-1589-edac-acacf54cea24","toProperty":"transformX"},{"fromId":"c2e35d8b-c32a-8d1b-754e-6d33a90e9a8f","fromProperty":"onClick","toId":"20e7a891-e750-3d60-058f-804e324722eb","toProperty":"Generate"}],"comments":[]}}/>
+</div>
+
+## Reading inputs and setting outputs
+
+You can read the inputs directly through the members of the `Script.Inputs` object, typically `Script.Inputs.AnInput`.
+
+There are two ways to set the outputs. Set the value by setting the appropriate property of the `Script.Outputs` object:
+
+```javascript
+Script.Outputs.RandomNumber = randomNumber;
+```
+
+Set many outputs at the same time using the `Script.setOutputs` function:
+
+```javascript
+Script.setOutputs({
+  One: 1,
+  Two: 2,
+});
+```
+
+This is useful when you have an object that contains multiple values you want to send at once.
+
+Finally if you want to send a signal on an output you need to use the output as a function, calling it when you want to send the signal.
+
+```javascript
+Script.Outputs.MySignalOutput();
+```
+
+Now let's add a bit more code to our JavaScript example. Instead of the `Generate` signal we will implement `Start` and `Stop` signals and have the **JavaScript** node generate new numbers continuously. We will start a timer in `Start` that will trigger after a random time, influenced by the `Lambda` input. The higher the `Lambda` the shorter the time and the higher the rate of generated numbers.
+
+?> See the <a href="https://en.wikipedia.org/wiki/Poisson_point_process" target="_blank">Poisson process</a> for the math behind generating a random number using a Poisson distribution.
+
+When the timer is triggered, a random number is generated based on the ranges provided to the node. Finally a signal to notify that a new number has been generated is sent and the timer is restarted with a new timeout.
+When the `Stop` signal is triggered the timer is stopped.
+
+Here's the code that generates the random numbers with a Poisson distributed time in between them.
+
+```javascript
+Script.Inputs = {
+  Lambda: "number",
+  RangeLow: "number",
+  RangeHigh: "number",
+};
+
+Script.Outputs = {
+  Trigger: "signal",
+  RandomNumber: "number",
+};
+
+var timer;
+
+function generateRandNum(rangeLow, rangeHigh) {
+  return Math.random() * (rangeHigh - rangeLow) + rangeLow;
+}
+
+function calculateIntervalMs(lambda) {
+  let interval = -Math.log(1.0 - Math.random()) / lambda;
+  // translate from seconds to milliseconds
+  return interval * 1000;
+}
+
+Script.Signals.Start = function () {
+  console.log("Start");
+  let timeOutFunction = () => {
+    // generate the random number
+    let randNum = generateRandNum(
+      Script.Inputs.RangeLow,
+      Script.Inputs.RangeHigh
+    );
+    // set it on the output "RandomNumber"
+    Script.setOutputs({ RandomNumber: randNum });
+    // Trigger the signal "Trigger"
+    Script.Outputs.Trigger();
+    // restart the timer at a new interval
+    timer = setTimeout(
+      timeOutFunction,
+      calculateIntervalMs(Script.Inputs.Lambda)
+    );
+  };
+
+  // start the first timer
+  let interval = calculateIntervalMs(Script.Inputs.Lambda);
+
+  timer = setTimeout(timeOutFunction, interval);
+};
+
+Script.Signals.Stop = function () {
+  clearTimeout(timer);
+  timer = undefined;
+};
+```
+
+## Changed inputs
+
+You can run code whenever an input is changed. In this particular case, when the `Lambda` input of the random number generator is changed, the timer interval should be updated to avoid waiting for the next timer to time out for the change to take effect. To handle a case like this, a function with the same name as the input, `Lambda`, is added in the `Script.Setters` object. An additional state variable, `started`, is added to make sure that changing the value when the timer is stopped won't cause it to start.
+
+```javascript
+var started = false;
+Script.Setters.Lambda = function (value) {
+  if (started === true) {
+    clearTimeout(timer);
+    startTimer();
+  }
+};
+```
+
+## The final code
+
+After some small refactoring the final code looks as below:
+
+```javascript
+Script.Inputs = {
+  Lambda: "number",
+  RangeLow: "number",
+  RangeHigh: "number",
+};
+
+Script.Outputs = {
+  Trigger: "signal",
+  RandomNumber: "number",
+};
+
+var timer;
+var started = false;
+
+function generateRandNum(rangeLow, rangeHigh) {
+  return Math.random() * (rangeHigh - rangeLow) + rangeLow;
+}
+
+function calculateIntervalMs(lambda) {
+  let interval = -Math.log(1.0 - Math.random()) / lambda;
+  // translate from seconds to milliseconds
+  return interval * 1000;
+}
+
+function startTimer() {
+  let timeOutFunction = () => {
+    // generate the random number
+    let randNum = generateRandNum(
+      Script.Inputs.RangeLow,
+      Script.Inputs.RangeHigh
+    );
+    // set it on the output "RandomNumber"
+    Script.setOutputs({ RandomNumber: randNum });
+    // Trigger the signal "Trigger"
+    Script.Outputs.Trigger();
+    // restart the timer at a new interval
+    timer = setTimeout(
+      timeOutFunction,
+      calculateIntervalMs(Script.Inputs.Lambda)
+    );
+  };
+
+  // start the first timer
+  let interval = calculateIntervalMs(Script.Inputs.Lambda);
+
+  timer = setTimeout(timeOutFunction, interval);
+}
+
+Script.Signals = {
+  Start() {
+    started = true;
+    startTimer();
+  },
+  Stop() {
+    clearTimeout(timer);
+    started = false;
+  },
+};
+
+Script.Setters.Lambda = function (value) {
+  if (started === true) {
+    clearTimeout(timer);
+    startTimer();
+  }
+};
+```
+
+## Using script nodes
+
+Connecting to the the inputs and outputs, the **Script** nodes can be used as any other nodes in Noodl. As an example, the Random Generator **Script** node has been combined with a simple UI to control the inputs. The output of the random generator is used to move a circle on the screen and trigger state changes. We have also copy & pasted the **Script** node and use it two times. This works great, but remember that the JavaScript code is cloned if you are using an inline source so changing the code in one **Script** node does not affect the other. It's often a good idea to encapsulate a reusable **Script** node in a Noodl component.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/random3.gif)
+
+<CopyToClipboardButton
+  json={{
+    nodes: [
+      {
+        id: "e1b76139-42b1-f1aa-d935-8697c02446e5",
+        type: "Group",
+        x: 550.8894402215635,
+        y: 769.5545779864274,
+        parameters: {
+          backgroundColor: "#FFFFFF",
+          paddingTop: { value: 20, unit: "px" },
+          paddingLeft: { value: 20, unit: "px" },
+          paddingRight: { value: 20, unit: "px" },
+        },
+        ports: [],
+        children: [
+          {
+            id: "7d179c30-3108-a71d-76bf-0f760b7f9417",
+            type: "Group",
+            x: 570.8894402215635,
+            y: 815.5545779864274,
+            parameters: {
+              flexDirection: "row",
+              sizeMode: "contentHeight",
+              marginBottom: { value: 10, unit: "px" },
+            },
+            ports: [],
+            children: [
+              {
+                id: "801c4a96-5219-b818-4564-87a704f84837",
+                type: "Text",
+                label: "Rate controller text",
+                x: 590.8894402215635,
+                y: 861.5545779864274,
+                parameters: {
+                  text: "Random generator is",
+                  fontSize: { value: 15, unit: "px" },
+                  alignY: "bottom",
+                  sizeMode: "contentSize",
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: "f54f6144-306d-9339-4e9c-a1fd70d0910d",
+                type: "Group",
+                label: "On/Off Spinner",
+                x: 590.8894402215635,
+                y: 921.5545779864274,
+                parameters: {
+                  sizeMode: "explicit",
+                  height: { value: 20, unit: "px" },
+                  clip: true,
+                  alignY: "bottom",
+                  marginLeft: { value: 10, unit: "px" },
+                  flexDirection: "none",
+                  width: { value: 30, unit: "px" },
+                },
+                ports: [],
+                children: [
+                  {
+                    id: "8d21ec9d-7d28-d1e1-6435-ed102c432236",
+                    type: "Text",
+                    label: "Off",
+                    x: 610.8894402215635,
+                    y: 1017.5545779864274,
+                    parameters: {
+                      text: "Off",
+                      color: "#006394",
+                      fontSize: { value: 15, unit: "px" },
+                      sizeMode: "contentSize",
+                      alignY: "bottom",
+                    },
+                    ports: [],
+                    children: [],
+                  },
+                  {
+                    id: "6ec39536-2ae0-13da-31a9-0c95693eb91a",
+                    type: "Text",
+                    label: "On",
+                    x: 610.8894402215635,
+                    y: 1113.5545779864274,
+                    parameters: {
+                      text: "On",
+                      fontSize: { value: 15, unit: "px" },
+                      color: "#006394",
+                      sizeMode: "contentSize",
+                      alignY: "bottom",
+                    },
+                    ports: [],
+                    children: [],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: "83c96b0c-c3b3-c331-4c9c-ea903740c149",
+            type: "Group",
+            label: "Text and Rate controller",
+            x: 570.8894402215635,
+            y: 1209.5545779864274,
+            parameters: {
+              flexDirection: "row",
+              sizeMode: "contentHeight",
+              marginBottom: { value: 10, unit: "px" },
+            },
+            ports: [],
+            children: [
+              {
+                id: "3e8aa8af-5940-099e-9aa4-04aafc48f785",
+                type: "Text",
+                label: "Set rate",
+                x: 590.8894402215635,
+                y: 1283.5545779864274,
+                parameters: {
+                  text: "Set rate",
+                  fontSize: { value: 15, unit: "px" },
+                  alignY: "center",
+                  sizeMode: "contentSize",
+                  marginRight: { value: 20, unit: "px" },
+                },
+                ports: [],
+                children: [],
+              },
+              {
+                id: "e30dd54b-7feb-d649-f3f9-e8f89ed96f7e",
+                type: "Group",
+                label: "Rate Controller",
+                x: 590.8894402215635,
+                y: 1343.5545779864274,
+                parameters: {
+                  sizeMode: "explicit",
+                  height: { value: 30, unit: "px" },
+                  flexDirection: "none",
+                  width: { value: 200, unit: "px" },
+                },
+                ports: [],
+                children: [
+                  {
+                    id: "e6d5752f-cedd-429d-3d3d-173d747c8c85",
+                    type: "Group",
+                    label: "Rate controller Bg",
+                    x: 610.8894402215635,
+                    y: 1403.5545779864274,
+                    parameters: {
+                      height: { value: 20, unit: "px" },
+                      backgroundColor: "#C6C6C6",
+                      borderRadius: { value: 10, unit: "px" },
+                      alignY: "center",
+                    },
+                    ports: [],
+                    children: [],
+                  },
+                  {
+                    id: "241b0a6f-b409-7cbd-dc61-3bc39c020667",
+                    type: "Drag",
+                    x: 610.8894402215635,
+                    y: 1499.5545779864274,
+                    parameters: {},
+                    ports: [],
+                    children: [
+                      {
+                        id: "31252340-8be5-166c-4c16-f3d178135139",
+                        type: "Group",
+                        label: "Drag handle",
+                        x: 630.8894402215635,
+                        y: 1581.5545779864274,
+                        parameters: {
+                          height: { value: 20, unit: "px" },
+                          width: { value: 5, unit: "px" },
+                          backgroundColor: "#434B53",
+                          paddingLeft: { value: 0, unit: "px" },
+                          marginLeft: { value: 10, unit: "px" },
+                          marginRight: { value: 10, unit: "px" },
+                          borderRadius: { value: 2, unit: "px" },
+                          alignY: "center",
+                        },
+                        ports: [],
+                        children: [],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: "f227417b-8cd3-3c03-5501-1b85add9566c",
+            type: "Group",
+            label: "Arena",
+            x: 570.8894402215635,
+            y: 1641.5545779864274,
+            parameters: {
+              borderStyle: "solid",
+              borderWidth: { value: 2, unit: "px" },
+              marginBottom: { value: 10, unit: "px" },
+              flexDirection: "none",
+            },
+            ports: [],
+            children: [
+              {
+                id: "521f5c37-4508-f725-d67d-44f0227e3aa9",
+                type: "Circle",
+                x: 590.8894402215635,
+                y: 1737.5545779864274,
+                parameters: { size: 30, position: "absolute" },
+                ports: [],
+                children: [],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "238629f6-8594-ac78-ba25-a8141cebf4f6",
+        type: "States",
+        x: 110.74283186907337,
+        y: 946.5074351399836,
+        parameters: {
+          states: "Off,On",
+          values: "Off y position,On y Position",
+          "value-Off-Off y position": 0,
+          "value-On-Off y position": -20,
+          "value-Off-On y Position": 20,
+          "value-On-On y Position": 0,
+        },
+        ports: [],
+        children: [],
+      },
+      {
+        id: "606ead21-564f-f2d3-8311-30eb63af8eab",
+        type: "Javascript2",
+        label: "Poisson Process",
+        x: 360.9506961673602,
+        y: 1177.1836206411483,
+        parameters: {
+          code: 'Script.Inputs = {\n  Lambda: "number",\n  RangeLow: "number",\n  RangeHigh: "number",\n}\n\nScript.Outputs = {\n  Trigger: "signal",\n  RandomNumber: "number",\n}\n\nvar timer;\nvar started = false;\n\nfunction generateRandNum(rangeLow, rangeHigh) {\n  return Math.random() * (rangeHigh - rangeLow) + rangeLow;\n}\n\nfunction calculateIntervalMs(lambda) {\n  let interval = -Math.log(1.0 - Math.random()) / lambda;\n  // translate from seconds to milliseconds\n  return interval * 1000;\n}\n\nfunction startTimer() {\n  let timeOutFunction = () => {\n    // generate the random number\n    let randNum = generateRandNum(\n      Script.Inputs.RangeLow,\n      Script.Inputs.RangeHigh\n    );\n    // set it on the output "RandomNumber"\n    Script.setOutputs({ RandomNumber: randNum });\n    // Trigger the signal "Trigger"\n    Script.Outputs.Trigger()\n    // restart the timer at a new interval\n    timer = setTimeout(\n      timeOutFunction,\n      calculateIntervalMs(Script.Inputs.Lambda)\n    );\n  };\n\n  // start the first timer\n  let interval = calculateIntervalMs(Script.Inputs.Lambda);\n\n  timer = setTimeout(timeOutFunction, interval);\n}\n\nScript.Signals = {\n  Start() {\n    started = true;\n    startTimer();\n  },\n  Stop() {\n    clearTimeout(timer);\n    started = false;\n  }\n}\n\nScript.Setters.Lambda = function (value) {\n  if (started === true) {\n    clearTimeout(timer);\n    startTimer();\n  }\n}\n',
+          Lambda: 2,
+          RangeLow: 0,
+        },
+        ports: [],
+        children: [],
+      },
+      {
+        id: "cdd08f56-26b6-c81f-729b-ef7220190933",
+        type: "Expression",
+        label: "Lambda value",
+        x: 943.791823827788,
+        y: 1223.6044302506757,
+        parameters: { expression: "xpos/(DrageAreaWidth - 25)*3 + 0.1" },
+        ports: [],
+        children: [],
+      },
+      {
+        id: "26b6b95e-48c9-d4a5-2255-124bef51428b",
+        type: "Expression",
+        x: 297.4155454673813,
+        y: 1508.2775409338583,
+        parameters: { expression: "ArenaWidth - CircleRadius" },
+        ports: [],
+        children: [],
+      },
+      {
+        id: "99c3a02d-7b32-d31e-40d0-fc6bd485f2d3",
+        type: "Transition",
+        x: 272.28959152461647,
+        y: 1742.5301598853775,
+        parameters: {},
+        ports: [],
+        children: [],
+      },
+      {
+        id: "9a29693e-97b7-e24a-c39f-95745e15289a",
+        type: "Javascript2",
+        label: "Poisson Process",
+        x: 973.3810754787316,
+        y: 1711.8056993389462,
+        parameters: {
+          code: 'Script.Inputs = {\n  Lambda: "number",\n  RangeLow: "number",\n  RangeHigh: "number",\n}\n\nScript.Outputs = {\n  Trigger: "signal",\n  RandomNumber: "number",\n}\n\nvar timer;\nvar started = false;\n\nfunction generateRandNum(rangeLow, rangeHigh) {\n  return Math.random() * (rangeHigh - rangeLow) + rangeLow;\n}\n\nfunction calculateIntervalMs(lambda) {\n  let interval = -Math.log(1.0 - Math.random()) / lambda;\n  // translate from seconds to milliseconds\n  return interval * 1000;\n}\n\nfunction startTimer() {\n  let timeOutFunction = () => {\n    // generate the random number\n    let randNum = generateRandNum(\n      Script.Inputs.RangeLow,\n      Script.Inputs.RangeHigh\n    );\n    // set it on the output "RandomNumber"\n    Script.setOutputs({ RandomNumber: randNum });\n    // Trigger the signal "Trigger"\n    Script.Outputs.Trigger()\n    // restart the timer at a new interval\n    timer = setTimeout(\n      timeOutFunction,\n      calculateIntervalMs(Script.Inputs.Lambda)\n    );\n  };\n\n  // start the first timer\n  let interval = calculateIntervalMs(Script.Inputs.Lambda);\n\n  timer = setTimeout(timeOutFunction, interval);\n}\n\nScript.Signals = {\n  Start() {\n    started = true;\n    startTimer();\n  },\n  Stop() {\n    clearTimeout(timer);\n    started = false;\n  }\n}\n\nScript.Setters.Lambda = function (value) {\n  if (started === true) {\n    clearTimeout(timer);\n    startTimer();\n  }\n}\n',
+          Lambda: 2,
+          RangeLow: 0,
+        },
+        ports: [],
+        children: [],
+      },
+      {
+        id: "db634033-b137-02ea-5d50-706c06432557",
+        type: "Expression",
+        x: 952.9005306361687,
+        y: 1948.8030166078263,
+        parameters: { expression: "ArenaHeight-CircleRadius" },
+        ports: [],
+        children: [],
+      },
+      {
+        id: "0a89a18b-cfe3-c6f9-18bc-221a7ffb2182",
+        type: "Transition",
+        x: 910.411880595271,
+        y: 1523.391447982002,
+        parameters: {},
+        ports: [],
+        children: [],
+      },
+      {
+        id: "7249be82-0072-c1ab-1e4c-c0c60903f8cf",
+        type: "States",
+        label: "Circle Color",
+        x: 291.63095980838676,
+        y: 1874.4551715183388,
+        parameters: {
+          states: "Color 1,Color 2,Color 3,Color 4",
+          values: "Circle Color",
+          "type-Circle Color": "color",
+          "value-Color 1-Circle Color": "#A92952",
+          "value-Color 2-Circle Color": "#F0BF56",
+          "value-Color 3-Circle Color": "#006394",
+          "value-Color 4-Circle Color": "#5E4275",
+        },
+        ports: [],
+        children: [],
+      },
+      {
+        id: "31a54762-a486-533b-6041-e2b99c000ee4",
+        type: "States",
+        x: 659.6426944801517,
+        y: 2001.0264630214242,
+        parameters: {
+          states: "Small,Big",
+          values: "Radius",
+          "value-Small-Radius": 30,
+          "value-Big-Radius": 50,
+        },
+        ports: [],
+        children: [],
+      },
+    ],
+    connections: [
+      {
+        fromId: "238629f6-8594-ac78-ba25-a8141cebf4f6",
+        fromProperty: "Off y position",
+        toId: "8d21ec9d-7d28-d1e1-6435-ed102c432236",
+        toProperty: "transformY",
+      },
+      {
+        fromId: "238629f6-8594-ac78-ba25-a8141cebf4f6",
+        fromProperty: "On y Position",
+        toId: "6ec39536-2ae0-13da-31a9-0c95693eb91a",
+        toProperty: "transformY",
+      },
+      {
+        fromId: "f54f6144-306d-9339-4e9c-a1fd70d0910d",
+        fromProperty: "onClick",
+        toId: "238629f6-8594-ac78-ba25-a8141cebf4f6",
+        toProperty: "toggle",
+      },
+      {
+        fromId: "241b0a6f-b409-7cbd-dc61-3bc39c020667",
+        fromProperty: "positionX",
+        toId: "cdd08f56-26b6-c81f-729b-ef7220190933",
+        toProperty: "xpos",
+      },
+      {
+        fromId: "e6d5752f-cedd-429d-3d3d-173d747c8c85",
+        fromProperty: "boundingWidth",
+        toId: "cdd08f56-26b6-c81f-729b-ef7220190933",
+        toProperty: "DrageAreaWidth",
+      },
+      {
+        fromId: "238629f6-8594-ac78-ba25-a8141cebf4f6",
+        fromProperty: "reached-On",
+        toId: "606ead21-564f-f2d3-8311-30eb63af8eab",
+        toProperty: "Start",
+      },
+      {
+        fromId: "238629f6-8594-ac78-ba25-a8141cebf4f6",
+        fromProperty: "reached-Off",
+        toId: "606ead21-564f-f2d3-8311-30eb63af8eab",
+        toProperty: "Stop",
+      },
+      {
+        fromId: "cdd08f56-26b6-c81f-729b-ef7220190933",
+        fromProperty: "result",
+        toId: "606ead21-564f-f2d3-8311-30eb63af8eab",
+        toProperty: "Lambda",
+      },
+      {
+        fromId: "521f5c37-4508-f725-d67d-44f0227e3aa9",
+        fromProperty: "boundingWidth",
+        toId: "26b6b95e-48c9-d4a5-2255-124bef51428b",
+        toProperty: "CircleRadius",
+      },
+      {
+        fromId: "26b6b95e-48c9-d4a5-2255-124bef51428b",
+        fromProperty: "result",
+        toId: "606ead21-564f-f2d3-8311-30eb63af8eab",
+        toProperty: "RangeHigh",
+      },
+      {
+        fromId: "606ead21-564f-f2d3-8311-30eb63af8eab",
+        fromProperty: "RandomNumber",
+        toId: "99c3a02d-7b32-d31e-40d0-fc6bd485f2d3",
+        toProperty: "targetValue",
+      },
+      {
+        fromId: "99c3a02d-7b32-d31e-40d0-fc6bd485f2d3",
+        fromProperty: "currentValue",
+        toId: "521f5c37-4508-f725-d67d-44f0227e3aa9",
+        toProperty: "transformX",
+      },
+      {
+        fromId: "cdd08f56-26b6-c81f-729b-ef7220190933",
+        fromProperty: "result",
+        toId: "9a29693e-97b7-e24a-c39f-95745e15289a",
+        toProperty: "Lambda",
+      },
+      {
+        fromId: "f227417b-8cd3-3c03-5501-1b85add9566c",
+        fromProperty: "boundingWidth",
+        toId: "26b6b95e-48c9-d4a5-2255-124bef51428b",
+        toProperty: "ArenaWidth",
+      },
+      {
+        fromId: "f227417b-8cd3-3c03-5501-1b85add9566c",
+        fromProperty: "boundingHeight",
+        toId: "db634033-b137-02ea-5d50-706c06432557",
+        toProperty: "ArenaHeight",
+      },
+      {
+        fromId: "521f5c37-4508-f725-d67d-44f0227e3aa9",
+        fromProperty: "boundingHeight",
+        toId: "db634033-b137-02ea-5d50-706c06432557",
+        toProperty: "CircleRadius",
+      },
+      {
+        fromId: "db634033-b137-02ea-5d50-706c06432557",
+        fromProperty: "result",
+        toId: "9a29693e-97b7-e24a-c39f-95745e15289a",
+        toProperty: "RangeHigh",
+      },
+      {
+        fromId: "9a29693e-97b7-e24a-c39f-95745e15289a",
+        fromProperty: "RandomNumber",
+        toId: "0a89a18b-cfe3-c6f9-18bc-221a7ffb2182",
+        toProperty: "targetValue",
+      },
+      {
+        fromId: "0a89a18b-cfe3-c6f9-18bc-221a7ffb2182",
+        fromProperty: "currentValue",
+        toId: "521f5c37-4508-f725-d67d-44f0227e3aa9",
+        toProperty: "transformY",
+      },
+      {
+        fromId: "238629f6-8594-ac78-ba25-a8141cebf4f6",
+        fromProperty: "reached-Off",
+        toId: "9a29693e-97b7-e24a-c39f-95745e15289a",
+        toProperty: "Stop",
+      },
+      {
+        fromId: "238629f6-8594-ac78-ba25-a8141cebf4f6",
+        fromProperty: "reached-On",
+        toId: "9a29693e-97b7-e24a-c39f-95745e15289a",
+        toProperty: "Start",
+      },
+      {
+        fromId: "7249be82-0072-c1ab-1e4c-c0c60903f8cf",
+        fromProperty: "Circle Color",
+        toId: "521f5c37-4508-f725-d67d-44f0227e3aa9",
+        toProperty: "fillColor",
+      },
+      {
+        fromId: "606ead21-564f-f2d3-8311-30eb63af8eab",
+        fromProperty: "Trigger",
+        toId: "7249be82-0072-c1ab-1e4c-c0c60903f8cf",
+        toProperty: "toggle",
+      },
+      {
+        fromId: "9a29693e-97b7-e24a-c39f-95745e15289a",
+        fromProperty: "Trigger",
+        toId: "31a54762-a486-533b-6041-e2b99c000ee4",
+        toProperty: "toggle",
+      },
+      {
+        fromId: "31a54762-a486-533b-6041-e2b99c000ee4",
+        fromProperty: "Radius",
+        toId: "521f5c37-4508-f725-d67d-44f0227e3aa9",
+        toProperty: "size",
+      },
+    ],
+    comments: [],
+  }}
+/>
+
+</div>
+
+## Debugging
+
+As with any coding, you will sooner or later make a mistake in your code. Noodl will catch both syntax errors and runtime errors and highlight the **Script** node causing the error. You can also find errors in the warnings popup.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/script-error.png)
+
+</div>
+
+As seen in the image above, syntax errors in the code can cause inputs and outputs of the node to becomes invalid. Fixing the syntax error will restore the connections.
+
+To debug your javascript you can launch the web debugger from the viewer window by clicking the bug icon.
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/business-logic/javascript/open-debugger.png)
+
+</div>
+
+In the web debugger you can find any external source files that your are using in your script nodes, but if you want to set a breakpoint in an internal file you can use the `debugger` command. Here's an example:
+
+```javascript
+Script.Signals.Stop = function () {
+  debugger; // This will cause the debugger to break here when running
+  clearTimeout(timer);
+  timer = undefined;
+};
+```
+
+### Running code when a Script node is created or destroyed
+
+A Script node is created when the Noodl component that it belongs to is created. Components are created when the app is first launched, when navigation happens, and when a [Repeater](/nodes/ui-controls/repeater) node creates items. The `Script.OnInit` function is automatically called by Noodl when the Script node is created.
+
+Components can be destroyed when doing navigation or when removing items from a list used by a Repeater node. This will run the `Script.OnDestroy` function.
+
+Here's an example that sets up an event listener on the `body` element and removes it when the node is destroyed to avoid memory leaks.
+
+```js
+function setPosition(e) {
+  Script.Outputs.PointerX = e.clientX;
+  Script.Outputs.PointerY = e.clientY;
+}
+
+Script.OnInit = function () {
+  document.body.addEventListener("mousemove", setPosition);
+  document.body.addEventListener("mousedown", setPosition);
+};
+
+Script.OnDestroy = function () {
+  document.body.removeEventListener("mousedown", setPosition);
+  document.body.removeEventListener("mousemove", setPosition);
+};
+```

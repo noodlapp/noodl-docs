@@ -1,0 +1,667 @@
+<!-- A step with just a popup -->
+<div data-template="popup">
+    <video src="lesson-05_00-intro.mp4"></video>
+    <h2>Page Navigation</h2>
+    <p>Welcome back! In this fifth lesson you will learn how to work with page navigation and how to pass data between pages.</p>
+    <p>In the last lesson you built a clickable <i>Card Item</i> component. Let's make it lead to a dedicated details page.</p>
+</div>
+<!-- # -->
+
+
+<!-- Talk about lists -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Key elements of a navigation system</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-05_01-keylements.mp4"></video>
+        <h2>Key elements of a navigation system</h2>
+        <p>All Noodl projects start with a simple navigation system in place. In previous lessons we went through the basics of navigation. Let's refresh the memory of what is needed for navigation in Noodl:</p>
+        <ol>
+            <li><p>Multiple <strong>page components</strong> that each contain a page of your app. In this project you already have a <i>Start Page</i> and a <i>Task Page</i>.</p></li>
+            <li><p>A <strong>Page Router</strong> node, that works as a container that controls which page component to show. This node is often placed in the <i>App</i> component.</p></li>
+            <li><p>A <stron>Navigate</stron> node that lets you navigate from one page to another.</p></li>
+        </ol>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Page Router node</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-05_01-keylements.mp4"></video>
+        <h2>Page Router node</h2>
+        <p>The Page Router node is a visual node that acts as a container for pages. Any page you navigate to will be rendered inside the Page Router and fill out the space available.</p>
+        <p>In the node graph, the Page Router often lives in between a <i>Header</i> and a <i>Footer</i> component. This way they don't need to be inserted (and rerendered) on every page.</p>
+        <p>If we select the <strong>Page Router</strong> you can see all the pages that are part of it. You can also set which page you want to act as the start page.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- # -->
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Creating pages</h2>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-05_04-creating pages.mp4"></video>
+        <h2>Creating pages</h2>
+        <p>When you create a new page component it automatically gets added to the Page Router. A quick way to create a new page is by opening the <strong>Component Panel</strong>, then <strong>clicking</strong> the <i>plus</i> icon and picking <i>page component</i>.</p>
+        <p>It's time for you to create your very own page!</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Lesson tasks</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <image src="../01_task.png"></image>
+        <h2>Time to get your hands dirty!</h2>
+        <p>During this lesson, you will be given multiple tasks. Spot them in the lesson timeline by the <i>Task</i> label.</p>
+        <p>If you get stuck you can get a hint by clicking the card in the timeline.</p>
+        <p>Some of the nodes graphs will already be set up for you beforehand. This is to keep the lessons short so that you can focus on learning one concept at a time. If it feels like magic at times, don't worry. It's just a concept you will learn in a later lesson.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/App:%Group:%Router",
+            "paramseq": {
+                "pages": {
+                  "routes": ["/Start Page","/Task Page","/Details Page"]
+                }
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create a new page called <strong><i>Details Page</i></strong></h3>
+    </div>
+    <div data-template="popup">
+        <video src="lesson-05_04-creating pages.mp4"></video>
+        <p>Open the Component Panel and click the <i>plus</i> icon in the Components section. Name it <strong><i>Details Page</i></strong>, remember that page names are case sensitive.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "viewerpatheq":"/details-page"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Select the <strong><i>/details-page</i></strong> path in the <strong>Path Dropdown</strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_05-select details page.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Page components</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_04-pagescomponent.mp4"></video>
+        <h2>The page component</h2>
+        <p>Every page component comes with a <strong>Page</strong> node and a <strong>Page Inputs</strong> node. All children to the page node gets rendered on the page.</p>
+        <p>With the Page Inputs node, we can create Path and Query Inputs. They are used to send data into a page. You have probably seen this on other websites before, looking something like this: www.webshop.com/products<strong>?search=noodles</strong>.</p>
+        <p>We will take a closer look at this shortly, but first lets get a simple interface on this page.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Here's something we prepared earlier...</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_07-copy-page-content.mp4"></video>
+        <h2>Here's something we prepared earlier...</h2>
+        <p>To keep this lesson within a reasonable length we decided to add a component to the project containing a simple UI for our newly created <i>Details Page</i>.</p>
+        <p>You can go the <i>Details Page Content</i> component and copy all the nodes and paste them into the <i>Details Page</i> as children to the Page node.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+data-conditions='[
+    {
+        "path":"/Details Page:%Page:#Page Content",
+        "exists": true
+    }
+]'
+>
+    <div data-template="item" style="width: 500px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Copy all the nodes from the <strong>Details page content</strong> component, open the <i>Details Page</i> node graph and paste them under the <strong>Page</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_07-copy-page-content.mp4"></video>
+        <p>Copy with <strong>Cmd/Ctrl + C</strong> and paste with <strong>Cmd/Ctrl + V</strong></p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Page inputs</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_08-add-taskid.mp4"></video>
+        <h2>Page inputs</h2>
+        <p>The Page Inputs node is similar to the Components Inputs node. It allows you to create parameters that can be used to send data into a page when you navigate to it.</p>
+        <p>There are two different types of parameters: <strong>query parameters</strong> and <strong>path parameters</strong>. In this lesson you will be using the latter.</p>
+        <p>The page parameters makes it possible to use a <strong>page component</strong> as a template, allowing you to keep the style and structure, but dynamically change the content.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Details Page:%PageInputs",
+            "paramseq": {
+                "pathParams":"Task id"
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>On the <strong>Page Inputs</strong> node, create a path parameter called <strong><i>Task id</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_08-add-taskid.mp4"></video>
+        <p>Open the node graph for the <i>Details Page</i>. The name is case sensitive</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Details Page:%Model2",
+            "exists":true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Create an <strong>Object</strong> node close to the <strong>Page Inputs</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_09-add-objectnode.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Details Page:%PageInputs",
+            "to":"/Details Page:%Model2",
+            "hasconnection":"pm-Task id, modelId"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 390px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Page Inputs</strong> node to the <strong>Object</strong> node and send the <strong><i>task id</i></strong> output to the <strong><i>id</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_10-connect-to-object.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Task Page:%Model2",
+            "exists":false
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Go back to the <strong>Task Page</strong> node graph and delete the <strong>Object</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_11-delete-object.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Task Page:%RouterNavigate",
+            "exists": true
+        }
+    ]'
+>
+    <div data-template="item" style="width: 330px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Open the Node Picker and place a <strong>Navigate</strong> node close to the <strong>Repeater</strong> node</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_12-place-navigatenode.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "path":"/Task Page:%RouterNavigate",
+            "paramseq": {
+                "target":"/Details page"
+                }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>On the <strong>Navigate</strong> node, set the <strong>target page</strong> property to <strong><i>Details Page</i></strong></h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_12-place-navigatenode.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from": "/Task Page:%Page:%Group:%Group:%For Each",
+            "to":"/Task Page:%RouterNavigate",
+            "hasconnection": "itemOutputSignal-Clicked, navigate"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 380px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Repeater</strong> node to the <strong>Navigate</strong> node and send the <strong><i>clicked</i></strong> output to the <strong><i>navigate</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_13-connect-from-repeater.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "from":"/Task Page:%Page:%Group:%Group:%For Each",
+            "to":"/Task Page:%RouterNavigate",
+            "hasconnection" : "itemActionItemId, pm-Task id"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 380px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Repeater</strong> node to the <strong>Navigate</strong> node and send the <strong><i>item id</i></strong> output to the <strong><i>task id</i></strong> input</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_13-connect-from-repeater.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Object Id as a page parameter</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_14-objectid-pageinput.mp4"></video>
+        <h2>Object Id as a page parameter</h2>
+        <p>You now have a navigation system that allows us to click on a card, get its underlying object id, and use that as a path parameter when you navigate to the <i>Details Page</i>.</p>
+        <p>This allows you to access all the data via the <strong>Object</strong> in the <i>Details Page</i> component.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Object properties</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_15-objectid-properties.mp4"></video>
+        <h2>Object properties</h2>
+        <p>When there is a valid id set on a <strong>Object</strong> node, you can see all the available data when the node is inspected. However, to make it available as outputs, you need to manually create them as parameters by matching the names.</p>
+    </div>
+</div>
+<!-- # -->
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div
+    data-conditions='[
+        {
+            "path":"/Details page:%Model2",
+            "paramseq":{
+                "properties":"Image,Background Color,Title,Category,Date"
+            }
+        }
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>In the <strong>Details Page</strong> node graph, add the following properties to the Object node: <strong><i>Image</i></strong>, <strong><i>Background Color</i></strong>, <strong><i>Title</i></strong>, <strong><i>Category</i></strong>, <strong><i>Date</i></strong></h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_15-objectid-properties.mp4"></video>
+        <p>Remember that property names are case sensitive</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div
+    data-conditions='[
+        {
+            "from": "/Details Page:%Model2",
+            "to": "/Details Page:%Page:%Group:#Hero section",
+            "hasconnection": "prop-Background Color, backgroundColor"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 500px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Hero section</strong> Group and send the <strong><i>background color</i></strong> output to the <strong><i>background color</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_16-bgcolor.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div
+    data-conditions='[
+        {
+            "from": "/Details Page:%Model2",
+            "to": "/Details Page:%Page:%Group:#Hero section:%Image",
+            "hasconnection": "prop-Image,src"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Image</strong> node and send the <strong><i>image</i></strong> output to the <strong><i>source</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_16-image.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div
+    data-conditions='[
+        {
+            "from": "/Details Page:%Model2",
+            "to": "/Details Page:%Page:%Group:#Page body:#Title",
+            "hasconnection": "prop-Title,text"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Title</strong> Text node and send the <strong><i>title</i></strong> output to the <strong><i>text</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_16-title.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div
+    data-conditions='[
+        {
+            "from": "/Details Page:%Model2",
+            "to": "/Details Page:%Page:%Group:#Page body:#Task Info:#Category:%Text",
+            "hasconnection": "prop-Category,text"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 480px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Text</strong> node inside the <i>Category</i> Group, and send the <strong><i>category</i></strong> output to the <strong><i>text</i></strong> input</h3>
+
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_16-category.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div
+    data-conditions='[
+        {
+            "from": "/Details Page:%Model2",
+            "to": "/Details Page:%Page:%Group:#Page body:#Task Info:#Calender:%Text",
+            "hasconnection": "prop-Date,text"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 450px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Object</strong> node to the <strong>Text</strong> node inside the <i>Calender</i> Group, and send the <strong><i>date</i></strong> output to the <strong><i>text</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_16-date.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- Ask user to look at the static data -->
+<div>
+    <div data-template="item">
+        <header>&nbsp;</header>
+        <h2>Navigating back</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_17-navigateback.mp4"></video>
+        <h2>Navigating back</h2>
+        <p>You will now be navigated to the <i>Details Page</i> when you click a card. But what if you want to navigate back again?</p>
+        <p>The easiest way is just to use the <i>back</i> and <i>forward</i> controls built in to your browser. The Noodl editor has similar controls next to the Path Dropdown.</p>
+        <p>If you want to be fancy, you can use the <b>Navigate</b> node to create a custom <i>back</i> control. Let's do that.</p>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div
+    data-conditions='[
+    {
+        "path":"/Details Page:%RouterNavigate",
+        "paramseq": {
+            "target":"/Task page"
+        }
+    }
+    ]'
+>
+    <div data-template="item" style="width: 350px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>In the <i>Details Page</i> node graph, add a <strong>Navigate</strong> node and set the <strong>target page</strong> to <strong><i>Task Page</i></strong></h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_17-navigatenode.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div
+    data-conditions='[
+    {
+        "from": "/Details Page:%Page:#Page Content:#Page body:%net.noodl.controls.button",
+        "to":"/Details Page:%RouterNavigate",
+        "hasconnection": "onClick, navigate"
+    }
+    ]'
+>
+    <div data-template="item" style="width: 400px">
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Connect the <strong>Back Button</strong> node to the <strong>Navigate</strong> node and the <strong><i>click</i></strong> output to the <strong><i>navigate</i></strong> input</h3>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_17-connectbutton.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+<!-- A step with an item in the bottom bar. It has tasks, so popup will only be shown when user clicks the item -->
+<div
+    data-conditions='[
+        {
+            "viewerpatheq":"/task-page"
+        }
+    ]'
+>
+    <div data-template="item" style="width: 280px">
+
+        <header>Task<span class="lesson-checkmark"></span></header>
+        <h3>Click the button to navigate back to the Task Page</h3>
+    </div>
+
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <video src="lesson-05_05-select details page.mp4"></video>
+    </div>
+</div>
+<!-- # -->
+
+
+
+<!-- A step with an item in the bottom bar. No tasks, so popup will be shown automatically -->
+<div>
+    <div data-template="item">
+        <header>Outro</header>
+        <h2>Congratulations!</h2>
+    </div>
+    <div data-template="popup">
+        <style>.lesson-item-popup {width: 600px !important;}</style>
+        <!--<img src="tutorial_card.png" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')"> -->
+        <h2>Congratulations!</h2>
+        <p>You've completed the fifth tutorial! Hope you had fun.</p>
+        <p>Feel free to navigate back and forth to the details of each card if you have nothing better to do.</p>
+        <p>Otherwise, it seems about time to start building your own app!</p>
+        <!--<p>In the next tutorial we will learn how to create a form page to let the user create new Task items.</p>-->
+        <p>Happy Noodling!</p>
+        <!--<button style="width: 150px" onclick="window.open('https://www.youtube.com/watch?v=TNnn0Gzj-H4&list=PL2eC2vS4uVoMbujQ5CiNtNuP7s7-UwNn-')">WATCH TUTORIAL</button>-->
+        <button style="width: 150px" data-click="exitEditor">EXIT LESSON</button>
+    </div>
+</div>
+<!-- # -->
