@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Feature request
+    url: https://github.com/noodlapp/noodl-docs/discussions/categories/feature-requests
+    about: Request a new feature or example.
+  - name: Ask a question
+    url: https://github.com/noodlapp/noodl-docs/discussions/categories/q-a
+    about: Ask questions and discuss with other community members.
