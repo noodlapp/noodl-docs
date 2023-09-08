@@ -64,14 +64,14 @@ Here is a list of the values, that should be passed in:
 
 <div className="ndl-table-35-65">
 
-| Display Name            | Value     |
-| ----------------------- | --------- |
-| Align Bottom            | `bottom`  |
-| Align Vertical Center   | `center`  |
-| Align Top               | `top`     |
-| Align Left              | `left`    |
-| Align Horizontal Center | `center`  |
-| Align Right             | `right`   |
+| Display Name            | Value    |
+| ----------------------- | -------- |
+| Align Bottom            | `bottom` |
+| Align Vertical Center   | `center` |
+| Align Top               | `top`    |
+| Align Left              | `left`   |
+| Align Horizontal Center | `center` |
+| Align Right             | `right`  |
 
 </div>
 
@@ -362,7 +362,8 @@ The Dimension Constraints Gadget allows you to clamp the values of the [Dimensio
 
 ## Advanced HTML
 
-| Data                                        | Description                                                             |
-| ------------------------------------------- | ----------------------------------------------------------------------- |
-| <span className="ndl-data">CSS Class</span> | <##input:cssClass##>Specify a CSS class this node will have.<##input##> |
-| **CSS Style**                               | Use this property to specify your custom CSS.                           |
+| Data                                        | Description                                                                                         |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| <span className="ndl-data">Tag</span>       | The tag used when this node renders in the app. Only available on the **Group** and **Text** nodes. |
+| <span className="ndl-data">CSS Class</span> | <##input:cssClass##>Specify a CSS class this node will have.<##input##>                             |
+| <span className="ndl-data">CSS Style</span> | Use this property to specify your custom CSS.                                                       |
