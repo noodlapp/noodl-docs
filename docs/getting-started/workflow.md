@@ -29,17 +29,18 @@ Any app needs a great **User Interface**. In Noodl it's easy and fast to build d
 
 ### Customizing UI Controls
 
-Each UI Control have properties that use can be used for fine grained customization. Here is a short overview of concepts important for building user interfaces:
+Each UI control has properties that can be used for fine-grained customization. Here is a short overview of concepts important for building user interfaces:
 
--   **Visual States** Each UI Control have a set of visual states, e.g. Hover, Pressed etc, and the control properties can be set for each state individually. Learn more [here](/docs/guides/user-interfaces/visual-states).
+-   **Visual States** Each UI control has a set of visual states, such as Hover, Pressed, etc., and the control properties can be set for each state individually. Learn more [here](/docs/guides/user-interfaces/visual-states).
 
 -   **Transitions** You can control transition animations between each visual state using the animation editor.
 
--   **Variants** Define re-usable variants for your UI controls including properties, visual states and transitions. Build your own design systems and become super productive. Learn more [here](/docs/guides/user-interfaces/style-variants)
+-   **Variants** Define reusable variants for your UI controls, including properties, visual states, and transitions. Build your own design systems to enhance productivity. Learn more [here](/docs/guides/user-interfaces/style-variants)
 
 ## Page Navigation & Components
 
-When you start building more complete frontends you will be working with **components**. A component can be an entire page in your application, these are called **Page Component**s, or they can be a smaller part of your UI that you want to re-use in many places, these are called **Visual Component**s. Pages can be found in the top navigation bar, and visual components are found in the component panel in the sidebar. You can also use the preview in design mode to quickly locate a certain visual element in your app.
+When you start building more complete frontends, you will be working with **components**. A component can be an entire page in your application; these are called **Page Components**, or they can be a smaller part of your UI that you want to reuse in many places; these are called **Visual Components**. Pages can be found in the top navigation bar, and visual components are found in the component panel in the sidebar. You can also use the preview in design mode to quickly locate a specific visual element in your app.
+
 
 <div className="ndl-video">
     <video width="100%" autoPlay muted loop src={useBaseUrl("/docs/getting-started/basic-concepts/nav-1.mp4")}/>
@@ -53,7 +54,8 @@ It's simple to create page navigation but the system is also flexible enough to 
 
 ## Actions
 
-An important concept in Noodl, that was briefly shown above, is **action nodes**. These nodes perform some sort of action when they are triggered by a signal, e.g. from a UI control (such as a button click) or from another action node (such as when the action has completed successfully or failed). Noodl contains a wide variety of action nodes for most common basic tasks such as **Navigation** and **Reading and writing data**.
+An important concept in Noodl, as briefly shown above, is **action nodes**. These nodes perform some sort of action when triggered by a signal, for example, from a UI control (such as a button click) or from another action node (such as when an action has completed successfully or failed). Noodl contains a wide variety of action nodes for most common basic tasks, including **Navigation** and **Reading and Writing Data**.
+
 
 ![](/docs/getting-started/basic-concepts/connecting-nodes.gif)
 
@@ -69,7 +71,7 @@ When you have built some of your frontend, added pages, components and navigatio
 
 There are three basic concepts for data in Noodl, the **Variable**, **Object** and **Array** nodes. You can learn more about how to work with these [here](/docs/guides/data/overview).
 
-A very common pattern in web applications frontends are different types of lists or other dynamic repeating content. Learn how to do that in Noodl [here](/docs/guides/data/list-basics)
+A very common pattern in web applications frontends are different types of lists or other dynamic repeating content. Learn how to do that in Noodl [here](/docs/guides/data/list-basics).
 
 ## Business Logic
 
@@ -85,7 +87,7 @@ But most applications require some sort of more advanced business logic, for ins
     <video width="100%" autoPlay muted loop src={useBaseUrl("/docs/getting-started/basic-concepts/edit-code.mp4")}/>
 </div>
 
-Not a skilled software developer? Don't worry, the philosofy of Noodl is to focus on the code that matters and remove much of the unncessecary complexities of developing software. If you have basic knowledge of Javascript, you will get very far with Noodl.
+Not a skilled software developer? Don't worry; the philosophy of Noodl is to focus on the code that matters and remove much of the unnecessary complexities of software development. If you have a basic knowledge of JavaScript, you will go a long way with Noodl.
 
 ## The cloud services
 
@@ -95,15 +97,15 @@ Now it's time to take a look at the second part of the Noodl platform, the cloud
     <video width="100%" autoPlay muted loop src={useBaseUrl("/docs/getting-started/basic-concepts/cloud-1.mp4")}/>
 </div>
 
-The Noodl cloud services will provide your applications with a couple of important functions:
+The Noodl cloud services will provide your applications with several important functions:
 
--   **Reading and writing data**. You can create **Class**es where you store **Record**s, these can then be read, filtered and presented in your application. Dive in [here](/docs/guides/cloud-data/overview) to start learning about cloud services.
+- **Reading and Writing Data**: You can create **classes** to store **records**, which can then be read, filtered, and presented in your application. Dive in [here](/docs/guides/cloud-data/overview) to start learning about cloud services.
 
 -   **User Management**. Most applications need users, you can sign up users, log in, manage passwords etc. 
 
--   **Access Control**. When you have users and data, you need to control which users can access what data. This can be done trough **Role**s in your cloud servies. Learn more [here](/docs/guides/cloud-data/access-control)
+- **Access Control**: When you have users and data, you need to control which users can access what data. This can be done through **roles** in your cloud services. Learn more [here](/docs/guides/cloud-data/access-control).
 
--  **Cloud Functions**. You are not just limited to creating logic on the frontend, you can also create cloud functions that peform tasks that run in the cloud. This is super useful for things like database operations that should have admin access and background jobs.
+- **Cloud Functions**: You are not limited to creating logic on the frontend; you can also create cloud functions that perform tasks running in the cloud. This is especially useful for operations like database operations requiring admin access and background jobs.
 
 ## Cloud Functions
 
@@ -117,14 +119,13 @@ This is very useful for many different functions such as:
 
 - Access the database in admin mode, do things that should not be possible from the client for security reasons such as resetting passwords and verifying emails.
 
-- Connection to external services using e.g. OAuth or webhooks need to logic to run in the cloud, here cloud functions can be super helpful.
+- Connecting to external services using methods such as OAuth or webhooks requires logic to be executed in the cloud. In such cases, cloud functions can be incredibly helpful.
 
-- Performing queries is much faster in the cloud, so if you need to make many database queries and compound the result you can achieve high performance by doing this in the cloud.
-
+- Performing queries is significantly faster in the cloud, so if you need to make numerous database queries and combine the results, you can achieve high performance by doing this in the cloud.
 
 ## Collaboration
 
-Finally, when your applications is growing you will want to work with your colleagues and friends. Thankfully, Noodl has a solid collaboration system with version control built in. You can work together on a project, you can each work on your own branches and merge. We try to bring really powerful concepts from the software development world into Noodl to make sure that you will never hit a wall.
+Finally, as your application grows, you'll want to collaborate with colleagues and friends. Thankfully, Noodl offers a robust collaboration system with built-in version control. You can collaborate on a project, work on your individual branches, and merge changes. We aim to incorporate powerful concepts from the software development world into Noodl to ensure you never encounter any limitations.
 
 <div className="ndl-image-with-background">
 
@@ -144,7 +145,7 @@ In Noodl you can also import modules developed by others or develop your own mod
 
 </div>
 
-An important concept in Noodl that will take your productivity to the next step are **prefabs**, these are pre-built components that can be cloned into your project. You can use them as is, or as a starting point to modify and extend. It's also a great way to learn some of the good development patterns in Noodl.
+An important concept in Noodl that will take your productivity to the next level is **prefabs**. These are pre-built components that can be cloned into your project. You can use them as they are or as a starting point for modification and extension. It's also a great way to learn some of the best development patterns in Noodl.
 
 <div className="ndl-image-with-background l">
 
