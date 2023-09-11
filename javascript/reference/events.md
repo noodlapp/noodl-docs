@@ -62,7 +62,17 @@ Script.Outputs = {
   Navigated: "signal",
 };
 
-function onNavigated({ routerName, path, title, component }) {
+function onNavigated({
+  // The name of the router for example 'Main'.
+  routerName,
+  // The relative path on this page router.
+  // To get the fullpath, use `window.location.pathname`.
+  path,
+  title,
+  // The component name for example '/Pages/MyPage'.
+  // (this is a page in the 'Pages' folder)
+  component
+}) {
   Script.Outputs.Navigated();
 }
 
@@ -70,6 +80,8 @@ Script.Signals.DidMount = function () {
   Noodl.Events.on("NoodlApp_Navigated", onNavigated);
 };
 
+// OnDestroy is called when the Script node is unmounted.
+// Where we do some cleanup to remove the event listener.
 Script.OnDestroy = function () {
   Noodl.Events.off("NoodlApp_Navigated", onNavigated);
 };
