@@ -33,7 +33,7 @@ This node should be placed as a child in the Mapbox Map node, it can be used in 
 | <span className="ndl-data">Offset Y</span>           | Sets the marker y offset.                                                                    |
 | <span className="ndl-data">Longitude</span>          | Sets the current active longitude.                                                           |
 | <span className="ndl-data">Latitude</span>           | Sets the current active latitude.                                                            |
-| <span className="ndl-data">Tooltip</span>            | Add a custom tooltip using the Mapbox tooltips, this will oonly work on the default markers. |
+| <span className="ndl-data">Tooltip</span>            | Add a custom tooltip using the Mapbox tooltips, this will only work on the default markers. |
 
 </div>
 
