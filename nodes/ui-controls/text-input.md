@@ -99,8 +99,8 @@ This node supports the following [Visual Output Properties](/nodes/shared-props/
 
 <div className="hidden-props-for-editor">
 
-@include "../shared-props/inputs/\_visual-input-properties.md"
+@include "../shared-props/inputs/_visual-input-properties.md"
 
-@include "../shared-props/outputs/\_visual-output-properties.md"
+@include "../shared-props/outputs/_visual-output-properties.md"
 
 </div>
