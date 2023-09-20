@@ -81,13 +81,13 @@ This node supports the following [Visual Input Properties](/nodes/shared-props/i
 
 It also features the standard set of UI control <span className="ndl-signal">signals</span>:
 
-@include "../shared-props/outputs/\_control-events.md"
+@include "../shared-props/outputs/_control-events.md"
 
 ### States
 
 Apart from triggering <span className="ndl-signal">signals</span> the Checkbox node also notifies of its state through <span className="ndl-data">data</span> outputs:
 
-@include "../shared-props/outputs/\_control-states.md"
+@include "../shared-props/outputs/_control-states.md"
 
 ### Visual
 
@@ -99,8 +99,8 @@ This node supports the following [Visual Output Properties](/nodes/shared-props/
 
 <div className="hidden-props-for-editor">
 
-@include "../shared-props/inputs/\_visual-input-properties.md"
+@include "../shared-props/inputs/_visual-input-properties.md"
 
-@include "../shared-props/outputs/\_visual-output-properties.md"
+@include "../shared-props/outputs/_visual-output-properties.md"
 
 </div>
