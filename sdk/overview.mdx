@@ -1,0 +1,28 @@
+---
+title: SDK Overview
+hide_title: true
+---
+
+# SDK Overview
+
+Noodl SDK, or `@noodl/noodl-sdk`, is a javascript package that is making is easy to extend Noodl with core nodes.
+
+## Installation
+
+Here are some guides on how to create a Noodl module, including installing the SDK.
+[Continue here.](/javascript/extending/overview)
+
+## Getting started
+
+We have a lot of open source modules in this [GitHub repository](https://github.com/noodlapp/modules).
+These are a great place to start when looking for references, and examples of how to build a module.
+
+Not all of these modules are made with the SDK. Why?
+The SDK is built on top of the internal Noodl API, designed to make it easier and future compatible with internal Noodl API changes in mind.
+Currently the SDK does lack some of the functionality that the internal Noodl API provides, which is the primary reason not to use the SDK for these modules.
+In the end the module code will be very similar, but can cause some confusion.
+
+> At this time, the only module that is not built using the SDK in that GitHub repository is the `simple-tooltips` module.
+
+For a module to be registered in the Noodl app, you don't need to have the SDK installed.
+The way that the modules are registered is by calling the `Noodl.defineModule(module)` function which is globally defined by the Noodl runtime and not in the SDK.
