@@ -9,6 +9,18 @@ This component is used to call Xano API endpoints.
 
 > Please note that [Xano Client](/library/prefabs/xano/components/setup-xanoclient/) needs to be set up in your app before you can properly use this component.
 
+## Extracting the data
+
+The simplest way to extract the data from the response is by using an [Expression](/nodes/math/expression/) node, and accessing the body from the response:
+
+<div className="ndl-image-with-background l">
+
+![](/library/prefabs/xano/extract-response.png)
+
+</div>
+
+For more advanced extraction (and parsing) you can use a [Function](/nodes/javascript/function) node.
+
 ## Inputs
 
 | Data                                           | Description                                                                                               |
