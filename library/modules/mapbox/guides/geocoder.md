@@ -101,11 +101,75 @@ To make the parameters match, we can make a few changes in this code:
 ```js
 const queryParams = {
   access_token, // Provide the access token
-  proximity: [Script.Inputs.lng, Script.Inputs.lat].join(','), // Bias results towards user's location
+  proximity: [Script.Inputs.lng, Script.Inputs.lat].join(","), // Bias results towards user's location
   limit: 5, // Maximum number of results to return
-  language: 'en-GB'
+  language: "en-GB",
 };
 ```
 
 The main change here is the `proximity` that we changed to a Geopoint instead of `ip`.
 This requires 2 new inputs to the Script node, `lng` and `lat`, connected from the Mapbox node center lng and lat position.
+
+## Get Country name from Longitude and Latitude
+
+Here is an example of how to use [Mapbox reverse geocoding](https://docs.mapbox.com/api/search/geocoding/#reverse-geocoding) to get information about a specific longitude and latitude.
+
+The types can be changed to get more information `types: ["country"]`, but the outputs have to be updated to match the desired data.
+
+```js
+// Define the expected inputs for the script
+Script.Inputs = {
+  Longitude: "number",
+  Latitude: "number",
+};
+
+// Define the expected outputs for the script
+Script.Outputs = {
+  Country: "string",
+  Done: "signal",
+};
+
+const ENDPOINT = "https://api.mapbox.com/geocoding/v5/mapbox.places";
+
+// Define an asynchronous function to make the API request
+async function makeRequest() {
+  // Get the Mapbox access token from Noodl project settings
+  const access_token = Noodl.getProjectSettings().mapboxAccessToken;
+
+  const longitude = encodeURIComponent(Script.Inputs.Longitude);
+  const latitude = encodeURIComponent(Script.Inputs.Latitude);
+
+  // https://docs.mapbox.com/api/search/geocoding/#reverse-geocoding
+  const queryParams = {
+    access_token, // Provide the access token
+    limit: 5, // Maximum number of results to return
+    types: ["country"].join(","), // Filter results to include only addresses
+  };
+
+  // Construct the query string from the query parameters
+  const query = Object.keys(queryParams)
+    .filter((key) => !!queryParams[key]) // Filter out empty values
+    .map(
+      (key) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`
+    )
+    .join("&");
+
+  // Make the API request and get the response as JSON
+  const response = await fetch(
+    `${ENDPOINT}/${longitude},${latitude}.json?${query}`
+  );
+  const json = await response.json();
+
+  const countries = json.features.map((x) => x.text);
+
+  Script.Outputs.Country = countries.length > 0 ? countries[0] : "";
+  Script.Outputs.Done();
+}
+
+Script.Signals = {
+  Fetch() {
+    makeRequest();
+  },
+};
+```
