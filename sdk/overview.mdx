@@ -22,3 +22,7 @@ The SDK is built on top of the internal Noodl API, designed to make it easier an
 Currently the SDK does lack some of the functionality that the internal Noodl API provides, which is the primary reason not to use the SDK for these modules.
 In the end the module code will be very similar, but can cause some confusion.
 
+> At this time, the only module that is not built using the SDK in that GitHub repository is the `simple-tooltips` module.
+
+For a module to be registered in the Noodl app, you don't need to have the SDK installed.
+The way that the modules are registered is by calling the `Noodl.defineModule(module)` function which is globally defined by the Noodl runtime and not in the SDK.

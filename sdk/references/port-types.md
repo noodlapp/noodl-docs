@@ -13,8 +13,11 @@ There are two ways to set the type on a Input or Output, either with the shortcu
 {
   // ...
   inputs: {
-    myInput: "string"
-  }
+    myInput: "string",
+    displayName: "My Input",
+    group: "My Group",
+    default: "My default input value",
+  },
   // ...
 }
 ```
@@ -26,8 +29,13 @@ Or with the full type where you can apply more options, like this:
   // ...
   inputs: {
     myInput: {
-      name: "string"
-    }
+      name: "string",
+      codeeditor: "plaintext",
+      allowEditOnly: true
+    },
+    displayName: "My Input",
+    group: "My Group",
+    default: "My default input value",
   }
   // ...
 }
@@ -38,11 +46,12 @@ Or with the full type where you can apply more options, like this:
 The type can also be `*` (star) to be any type, removing all connection type restrictions in the editor.
 
 ```ts
-type TypeEditor = "javascript" | "graphql" | "css" | "html";
+type TypeEditor = "javascript" | "plaintext" | "graphql" | "css" | "html";
 
 interface BuiltInType {
   name: string;
   codeeditor?: TypeEditor;
+  /** Allow the Input to only be edited via the property panel */
   allowEditOnly?: boolean;
 }
 
