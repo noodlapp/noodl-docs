@@ -1,6 +1,6 @@
 ---
 hide_title: true
-title: REST
+title: REST node
 ---
 
 <##head##>

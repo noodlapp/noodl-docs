@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Parent Component Object
+title: Parent Component Object node
 ---
 
 <##head##>

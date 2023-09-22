@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Create New Record
+title: Create New Record node
 ---
 
 <##head##>

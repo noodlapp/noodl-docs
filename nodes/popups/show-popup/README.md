@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Show Popup
+title: Show Popup node
 ---
 
 <##head##>

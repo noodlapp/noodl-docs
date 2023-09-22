@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Radio Button
+title: Radio Button node
 ---
 
 <##head##>

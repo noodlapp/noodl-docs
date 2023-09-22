@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Columns
+title: Columns node
 ---
 
 <##head##>

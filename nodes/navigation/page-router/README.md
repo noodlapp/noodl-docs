@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Page Router
+title: Page Router node
 ---
 
 <##head##>

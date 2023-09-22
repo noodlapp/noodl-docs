@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Radio Button Group
+title: Radio Button Group node
 ---
 
 <##head##>

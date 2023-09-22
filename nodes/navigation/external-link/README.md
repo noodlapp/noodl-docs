@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: External Link
+title: External Link node
 ---
 
 <##head##>
