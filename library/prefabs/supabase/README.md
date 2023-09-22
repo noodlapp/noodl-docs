@@ -19,21 +19,21 @@ This prefab gives you a few components that allows you to connect to Supabase an
 
 ### Base Components
 
-- **[Supabase - Setup Client](components/setup-client)**: Sets up the Supabse SDK client to access your supabase instance. Must be placed in your projects home component.
-- **[Supabase - Example Request](components/supabase-request-example)**: An example on how to fetch data from a table in Supabase.
+- **[Supabase - Setup Client](./components/setup-client/README.md)**: Sets up the Supabse SDK client to access your supabase instance. Must be placed in your projects home component.
+- **[Supabase - Example Request](./components/supabase-request-example/README.md)**: An example on how to fetch data from a table in Supabase.
 
 ### User Components
 
-- **[Supabase – Sign Up](components/supabase-sign-up)**: Signs up a new user.
-- **[Supabase – Log In](components/supabase-log-in)**: Logs in a user.
-- **[Supabase – Log Out](components/supabase-log-out)**: Logs out a user.
-- **[Supabase – Send Password Reset](components/supabase-send-password-reset)**: Sends a link to reset user password.
-- **[Supabase – Send Magic Link](components/supabase-send-magic-link)**: Sends a login link without password.
-- **[Supabase – Resend Confirmation](components/supabase-resend-confirmation)**: Resend a signup confirmation email when validating sign up by email
-- **[Supabase – Fetch Current User Auth](components/supabase-fetch-current-user-auth)**: Retrieves the auth data of the currently logged in user and saves it to a global `currentUser` object.
-- **[Supabase – Fetch Current User Profile Data](components/supabase-fetch-current-user-profile-data)**: Retrieves the non-auth user data of the currently logged in user and saves it to a global `currentUser` object.
-- **[Supabase – Update Current User Auth](components/supabase-update-current-user-auth)**: Updates auth data for the currently logged in user, both in Supabase and the `currentUser` object.
-- **[Supabase – Update Current User Profile Data](components/supabase-update-current-user-profile-data)**: Updates user data for the currently logged in user, both in Supabase and the `currentUser` object.
+- **[Supabase – Sign Up](./components/supabase-sign-up/README.md)**: Signs up a new user.
+- **[Supabase – Log In](./components/supabase-log-in/README.md)**: Logs in a user.
+- **[Supabase – Log Out](./components/supabase-log-out/README.md)**: Logs out a user.
+- **[Supabase – Send Password Reset](./components/supabase-send-password-reset/README.md)**: Sends a link to reset user password.
+- **[Supabase – Send Magic Link](./components/supabase-send-magic-link/README.md)**: Sends a login link without password.
+- **[Supabase – Resend Confirmation](./components/supabase-resend-confirmation/README.md)**: Resend a signup confirmation email when validating sign up by email
+- **[Supabase – Fetch Current User Auth](./components/supabase-fetch-current-user-auth/README.md)**: Retrieves the auth data of the currently logged in user and saves it to a global `currentUser` object.
+- **[Supabase – Fetch Current User Profile Data](./components/supabase-fetch-current-user-profile-data/README.md)**: Retrieves the non-auth user data of the currently logged in user and saves it to a global `currentUser` object.
+- **[Supabase – Update Current User Auth](./components/supabase-update-current-user-auth/README.md)**: Updates auth data for the currently logged in user, both in Supabase and the `currentUser` object.
+- **[Supabase – Update Current User Profile Data](./components/supabase-update-current-user-profile-data/README.md)**: Updates user data for the currently logged in user, both in Supabase and the `currentUser` object.
 
 ### Pages
 
@@ -64,6 +64,6 @@ This will set everything up and allow you to use all of the other Supabase compo
 
 You can use an **[Object](/nodes/data/object/object-node)** node set to the id `currentUser` to get all the user data (if a user is logged in).
 
-You can use the **[Supabase – Fetch Current User Auth](components/supabase-update-current-user-auth)** component to check if the user is logged in. If the user is already authenticated from a previous session, this session is retrieved, the user is considered logged in, and the component outputs `true` on its `Logged In` output and in the `currentUser` Noodl object.
+You can use the **[Supabase – Fetch Current User Auth](./components/supabase-update-current-user-auth/README.md)** component to check if the user is logged in. If the user is already authenticated from a previous session, this session is retrieved, the user is considered logged in, and the component outputs `true` on its `Logged In` output and in the `currentUser` Noodl object.
 
-Use the **[Supabase - Fetch Current User Profile Data](components/supabase-update-current-user-profile-data)** to trigger a data fetch and refresh the non-auth data in the `currentUser` object.
+Use the **[Supabase - Fetch Current User Profile Data](./components/supabase-update-current-user-profile-data/README.md)** to trigger a data fetch and refresh the non-auth data in the `currentUser` object.

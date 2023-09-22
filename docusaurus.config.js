@@ -40,6 +40,9 @@ const config = {
   organizationName: 'Noodl', // Usually your GitHub org/user name.
   projectName: 'Noodl', // Usually your repo name.
 
+  // This depends on the hosting provider
+  // trailingSlash: true,
+
   presets: [
     [
       'classic',
@@ -49,7 +52,6 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           breadcrumbs: false,
         },
-
         theme: {
           customCss: [
             require.resolve('./src/css/custom.css'),
