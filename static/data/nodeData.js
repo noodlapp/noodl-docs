@@ -1,5 +1,3 @@
-const { recursiveBuildSidebarData } = require('./dataHelpers');
-
 const NodeType = {
   Visual: 'is-visual',
   Data: 'is-data',
@@ -658,7 +656,7 @@ function recursiveBuildNodeOverviewData(item) {
   } else {
     return {
       label: item.label,
-      docUrl: item.id,
+      docUrl: '/nodes/' + item.id,
       nodeType: item.nodeType,
       key: item.label,
     };
@@ -678,6 +676,23 @@ exports.getNodePageData = function () {
     return { ...category, items: flatItems };
   });
 };
+
+function recursiveBuildSidebarData(item) {
+  if ('items' in item) {
+      // is a category
+      return {
+          type: 'category',
+          label: item.label,
+          items: item.items.map(recursiveBuildSidebarData),
+      }
+  } else {
+      return {
+          type: 'doc',
+          label: item.label,
+          id: item.id + "/README",
+      }
+  }
+}
 
 exports.getNodeSidebarData = function () {
   return nodeData.map(recursiveBuildSidebarData);

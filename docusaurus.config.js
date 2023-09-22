@@ -152,7 +152,10 @@ const config = {
     [
       require('./plugins/copy-node-markdowns'),
       {
-        paths: ['nodes/', 'library/modules/'],
+        paths: [
+          { path: 'nodes/', folderName: true },
+          { path: 'library/modules/' }
+        ],
       },
     ],
 
