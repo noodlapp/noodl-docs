@@ -28,6 +28,7 @@ export default function Home() {
                     property="og:description"
                     content="Explore Noodl guides, tutorials, videos, modules, and reference documentation here. Noodl is the low-code platform for designers + developers to build custom web apps and experiences."
                 />
+                <title>Noodl</title>
             </Head>
 
             <Container>

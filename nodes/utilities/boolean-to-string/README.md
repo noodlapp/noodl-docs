@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Boolean To String
+title: Boolean To String node
 ---
 
 <##head##>

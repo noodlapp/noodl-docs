@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Set Component Object Properties
+title: Set Component Object Properties node
 ---
 
 <##head##>

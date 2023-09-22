@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Text Input
+title: Text Input node
 ---
 
 <##head##>

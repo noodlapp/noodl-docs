@@ -1,7 +1,7 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Animate To Value
+title: Animate To Value node
 ---
 
 <##head##>
