@@ -34,7 +34,7 @@ export function NodeReferenceListing() {
 
 export function NodeColorGuide({ text }) {
     return (
-        <Section title="Node colors" linkLabel={null}>
+        <Section title="Node colors" linkLabel={undefined}>
             <Grid layout={GridLayout.Grid_2_3}>
                 <Text>{text}</Text>
 
