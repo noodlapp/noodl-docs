@@ -19,7 +19,7 @@ This node is used do aggregate data queries on a column from a public Google She
 
 </div>
 
-?> Note that the Google Sheet need to be made public for Noodl to be able to access it.
+> Note that the Google Sheet need to be made public for Noodl to be able to access it.
 
 <##head##>
 
