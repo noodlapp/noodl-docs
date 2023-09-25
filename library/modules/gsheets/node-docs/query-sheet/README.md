@@ -23,7 +23,7 @@ The node works in a similar way as the [Query Records](/nodes/data/cloud-data/qu
 
 </div>
 
-?> Note that the Google Sheet need to be made public for Noodl to be able to access it.
+> Note that the Google Sheet need to be made public for Noodl to be able to access it.
 
 <##head##>
 

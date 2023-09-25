@@ -14,4 +14,4 @@ The Google Sheets Module makes it easy to read data from publich Google Sheets. 
 
 The module will interpret a Google Sheet as a giant table meaning the first row encountered in the sheet will decide the names of the columns, and then each row will contains values for those columns in its cells. Empty rows and columns will be skipped.
 
-?> Note that the Google Sheet need to be made publicly available for the module to be able to access it. Also, the module is read-only, i.e. you cannot write data to the Google Sheet.
+> Note that the Google Sheet need to be made publicly available for the module to be able to access it. Also, the module is read-only, i.e. you cannot write data to the Google Sheet.
