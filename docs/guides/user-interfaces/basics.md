@@ -25,14 +25,14 @@ To edit the properties of a UI element, you click the element in the visual canv
     <video width="100%" autoPlay muted loop src={useBaseUrl("/docs/guides/user-interfaces/basics/edit-properties.mp4")}/>
 </div>
 
-## The visual heirarchy
-As you add UI elements to your component you will see the visual heirarchy being built in the node graph editor. All UI elements are depicted as blue nodes. Here are some nifty things to know about the visual hierarchy in the node editor.
+## The visual hierarchy
+As you add UI elements to your component you will see the visual hierarchy being built in the node graph editor. All UI elements are depicted as blue nodes. Here are some nifty things to know about the visual hierarchy in the node editor.
 
 - All components must have a **single root** UI Element, most ofthen this is a **Group** node.
 
 - You can hover the UI elements in the node graph editor to reveal them in the visual canvas.
 
-- You can manipulate the heirarchy much like you would a layer panel in other design tools.
+- You can manipulate the hierarchy much like you would a layer panel in other design tools.
 
 - You can bring up the **Node picker** by **right clicking** in the node graph editor. If you want the newly created UI element to be placed as a child to another UI element simply right click the parent element to bring up the **Node Picker**.
 
@@ -41,7 +41,7 @@ As you add UI elements to your component you will see the visual heirarchy being
 </div>
 
 ## Grouping and Layouts
-Now that you know how to place new components it's time to learn another important concept, grouping. This is how you group UI elements together and control the layout of the elements under a group. Use the **Node Picker** to create a new group, place it where you want it in the heirarchy, select, drag and drop the UI elements that you want under the group.
+Now that you know how to place new components it's time to learn another important concept, grouping. This is how you group UI elements together and control the layout of the elements under a group. Use the **Node Picker** to create a new group, place it where you want it in the hierarchy, select, drag and drop the UI elements that you want under the group.
 
 The **Group** node gives you a bunch of options for layouting user interfaces, learn more about the details of layouting and the group node in this [guide](/docs/guides/user-interfaces/layout)
 

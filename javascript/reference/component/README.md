@@ -25,7 +25,7 @@ Component.Object.Selection = Component.Object.Checkboxes.filter(
 ).map((o) => ({ Value: o.Value }));
 ```
 
-`Component.ParentObject` is similair but this object is the [Parent Component Object](/nodes/component-utilities/parent-component-object), that is the **Component Object** of the parent component in the visual heirarchy. It is also used like any other [Noodl.Object](/javascript/reference/object).
+`Component.ParentObject` is similair but this object is the [Parent Component Object](/nodes/component-utilities/parent-component-object), that is the **Component Object** of the parent component in the visual hierarchy. It is also used like any other [Noodl.Object](/javascript/reference/object).
 
 `Component.RepeaterObject` If this component is the template of a repeater this will contain the object of the items array corresponding to this specific component instance. That is the same object as if you set an object **Id Source** to **From Repeater**, as shown below.
 
