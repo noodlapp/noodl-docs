@@ -21,5 +21,10 @@ jobs:
       - name: Install dependencies 🏗
         run: npm install
 
-      - name: Build noodl
+      - name: Build noodl-docs
         run: npm run build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: noodl-docs
+          path: build/
