@@ -26,7 +26,7 @@ function copyNodeMarkdowns(dir, asFolderName) {
             let outputFilePath = 'build/' + filePath;
             if (asFolderName) {
                 // HACK: Resolve the new nodes folder structure
-                outputFilePath = 'build/' + filePath.split("\\").slice(0, -1).join("/") + '.md'
+                outputFilePath = 'build/' + filePath.split(/\\|\//).slice(0, -1).join("/") + '.md'
             }
 
             if (!fs.existsSync('build/' + dir)) {
