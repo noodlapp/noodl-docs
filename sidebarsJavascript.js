@@ -32,6 +32,7 @@ const sidebars = {
                 { type: 'doc', label: 'Files', id: 'reference/files/README' },
                 { type: 'doc', label: 'Navigation', id: 'reference/navigation/README' },
                 { type: 'doc', label: 'CloudFunctions', id: 'reference/cloudfunctions/README' },
+                { type: 'doc', label: 'SEO', id: 'reference/seo/README' },
             ],
         },
         {
