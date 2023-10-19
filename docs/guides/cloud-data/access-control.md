@@ -1,8 +1,8 @@
 ---
-title: Access Control
+title: Access Control / ACL
 hide_title: true
 ---
-# Access Control
+# Access Control / ACL
 
 ## What you will learn in this guide
 
@@ -154,7 +154,7 @@ But you will also need to provide the **User Id** of the receiver (the sender wi
 
 ## Roles
 
-This is great, but sometimes you want to have a record accessible by many users and if these users change over time it's a hazzle to update all records accordingly. This is where roles come in. A role is in it's essence simply a list of users (this is esstablished via a relation property called **users** on the role). You can add and remove users from the role using the **Add Record Relation** and **Remove Record Relation** nodes. You can add a role via the cloud services dashboard.
+This is great, but sometimes you want to have a record accessible by many users and if these users change over time it's a hassle to update all records accordingly. This is where roles come in. A role is in it's essence simply a list of users (this is esstablished via a relation property called **users** on the role). You can add and remove users from the role using the **Add Record Relation** and **Remove Record Relation** nodes. You can add a role via the cloud services dashboard.
 
 <div className="ndl-image-with-background l">
 
