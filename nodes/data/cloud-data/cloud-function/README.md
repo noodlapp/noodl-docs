@@ -40,6 +40,15 @@ If a **Success** signal is sent the result parameters will be available as outpu
 
 <##head##>
 
+:::note
+
+When using a Noodl-hosted Cloud Service, there is currently a timeout of 15 seconds.
+When the time has passed without a response the request will be canceled and the Error will be `timeout`. 
+
+This does not happen when running Cloud Functions locally where there is no timeout, same when running your own self-hosted Cloud Service.
+
+:::
+
 ## Inputs
 
 | Data                                                | Description                                                                                                                                      |
