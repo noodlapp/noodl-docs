@@ -35,7 +35,6 @@ The <span className="ndl-node">String Format</span> node needs a format input wh
 
 ## Outputs
 
-| Data                                        | Description                                                                                                                     |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Formatted</span> | The formatted string, e.g. if the string format is _{Hours} hours ago_ and the _Hours_ input is connected to a value of _9_ the |
-| formatted string will be _9 hours ago_.     |
+| Data                                        | Description                                                                                                                                                             |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <span className="ndl-data">Formatted</span> | The formatted string, e.g. if the string format is "_{Hours} hours ago_" and the _Hours_ input is connected to a value of _9_, the formatted string will be _9 hours ago_. |
