@@ -43,7 +43,7 @@ Outputs.Data = {
     datasets: [
         {
             label: "Fully Rounded",
-            data: [99, 41, 94, 1, 32, -63, 36]
+            data: [99, 41, 94, 1, 32, -63, 36],
             borderColor: "rgb(255, 99, 132)",
             backgroundColor: "rgba(255, 99, 132, 0.5)",
             borderWidth: 2,
