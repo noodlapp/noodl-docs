@@ -1,0 +1,19 @@
+{
+  "label": "My Prefab",
+  "desc": "A description of what my Prefab does",
+  "icon": "library/prefabs/my-prefab/thumb.png",
+  "project": "library/prefabs/my-prefab/YOUR_PREFAB_ZIP_HERE.zip",
+  "docs": "/library/prefabs/my-prefab/",
+  "tags": [
+    "UI",
+    "Data",
+    "Utility",
+    "Cloud",
+    "Service",
+    "Networking",
+    "Device",
+    "Code",
+    "Analytics",
+    "Animation"
+  ]
+}
