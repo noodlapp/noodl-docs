@@ -29,7 +29,7 @@ To add an iframe to your HTML document, you can use the `<iframe>` tag with the 
 <iframe
   width="560"
   height="315"
-  src="https://example.sandbox.noodl.app/" 
+  src="https://url.to.your.deployed.app/"
   rameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
@@ -37,13 +37,14 @@ To add an iframe to your HTML document, you can use the `<iframe>` tag with the 
 ```
 
 In this example, the `<iframe>` tag has several attributes:
+
 - `width` and `height`: Set the dimensions of the iframe.
-- `src`: The URL of the Noodl sandbox to be embedded.
+- `src`: The URL of your deployed Noodl app.
 - `frameborder`: Set to "0" to remove the border around the iframe.
 - `allow`: Specifies a list of features that are allowed within the iframe, such as accelerometer, autoplay, clipboard-write, encrypted-media, gyroscope, and picture-in-picture.
 - `allowfullscreen`: Allows the iframe to go full-screen mode when the full-screen API is used.
 
-This example demonstrates how to add an iframe to your HTML document to embed a Noodl sandbox. You can customize the attributes as needed to suit your specific use case or other types of content to be embedded using iframes.
+This example demonstrates how to add an iframe to your HTML document to embed a deployed Noodl app. You can customize the attributes as needed to suit your specific use case or other types of content to be embedded using iframes.
 
 ## Micro Frontend
 
@@ -51,4 +52,4 @@ Micro Frontends is an architectural pattern that involves breaking down a fronte
 
 The micro frontend approach allows for greater flexibility and scalability in frontend development, as each micro frontend can be developed and deployed independently, and can be composed to create the overall frontend application. This approach also allows for different teams to work on different parts of the front-end application, using different technologies.
 
-If you are interested in hearing more, [contact us](https://www.noodl.net/community).
+If you are interested in hearing more, [reach out to us in the community](https://www.noodl.net/community).

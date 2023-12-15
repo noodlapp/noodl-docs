@@ -2,6 +2,7 @@
 title: Setting up Google Analytics
 hide_title: true
 ---
+
 # Setting up Google Analytics
 
 ## What you will learn in this guide
@@ -12,11 +13,11 @@ This guide will show you how to add basic tracking with Google Analytics. After 
 
 We will go through the following topics:
 
--   Beginners guide to Google Analytics
--   Set up Google Analytics
--   Set up the Noodl Module
--   Allow tracking
--   Next steps
+- Beginners guide to Google Analytics
+- Set up Google Analytics
+- Set up the Noodl Module
+- Allow tracking
+- Next steps
 
 ## Beginners guide to Google Analytics
 
@@ -55,7 +56,7 @@ Make sure that you are using _Google Analytics 4_ and **NOT** _Universal Analyti
 
 So what is a **Data Stream**? Simply put, it's a connection that will stream data from your app to Google Analytics. You can have multiple **Data Streams** in your **Property**, but in most cases you will only need one.
 
-Let's set up our first **Data Stream**. As Noodl outputs Web Apps, we will need to select the [**Web** option](https://support.google.com/analytics/answer/9304153#stream&zippy=%2Cweb). When asked for the URL of the primary website, this needs to be the URL for your app [when it's deployed](/docs/guides/deploy/deploying-an-app-on-sandbox). `example.com` works for testing purposes as well.
+Let's set up our first **Data Stream**. As Noodl outputs Web Apps, we will need to select the [**Web** option](https://support.google.com/analytics/answer/9304153#stream&zippy=%2Cweb). When asked for the URL of the primary website, this needs to be the URL for your app when it's deployed. `example.com` works for testing purposes as well.
 
 !> Make sure to disable [_Enhanced Measurement_](https://support.google.com/analytics/answer/9216061), as this might send double page views.
 

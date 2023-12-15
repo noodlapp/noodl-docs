@@ -2,9 +2,12 @@
 title: Deploying and hosting Noodl apps
 hide_title: true
 ---
+
 # Deploying and hosting Noodl apps
 
-Noodl have it's own hosting infrastructure which makes it very easy to deploy Noodl app. You can also use your own custom domain to point to the app if you have one.
-If you for some reason want to host the frontend and/or the backend on you own infrastructure that's also possible.
+Noodl allows you to export your frontend and backend so that you can host it on your own servers.
 
-### [Start learning about hosting and deployment of Noodl apps](/docs/guides/deploy/deploying-an-app-on-sandbox)
+- [Learn about deploying the frontend](/docs/guides/deploy/hosting-frontend)
+- [Learn about deploying the backend on AWS](/docs/guides/deploy/setting-up-backend-on-aws)
+- [Learn about deploying the backend on GCP](/docs/guides/deploy/setting-up-backend-on-gcp)
+- [Learn about deploying to iOS and Android](/docs/guides/deploy/deploying-to-ios-and-android)

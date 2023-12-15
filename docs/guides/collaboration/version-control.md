@@ -14,27 +14,18 @@ Version control has three main use cases:
 
 </div>
 
-Noodl uses [Git](https://git-scm.com) as the underlying version control system. The project folder is a git repository.
-Users comfortable with git can use external git clients to view their Noodl projects.
+Noodl uses [Git](https://git-scm.com) as the underlying version control system. The project folder is a Git repository.
+Users comfortable with Git can use external git clients to view their Noodl projects.
 
 ## Enabling version control
 
-Projects will automatically get a version control repository in the cloud. You can use it locally without sending data to the cloud, but to collaborate you have to push your changes, which will upload the project to Noodl's cloud.
+Noodl projects will automatically initiate a Git project in the Project Folder. To activate the Version Control sidepanel you will need to push the Project Folder to an external Git repo, with any Git provider of your choice. This can be done through the terminal, or with a Git client like [Github Desktop](https://desktop.github.com/).
 
-:::danger
-
-A project that isn't pushed isn't available to collaborators or if you log into another computer.
-Same goes for the changes you make, you have to push them to upload to the cloud.
-
-:::
-
-Read more about how to push your project below.
+Any project collaborators will have to clone the project from the repo, and then open the downloaded Project Folder in Noodl.
 
 ## The version control panel
 
-The version control panel is where you perform all actions related to version control.
-This includes actions such as pushing new changes to your collaborators,
-pulling down the latest version, seeing differences between versions, merging branches, and more.
+The version control panel is where you perform all actions related to version control. This includes actions such as pushing new changes to your collaborators, pulling the latest version, seeing differences between versions, merging branches, and more.
 
 <div className="ndl-image-with-background">
 
@@ -44,7 +35,7 @@ pulling down the latest version, seeing differences between versions, merging br
 
 ## Commiting your changes
 
-When there are changes in your project and you can commit your changes to the version control system. This creates a commit, which is a snapshot of the state of your entire project. This can then be pushed to share your changes with collaborators (or yourself if you work on multiple computers).
+When there are changes in your project you can commit them to the version control system. This creates a commit, which is a snapshot of the current state of your entire project. This can then be pushed to share your changes with collaborators (or yourself if you work on multiple computers).
 
 <div className="ndl-image-with-background">
 

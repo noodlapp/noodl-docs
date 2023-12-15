@@ -453,20 +453,6 @@ const guides = [
     items: [
       {
         type: 'doc',
-        label: 'Sandbox Deploy',
-        id: 'guides/deploy/deploying-an-app-on-sandbox',
-        imageUrl: '/img/featured-content-images/hosting.png',
-        description: 'Learn how to deploy your app to a Noodl sandbox domain',
-      },
-      {
-        type: 'doc',
-        label: 'Deploying to custom domains',
-        id: 'guides/deploy/deploying-to-custom-domain',
-        imageUrl: '/img/featured-content-images/hosting.png',
-        description: 'Learn how to deploy your app to custom domains ',
-      },
-      {
-        type: 'doc',
         label: 'Using a self hosted cloud service',
         id: 'guides/deploy/using-an-external-backend',
         imageUrl: '/img/featured-content-images/data.png',
