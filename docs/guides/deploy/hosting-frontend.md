@@ -35,3 +35,17 @@ Make sure you pick the backend you want to use for the deploy.
 -   **Google Cloud Platform** If you would like use GCP to host the frontend you can follow this [guide](https://cloud.google.com/storage/docs/hosting-static-website). There you will create a bucket, a load balancer and a CDN.
 
 -   **Amazon Web Services** If you prefer to use AWS you can watch this [video](https://www.youtube.com/watch?v=BpFKnPae1oY&ab_channel=AmazonWebServices) it will explain how to create an S3 bucket and how to route traffic using the AWS DNS service, Route 53.
+
+## Hosting your Frontend at Vercel
+
+It is super simple. So simple even Rico can do it.
+
+1. Create accounts on both Github and Vercel
+1. Deploy your Noodl project to local folder
+1. Go into that folder and initialize git
+1. Go to Github and create a new repo
+1. Link local to that remote Github
+1. In Vercel, create a new project, select Github, select the repo you just created.
+... voilà: your server is up and running
+
+Vercel will automatically redeploy anytime you push a new version to the main branch (or whichever branch you chose).
