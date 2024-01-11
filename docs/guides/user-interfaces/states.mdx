@@ -24,7 +24,7 @@ First let's start with the basic visual nodes that make up the switch. This is s
 
 <div className="ndl-image-with-background xl">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/switch-nodes.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/switch-nodes.png")}
     className="ndl-image med"
   ></img>
   <CopyToClipboardButton
@@ -82,11 +82,11 @@ Below you can see the styling of the two nodes. The first image shows the Circle
 
 <div className="ndl-image-with-background l">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/style-props1.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/style-props1.png")}
     className="ndl-image small"
   ></img>
   <img
-    src="/2.8/docs/guides/user-interfaces/states/style-props2.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/style-props2.png")}
     className="ndl-image small"
   ></img>
 </div>
@@ -99,7 +99,7 @@ Next, create the two states.
 
 <div className="ndl-image-with-background l">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/create-states.gif"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/create-states.gif")}
     className="ndl-image med"
   ></img>
 </div>
@@ -110,7 +110,7 @@ We will also specify **Values** for each of our states. In the same way you adde
 
 <div className="ndl-image-with-background">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/values-1.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/values-1.png")}
     className="ndl-image med"
   ></img>
 </div>
@@ -119,11 +119,11 @@ Specify the value for each state. The X position should be **40** when the switc
 
 <div className="ndl-image-with-background">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/on-values.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/on-values.png")}
     className="ndl-image med"
   ></img>
   <img
-    src="/2.8/docs/guides/user-interfaces/states/off-values.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/off-values.png")}
     className="ndl-image med"
   ></img>
 </div>
@@ -131,7 +131,7 @@ Specify the value for each state. The X position should be **40** when the switc
 Connect the **Knob X** output of the **States** node to the **Pos X** input of the **Circle** node.
 
 <div className="ndl-image-with-background xl">
-  <img src="/2.8/docs/guides/user-interfaces/states/knob-x-connected.png"></img>
+  <img src={useBaseUrl("/docs/guides/user-interfaces/states/knob-x-connected.png")}></img>
 </div>
 
 As you can see the **States** node will get an output corresponding to each value that is defined under **Values**. This output will transition to the specified values when the **States** node changes state. One way to see the different states and transitions is to play with the **State** dropdown menu in the properties panel.
@@ -146,7 +146,7 @@ You can connect the outputs of the **States** node to anything you like. In this
 
 <div className="ndl-image-with-background">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/color-type.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/color-type.png")}
     className="ndl-image med"
   ></img>
 </div>
@@ -154,7 +154,7 @@ You can connect the outputs of the **States** node to anything you like. In this
 Finally, we can make the **States** node toggle state when the switch **Group** node is clicked. This is achieved by connecting the **Click** signal from the **Group** to the **Toggle** input of the **States** node. This will make the **States** node jump to the next state in the list and when the last one is reached it will jump to the first one again. In this case we only have two states, so it will toggle between **On** and **Off**.
 
 <div className="ndl-image-with-background xl">
-  <img src="/2.8/docs/guides/user-interfaces/states/click-toggle.png"></img>
+  <img src={useBaseUrl("/docs/guides/user-interfaces/states/click-toggle.png")}></img>
   <CopyToClipboardButton
     json={{
       nodes: [
@@ -249,7 +249,7 @@ For _number_ and _color_ types the **States** node will try to smoothly transiti
 
 <div className="ndl-image-with-background xl">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/hover-fx-nodes.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/hover-fx-nodes.png")}
     className="ndl-image med"
   ></img>
   <CopyToClipboardButton
@@ -335,7 +335,7 @@ This simple graph has a **States** node that controls the hover state of a **Gro
 
 <div className="ndl-image-with-background">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/hover-fx1.gif"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/hover-fx1.gif")}
     className="ndl-image small"
   ></img>
 </div>
@@ -344,7 +344,7 @@ Both transitions (color and size) have the default transition curves. You can ed
 
 <div className="ndl-image-with-background">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/transition-props.png"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/transition-props.png")}
     className="ndl-image med"
   ></img>
 </div>
@@ -355,7 +355,7 @@ In this case we want to change the curve for the **Size** transition. You can ed
 
 <div className="ndl-image-with-background l">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/change-size-curve.gif"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/change-size-curve.gif")}
     className="ndl-image med"
   ></img>
 </div>
@@ -369,7 +369,7 @@ You can play with different settings for the curves and see them working when yo
 
 <div className="ndl-image-with-background">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/hover-fx2.gif"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/hover-fx2.gif")}
     className="ndl-image small"
   ></img>
 </div>
@@ -379,7 +379,7 @@ You can play with different settings for the curves and see them working when yo
 You can also connect several **States** nodes together to create more complex types of animations. In the node graph below we have a second **States** node that expands the **Group** node (changes the width). The second **States** node labeled **Expand** changes the width between the states **Yes** and **No**. The neat thing is that it is triggered when the first states node (the hover states) has reached the **Yes** state. It is returned to **No** when the mouse leaves (the hover end), just like the first node.
 
 <div className="ndl-image-with-background xl">
-  <img src="/2.8/docs/guides/user-interfaces/states/chaining-states.png"></img>
+  <img src={useBaseUrl("/docs/guides/user-interfaces/states/chaining-states.png")}></img>
   <CopyToClipboardButton
     json={{
       nodes: [
@@ -517,7 +517,7 @@ This will result in the behaviour shown below. As you can see the first **States
 
 <div className="ndl-image-with-background">
   <img
-    src="/2.8/docs/guides/user-interfaces/states/hover-fx3.gif"
+    src={useBaseUrl("/docs/guides/user-interfaces/states/hover-fx3.gif")}
     className="ndl-image small"
   ></img>
 </div>

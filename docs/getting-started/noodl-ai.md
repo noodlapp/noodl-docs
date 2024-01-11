@@ -31,7 +31,7 @@ Please note that the performance of the same AI command varies between the two m
 
 ## Setup Instructions
 
-Any version of the editor that is version 2.9 or higher comes with the generative features enabled. You can see your current version during login, or in the top right corner of the editor. If your editor has not automatically updated to the latest version, visit the [Noodl Console](https://console.noodl.net) to download it manually.
+Any version of the editor that is version 2.9 or higher comes with the generative features enabled. You can see your current version during login, or in the top right corner of the editor.
 
 When opening a project you should see the AI bar in the top left corner of the node canvas. In the Editor Settings (in the Sidepanel) you can find options for changing the AI model, or disabling all AI features.
 
@@ -133,7 +133,7 @@ Here are some examples of prompting the `/Write to database` command:
 </div>
 
 :::note
-This is an experimental command and is still both limited and unpolished. Please reach out to us if you have any thoughts on future developments.
+This is an experimental command and is still both limited and unpolished.
 :::
 
 The `/UI` command is used to generate visual nodes from a text prompt. Currently it supports the Group, Columns, Button, Text Input, Checkbox, Image and Dropdown nodes, with some limited styling. It can also generate components from your design system, if they are AI annotated.
@@ -171,7 +171,7 @@ This method allows you fine grained control over your design system, while still
 </div>
 
 :::note
-This is an experimental command and is still both limited and unpolished. Please reach out to us if you have any thoughts on future developments.
+This is an experimental command and is still both limited and unpolished.
 :::
 
 The `/Image` command creates a single Image node and populates it with a Dall-E generated image. The images are saved in the project folder.
