@@ -223,14 +223,7 @@
     "docs": "/library/prefabs/openai/",
     "tags": ["Cloud"]
   },
-  {
-    "label": "PDF Export",
-    "desc": "A prefab for creating a PDF file from a web page",
-    "icon": "library/prefabs/pdf/pdf.png",
-    "project": "library/prefabs/pdf/pdf-0-1.zip",
-    "docs": "/library/prefabs/pdf/",
-    "tags": ["Cloud"]
-  },
+  
   {
     "label": "Xano",
     "desc": "Connects to Xano and handles queries, users and authTokens. Built by @gmaison.",
