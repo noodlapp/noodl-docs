@@ -38,7 +38,7 @@ Make sure you pick the backend you want to use for the deploy.
 
 ## Hosting your Frontend at Vercel
 
-It is super simple. So simple even Rico can do it.
+It straight forward (after you have your accounts set up).
 
 1. Create accounts on both Github and Vercel
 1. Deploy your Noodl project to local folder
