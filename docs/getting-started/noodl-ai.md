@@ -15,8 +15,6 @@ Noodl AI presents a unique way of leveraging the power of Large Language Models 
 
 Easily create JavaScript logic, handle API calls, interact with databases, and generate UI elements. Our goal is to make the development process more inclusive and accessible for a bigger range of skill sets. Whether you're an experienced developer or a beginner, Noodl AI is here to support you throughout your app development journey.
 
-> In the ever-evolving field of generative AI, Noodl AI keeps pace with the latest developments as well as the valuable feedback from the Noodl community. Please don’t hesitate to reach out with your thoughts on our [Discord](https://discord.com/invite/23xU2hYrSJ) or [Twitter](https://twitter.com/getnoodl).
-
 ## Noodl AI access
 
 Noodl AI is built on top of OpenAIs GPT models, and requires you to input an OpenAI API key. It currently supports two modes:
