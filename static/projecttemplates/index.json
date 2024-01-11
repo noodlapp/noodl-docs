@@ -28,15 +28,6 @@
         "category": "Basic"
     },
     {
-        "iconURL": "signup_template/signup_thumbnail.png",
-        "title": "Sign up and log in",
-        "desc": "A project with a full sign up and log in flow.",
-        "projectURL": "signup_template/signuptemplate-2-5.zip",
-        "category": "Basic",
-        "useCloudServices": true,
-        "cloudServicesTemplateURL": "signup_template/signup-app-cf.json"
-    },
-    {
         "iconURL": "task_manager_template/taskmanager.png",
         "title": "Task Manager App",
         "desc": "The final task manager app from the interactive lessons",

@@ -19,7 +19,7 @@
     "label": "Multi Choice with Pills",
     "desc": "A multi select drop down, showing the selected items as pills.",
     "icon": "library/prefabs/multi-choice-with-pills/multi-choice-with-pills.png",
-    "project": "library/prefabs/multi-choice-with-pills/multi-choice-with-pills-0-8.zip",
+    "project": "library/prefabs/multi-choice-with-pills/multi-choice-with-pills-0-9.zip",
     "docs": "/library/prefabs/multi-choice-with-pills/",
     "tags": ["UI"]
   },
