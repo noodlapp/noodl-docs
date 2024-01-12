@@ -3,7 +3,7 @@ hide_title: true
 title: REST node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # REST
 
@@ -17,7 +17,7 @@ This node is used to connect to external [REST](https://en.wikipedia.org/wiki/Re
 
 You initiate the request by sending a <span className="ndl-signal">signal</span> to the <span className="ndl-signal">Fetch</span> input. Any inputs and outputs to the node are specified in the `request` and `response` scripts.
 
-<##head##>
+{/*##head##*/}
 
 ## Request and response script
 

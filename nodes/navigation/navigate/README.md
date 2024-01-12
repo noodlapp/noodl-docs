@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Navigate node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Navigate
 
@@ -18,7 +18,7 @@ This node is used to navigate between <span className="ndl-node">[Page](/nodes/n
 
 You can use a [Page Inputs](/nodes/navigation/page-inputs) node to pass parameters to the <span className="ndl-node">Page</span> you are navigating to. Any <span className="ndl-data">Path Parameters</span> or <span className="ndl-data">Query Parameters</span> you add will show up as inputs to the <span className="ndl-node">Navigate</span> node if you select that <span className="ndl-node">Page</span> as the <span className="ndl-data">Target Page</span>.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
@@ -32,13 +32,13 @@ You can use a [Page Inputs](/nodes/navigation/page-inputs) node to pass paramete
 
 | Signal                                       | Description                                                                                                       |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Navigate</span> | <##input:navigate##>Sending a signal to this input will perform the navigation to the **Target Page**.<##input##> |
+| <span className="ndl-signal">Navigate</span> | {/*##input:navigate##*/}Sending a signal to this input will perform the navigation to the **Target Page**.{/*##input##*/} |
 
 | Mixed               | Description                                                                                                                                             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Page Parameters** | Any page parameters set in the [Pages Inputs](/nodes/navigation/page-inputs) used by the **Page** will be available as inputs on the **Navigate** node. |
 
-<span className="hidden-props-for-editor"><##input:pm-\*##> An input parameter originating from the **Page Inputs** node of the **Target Page**.<##input##></span>
+<span className="hidden-props-for-editor">{/*##input:pm-\*##*/} An input parameter originating from the **Page Inputs** node of the **Target Page**.{/*##input##*/}</span>
 
 </div>
 
@@ -48,6 +48,6 @@ You can use a [Page Inputs](/nodes/navigation/page-inputs) node to pass paramete
 
 | Signal                                        | Description                                                                                    |
 | --------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Navigated</span> | <##output:navigated##>This event is triggered when a navigation as been performed.<##output##> |
+| <span className="ndl-signal">Navigated</span> | {/*##output:navigated##*/}This event is triggered when a navigation as been performed.{/*##output##*/} |
 
 </div>

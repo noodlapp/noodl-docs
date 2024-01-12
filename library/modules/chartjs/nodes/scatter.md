@@ -3,7 +3,7 @@ title: Scatter Chart
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Scatter Chart
 
@@ -17,7 +17,7 @@ This visual node adds a scatter chart to the visual tree.
 
 [Here](../charts/scatter) is an example how to use used the node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

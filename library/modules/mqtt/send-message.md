@@ -3,7 +3,7 @@ title: Send Message
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 # Send Message 
 
 **Send Message** nodes are used to send a message over MQTT, to another device for example. All devices that connect to the editor will
@@ -12,7 +12,7 @@ use the same MQTT broker and thus messages can be sent across devices. The **Sen
 
 ![](/library/modules/mqtt/send-message.gif)
 
-<##head##>
+{/*##head##*/}
 
 <div class = "node-inputs">
 

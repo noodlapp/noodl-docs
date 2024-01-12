@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Query Records node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Query Records
 
@@ -24,7 +24,7 @@ You can specify the query using filter, sorting and limit in the Property Panel.
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Filters
 
@@ -320,27 +320,27 @@ sort(["-Age", "createdAt"]);
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <span className="ndl-data">Class</span>             | Select the **Class** for the types of records this node should query. When the **Class** is selected you can create filters and sorting based on the properties of the **Class**.                                                                                                 |
 | <span className="ndl-data">Filter</span>            | This specifies the type of filter, you can choose from:<br/><br/>`Visual`: Specify your filter using the visual filter editor.<br/>`JavaScript`: Specify your filter using JavaScript (this is more flexible and you can create more dynamic queyries but it's also more complex) |
-| <span className="ndl-data">Use Limit</span>         | <##input:use limit##>Enable or disable the use of limit, i.e. that you can specify how many records are returned as a maximum and if a number of record should be skipped.<##input##>                                                                                             |
-| <span className="ndl-data">Limit</span>             | <##input:limit##>The maximum number of records to be returned by the backend.<##input##>                                                                                                                                                                                          |
-| <span className="ndl-data">Skip</span>              | <##input:skip##>This property allows you to skip a number of records from being returned by the backend. Using **Skip** and **Limit** allows you to do paging, e.g. return records from 10-20.<##input##>                                                                         |
-| <span className="ndl-data">Fetch Total Count</span> | <##input:storageEnableCount##>Enable this to also query for the total count of records matching the filters. Even if you limit the returned result. <##input##>                                                                                                                   |
-| <span className="ndl-data">Query Parameters</span>  | <##input:qp-\*##>The input for specifying the value of a query parameter.<##input##> Each paramteter used in your query will get an input where you can provide a value through a connection.<##input##>                                                                          |
+| <span className="ndl-data">Use Limit</span>         | {/*##input:use limit##*/}Enable or disable the use of limit, i.e. that you can specify how many records are returned as a maximum and if a number of record should be skipped.{/*##input##*/}                                                                                             |
+| <span className="ndl-data">Limit</span>             | {/*##input:limit##*/}The maximum number of records to be returned by the backend.{/*##input##*/}                                                                                                                                                                                          |
+| <span className="ndl-data">Skip</span>              | {/*##input:skip##*/}This property allows you to skip a number of records from being returned by the backend. Using **Skip** and **Limit** allows you to do paging, e.g. return records from 10-20.{/*##input##*/}                                                                         |
+| <span className="ndl-data">Fetch Total Count</span> | {/*##input:storageEnableCount##*/}Enable this to also query for the total count of records matching the filters. Even if you limit the returned result. {/*##input##*/}                                                                                                                   |
+| <span className="ndl-data">Query Parameters</span>  | {/*##input:qp-\*##*/}The input for specifying the value of a query parameter.{/*##input##*/} Each paramteter used in your query will get an input where you can provide a value through a connection.{/*##input##*/}                                                                          |
 
 | Signal                                 | Description                                                                                                   |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Do</span> | <##input:do##>Send a signal here to perform the query and fetch matching records from the backend.<##input##> |
+| <span className="ndl-signal">Do</span> | {/*##input:do##*/}Send a signal here to perform the query and fetch matching records from the backend.{/*##input##*/} |
 
 ## Outputs
 
 | Data                                              | Description                                                                                                                                                                                          |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Items</span>           | <##output:items##>The result of the query as an array of **Records**.<##output##>                                                                                                                    |
-| <span className="ndl-data">Count</span>           | <##output:count##>The number of records in the result.<##output##>                                                                                                                                   |
-| <span className="ndl-data">First Record Id</span> | <##output:first record id##>The Id of the first Record in the result array.<##output##>                                                                                                              |
-| <span className="ndl-data">Error</span>           | <##output:error##>This output contains the error message incase something when wrong when executing the query.<##output##>                                                                           |
-| <span className="ndl-data">Total Count</span>     | <##output:storageTotalCount##>If **Fetch Total Count** is enabled then this output will contain the total number of records that match the query. Even if you limit the returned result.<##output##> |
+| <span className="ndl-data">Items</span>           | {/*##output:items##*/}The result of the query as an array of **Records**.{/*##output##*/}                                                                                                                    |
+| <span className="ndl-data">Count</span>           | {/*##output:count##*/}The number of records in the result.{/*##output##*/}                                                                                                                                   |
+| <span className="ndl-data">First Record Id</span> | {/*##output:first record id##*/}The Id of the first Record in the result array.{/*##output##*/}                                                                                                              |
+| <span className="ndl-data">Error</span>           | {/*##output:error##*/}This output contains the error message incase something when wrong when executing the query.{/*##output##*/}                                                                           |
+| <span className="ndl-data">Total Count</span>     | {/*##output:storageTotalCount##*/}If **Fetch Total Count** is enabled then this output will contain the total number of records that match the query. Even if you limit the returned result.{/*##output##*/} |
 
 | Signal                                      | Description                                                                                                                                            |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-signal">Success</span> | <##output:success##>A signal is sent here if the query was successful and the result is ready.<##output##>                                             |
-| <span className="ndl-signal">Failure</span> | <##output:failure##>A signal is sent here if something went wrong with the query. You can find the error message via the **Error** output.<##output##> |
+| <span className="ndl-signal">Success</span> | {/*##output:success##*/}A signal is sent here if the query was successful and the result is ready.{/*##output##*/}                                             |
+| <span className="ndl-signal">Failure</span> | {/*##output:failure##*/}A signal is sent here if something went wrong with the query. You can find the error message via the **Error** output.{/*##output##*/} |

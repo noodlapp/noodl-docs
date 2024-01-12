@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Image node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Image
 
@@ -12,7 +12,7 @@ This node places an image in the visual tree. It features a wide range of design
 
 The <span className="ndl-data">source</span> can be set from a URL or a file. You can drag images from your computer and drop them into Noodl to add them to the project folder. This will make them selectable as the <span className="ndl-data">source</span> in the <span className="ndl-node">Image</span> nodes Property Panel.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

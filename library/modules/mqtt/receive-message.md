@@ -3,7 +3,7 @@ title: Receive Message
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Receive Message
 
@@ -11,7 +11,7 @@ hide_title: true
 be used for inter-device communication and IoT. The **Receive Message** node subscribes to an MQTT topic and receives any message and payload published to that topic.
 
 ![](/library/modules/mqtt/receive-message.png)
-<##head##>
+{/*##head##*/}
 
 <div class = "node-inputs">
 

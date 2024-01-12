@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Set Parent Component Object Properties node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Set Parent Component Object Properties
 
@@ -16,20 +16,20 @@ With this node you can set properties on the closed parent **Component Object**.
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
 | Signal                                 | Description                                                                                                                                                                                                                                                                   |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Do</span> | <##input:do##>Stores any properties that are typed in the property panel or connected. All **Component Object** nodes in the same component, as well as any [Parent Component Object](/nodes/component-utilities/parent-component-object) nodes, will be updated. <##input##> |
+| <span className="ndl-signal">Do</span> | {/*##input:do##*/}Stores any properties that are typed in the property panel or connected. All **Component Object** nodes in the same component, as well as any [Parent Component Object](/nodes/component-utilities/parent-component-object) nodes, will be updated. {/*##input##*/} |
 
 | Data                                                | Description                                                                                                                                     |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Custom Properties</span> | <##input:prop-\*##>A property to set in the **Component Object**. You can list the properties you want to set in the property panel.<##input##> |
+| <span className="ndl-data">Custom Properties</span> | {/*##input:prop-\*##*/}A property to set in the **Component Object**. You can list the properties you want to set in the property panel.{/*##input##*/} |
 
 ## Outputs
 
 | Signal                                   | Description                                                                                    |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Done</span> | <##output:done##>A signal is sent on this output when the set action is completed.<##output##> |
+| <span className="ndl-signal">Done</span> | {/*##output:done##*/}A signal is sent on this output when the set action is completed.{/*##output##*/} |

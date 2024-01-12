@@ -3,14 +3,14 @@ title: Validate
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Validate
 
 The **Validate** node is used to validate data provided as inputs to the node based on a specified _schema_. This is most commonly used to validate input forms, learn more in the [guide](/library/modules/validation).
 
 ![](/library/modules/validation/simple-validate.png ':class=img-size-l')
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

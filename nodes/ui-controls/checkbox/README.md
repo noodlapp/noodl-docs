@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Checkbox node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Checkbox
 
@@ -24,7 +24,7 @@ The checkbox will flip its state when clicked and its <span className="ndl-data"
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 This control contains all logic such as accessibility etc. It can be styled in via it's properties, or you can use it only for the logic and create your own checkbox component in your own design system.
 
@@ -42,8 +42,8 @@ The main input of the Checkbox node is the <span className="ndl-data">Checked</s
 
 | Data                                               | Description                                                                                                                                                              |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Checked</span>          | <##input:checked##>A boolean setting the checkbox in "checked" or "unchecked" state. This is the value of the checkbox and can be connected to a data source.<##input##> |
-| <span className="ndl-data">Background Color</span> | <##input:backgroundColor##>The background color when the checkbox is "checked"<##input##>.                                                                               |
+| <span className="ndl-data">Checked</span>          | {/*##input:checked##*/}A boolean setting the checkbox in "checked" or "unchecked" state. This is the value of the checkbox and can be connected to a data source.{/*##input##*/} |
+| <span className="ndl-data">Background Color</span> | {/*##input:backgroundColor##*/}The background color when the checkbox is "checked"{/*##input##*/}.                                                                               |
 
 </div>
 
@@ -116,7 +116,7 @@ The main output of the Checkbox node is the <span className="ndl-data">Checked</
 
 | Data                                      | Description                                                                                                                                                                                                                                    |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Checked</span> | <##output:checked##>A boolean output that is true when this checkbox control is checked and false if not. This is useful when using this control as a base for your own component that will represent visually that it is checked.<##output##> |
+| <span className="ndl-data">Checked</span> | {/*##output:checked##*/}A boolean output that is true when this checkbox control is checked and false if not. This is useful when using this control as a base for your own component that will represent visually that it is checked.{/*##output##*/} |
 
 </div>
 

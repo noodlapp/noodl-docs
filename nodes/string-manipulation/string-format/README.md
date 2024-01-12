@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: String Format node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # String Format
 
@@ -24,7 +24,7 @@ The <span className="ndl-node">String Format</span> node needs a format input wh
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

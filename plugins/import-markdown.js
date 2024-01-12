@@ -6,7 +6,7 @@
  */
 
 const path = require('path')
-const remark = require('remark')
+const { remark } = require('remark')
 const remarkMdx = require('remark-mdx')
 const { _parseNoodlMarkupPlugin } = require('./markdown-syntax')
 const readFileSync = require('fs').readFileSync

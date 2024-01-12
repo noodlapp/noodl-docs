@@ -21,7 +21,7 @@ The properties of the object will be that of the supplied data. A special case i
 the id attribute that will become the id of the object and not part of the object properties.
 E.g. the code below will create an object with two properties and the id set to 'A'.
 
-```javascript
+```js
 Noodl.Object.create({
   id: "A",
   myProp1: 10,
@@ -50,7 +50,7 @@ Supported events:
 
 Example usage:
 
-```javascript
+```js
 myObject.on("change", function (args) {
   // property with name args.name was changed
   // new value in args.value
@@ -138,7 +138,7 @@ Noodl.Objects["unique"].fill(5);
 
 Returns the value of the property with the specified name.
 As in the set function the dot notation can be used if the object has another object as a property,
-if the options {resolve:true} is supplied.
+if the options `{resolve:true}` is supplied.
 
 `myObject.get('myProp3.anotherProp',{resolve:true})`
 

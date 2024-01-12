@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Run Tasks node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Run Tasks
 
@@ -24,7 +24,7 @@ The <span className="ndl-node">Run Tasks</span> node needs a task component that
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 You can control the behaviour of how the tasks are run with the properties.
 

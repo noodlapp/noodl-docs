@@ -3,7 +3,7 @@ title: Marquee
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Marquee
 
@@ -15,7 +15,7 @@ This visual node adds a marquee container to the visual tree.
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

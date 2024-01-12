@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Component Children node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Component Children
 
@@ -20,7 +20,7 @@ the **Component Children** node.
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 To fully understand this concept it's important to understand node hierarchies.
 Visual nodes can be placed in a hierarchy which will cause them to be layouted and drawn appropriately.

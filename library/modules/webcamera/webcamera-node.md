@@ -2,7 +2,7 @@
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 # Webcamera
 
 !> The documentation for this node will be coming soon.
@@ -14,4 +14,4 @@ The **Web Camera** node gets the video stream of a target device’s camera (mob
 It will work inside of Noodl without problems, but to make it work on a phone, or on a website, the project needs to be hosted on a secure server (https). If you use the Noodl Cloud Deploy functionality your project will be hosted on a secure server so this is a great way to test the Web Camera on a phone.
 
 Note that iOS sometimes can be tricky, but try setting the Video node to mute and autoplay to get the Web Camera stream.
-<##head##>
+{/*##head##*/}

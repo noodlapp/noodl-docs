@@ -3,7 +3,7 @@ title: Mapbox Polygon
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Mapbox Polygon
 
@@ -29,7 +29,7 @@ Outputs.Coordinates = [
 ];
 ```
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

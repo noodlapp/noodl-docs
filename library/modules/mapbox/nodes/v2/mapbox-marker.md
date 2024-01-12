@@ -3,7 +3,7 @@ title: Mapbox Marker
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Mapbox Marker
 
@@ -15,7 +15,7 @@ This node should be placed as a child in the Mapbox Map node, it can be used in 
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

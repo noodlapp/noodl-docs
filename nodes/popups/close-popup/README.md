@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Close Popup node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Close Popup
 
@@ -18,7 +18,7 @@ This node is used to close a popup that have previously been shown with the <spa
 
 You can also pass data back to the component that triggered the popup by adding <span className="ndl-data">Result</span> values and <span className="ndl-signal">Close Action</span> signals. This is typically used for popups that propmt the user for some kind of input or action, like **Name**, **Confirm** or **Cancel**.
 
-<##head##>
+{/*##head##*/}
 
 ### Results and close actions
 
@@ -56,13 +56,13 @@ These **Result** values and **Close Actions** will also become available as outp
 
 | Signal                                            | Description                                                                                                               |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Close</span>         | <##input:close##>Send a signal here to close the popup. If no close actions are specified this should be used.<##input##> |
+| <span className="ndl-signal">Close</span>         | {/*##input:close##*/}Send a signal here to close the popup. If no close actions are specified this should be used.{/*##input##*/} |
 | <span className="ndl-signal">Close Actions</span> | All close actions specified on this node will become available as signal inputs. See above for more details.              |
 
-<span className="hidden-props-for-editor"><##input:closeAction-\*##>When the **Popup** is closed using this custom **Close Action**, the same signal be triggered on the **Show Popup** node that was used to open the **Popup**.<##input##></span>
+<span className="hidden-props-for-editor">{/*##input:closeAction-\*##*/}When the **Popup** is closed using this custom **Close Action**, the same signal be triggered on the **Show Popup** node that was used to open the **Popup**.{/*##input##*/}</span>
 
 | Data                                            | Description                                                                                           |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | <span className="ndl-data">Result Values</span> | All result values specified on this node will become available as inputs. See above for more details. |
 
-<span className="hidden-props-for-editor"><##input:result-\*##>When the **Popup** is closed, this result parameter will be forwarded as an output on the **Show Popup** node that was used to open the **Popup**.<##input##></span>
+<span className="hidden-props-for-editor">{/*##input:result-\*##*/}When the **Popup** is closed, this result parameter will be forwarded as an output on the **Show Popup** node that was used to open the **Popup**.{/*##input##*/}</span>

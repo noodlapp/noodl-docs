@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Unique Id node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Unique Id
 
@@ -18,7 +18,7 @@ This node generates a unique ID, something that is very useful when storing data
 
 Generating a unique ID for every entity in the database means that it can easily be retrieved and referenced, no matter what the content is.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

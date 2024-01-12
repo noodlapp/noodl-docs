@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Radio Button node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Radio Button
 
@@ -24,7 +24,7 @@ You must specify a unique <span className="ndl-data">Value</span> for each <span
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 The core radio button has a very simple visual appearance and is most often used in other components as part of a design system. This control contains all logic such as accessibility etc. It can be styled in via it's properties, or you can use it only for the logic and create your own radio button component in your own design system.
 

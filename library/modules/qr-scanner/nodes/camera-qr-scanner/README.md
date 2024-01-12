@@ -3,7 +3,7 @@ title: Camera QR Scanner
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Camera QR Scanner
 
@@ -16,7 +16,7 @@ The **Camera QR Scanner** node is used to open the camera view finder and scan f
 </div>
 When a QR code has been successfully identified, the node will send a <span className="ndl-signal">Scan Successful</span> event and the decoded string, otherwise <span className="ndl-signal">Scan Failed</span>.
 In this node, the decoding happens in real time, meaning if the QR code is not visible anymore the node will send an event to indicate that the scanning failed.
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

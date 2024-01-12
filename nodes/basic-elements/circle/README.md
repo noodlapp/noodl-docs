@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Circle node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Circle
 
@@ -16,7 +16,7 @@ This node places a circle (or a circle segment) in the visual tree. It features 
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

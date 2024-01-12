@@ -3,7 +3,7 @@ title: Send Google Analytics Data
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Send Google Analytics Data
 
@@ -15,7 +15,7 @@ This node is used to send custom data to Google Analytics. It works similarily t
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

@@ -365,5 +365,5 @@ The Dimension Constraints Gadget allows you to clamp the values of the [Dimensio
 | Data                                        | Description                                                                                         |
 | ------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | <span className="ndl-data">Tag</span>       | The tag used when this node renders in the app. Only available on the **Group** and **Text** nodes. |
-| <span className="ndl-data">CSS Class</span> | <##input:cssClass##>Specify a CSS class this node will have.<##input##>                             |
+| <span className="ndl-data">CSS Class</span> | {/*##input:cssClass##*/}Specify a CSS class this node will have.{/*##input##*/}                             |
 | <span className="ndl-data">CSS Style</span> | Use this property to specify your custom CSS.                                                       |

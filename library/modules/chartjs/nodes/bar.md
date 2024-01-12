@@ -3,7 +3,7 @@ title: Bar Chart
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Bar Chart
 
@@ -17,7 +17,7 @@ This visual node adds a bar chart to the visual tree.
 
 [Here](../charts/bar) is an example how to use used the node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

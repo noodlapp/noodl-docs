@@ -3,7 +3,7 @@ title: Bubble Chart
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Bubble Chart
 
@@ -17,7 +17,7 @@ This visual node adds a bubble chart to the visual tree.
 
 [Here](../charts/bubble) is an example how to use used the node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

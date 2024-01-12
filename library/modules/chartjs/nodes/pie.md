@@ -3,7 +3,7 @@ title: Pie Chart
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Pie Chart
 
@@ -17,7 +17,7 @@ This visual node adds a pie chart to the visual tree.
 
 [Here](../charts/pie) is an example how to use used the node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

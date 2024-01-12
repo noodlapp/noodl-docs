@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Screen Resolution node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Screen Resolution
 
@@ -16,7 +16,7 @@ This node outputs the <span className="ndl-data">width</span>, <span className="
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Outputs
 

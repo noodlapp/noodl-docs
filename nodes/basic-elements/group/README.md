@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Group node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Group
 
@@ -24,7 +24,7 @@ The <span className="ndl-node">Group</span> is the most essential node when it c
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 **Group** nodes are typically used to layout children by stacking (the default), but can also be used to simply provide margins and padding to a group of visual nodes. To learn more about **Group** nodes check out the [Layouting guide](/docs/guides/user-interfaces/layout).
 

@@ -3,7 +3,7 @@ title: Tooltip
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Tooltip
 
@@ -15,7 +15,7 @@ This visual node adds a tooltip to the visual tree.
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

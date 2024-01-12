@@ -3,7 +3,7 @@ title: Radar Chart
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Radar Chart
 
@@ -17,7 +17,7 @@ This visual node adds a radar chart to the visual tree.
 
 [Here](../charts/radar) is an example how to use used the node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
