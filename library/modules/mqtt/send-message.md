@@ -4,11 +4,11 @@ hide_title: true
 ---
 
 {/*##head##*/}
-# Send Message 
+
+# Send Message
 
 **Send Message** nodes are used to send a message over MQTT, to another device for example. All devices that connect to the editor will
 use the same MQTT broker and thus messages can be sent across devices. The **Send Message** node uses topics to specify which receivers should get the messages.
-
 
 ![](/library/modules/mqtt/send-message.gif)
 
@@ -20,8 +20,8 @@ use the same MQTT broker and thus messages can be sent across devices. The **Sen
 
 ### General
 
-**Topic**  
-The MQTT topic this **Send Message** will publish messages to. Most commonly the topics are specified as a hierarchy with **/** as delimiters, e.g. _/Foo/Bar/1_. Sometimes the topic needs to be dynamic, this can be achieved by encapsulating a topic component with curly brackets, e.g. _/Foo/{Bar}/1_. In this case a port called _Bar_ will show up.
+**Topic**
+The MQTT topic this **Send Message** will publish messages to. Most commonly the topics are specified as a hierarchy with **/** as delimiters, e.g. `/Foo/Bar/1`. Sometimes the topic needs to be dynamic, this can be achieved by encapsulating a topic component with curly brackets, e.g. `/Foo/{Bar}/1`. In this case a port called _Bar_ will show up.
 
 **Format**
 This input sets the format the payload will be sent in, either as JSON or as a CSV.

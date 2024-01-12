@@ -8,7 +8,9 @@ hide_title: true
 Cloud functions play an important role when creating different log in and sign up flows. Using the nodes [Sign Up](/nodes/data/user/sign-up), [Log In](/nodes/data/user/log-in) and [Log Out](/nodes/data/user/log-out) you can create the most basic flow that will have the user sign up with a username, optionally email, and password and log in with username and password.
 
 :::note
+
 It's common to use email for both **username** and **email** when signing up, so you only ask the user for email and password, one less thing to remeber right.
+
 :::
 
 Once logged in you can use the [Access Control](/docs/guides/cloud-data/access-control) functions of the cloud database to control what a user has access to and not. The built in role system will allow you to create features like teams/groups of users.
@@ -77,11 +79,11 @@ The **Format Email** action takes as input the verification token and the email 
 
 As you can see it creates an email containing an HTML link, this link uses some fancy template syntax.
 
-- **$Domain** This will be replaced by the format email node to the domain where your application is deployed, so that the link will take you back to the app. More on this later.
-- **{Token}** This is the generated token from before.
-- **{Email}** This is the email for the user, it will be used to fetch the user and marked the email as verified in the next step.
+- `$Domain` This will be replaced by the format email node to the domain where your application is deployed, so that the link will take you back to the app. More on this later.
+- `{Token}` This is the generated token from before.
+- `{Email}` This is the email for the user, it will be used to fetch the user and marked the email as verified in the next step.
 
-The **Format Email** node outputs the final email with the correct values for the above placeholders insterted. This email content is then sent to the **Send Email** node that actually sends the email to the user. 
+The **Format Email** node outputs the final email with the correct values for the above placeholders insterted. This email content is then sent to the **Send Email** node that actually sends the email to the user.
 
 <div className="ndl-image-with-background l">
 
@@ -135,14 +137,13 @@ Resetting a user password when it's been lost follows the same pattern as sendin
 
 </div>
 
-There is a function called **Sign Up / Request Password Reset** that simply accepts an **Email** and it can be called without the user being logged in. 
+There is a function called **Sign Up / Request Password Reset** that simply accepts an **Email** and it can be called without the user being logged in.
 
 <div className="ndl-image-with-background xl">
 
 ![](/docs/guides/cloud-logic/email-verification/reset-password-2.png)
 
 </div>
-
 
 The cloud function follow pretty much the same pattern as when sending email verifications. It will send an email to the user with a link containing a secret token just like when veryfing the email address.
 
@@ -183,17 +184,3 @@ When the user hits the reset button we will call the **Sign Up / Reset Password*
 Provided that the secret token is correct and have not expired (tokens are valid for 24 hours) the password will be updated. You can then send the user back to the **Log In** page.
 
 That's it, this is how you use cloud functions to create an email verification and password reset flow. You will use cloud functions for a lot of user management tasks that need to be performed on the backend with full database access.
-
-
-
-
-
-
-
-
-
-
-
-
-
-

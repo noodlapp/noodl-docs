@@ -20,13 +20,13 @@ The format is specified as a <span className="ndl-data">string</span> that can i
 
 {/*##head##*/}
 
-- **{date}** The numeric date part.
-- **{month}** The numeric month 1 = January, 12 = December.
-- **{monthShort}** The numeric month 1 = Jan, 12 = Dec.
-- **{year}** The numeric year.
-- **{hours}** The numeric hour, between 0..23
-- **{minutes}** The numeric minute, between 0..60
-- **{seconds}** The numeric second, between 0..60
+- `{date}` The numeric date part.
+- `{month}` The numeric month 1 = January, 12 = December.
+- `{monthShort}` The numeric month 1 = Jan, 12 = Dec.
+- `{year}` The numeric year.
+- `{hours}` The numeric hour, between 0..23
+- `{minutes}` The numeric minute, between 0..60
+- `{seconds}` The numeric second, between 0..60
 
 The default format is this:
 
