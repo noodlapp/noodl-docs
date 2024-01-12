@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Text node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Text
 
@@ -24,7 +24,7 @@ The <span className="ndl-node">Text</span> node can be styled with font family, 
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

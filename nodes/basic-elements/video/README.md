@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Video node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Video
 
@@ -12,7 +12,7 @@ This node places a video surface in the visual tree. It features a wide range of
 
 The <span className="ndl-data">source</span> can be set from a URL or a file. You can drag videos from your computer and drop them into Noodl to add them to the project folder. This will make them selectable as the <span className="ndl-data">source</span> in the <span className="ndl-node">Video</span> node Property Panel.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

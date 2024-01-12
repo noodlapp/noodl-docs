@@ -2,6 +2,7 @@
 title: Using Variables
 hide_title: true
 ---
+
 import ImportButton from '../../../src/components/importbutton'
 
 # Using Variables
@@ -47,7 +48,7 @@ Now we are going to do two things. 1. We want to store the value of the TextFiel
 
 Let's start with the capitalization. Add a [Function](/nodes/javascript/function) node. Edit the script and paste the following:
 
-```javascript
+```js
 if (Inputs.name !== undefined) {
     Outputs.capitalizedName =
         Inputs.name.substr(0, 1).toUpperCase() + Inputs.name.substr(1)
@@ -118,7 +119,7 @@ So, connect the **onEnter** output on the **TextField** to the **Do** input sign
 
 ### Reading a Variable
 
-Ok, now we want to use the value we just stored. We want to include the name in the `Hello World` greeting. So lets first add a [String Format](/nodes/string-manipulation/string-format/) node. Make sure the text in the node is "Hello World {name}".
+Ok, now we want to use the value we just stored. We want to include the name in the `Hello World` greeting. So lets first add a [String Format](/nodes/string-manipulation/string-format/) node. Make sure the text in the node is "Hello World `{name}`".
 
 <div className="ndl-image-with-background xl">
 
@@ -156,7 +157,9 @@ Now test your app. Start writing a name in the **Text Input**, press _Enter_ and
 Now let's change the structure a little. We will create a **Popup** and present the "Hello World" message in it only after the user have pressed _Enter_.
 
 :::note
+
 If you want to learn more about popups, take a look at the [Popups](/docs/guides/navigation/popups) guide.
+
 :::
 
 Start by creating a new visual component, call it "Hello Popup".
@@ -263,7 +266,7 @@ Connect the **value** output from the **Variable** `userName` to the a **String*
 
 Then create an **Expression** node. We want to check that the length of the name is 6 characters or more. So edit the expression and write
 
-```
+```js
 length >= 6
 ```
 

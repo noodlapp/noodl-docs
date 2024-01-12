@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Array Map node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Array Map
 
@@ -16,13 +16,13 @@ This node takes an input array, runs a small map script on each item, and output
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
 | Data                                    | Description                                                  |
 | --------------------------------------- | ------------------------------------------------------------ |
-| <span className="ndl-data">Items</span> | <##input:items##>The array that should be mapped.<##input##> |
+| <span className="ndl-data">Items</span> | {/*##input:items##*/}The array that should be mapped.{/*##input##*/} |
 
 ### Script
 
@@ -54,9 +54,9 @@ Note that the objects that are created when mapping are new objects so they will
 
 | Data                                    | Description                                                                                                      |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Items</span> | <##output:items##>The mapped array.<##output##>                                                                  |
-| <span className="ndl-data">Count</span> | <##output:count##>The number of items in the mapped array (this will be the same as the input array)<##output##> |
+| <span className="ndl-data">Items</span> | {/*##output:items##*/}The mapped array.{/*##output##*/}                                                                  |
+| <span className="ndl-data">Count</span> | {/*##output:count##*/}The number of items in the mapped array (this will be the same as the input array){/*##output##*/} |
 
 | Signal                                      | Description                                                                                                                                                                                  |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Changed</span> | <##output:changed##>A signal is emitted here when the input array has been modified which will trigger the _Array Map_ node to remap the input and produce a new output _Items_.<##output##> |
+| <span className="ndl-signal">Changed</span> | {/*##output:changed##*/}A signal is emitted here when the input array has been modified which will trigger the _Array Map_ node to remap the input and produce a new output _Items_.{/*##output##*/} |

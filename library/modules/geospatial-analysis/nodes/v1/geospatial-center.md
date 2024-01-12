@@ -3,13 +3,13 @@ title: Geospatial Center
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Geospatial Center
 
 Takes a GeoJSON feature and returns the absolute center point.
 
-<##head##>
+{/*##head##*/}
 
 Here is an example of how to use it.
 

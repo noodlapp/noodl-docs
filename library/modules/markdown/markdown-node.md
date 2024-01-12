@@ -3,13 +3,13 @@ title: Markdown
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 # Markdown
 
 This node enables you to use Markdown in Noodl.
 
 ![](/library/modules/markdown/markdown-nodes.png)
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Color Blend node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Color Blend
 
@@ -16,7 +16,7 @@ This node lets you blend between color values.
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

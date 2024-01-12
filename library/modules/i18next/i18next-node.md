@@ -3,11 +3,11 @@ title: i18next
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 # i18next
 
 This is used to register bundles and to set and get the current language.
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

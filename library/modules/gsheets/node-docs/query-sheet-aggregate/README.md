@@ -3,7 +3,7 @@ title: Query Sheet Aggregate
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Query Sheet Aggregate
 
@@ -21,7 +21,7 @@ This node is used do aggregate data queries on a column from a public Google She
 
 > Note that the Google Sheet need to be made public for Noodl to be able to access it.
 
-<##head##>
+{/*##head##*/}
 
 ## Results from the Aggregate Query
 

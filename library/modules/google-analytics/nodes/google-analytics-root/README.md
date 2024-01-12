@@ -3,7 +3,7 @@ title: Google Analytics Root
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Google Analytics Root
 
@@ -17,7 +17,7 @@ This node loads Google Analytics in your Noodl app. It _must_ be placed in your 
 
 This node uses [Google Analytics 4](https://developers.google.com/analytics/devguides/collection/ga4) and requires a [Google Analytics Measurement ID](https://support.google.com/analytics/answer/9539598#find-G-ID).
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

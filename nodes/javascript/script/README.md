@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Script node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Script
 
@@ -78,7 +78,7 @@ Script.OnDestroy = function () {
 }
 ```
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

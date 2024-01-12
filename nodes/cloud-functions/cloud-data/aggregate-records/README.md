@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Aggregate Records node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Aggregate Records
 
@@ -32,7 +32,7 @@ Then for each aggregate name you created you choose the property to aggregate ov
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 You can also specify filters to limit the aggretate to a select set of recrods. This is done in the same way as with the [Query Records](/nodes/data/cloud-data/query-records) node, please see those reference docs for more details.
 
@@ -52,8 +52,8 @@ You can do aggregates over two types of properties **String** and **Number**, th
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <span className="ndl-data">Class</span>             | Select the **Class** for the types of records this node should do aggregate over. When the **Class** is selected you can create filters and aggregates of the **Class**.                                                                                                 |
 | <span className="ndl-data">Filter</span>            | This specifies the type of filter, you can choose from:<br/><br/>`Visual`: Specify your filter using the visual filter editor.<br/>`JavaScript`: Specify your filter using JavaScript (this is more flexible and you can create more dynamic queyries but it's also more complex) |
-| <span className="ndl-data">Query Parameters</span>  | <##input:qp-\*##>The input for specifying the value of a query parameter.<##input##> Each paramteter used in your query will get an input where you can provide a value through a connection.<##input##>                                                                          |
-| <span className="ndl-data">Aggregates</span>  | <##input:aggregates##>This a list of the aggregates you want to perform. You must provide the names of the outputs that will contain the aggregates here.<##input##>                                                                          |
+| <span className="ndl-data">Query Parameters</span>  | {/*##input:qp-\*##*/}The input for specifying the value of a query parameter.{/*##input##*/} Each paramteter used in your query will get an input where you can provide a value through a connection.{/*##input##*/}                                                                          |
+| <span className="ndl-data">Aggregates</span>  | {/*##input:aggregates##*/}This a list of the aggregates you want to perform. You must provide the names of the outputs that will contain the aggregates here.{/*##input##*/}                                                                          |
 
 ### Aggregate property and operation
 
@@ -67,16 +67,16 @@ For each aggregate you create you also need to provide the property if should ag
 
 | Signal                                 | Description                                                                                                   |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Do</span> | <##input:do##>Send a signal here to perform the aggregate.<##input##> |
+| <span className="ndl-signal">Do</span> | {/*##input:do##*/}Send a signal here to perform the aggregate.{/*##input##*/} |
 
 ## Outputs
 
 | Data                                              | Description                                                                                                                                                                                          |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Error</span>           | <##output:error##>This output contains the error message incase something when wrong when executing the aggregate.<##output##>                                                                           |
+| <span className="ndl-data">Error</span>           | {/*##output:error##*/}This output contains the error message incase something when wrong when executing the aggregate.{/*##output##*/}                                                                           |
 
 | Signal                                      | Description                                                                                                                                            |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-signal">Success</span> | <##output:success##>A signal is sent here if the aggregate was successful and the result is ready.<##output##>                                             |
-| <span className="ndl-signal">Failure</span> | <##output:failure##>A signal is sent here if something went wrong with the aggregate. You can find the error message via the **Error** output.<##output##> |
+| <span className="ndl-signal">Success</span> | {/*##output:success##*/}A signal is sent here if the aggregate was successful and the result is ready.{/*##output##*/}                                             |
+| <span className="ndl-signal">Failure</span> | {/*##output:failure##*/}A signal is sent here if something went wrong with the aggregate. You can find the error message via the **Error** output.{/*##output##*/} |
 

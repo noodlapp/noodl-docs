@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Response node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Response
 
@@ -24,7 +24,7 @@ The response is sent when a signal is received on the **Send** input. You can sp
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 If the status is **Failure** you can provide an error message that will be returned to the calling [Cloud Function](/nodes/data/cloud-data/cloud-function) node.
 

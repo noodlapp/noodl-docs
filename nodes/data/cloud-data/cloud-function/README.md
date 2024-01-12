@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Cloud Function node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Cloud Function
 
@@ -38,7 +38,7 @@ If a **Failure** signal is emitted you can also use the **Error** output that wi
 
 If a **Success** signal is sent the result parameters will be available as outputs on the **Cloud Function** node.
 
-<##head##>
+{/*##head##*/}
 
 :::note
 
@@ -53,25 +53,25 @@ This does not happen when running Cloud Functions locally where there is no time
 
 | Data                                                | Description                                                                                                                                      |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Function</span>     | <##input:functionName##>The cloud function component that this node will call.<##input##>                                                                       |
+| <span className="ndl-data">Function</span>     | {/*##input:functionName##*/}The cloud function component that this node will call.{/*##input##*/}                                                                       |
 
 ### Parameters
 The **Cloud Function** node will receive all parameters specified in the [Request](/nodes/cloud-functions/request) node in the cloud function component as inputs. When the <span className="ndl-signal">Call</span> signal is received the values on the inputs will be sent to the cloud funciton.
 
 | Signal                                   | Description                                                                                 |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Call</span> | <##input:call##>Send a signal on this input to issue the request to the cloud function.<##input##> |
+| <span className="ndl-signal">Call</span> | {/*##input:call##*/}Send a signal on this input to issue the request to the cloud function.{/*##input##*/} |
 
 ## Outputs
 
 | Data                                     | Description                                                                                                              |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Error</span> | <##output:error##>If the cloud function results in an error status, this output will contain the error message. <##output##> |
+| <span className="ndl-data">Error</span> | {/*##output:error##*/}If the cloud function results in an error status, this output will contain the error message. {/*##output##*/} |
 
 ### Result
 The **Cloud Function** node will receive all result parameters specified in any [Response](/nodes/cloud-functions/response) node in the cloud function component that is called. When the cloud function completes and retuns a **Sucess** status, any result parameters sent back will be available on these outputs.
 
 | Signal                                      | Description                                                                                              |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Success</span> | <##output:success##>This is sent if the cloud function returns a **Success** status.<##output##> |
-| <span className="ndl-signal">Failure</span> | <##output:failure##>This is sent if the cloud function returns a **Failure** status.<##output##>                        |
+| <span className="ndl-signal">Success</span> | {/*##output:success##*/}This is sent if the cloud function returns a **Success** status.{/*##output##*/} |
+| <span className="ndl-signal">Failure</span> | {/*##output:failure##*/}This is sent if the cloud function returns a **Failure** status.{/*##output##*/}                        |

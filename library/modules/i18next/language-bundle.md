@@ -3,7 +3,7 @@ title: LanguageBundle
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 # LanguageBundle
 
 The language bundle contains the translations for a language. If you have multiple languages you will have one LanguageBundle for each language and they generally should contain the same strings, translated to the respective language.
@@ -27,7 +27,7 @@ In this example the key `loginpage.confirm_button.hover_text` would identify the
 Note that i18next supports various dynamic features in the texts, e.g. plurals, date formats, etc. These are generally supported when used in Noodl.
 
 There are typically two ways to use Language Bundles. For static texts, for example UI texts, you edit the bundle object directly in Noodl (pressing the "Edit" button on the property panel). As you build the UI you add new texts to the bundle. You have one bundle per language. For dynamic texts, for example loaded during execution from a database, you programatically create bundle objects and load them into the **LanguageBundle** when available and using the AddBundleObject input.
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

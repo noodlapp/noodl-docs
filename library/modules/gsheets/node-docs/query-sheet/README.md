@@ -3,7 +3,7 @@ title: Query Sheet
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Query Sheet
 
@@ -25,7 +25,7 @@ The node works in a similar way as the [Query Records](/nodes/data/cloud-data/qu
 
 > Note that the Google Sheet need to be made public for Noodl to be able to access it.
 
-<##head##>
+{/*##head##*/}
 
 ## Document Id and Sheet Name
 

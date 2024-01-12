@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Repeater Item node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Repeater Item
 
@@ -16,7 +16,7 @@ This node contains a set of useful utilities for components that have been dynam
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

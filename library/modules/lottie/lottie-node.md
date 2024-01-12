@@ -3,11 +3,11 @@ title: Lottie
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 # Lottie
 
 The documentation for this node will be coming soon.
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

@@ -3,7 +3,7 @@ title: Mapbox Map
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Mapbox Map
 
@@ -23,7 +23,7 @@ Markers can be placed on the map by sending an <span className="ndl-data">array<
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

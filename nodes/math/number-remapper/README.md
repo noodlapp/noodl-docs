@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Number Remapper node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Number Remapper
 
@@ -18,7 +18,7 @@ This node maps a range of input <span className="ndl-data">numbers</span> to a r
 
 If the input range is `0 to 360`, the output range is `0 to 1` and the input <span className="ndl-data">number</span> is `180` the output <span className="ndl-data">number</span> will be `0.5`.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

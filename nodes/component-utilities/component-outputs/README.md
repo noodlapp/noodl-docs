@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Component Outputs node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Component Outputs
 
@@ -24,7 +24,7 @@ A <span className="ndl-node">Component Output</span> node can have as many ports
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 A very powerful feature of Noodl is the ability to create **Components** that act as reusable nodes in your application. A core concept of components is that they can have inputs and outputs like any of the built in nodes.
 

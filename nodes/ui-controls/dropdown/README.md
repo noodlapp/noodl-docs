@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Dropdown node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Dropdown
 
@@ -51,14 +51,14 @@ The mapping can be achieved through `Value: function (object) { return object.id
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
 | Data                                                  | Description                                                                                                                                                                                                                                             |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Items</span>               | <##input:item##>This input takes an **Array** of **Objects** that will populate the **Dropdown**. You should make sure that they have the two properties `Label` and `Value` set as they are used to represent the item in the **Dropdown**.<##input##> |
-| <span className="ndl-data">Value</span>               | <##input:value##>Setting this input will force the **Dropdown** to select the item with the same value set in its `Value` property.<##input##>                                                                                                          |
+| <span className="ndl-data">Items</span>               | {/*##input:item##*/}This input takes an **Array** of **Objects** that will populate the **Dropdown**. You should make sure that they have the two properties `Label` and `Value` set as they are used to represent the item in the **Dropdown**.{/*##input##*/} |
+| <span className="ndl-data">Value</span>               | {/*##input:value##*/}Setting this input will force the **Dropdown** to select the item with the same value set in its `Value` property.{/*##input##*/}                                                                                                          |
 | <span className="ndl-data">Placeholder</span>         | The placeholder text for when the dropdown is empty.                                                                                                                                                                                                    |
 | <span className="ndl-data">Placeholder Opacity</span> | The opacity of the placeholder text. `0` is completely transparent and invisible. `1` is completely solid and opaque.                                                                                                                                   |
 
@@ -89,11 +89,11 @@ The main output is the following:
 
 | Data                                    | Description                                                                                                                                           |
 | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Value</span> | <##output:value##>This output holds the value, i.e. what is in the property `Value` in the currently selected **Object** in the Dropdown.<##output##> |
+| <span className="ndl-data">Value</span> | {/*##output:value##*/}This output holds the value, i.e. what is in the property `Value` in the currently selected **Object** in the Dropdown.{/*##output##*/} |
 
 | Signal                                    | Description                                                                                                   |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Changed</span> | <##output:changed##>This signal signal is emitted when the selection of the **Dropdown** changes.<##output##> |
+| <span className="ndl-data">Changed</span> | {/*##output:changed##*/}This signal signal is emitted when the selection of the **Dropdown** changes.{/*##output##*/} |
 
 It also features a set of more in depth <span className="ndl-signal">signals</span>:
 

@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: CSS Definition node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # CSS Definition
 
@@ -34,4 +34,4 @@ Classes can be attached to the Visual nodes in the Property Panel:
 
 The CSS Definition is best used if a style class will be reused on multiple different Visual nodes. If you're only styling one Visual node you should do it in the CSS Style editor at the bottom of the Property Panel.
 
-<##head##>
+{/*##head##*/}

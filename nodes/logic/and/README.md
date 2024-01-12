@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: And node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # And
 
@@ -18,7 +18,7 @@ This node performs a logic AND operation on its inputs. If all inputs are <span 
 
 Any number of inputs can be used. When an input is connected a new one will be created automatically.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

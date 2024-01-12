@@ -3,13 +3,13 @@ title: Geospatial Area
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Geospatial Area
 
 Takes an array of coordinates and returns their area in different formats.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

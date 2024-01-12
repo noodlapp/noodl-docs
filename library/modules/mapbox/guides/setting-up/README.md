@@ -27,7 +27,7 @@ When in the project, open the "Module" tab in the Node Picker. Find the "Mapbox"
 
 </div>
 
-After the module is imported, you should now be able to find the [Mapbox Map](library/modules/mapbox/nodes/v2/mapbox-map) node in the node picker. Right click in the node editor area to bring up the node picker. Look under "External libraries" to find the **Mapbox Map** node.
+After the module is imported, you should now be able to find the [Mapbox Map](/library/modules/mapbox/nodes/v2/mapbox-map) node in the node picker. Right click in the node editor area to bring up the node picker. Look under "External libraries" to find the **Mapbox Map** node.
 
 <div className="ndl-image-with-background s">
 

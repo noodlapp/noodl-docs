@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Button node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Button
 
@@ -23,7 +23,7 @@ The button has a <span className="ndl-signal">Click</span> signal that you can u
 ![](/nodes/ui-controls/button//button_node.png)
 
 </div>
-<##head##>
+{/*##head##*/}
 
 This control contains all logic such as accessibility etc. It can be styled in via it's properties.
 Use variations to create different types of buttons
@@ -79,7 +79,7 @@ The main output for the button is the Click <span className="ndl-signal">signal<
 
 | Signal                                    | Description                                                                                 |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Click</span> | <##output:onClick##>A signal is sent on this output when the button is clicked.<##output##> |
+| <span className="ndl-signal">Click</span> | {/*##output:onClick##*/}A signal is sent on this output when the button is clicked.{/*##output##*/} |
 
 It also features a set of more in depth <span className="ndl-signal">signals</span>:
 

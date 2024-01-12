@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Radio Button Group node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Radio Button Group
 
@@ -24,7 +24,7 @@ The output of the <span className="ndl-node">Radio Button Group</span> node is t
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

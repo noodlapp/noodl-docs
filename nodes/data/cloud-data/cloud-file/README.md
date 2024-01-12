@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Cloud File node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Cloud File
 
@@ -23,17 +23,17 @@ Represents a file that has been uploaded to the Noodl Cloud Services and stored 
 ![](/nodes/data/cloud-data/upload-file/upload-file.png)
 
 </div>
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
 | Data                                         | Description                                                                                                                                                                           |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Cloud File</span> | <##input:cloud file##>A file that has been stored in the Noodl Cloud Services. Often used in combination with a **Record** to retrieve the **Name** and **URL** of a file.<##input##> |
+| <span className="ndl-data">Cloud File</span> | {/*##input:cloud file##*/}A file that has been stored in the Noodl Cloud Services. Often used in combination with a **Record** to retrieve the **Name** and **URL** of a file.{/*##input##*/} |
 
 ## Outputs
 
 | Data                                   | Description                                        |
 | -------------------------------------- | -------------------------------------------------- |
-| <span className="ndl-data">URL</span>  | <##output:url##>The URL of the file.<##output##>   |
-| <span className="ndl-data">Name</span> | <##output:name##>The Name of the file.<##output##> |
+| <span className="ndl-data">URL</span>  | {/*##output:url##*/}The URL of the file.{/*##output##*/}   |
+| <span className="ndl-data">Name</span> | {/*##output:name##*/}The Name of the file.{/*##output##*/} |

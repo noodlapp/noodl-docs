@@ -3,7 +3,7 @@ title: Parse Cloud Function
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Parse Cloud Function
 
@@ -33,26 +33,26 @@ You can also provide parameters that you want to be passed to the cloud function
 
 The cloud function returns the result of the cloud function on the **Result** output. 
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
 | Data                                                | Description                                                                                                                                      |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Function Name</span>     | <##input:functionName##>The name of the cloud function to call.<##input##>                                                                       |
-| <span className="ndl-data">Custom Parameters</span> | <##input:pm-*##>A parameter that will be passed to the function. Any parameters you add will become available as inputs on the node.<##input##> |
+| <span className="ndl-data">Function Name</span>     | {/*##input:functionName##*/}The name of the cloud function to call.{/*##input##*/}                                                                       |
+| <span className="ndl-data">Custom Parameters</span> | {/*##input:pm-*##*/}A parameter that will be passed to the function. Any parameters you add will become available as inputs on the node.{/*##input##*/} |
 
 | Signal                                   | Description                                                                                 |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Call</span> | <##input:call##>Send a signal on this input to issue the request to the backend.<##input##> |
+| <span className="ndl-signal">Call</span> | {/*##input:call##*/}Send a signal on this input to issue the request to the backend.{/*##input##*/} |
 
 ## Outputs
 
 | Data                                     | Description                                                                                                              |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Result</span> | <##output:result##>This output will contain the result that the **Cloud Function** returns upon completion. <##output##> |
+| <span className="ndl-data">Result</span> | {/*##output:result##*/}This output will contain the result that the **Cloud Function** returns upon completion. {/*##output##*/} |
 
 | Signal                                      | Description                                                                                              |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Success</span> | <##output:success##>This is sent if the function returns a success code and a result object.<##output##> |
-| <span className="ndl-signal">Failure</span> | <##output:failure##>This is sent if the function returns a failure code.<##output##>                        |
+| <span className="ndl-signal">Success</span> | {/*##output:success##*/}This is sent if the function returns a success code and a result object.{/*##output##*/} |
+| <span className="ndl-signal">Failure</span> | {/*##output:failure##*/}This is sent if the function returns a failure code.{/*##output##*/}                        |

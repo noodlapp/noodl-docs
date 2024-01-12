@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Component Stack node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Component Stack
 
@@ -32,25 +32,25 @@ With the **clip** property set to <span className="ndl-data">false</span>, the *
 
 If you want to control the size of the **Component Stack** beyond that, you should put it as a child in a [Group](/nodes/basic-elements/group/README.md) node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
 | Data                                               | Description                                                                                                                                                                                                                                                                                                       |
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Name</span>             | <##input:name##>This is the name of the **Component Stack**. If you have multiple **Component Stacks** in your project you use the name to identify it in the [Push Component To Stack](/nodes/component-stack/push-component) and [Pop Component Stack](/nodes/component-stack/pop-component) nodes. <##input##> |
+| <span className="ndl-data">Name</span>             | {/*##input:name##*/}This is the name of the **Component Stack**. If you have multiple **Component Stacks** in your project you use the name to identify it in the [Push Component To Stack](/nodes/component-stack/push-component) and [Pop Component Stack](/nodes/component-stack/pop-component) nodes. {/*##input##*/} |
 | <span className="ndl-data">Start Page</span>       | The Component which will be shown by **Component Stack** at the start.                                                                                                                                                                                                                                            |
-| <span className="ndl-data">Clip Content</span>     | <##input:clip##>If this property is set to `true` the **Component Stack** will clip any component that is extending beyond its size. If set to `false` the size of the **Component Stack** will grow if needed to fit its component.<##input##>                                                                   |
-| <span className="ndl-data">Background Color</span> | <##input:backgroundColor##>The color that will be shown when there is no component covering the **Component Stack** or when the component is transparent.<##input##>                                                                                                                                              |
-| <span className="ndl-data">Mounted</span>          | <##input:mounted##>This property is used to completely remove the node from the DOM. If this property is set to false the node is removed from the DOM. It differs from the _Visible_ property where the node is still part of the DOM but invisible.<##input##>                                                  |
+| <span className="ndl-data">Clip Content</span>     | {/*##input:clip##*/}If this property is set to `true` the **Component Stack** will clip any component that is extending beyond its size. If set to `false` the size of the **Component Stack** will grow if needed to fit its component.{/*##input##*/}                                                                   |
+| <span className="ndl-data">Background Color</span> | {/*##input:backgroundColor##*/}The color that will be shown when there is no component covering the **Component Stack** or when the component is transparent.{/*##input##*/}                                                                                                                                              |
+| <span className="ndl-data">Mounted</span>          | {/*##input:mounted##*/}This property is used to completely remove the node from the DOM. If this property is set to false the node is removed from the DOM. It differs from the _Visible_ property where the node is still part of the DOM but invisible.{/*##input##*/}                                                  |
 
 | Signal                                    | Description                                                                                                                                                                             |
 | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Reset</span> | <##input:reset##>Triggering this action resets the **Component Stack** meaning all components on the stack will be removed and only the **Start Page** will be on the stack.<##input##> |
+| <span className="ndl-signal">Reset</span> | {/*##input:reset##*/}Triggering this action resets the **Component Stack** meaning all components on the stack will be removed and only the **Start Page** will be on the stack.{/*##input##*/} |
 
 | Deprecated                                         | Description                                                                             |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| <span className="ndl-deprecated">Use Routes</span> | <##input:useRoutes##>**This Property is deprecated and should not be used.**<##input##> |
+| <span className="ndl-deprecated">Use Routes</span> | {/*##input:useRoutes##*/}**This Property is deprecated and should not be used.**{/*##input##*/} |
 
 ### Visual
 
@@ -62,8 +62,8 @@ This node supports the following [Visual Input Properties](/nodes/shared-props/i
 
 | Data                                                 | Description                                                                                                                        |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Top Component Name</span> | <##output:topPageName##>This property holds the name of the current component that is on the top of the stack.<##output##>         |
-| <span className="ndl-data">Stack Depth</span>        | <##output:stackDepth##>This property equals to the number of components that are currently on the **Component Stack**.<##output##> |
+| <span className="ndl-data">Top Component Name</span> | {/*##output:topPageName##*/}This property holds the name of the current component that is on the top of the stack.{/*##output##*/}         |
+| <span className="ndl-data">Stack Depth</span>        | {/*##output:stackDepth##*/}This property equals to the number of components that are currently on the **Component Stack**.{/*##output##*/} |
 
 ### Visual
 

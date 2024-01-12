@@ -3,7 +3,7 @@ title: Image QR Scanner
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Image QR Scanner
 
@@ -16,7 +16,7 @@ The **Image QR Scanner** node is used to scane an image for a QR code. It's typi
 </div>
 
 When a QR code has been successfully identified, the node will send a <span className="ndl-signal">Scan Successful</span> event and the decoded string, otherwise <span className="ndl-signal">Scan Failed</span>.
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

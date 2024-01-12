@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Function node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Function
 
@@ -24,7 +24,7 @@ Runs the Javascript:
 The code runs from top to bottom.
 For more complex custom JavaScript with multiple executon paths and extended control you should use the <span className="ndl-node">Script</span> node.
 
-<##head##>
+{/*##head##*/}
 
 The most basic way to use the node is as an expression,
 any time the inputs are changed the script is run and the outputs are updated.

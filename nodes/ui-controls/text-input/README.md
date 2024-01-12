@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Text Input node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Text Input
 
@@ -24,7 +24,7 @@ The captured value can easily be connected to other nodes in a project.
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
