@@ -165,11 +165,6 @@ const config = {
         content: 'KjANYZkN8ymGFD0SGnAVlRkD85p-fpNHCRAOKxurpWI'
       }
     ],
-    algolia: {
-      appId: 'D29X2LNM4J',
-      apiKey: '7984d5feef068e1161527316bb9a1a4d',
-      indexName: 'docs_2-9',
-    },
     colorMode: {
       disableSwitch: true,
       defaultMode: 'dark',
