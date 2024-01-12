@@ -136,13 +136,6 @@ const config = {
         ],
       },
     ],
-
-    [
-      require('./plugins/gtm'),
-      {
-        id: 'GTM-P4LSJL4',
-      },
-    ],
   ],
 
   themeConfig: {
