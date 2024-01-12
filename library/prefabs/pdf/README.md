@@ -12,7 +12,7 @@ This prefab only works on Noodl hosted cloud services.
 It's recommended that you have a grasp of the following concepts before diving into this prefab:
 
 * [Page Navigation](/docs/guides/navigation/basic-navigation) - How to create pages and navigate between them.
-* [Cloud Functions](/docs/guides//cloud-logic/introduction) - How to create cloud functions and run logic on the backend.
+* [Cloud Functions](/docs/guides/cloud-logic/introduction) - How to create cloud functions and run logic on the backend.
 
 Here is a nifty prefab for exporting / generating PDFs. Exporting a PDF involves two components:
 
