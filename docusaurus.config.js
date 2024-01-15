@@ -91,22 +91,6 @@ const config = {
         ],
       },
     ],
-    
-    // CLI
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'cli',
-        path: 'cli',
-        routeBasePath: 'cli',
-        breadcrumbs: false,
-        sidebarPath: require.resolve('./sidebarsCli.js'),
-        remarkPlugins: [
-          _parseNoodlMarkupPlugin,
-          require('./plugins/import-markdown'),
-        ],
-      },
-    ],
 
     // Whats new
     [
@@ -132,7 +116,7 @@ const config = {
       {
         paths: [
           { path: 'nodes/', folderName: true },
-          { path: 'library/modules/' }
+          { path: 'library/modules/' },
         ],
       },
     ],
@@ -155,8 +139,8 @@ const config = {
       },
       {
         name: 'google-site-verification',
-        content: 'KjANYZkN8ymGFD0SGnAVlRkD85p-fpNHCRAOKxurpWI'
-      }
+        content: 'KjANYZkN8ymGFD0SGnAVlRkD85p-fpNHCRAOKxurpWI',
+      },
     ],
     colorMode: {
       disableSwitch: true,
