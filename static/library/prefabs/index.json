@@ -216,15 +216,6 @@
     "tags": ["UI"]
   },
   {
-    "label": "OpenAI",
-    "desc": "A prefab with cloud functions for creating chat bots with the OpenAI API.",
-    "icon": "library/prefabs/openai/openai.png",
-    "project": "library/prefabs/openai/openai-0-5.zip",
-    "docs": "/library/prefabs/openai/",
-    "tags": ["Cloud"]
-  },
-  
-  {
     "label": "Xano",
     "desc": "Connects to Xano and handles queries, users and authTokens. Built by @gmaison.",
     "icon": "library/prefabs/xano/xano-thumb.png",
