@@ -7,7 +7,7 @@ hide_title: true
 
 ChatGPT is a great tool that is used daily to generate code by developers all over the world. However (being a language model and not a programming engine) it does come with its own set of quirks and limitations. In this guide we will look at tips, tricks and strategies for how to get around them, and see why ChatGPT is a great pairing with Noodl.
 
-> This guide is about how to use [http://chat.openai.com](http://chat.openai.com) as part of the development process.<br/><br/>To use OpenAI as part of your application, check out the [OpenAI prefab](/library/prefabs/openai/).
+> This guide is about how to use [http://chat.openai.com](http://chat.openai.com) as part of the development process.
 
 ## When to ChatGPT
 

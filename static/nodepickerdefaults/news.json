@@ -22,17 +22,6 @@
       "imageUrl": "news/prefabs.gif 2x"
     },
     {
-      "supertitle": "Prefab Highlight",
-      "title": "OpenAI Prefab",
-      "text": "Bring AI and chatbot capabilities, based on ChatGPT, into your apps by using the OpenAi Prefab.",
-      "action": {
-        "kind": "link",
-        "linkUrl": "https://docs.noodl.net/2.9/library/prefabs/openai/",
-        "label": "Open docs"
-      },
-      "imageUrl": "news/openai_prefab.png 2x"
-    },
-    {
       "supertitle": "Node Highlight",
       "title": "States node: Animations",
       "text": "Did you know that you can use the States node to create custom animations?",
