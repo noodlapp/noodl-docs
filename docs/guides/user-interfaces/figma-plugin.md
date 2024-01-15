@@ -50,11 +50,11 @@ Here's the same node duplicated in Noodl, with a different source and border rad
 
 All text styles used by exported text layers will automatically be imported.
 
-?> Figma uses the fonts you have installed on your system. In Noodl apps the required font files have to be defined in your projects. You can [import fonts via Google Fonts](https://www.youtube.com/watch?v=lgMZZC6XoAs) or [via font files](https://www.youtube.com/watch?v=P76v0Q38eKI)
+Figma uses the fonts you have installed on your system. In Noodl apps the required font files have to be defined in your projects. You can [import fonts via Google Fonts](https://www.youtube.com/watch?v=lgMZZC6XoAs) or [via font files](https://www.youtube.com/watch?v=P76v0Q38eKI)
 
 <iframe width="560" height="315"  style={{margin:'0 auto',display:'block'}} src="https://www.youtube-nocookie.com/embed/sZm0eBZvLaM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br/>
 
-?> Note that the text styles was added to the styles tab in Noodl ![](/docs/guides/user-interfaces/figma-plugin/text-styles.png ':class=img-size-l')
+Note that the text styles was added to the styles tab in Noodl ![](/docs/guides/user-interfaces/figma-plugin/text-styles.png ':class=img-size-l')
 
 ## Export complex shapes
 

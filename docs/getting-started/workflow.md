@@ -9,15 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 
 Let's take a look at the different concepts of the Noodl workflow when building your applications, namely
 
-* Building User Interfaces
-* Page Navigation & Components
-* Actions
-* Working with Data
-* The Cloud Database
-* Business Logic
-* Cloud Functions
-* Collaboration
-* Modules and Prefabs
+- Building User Interfaces
+- Page Navigation & Components
+- Actions
+- Working with Data
+- The Cloud Database
+- Business Logic
+- Cloud Functions
+- Collaboration
+- Modules and Prefabs
 
 ## Building user interfaces
 
@@ -31,16 +31,15 @@ Any app needs a great **User Interface**. In Noodl it's easy and fast to build d
 
 Each UI control has properties that can be used for fine-grained customization. Here is a short overview of concepts important for building user interfaces:
 
--   **Visual States** Each UI control has a set of visual states, such as Hover, Pressed, etc., and the control properties can be set for each state individually. Learn more [here](/docs/guides/user-interfaces/visual-states).
+- **Visual States** Each UI control has a set of visual states, such as Hover, Pressed, etc., and the control properties can be set for each state individually. Learn more [here](/docs/guides/user-interfaces/visual-states).
 
--   **Transitions** You can control transition animations between each visual state using the animation editor.
+- **Transitions** You can control transition animations between each visual state using the animation editor.
 
--   **Variants** Define reusable variants for your UI controls, including properties, visual states, and transitions. Build your own design systems to enhance productivity. Learn more [here](/docs/guides/user-interfaces/style-variants)
+- **Variants** Define reusable variants for your UI controls, including properties, visual states, and transitions. Build your own design systems to enhance productivity. Learn more [here](/docs/guides/user-interfaces/style-variants)
 
 ## Page Navigation & Components
 
 When you start building more complete frontends, you will be working with **components**. A component can be an entire page in your application; these are called **Page Components**, or they can be a smaller part of your UI that you want to reuse in many places; these are called **Visual Components**. Pages can be found in the top navigation bar, and visual components are found in the component panel in the sidebar. You can also use the preview in design mode to quickly locate a specific visual element in your app.
-
 
 <div className="ndl-video">
     <video width="100%" autoPlay muted loop src={useBaseUrl("/docs/getting-started/basic-concepts/nav-1.mp4")}/>
@@ -48,18 +47,17 @@ When you start building more complete frontends, you will be working with **comp
 
 It's simple to create page navigation but the system is also flexible enough to build more complex navigation flows, such as nested navigation. Noodl supports state of the art web app navigation, with permalinks and encoding of data in URLs. Here is a short overview of concepts important for building pages and navigation:
 
--   The **Page**, **Page Router** and **Navigate** nodes are the essence of the navigation system. Learn how to build basic page navigation in this [guide](/docs/guides/navigation/basic-navigation) and more advanced multi level navigation [here](/docs/guides/navigation/multi-level-navigation).
+- The **Page**, **Page Router** and **Navigate** nodes are the essence of the navigation system. Learn how to build basic page navigation in this [guide](/docs/guides/navigation/basic-navigation) and more advanced multi level navigation [here](/docs/guides/navigation/multi-level-navigation).
 
--   Another feature of the navigation is **Popups**, these can be used to show or collect transient information. Learn more about popups [here](/docs/guides/navigation/popups)
+- Another feature of the navigation is **Popups**, these can be used to show or collect transient information. Learn more about popups [here](/docs/guides/navigation/popups)
 
 ## Actions
 
 An important concept in Noodl, as briefly shown above, is **action nodes**. These nodes perform some sort of action when triggered by a signal, for example, from a UI control (such as a button click) or from another action node (such as when an action has completed successfully or failed). Noodl contains a wide variety of action nodes for most common basic tasks, including **Navigation** and **Reading and Writing Data**.
 
-
 ![](/docs/getting-started/basic-concepts/connecting-nodes.gif)
 
-Connections between nodes is a core concept in Noodl, this is how you connect your user interface to data and actions. 
+Connections between nodes is a core concept in Noodl, this is how you connect your user interface to data and actions.
 
 ## Working with data
 
@@ -101,7 +99,7 @@ The Noodl cloud services will provide your applications with several important f
 
 - **Reading and Writing Data**: You can create **classes** to store **records**, which can then be read, filtered, and presented in your application. Dive in [here](/docs/guides/cloud-data/overview) to start learning about cloud services.
 
--   **User Management**. Most applications need users, you can sign up users, log in, manage passwords etc. 
+- **User Management**. Most applications need users, you can sign up users, log in, manage passwords etc.
 
 - **Access Control**: When you have users and data, you need to control which users can access what data. This can be done through **roles** in your cloud services. Learn more [here](/docs/guides/cloud-data/access-control).
 
@@ -109,7 +107,7 @@ The Noodl cloud services will provide your applications with several important f
 
 ## Cloud Functions
 
-Using the same techniques to build logic as described above you can build logic that runs in the cloud, this is called a **Cloud Function**. 
+Using the same techniques to build logic as described above you can build logic that runs in the cloud, this is called a **Cloud Function**.
 
 <div className="ndl-video">
     <video width="100%" autoPlay muted loop src={useBaseUrl("/docs/getting-started/basic-concepts/cloud-2.mp4")}/>
@@ -125,7 +123,7 @@ This is very useful for many different functions such as:
 
 ## Collaboration
 
-Finally, as your application grows, you'll want to collaborate with colleagues and friends. Thankfully, Noodl offers a robust collaboration system with built-in version control. You can collaborate on a project, work on your individual branches, and merge changes. We aim to incorporate powerful concepts from the software development world into Noodl to ensure you never encounter any limitations.
+Finally, as your application grows, you'll want to collaborate with colleagues and friends. Thankfully, Noodl is compatible with version control through Git and will give you a built in Version Control panel after the Project Folder has been pushed to a repo at your preferred Git provider. You can collaborate on a project, work on your individual branches, and merge changes. We aim to incorporate powerful concepts from the software development world into Noodl to ensure you never encounter any limitations.
 
 <div className="ndl-image-with-background">
 
@@ -153,4 +151,4 @@ An important concept in Noodl that will take your productivity to the next level
 
 </div>
 
-
+Any components that you build can also be turned into prefabs, and submitted to the Noodl Docs repo for the whole community to use. Read more about it [here](/library/prefab-contributions).

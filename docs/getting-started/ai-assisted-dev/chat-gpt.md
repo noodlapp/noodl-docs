@@ -159,4 +159,4 @@ In the same way we can easily ask follow-up questions:
 
 ## Age of exploration
 
-While a lot is known about ChatGPT, there are still a lot of dark spots on the AI-map. New strategies, primers, tips and tricks are invented and uncovered every day. If you have found something that we havent touched upon here and feel like sharing it, please hop on in to the #chat-gpt channel on our [Discord server](https://discord.com/invite/23xU2hYrSJ). Exploration is more fun together, and we all stand on the shoulders of each other in this exciting new step within technology.
+While a lot is known about ChatGPT, there are still a lot of dark spots on the AI-map. New strategies, primers, tips and tricks are invented and uncovered every day. If you have found something that we havent touched upon here and feel like sharing it, please hop on in to the #chat-gpt channel on the [Discord server](https://discord.com/invite/23xU2hYrSJ). Exploration is more fun together, and we all stand on the shoulders of each other in this exciting new step within technology.

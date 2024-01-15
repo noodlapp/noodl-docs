@@ -2,6 +2,7 @@
 title: Scanning for QR Codes in a camera feed
 hide_title: true
 ---
+
 # Scanning for QR Codes in a camera feed
 
 This example enables you to scan a camera feed for Quick Response (QR) Codes and fetch the resulting data in the QR Code. To scan for QR Codes via uploaded images, see the documentation on the [Image QR Scanner](/library/modules/qr-scanner/guides/image-upload).
@@ -33,4 +34,4 @@ Since we are using a **Video** node to display the camera feed, you might want t
 ## No camera stream in viewer? HTTP vs. HTTPS
 
 For security reasons, the camera feed can generally only be accessed through a secure connection, i.e. an URL beginning with <code>https://</code>, and not <code>http://</code>. This means that on some platforms (depending on OS and browser) the camera feed of the **Camera QR Scanner** will not work inside of the Noodl viewer. Furthermore, connecting to http://localhost:8574/ might have the same issue. However, on some platforms localhost is exempted from the rule and the camera works without problems in the viewer.
-If you run into this problem you will have to deploy to a secure server via <code>https://</code>. The easiest way to do that is to use the [Noodl Sandbox Deploy](/docs/guides/deploy/deploying-an-app-on-sandbox) which uses <code>https://</code> protocols.
+If you run into this problem you will have to deploy to a secure server via <code>https://</code>.

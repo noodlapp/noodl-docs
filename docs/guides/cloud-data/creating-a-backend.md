@@ -2,6 +2,7 @@
 title: Creating a Cloud Service
 hide_title: true
 ---
+
 # Creating a Cloud Service for your project
 
 <div className="ndl-image-with-background xl">
@@ -18,22 +19,20 @@ This guide will take you through the process of creating a **Cloud Service** for
 
 We will go through the following steps in this guide:
 
--   Creating a Cloud Services
--   Selecting a Cloud Services for you project
--   Inspect the **Cloud Services Database** using the **Dashboard**
--   Create and switch to a new **Cloud Service**
+- Creating a Cloud Services
+- Selecting a Cloud Services for you project
+- Inspect the **Cloud Services Database** using the **Dashboard**
+- Create and switch to a new **Cloud Service**
 
 ## What is a Cloud Service and when do you need it?
 
 A **Cloud Service** is a piece of software running in the cloud that helps serving your Noodl app with data and cloud functionality. The main reason for using a **Cloud Service** in your project is to use its **Database**. For example the nodes [Record](/nodes/data/cloud-data/record) and [Query Records](/nodes/data/cloud-data/query-records) can only be used if you have a **Cloud Service** active for you project. Also you need them for running [Cloud Functions](/docs/guides/cloud-logic/introduction).
 
-Each **Cloud Service** has a dedicated database which means you might want to have multiple **Cloud Services** available for your project, for example one for your test data and one for your production data. Only one **Cloud Service** can be active for your project at one time, but when you [Deploy](/docs/guides/deploy/deploying-an-app-on-sandbox) you can choose which service to use for the deploy.
+Each **Cloud Service** has a dedicated database which means you might want to have multiple **Cloud Services** available for your project, for example one for your test data and one for your production data. Only one **Cloud Service** can be active for your project at one time, but when you deploy your project you can choose which service to use for the deploy.
 
-Also note that **Cloud Services** are shared within a workspace, i.e. all projects in a workspace have access to the all **Cloud Services**.
+Also note that **Cloud Services** are accessible by all your Noodl projects.
 
-### Noold hosted vs Self Hosted Cloud Services
-
-In Noodl there are two types of **Cloud Services**, **Noodl Hosted (default)** and **Self Hosted**. The **Noodl Hosted** are easiest to use, since Noodl can create those for you in a few clicks. **Self Hosted Cloud Services** are services that you set up and host yourself, check out [this guide](/docs/guides/deploy/using-an-external-backend), In this guide we will focus on **Noodl Hosted Cloud Services**.
+### Creating a cloud service
 
 To add a new Cloud Service click the **Cloud Services** tab icon in the side bar.
 
@@ -110,9 +109,3 @@ Now you can switch back and forth between your two cloud services. But most ofte
 ## Deploying with a cloud service
 
 When you deploy you application you pick which cloud service to use for the deploy. So you can for instance have one test deploy to sandbox that is using your development or testing cloud service, and another using your custom domain that use your production cloud service.
-
-<div className="ndl-image-with-background l">
-
-![](/docs/guides/cloud-data/creating-a-backend/deploy.png)
-
-</div>

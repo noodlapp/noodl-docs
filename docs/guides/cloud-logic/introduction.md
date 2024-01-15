@@ -87,7 +87,7 @@ When your **Cloud Function** is in place you will need to call it from your fron
 
 </div>
 
-Then you can hook up the node. You call the function by sending a signal to the <span class="ndl-signal">Call</span> signal input. 
+Then you can hook up the node. You call the function by sending a signal to the <span class="ndl-signal">Call</span> signal input.
 
 <div className="ndl-image-with-background xl">
 
@@ -102,19 +102,3 @@ When your cloud function has completed running it will result in either a <span 
 ## Deploying
 
 This is the basics of cloud function, keep reading the guides in this section to learn more about the details and different use cases. Finally you will want to deploy your application, and for the cloud functions to work properly you need to make sure you have a cloud services selected when deploying.
-
-<div className="ndl-image-with-background l">
-
-![](/docs/guides/cloud-logic/introduction/cloud-functions-deploy.png)
-
-</div>
-
-
-
-
-
-
-
-
-
-

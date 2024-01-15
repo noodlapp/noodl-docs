@@ -1310,19 +1310,7 @@ const sidebars = {
     },
   ],
 
-  // PDF
-  PDFExportSidebar: [
-    {
-      type: 'doc',
-      label: 'Overview',
-      id: 'prefabs/pdf/README',
-    },
-    {
-      type: 'link',
-      label: 'Back to prefabs',
-      href: '/library/prefabs/overview',
-    },
-  ],
+
 
   // Marquee Module
   marquee: [

@@ -15,47 +15,29 @@ Noodl AI presents a unique way of leveraging the power of Large Language Models 
 
 Easily create JavaScript logic, handle API calls, interact with databases, and generate UI elements. Our goal is to make the development process more inclusive and accessible for a bigger range of skill sets. Whether you're an experienced developer or a beginner, Noodl AI is here to support you throughout your app development journey.
 
-> In the ever-evolving field of generative AI, Noodl AI keeps pace with the latest developments as well as the valuable feedback from the Noodl community. Please don’t hesitate to reach out with your thoughts on our [Discord](https://discord.com/invite/23xU2hYrSJ) or [Twitter](https://twitter.com/getnoodl).
-
 ## Noodl AI access
 
-All Noodl users have access to the beta version of Noodl AI, which includes generative features powered by OpenAIs GPT. However, as these models come with associated costs, we have divided the Noodl AI beta into two modes:
+Noodl AI is built on top of OpenAIs GPT models, and requires you to input an OpenAI API key. It currently supports two modes:
 
-**Limited Beta** is free for all users and is based on GPT-3.5. As this model is not as advanced as GPT-4, this mode only supports very limited AI features.
+- **GPT-3.5**: As this model is not as advanced as GPT-4, this mode only supports very limited AI features.
 
-**Full Beta** is based on GPT-4 and requires you to input a GPT-4 API key from OpenAI. This AI mode includes all generative features, and provides significantly better results.
+- **GPT-4**: This AI mode includes all generative features, and provides significantly better results.
 
 :::note
-Please note that the performance of the same AI command varies between the two modes due to the different capabilities of the GPT versions. For the best results, we recommend using the Full Beta mode, as it gives you a better output.
+Please note that the performance of the same AI command varies between the two modes due to the different capabilities of the GPT versions. For the best results, we recommend using the GPT-4 mode, as it gives you a better output.
 :::
-
-### LLM agnostic
-
-To streamline the beta phase, the public version of Noodl AI is limited to GPT-3.5/4. However, Noodl is built to leverage custom LLM endpoints, and even different models for compliance, regulations, performance, or price concerns.
-
-> We are currently looking for teams willing to test custom solutions. Please contact us of you are interested in using another LLM, custom endpoint, or your own knowledge base.
 
 ## Setup Instructions
 
-Any version of the editor that is version 2.9 or higher comes with the generative features enabled. You can see your current version during login, or in the top right corner of the editor. If your editor has not automatically updated to the latest version, visit the [Noodl Console](https://console.noodl.net) to download it manually.
+Any version of the editor that is version 2.9 or higher comes with the generative features enabled. You can see your current version during login, or in the top right corner of the editor.
 
-When opening a project you should see the AI bar in the top left corner of the node canvas. In the Editor Settings (in the Sidepanel) you can find options for changing the beta mode, or disabling all AI features.
+When opening a project you should see the AI bar in the top left corner of the node canvas. In the Editor Settings (in the Sidepanel) you can find options for changing the AI model, or disabling all AI features.
 
 <div className="ndl-image-with-background l">
 
 ![](/docs/getting-started/noodl-ai/settings.png)
 
 </div>
-
-### Limited Beta
-
-The Limited Beta mode is activated by default and is free to use for everyone. It is built on top of OpenAIs GPT-3.5 model. Due to the limitations of GPT-3.5 we only support the `/Function` command in this mode.
-
-### Full Beta
-
-The Full Beta mode requires an GPT-4 API key from OpenAI. If you don’t have a GPT-4 API key you can request one from OpenAI (but there might be a waiting list). Noodl will not charge you for using the Full Beta, but Open AI will bill you their regular amount based on your API usage.
-
-To activate the Full Beta, open the Editor Settings, find the **Noodl AI (Beta)** settings, and change the mode to `Full beta (gpt-4)`. Enter the API key and click **Verify** to activate.
 
 ## AI commands
 
@@ -149,7 +131,7 @@ Here are some examples of prompting the `/Write to database` command:
 </div>
 
 :::note
-This is an experimental command and is still both limited and unpolished. Please reach out to us if you have any thoughts on future developments.
+This is an experimental command and is still both limited and unpolished.
 :::
 
 The `/UI` command is used to generate visual nodes from a text prompt. Currently it supports the Group, Columns, Button, Text Input, Checkbox, Image and Dropdown nodes, with some limited styling. It can also generate components from your design system, if they are AI annotated.
@@ -178,8 +160,6 @@ The `/UI` command will now consider your component when generating prompted layo
 
 This method allows you fine grained control over your design system, while still leveraging the capabilities of LLMs for the bigger picture, giving you useful (and reusable) results in a real world setting.
 
-> We are currently looking for teams willing to test AI annotations on their design systems. Please contact us of you are interested in UI generation with your medium/large component library.
-
 ### `/Image`
 
 <div className="ndl-image-with-background l">
@@ -189,16 +169,10 @@ This method allows you fine grained control over your design system, while still
 </div>
 
 :::note
-This is an experimental command and is still both limited and unpolished. Please reach out to us if you have any thoughts on future developments.
+This is an experimental command and is still both limited and unpolished.
 :::
 
 The `/Image` command creates a single Image node and populates it with a Dall-E generated image. The images are saved in the project folder.
 
 > All your prompts will be sent to OpenAI. This includes any AI annotations in your components, as well as your data models (but not any of the data in your database). However, this will not be used to train OpenAIs models.<br/><br/>
 > You can read more about OpenAIs data usage policy [here](https://openai.com/policies/api-data-usage-policies).
-
-## Make your voice heard!
-
-We strongly believe that our community is one of our greatest assets, and we value all the input and feedback that we get, as it helps us shape and steer our development efforts. That's why we have opened up our beta to invite the community to actively participate in the journey. We encourage you to share your thoughts, ideas, and suggestions with us on [Discord](https://discord.com/invite/23xU2hYrSJ) or [Twitter](https://twitter.com/getnoodl).
-
-Thank you for trying out the new features, and happy noodling!
