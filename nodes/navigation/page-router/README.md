@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Page Router node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Page Router
 
@@ -20,7 +20,7 @@ Unlike the somewhat similar [Component Stack](/nodes/component-stack/component-s
 
 Every <span className="ndl-node">Page Router</span> has a <span className="ndl-data">Start Page</span>. The pages are rendered inside of the <span className="ndl-node">Page Router</span>. You can use the <span className="ndl-data">Clip Behavior</span> option to decide how the <span className="ndl-node">Page Router</span> should wrap its content.
 
-<##head##>
+{/*##head##*/}
 
 ## Implementation
 
@@ -86,15 +86,15 @@ The **Page Router** is a visual node. It will automatically expand to take all s
 
 | Data                                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Name</span>             | <##input:name##>The name of the **Page Router**. If you have multiple **Page Routers** the name will be used to identify them.<##input##>                                                                                                                                                                                                                                                                                                                                                          |
-| <span className="ndl-data">URL path</span>         | <##input:urlPath##>An optional path of the **Page Router** when routing a URL towards it.<##input##>                                                                                                                                                                                                                                                                                                                                                                                               |
-| <span className="ndl-data">Clip Behavior</span>    | <##input:clip##>This property controls the size and clipping behavior of the **Page Router**. It has three possible values: **Expand To Content Size**, **Scroll** or **Clip Content**.<##input##><br/><br/>`Expand To Content Size`: Changes the size of the **Page Router** to fit the size of the **Page** it's currently showing.<br/>`Scroll`: Makes the **Page Router** take as much space as it can. Any **Page** inside it will be scrollable if it cannot fit inside the **Page Router**. |
-| <span className="ndl-data">Background Color</span> | <##input:backgroundColor##>The color that will be shown when there is no **Page** covering the **Page Router** or when the **Page** is transparent.<##input##>                                                                                                                                                                                                                                                                                                                                     |
-| <span className="ndl-data">Mounted</span>          | <##input:mounted##>This property is used to completely remove the node from the DOM. If this property is set to false the node is removed from the DOM. It differs from the _Visible_ property where the node is still part of the DOM but invisible.<##input##>                                                                                                                                                                                                                                   |
+| <span className="ndl-data">Name</span>             | {/*##input:name##*/}The name of the **Page Router**. If you have multiple **Page Routers** the name will be used to identify them.{/*##input##*/}                                                                                                                                                                                                                                                                                                                                                          |
+| <span className="ndl-data">URL path</span>         | {/*##input:urlPath##*/}An optional path of the **Page Router** when routing a URL towards it.{/*##input##*/}                                                                                                                                                                                                                                                                                                                                                                                               |
+| <span className="ndl-data">Clip Behavior</span>    | {/*##input:clip##*/}This property controls the size and clipping behavior of the **Page Router**. It has three possible values: **Expand To Content Size**, **Scroll** or **Clip Content**.{/*##input##*/}<br/><br/>`Expand To Content Size`: Changes the size of the **Page Router** to fit the size of the **Page** it's currently showing.<br/>`Scroll`: Makes the **Page Router** take as much space as it can. Any **Page** inside it will be scrollable if it cannot fit inside the **Page Router**. |
+| <span className="ndl-data">Background Color</span> | {/*##input:backgroundColor##*/}The color that will be shown when there is no **Page** covering the **Page Router** or when the **Page** is transparent.{/*##input##*/}                                                                                                                                                                                                                                                                                                                                     |
+| <span className="ndl-data">Mounted</span>          | {/*##input:mounted##*/}This property is used to completely remove the node from the DOM. If this property is set to false the node is removed from the DOM. It differs from the _Visible_ property where the node is still part of the DOM but invisible.{/*##input##*/}                                                                                                                                                                                                                                   |
 
 | Signal                                    | Description                                                                                                      |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-signal">Reset</span> | <##input:reset##>Triggering this action will reset the **Page Router** making it show the start page.<##input##> |
+| <span className="ndl-signal">Reset</span> | {/*##input:reset##*/}Triggering this action will reset the **Page Router** making it show the start page.{/*##input##*/} |
 
 ### Visual
 
@@ -104,7 +104,7 @@ This node also supports the [Advanced HTML](/nodes/shared-props/inputs/visual-in
 
 | Data                                                 | Description                                                                                                         |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Current Page Title</span> | <##output:current page title##>The title of the page that is currently showing in this **Page Router**.<##output##> |
+| <span className="ndl-data">Current Page Title</span> | {/*##output:current page title##*/}The title of the page that is currently showing in this **Page Router**.{/*##output##*/} |
 
 ### Visual
 

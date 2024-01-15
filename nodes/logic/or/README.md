@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Or node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Or
 
@@ -18,7 +18,7 @@ This node performs a logic OR operation on its inputs. If any input is <span cla
 
 Any number of inputs can be used. When an input is connected a new one will be created automatically.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

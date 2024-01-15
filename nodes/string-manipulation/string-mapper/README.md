@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: String Mapper node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # String Mapper
 
@@ -17,7 +17,7 @@ You define your own string mappings. You can also define a default value to outp
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

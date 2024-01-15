@@ -3,7 +3,7 @@ title: Mapbox Map
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Mapbox Map
 
@@ -15,7 +15,7 @@ This node adds a map to the visual tree, using [Mapbox](https://www.mapbox.com/)
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

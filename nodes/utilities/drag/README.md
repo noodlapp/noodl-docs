@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Drag node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Drag
 
@@ -22,7 +22,7 @@ The Drag node can only have one child, but that child can have many children.
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

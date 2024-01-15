@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Animate To Value node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Animate To Value
 
@@ -16,7 +16,7 @@ This node takes a target value and will automatically animate towards it. The an
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

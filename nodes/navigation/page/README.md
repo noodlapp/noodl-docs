@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Page node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Page
 
@@ -24,14 +24,14 @@ The **Page** node is a basic building block when creating web type navigation us
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 
 | Data                                       | Description                                                                                                                                                                                                                                                        |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Title</span>    | <##input:title##>This property controls the title of the **Page** i.e. what the title of the browser window will be say when the **Page** is active.<##input##>                                                                                                    |
-| <span className="ndl-data">URL path</span> | <##input:urlPath##>This property controls the URL route to this **Page** in relation to its [Page Router](/nodes/navigation/page-router).<##input##> See the documentation for [Page Router](/nodes/navigation/page-router) for more details on how routing works. |
+| <span className="ndl-data">Title</span>    | {/*##input:title##*/}This property controls the title of the **Page** i.e. what the title of the browser window will be say when the **Page** is active.{/*##input##*/}                                                                                                    |
+| <span className="ndl-data">URL path</span> | {/*##input:urlPath##*/}This property controls the URL route to this **Page** in relation to its [Page Router](/nodes/navigation/page-router).{/*##input##*/} See the documentation for [Page Router](/nodes/navigation/page-router) for more details on how routing works. |
 
 This node supports the following [Visual Input Properties](/nodes/shared-props/inputs/visual-input-properties/):
 

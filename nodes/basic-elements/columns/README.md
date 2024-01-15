@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Columns node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Columns
 
@@ -28,7 +28,7 @@ A layout string is simply a string of numbers with spaces between them. Every nu
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Responsive layouts
 

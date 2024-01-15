@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Component Inputs node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Component Inputs
 
@@ -24,7 +24,7 @@ A <span className="ndl-node">Component Input</span> node can have multiple ports
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 A very powerful feature of Noodl is the ability to create **Components** that act as reusable nodes in your application.
 

@@ -5,7 +5,7 @@ interface ImportButtonProps {
     zip: string
     name: string
     thumb: string
-    cf: string
+    cf?: string
 }
 
 export default function ImportButton({

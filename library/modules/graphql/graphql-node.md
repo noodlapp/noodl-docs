@@ -3,14 +3,14 @@ title: GraphQL Query
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 # GraphQL Query
 
 This node enables you to connect to GraphQL based API:s in a quick and easy way.
 
 ![](/library/modules/graphql/graphql-guide-img/graphql-query-node.png)
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

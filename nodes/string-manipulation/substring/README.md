@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Substring node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Substring
 
@@ -16,7 +16,7 @@ This node lets you extract a part of a <span className="ndl-data">string</span> 
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

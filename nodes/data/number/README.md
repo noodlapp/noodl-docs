@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Number node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Number
 
@@ -24,7 +24,7 @@ You can also use the <span className="ndl-node">Number</span> node connected to 
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

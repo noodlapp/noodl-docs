@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Color node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Color
 
@@ -18,7 +18,7 @@ This node holds a <span className="ndl-data">color</span> value.
 
 The <span className="ndl-data">color</span> value can either be static or dynamic using the <span className="ndl-data">Value</span> and <span className="ndl-signal">Set</span> inputs.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

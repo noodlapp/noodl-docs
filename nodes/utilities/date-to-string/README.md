@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Date To String node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Date To String
 
@@ -18,15 +18,15 @@ This node translates a <span className="ndl-data">date</span> type input and out
 
 The format is specified as a <span className="ndl-data">string</span> that can include the following special syntax: `{date}`, `{month}`, `{monthShort}`, `{year}`, `{hours}`, `{minutes}` and `{seconds}`.
 
-<##head##>
+{/*##head##*/}
 
-- **{date}** The numeric date part.
-- **{month}** The numeric month 1 = January, 12 = December.
-- **{monthShort}** The numeric month 1 = Jan, 12 = Dec.
-- **{year}** The numeric year.
-- **{hours}** The numeric hour, between 0..23
-- **{minutes}** The numeric minute, between 0..60
-- **{seconds}** The numeric second, between 0..60
+- `{date}` The numeric date part.
+- `{month}` The numeric month 1 = January, 12 = December.
+- `{monthShort}` The numeric month 1 = Jan, 12 = Dec.
+- `{year}` The numeric year.
+- `{hours}` The numeric hour, between 0..23
+- `{minutes}` The numeric minute, between 0..60
+- `{seconds}` The numeric second, between 0..60
 
 The default format is this:
 

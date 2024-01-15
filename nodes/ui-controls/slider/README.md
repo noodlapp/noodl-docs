@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Slider node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Slider
 
@@ -24,7 +24,7 @@ The <span className="ndl-node">Slider</span> node allows you to set a <span clas
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

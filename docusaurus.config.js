@@ -1,39 +1,17 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-//const lightCodeTheme = require('prism-react-renderer/themes/github');
-//const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
 const {
   _parseNoodlMarkupPlugin,
   _parseRenderedMarkupPlugin,
 } = require('./plugins/markdown-syntax');
 
-const version = require('./package.json')
-  .version.split('.')
-  .slice(0, 2)
-  .join('.');
-
-// Reverse the sidebar items ordering (including nested category items)
-function reverseSidebarItems(items) {
-  // Reverse items in categories
-  const result = items.map((item) => {
-    if (item.type === 'category') {
-      return { ...item, items: reverseSidebarItems(item.items) };
-    }
-    return item;
-  });
-  // Reverse items at current level
-  result.reverse();
-  return result;
-}
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Noodl',
   tagline: 'Dinosaurs are cool',
-  url: 'https://docs.noodl.net',
-  baseUrl: `/${version}/`,
+  url: 'https://noodlapp.github.io',
+  baseUrl: `/noodl-docs/`,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -158,13 +136,6 @@ const config = {
         ],
       },
     ],
-
-    [
-      require('./plugins/gtm'),
-      {
-        id: 'GTM-P4LSJL4',
-      },
-    ],
   ],
 
   themeConfig: {
@@ -187,11 +158,6 @@ const config = {
         content: 'KjANYZkN8ymGFD0SGnAVlRkD85p-fpNHCRAOKxurpWI'
       }
     ],
-    algolia: {
-      appId: 'D29X2LNM4J',
-      apiKey: '7984d5feef068e1161527316bb9a1a4d',
-      indexName: 'docs_2-9',
-    },
     colorMode: {
       disableSwitch: true,
       defaultMode: 'dark',

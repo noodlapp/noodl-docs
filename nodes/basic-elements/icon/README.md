@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Icon node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Icon
 
@@ -17,7 +17,7 @@ This node places an icon in the visual tree.
 </div>
 
 You can use an icon from the built in library, or provide your own image source.
-<##head##>
+{/*##head##*/}
 
 ## Dynamic icons
 

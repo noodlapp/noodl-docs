@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Request node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Request
 
@@ -26,7 +26,7 @@ You specify what parameters the cloud function accepts in the properties of the 
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 By default the user must be logged in on the client, and if thats not the case the cloud function call will automatically fail with an error indication an invalid session.
 

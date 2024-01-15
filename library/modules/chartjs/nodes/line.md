@@ -3,7 +3,7 @@ title: Line Chart
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Line Chart
 
@@ -17,7 +17,7 @@ This visual node adds a line chart to the visual tree.
 
 [Here](../charts/line) is an example how to use used the node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

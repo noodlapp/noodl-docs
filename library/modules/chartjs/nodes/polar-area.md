@@ -3,7 +3,7 @@ title: Polar Area Chart
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Polar Area Chart
 
@@ -17,7 +17,7 @@ This visual node adds a polar area chart to the visual tree.
 
 [Here](../charts/polar-area) is an example how to use used the node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

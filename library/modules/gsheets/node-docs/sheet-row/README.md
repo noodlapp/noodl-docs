@@ -3,7 +3,7 @@ title: Sheet Row
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Sheet Row
 
@@ -25,7 +25,7 @@ By setting the `Row Id` of the **Sheet Row**, and selecting the **Sheet** (if yo
 
 > Note that the Google Sheet need to be made public for Noodl to be able to access it.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

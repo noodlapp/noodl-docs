@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Expression node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Expression
 
@@ -18,7 +18,7 @@ This node enables you to do your own calculations using simple expressons. Input
 
 The <span className="ndl-node">Expression</span> node runs JavaScript under the hood and supports a range of mathematical expressions.
 
-<##head##>
+{/*##head##*/}
 
 ## Built in math functions
 
@@ -70,10 +70,10 @@ Inputs are automatically derived from the expression. An expression set to `a + 
 
 | Data                                     | Description                                                                                   |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------- |
-| <span className="ndl-data">Result</span> | <##output:result##>This output contains the result when evaluating the expression<##output##> |
-| <span className="ndl-data">Is true</span> | <##output:isTrue##>This output will be true if the result of the expression is "truthy", that is considered true in Javascript.<##output##> |
-| <span className="ndl-data">Is false</span> | <##output:isFalse##>This output will be true if the result of the expression is "falsy", that is considered false in Javascript.<##output##> |
-| <span className="ndl-signal">On True</span> | <##output:isTrueEv##>A signal will be sent on this output when the expression is calculated and the result is "truthy".<##output##> |
-| <span className="ndl-signal">On False</span> | <##output:isFalseEv##>A signal will be sent on this output when the expression is calculated and the result is "falsy".<##output##> |
+| <span className="ndl-data">Result</span> | {/*##output:result##*/}This output contains the result when evaluating the expression{/*##output##*/} |
+| <span className="ndl-data">Is true</span> | {/*##output:isTrue##*/}This output will be true if the result of the expression is "truthy", that is considered true in Javascript.{/*##output##*/} |
+| <span className="ndl-data">Is false</span> | {/*##output:isFalse##*/}This output will be true if the result of the expression is "falsy", that is considered false in Javascript.{/*##output##*/} |
+| <span className="ndl-signal">On True</span> | {/*##output:isTrueEv##*/}A signal will be sent on this output when the expression is calculated and the result is "truthy".{/*##output##*/} |
+| <span className="ndl-signal">On False</span> | {/*##output:isFalseEv##*/}A signal will be sent on this output when the expression is calculated and the result is "falsy".{/*##output##*/} |
 
 

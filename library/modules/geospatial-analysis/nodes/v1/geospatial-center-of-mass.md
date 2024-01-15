@@ -3,13 +3,13 @@ title: Geospatial Center Of Mass
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Geospatial Center Of Mass
 
 Takes an array of coordinates and returns its center of mass using this formula: Centroid of Polygon.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

@@ -3,7 +3,7 @@ title: Doughnut Chart
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Doughnut Chart
 
@@ -17,7 +17,7 @@ This visual node adds a doughnut chart to the visual tree.
 
 [Here](../charts/doughnut) is an example how to use used the node.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

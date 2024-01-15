@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Boolean node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Boolean
 
@@ -24,7 +24,7 @@ You can connect the <span className="ndl-node">Boolean</span> node to a <span cl
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Config node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Config
 
@@ -24,7 +24,7 @@ You pick a **Parameter** in the properties of the node. First you must specify t
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 When creating a parameter you can specify if it requires the **Master Key** or not. Requiring the master key means that you can only access these parameters in cloud functions, which is important for config parameters that needs to be kept secure.
 
@@ -58,20 +58,20 @@ For the node above we want a special config parameter for when running locally s
 
 | Data                                                | Description                                                                                                                                      |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Parameter</span>     | <##input:configKey##>The config parameter to use for this node.<##input##>                                                                       |
+| <span className="ndl-data">Parameter</span>     | {/*##input:configKey##*/}The config parameter to use for this node.{/*##input##*/}                                                                       |
 
 ## Local Override
 
 | Data                                                | Description                                                                                                                                      |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Enable</span>     | <##input:useDevValue##>Checking this will provide a special value for this node when running in the editor or from ```localhost```<##input##>                                                                       |
-| <span className="ndl-data">Value</span>     | <##input:devValue##>The value to return from this node when running in the editor or on ```localhost```<##input##>                                                                       |
+| <span className="ndl-data">Enable</span>     | {/*##input:useDevValue##*/}Checking this will provide a special value for this node when running in the editor or from ```localhost```{/*##input##*/}                                                                       |
+| <span className="ndl-data">Value</span>     | {/*##input:devValue##*/}The value to return from this node when running in the editor or on ```localhost```{/*##input##*/}                                                                       |
 
 
 ## Outputs
 
 | Data                                     | Description                                                                                                              |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| <span className="ndl-data">Value</span> | <##output:value##>The value for this config parameter for the current active cloud service, or the local override. <##output##> |
+| <span className="ndl-data">Value</span> | {/*##output:value##*/}The value for this config parameter for the current active cloud service, or the local override. {/*##output##*/} |
 
 

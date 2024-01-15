@@ -3,13 +3,13 @@ title: Geospatial Turf API
 hide_title: true
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Turf.js API
 
 Returns the Turf.js API object, allowing to use other Turf.js functions that doesn't have nodes yet.
 
-<##head##>
+{/*##head##*/}
 
 ## Outputs
 

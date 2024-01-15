@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Delay node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Delay
 
@@ -16,7 +16,7 @@ This node lets you delay <span className="ndl-signal">signals</span> by the spec
 
 </div>
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

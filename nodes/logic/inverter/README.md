@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: Inverter node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # Inverter
 
@@ -18,7 +18,7 @@ This node changes <span className="ndl-data">true</span> values to be <span clas
 
 The <span className="ndl-node">Inverter</span> node runs JavaScript in the background and interprets truthy and falsy values in the same fashion. It is equal to creating an <span className="ndl-node">Expression</span> node with the expression `!value`.
 
-<##head##>
+{/*##head##*/}
 
 ## Inputs
 

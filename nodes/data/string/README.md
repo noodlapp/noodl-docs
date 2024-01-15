@@ -4,7 +4,7 @@ hide_table_of_contents: true
 title: String node
 ---
 
-<##head##>
+{/*##head##*/}
 
 # String
 
@@ -18,7 +18,7 @@ This node contains a <span className="ndl-data">string</span> value (text). It c
 
 You can also use the String node connected to a <span className="ndl-node">Component Inputs</span> node. This will make sure the input shows up as a <span className="ndl-data">string</span> input in the Property Panel for instances of this component.
 
-<##head##>
+{/*##head##*/}
 
 You can use it to provide a static value for input to other nodes. It is local to the component and cannot be accessed anywhere else in the graph.
 
