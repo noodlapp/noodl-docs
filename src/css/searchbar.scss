@@ -20,34 +20,19 @@
     );
 }
 
-.DocSearch {
-    padding: 0 !important;
+.search-bar-outer {
+    margin-bottom: 80px;
 
-    main & {
-        margin-bottom: 80px;
+    span {
+        width: 100%;
     }
 
-    .navbar & {
-        display: none;
+    & .navbar__search-input {
+        height: auto !important;
+        border-radius: 2px !important;
+        border: 1px solid var(--doc-color-noodl-black-light) !important;
+        width: 100% !important;
+        padding: 20px 40px !important;
+        background-color: var(--doc-color-noodl-black-darker) !important;
     }
-}
-
-.navbar__items--right :last-child {
-    display: none !important;
-}
-
-.DocSearch-Button {
-    height: auto !important;
-    border-radius: 2px !important;
-    border: 1px solid var(--doc-color-noodl-black-light) !important;
-    width: 100% !important;
-    padding: 20px 24px !important;
-}
-
-.search-bar-outer > :first-child {
-    padding: 0;
-}
-
-.DocSearch-Hit[aria-selected='true'] a {
-    background-color: var(--doc-color-noodl-blue-80) !important;
 }
