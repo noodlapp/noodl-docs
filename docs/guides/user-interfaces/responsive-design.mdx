@@ -467,234 +467,27 @@ So far we've been making our UI responsive by checking the size of the screen. T
 
 One solution to this is a concept called **Container Queries**. Here we check for the size of the component in question, and set the responsiveness based on that (instead of the viewport).
 
-Here's a very basic example using an **Expression** node to check a components witdth and set different `Layout Strings`:
+Here's a very basic example using a **Function** node to check a components witdth and set different `Layout Strings`:
 
 <div className="ndl-image-with-background l">
 
 <CopyToClipboardButton
-  json={{
-    nodes: [
-      {
-        id: '9bb3b01d-56f0-2ad0-ded6-3db55487800f',
-        type: 'Group',
-        label: 'Grid container',
-        x: 0,
-        y: 0,
-        parameters: {},
-        ports: [],
-        children: [
-          {
-            id: '2c51662f-1cc1-1fe7-fee7-f6c0a2805790',
-            type: 'net.noodl.visual.columns',
-            x: 20,
-            y: 96,
-            parameters: {},
-            ports: [],
-            children: [
-              {
-                id: '16371695-9a59-4f4a-a0e7-c7739d3bfe4b',
-                type: 'Group',
-                x: 40,
-                y: 178,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: '9bcd72b8-eb0e-7b81-ce29-5a22604163a1',
-                type: 'Group',
-                x: 40,
-                y: 224,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: '1bc9108b-2ecd-1795-dc7e-dd92022503b1',
-                type: 'Group',
-                x: 40,
-                y: 270,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: 'd602be2c-e32b-00f9-be32-033dee41fe37',
-                type: 'Group',
-                x: 40,
-                y: 316,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: '072d8bde-e96d-ff8d-b543-c6741afefbbb',
-                type: 'Group',
-                x: 40,
-                y: 362,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: 'cccbfb7c-7b15-a3dd-8bf8-e197c86837fd',
-                type: 'Group',
-                x: 40,
-                y: 408,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: '2b38420e-fdf4-b19b-1cae-07825eab1479',
-                type: 'Group',
-                x: 40,
-                y: 454,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: 'd686287d-9325-efd9-5ed1-1a12849954f4',
-                type: 'Group',
-                x: 40,
-                y: 500,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: 'c207bff1-55aa-f0b8-313a-d5358af923ce',
-                type: 'Group',
-                x: 40,
-                y: 546,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-              {
-                id: '1d034b8e-ae18-7310-8557-c008fc9924c7',
-                type: 'Group',
-                x: 40,
-                y: 592,
-                parameters: {
-                  height: { value: 300, unit: 'px' },
-                  backgroundColor: 'Primary',
-                  alignY: 'bottom',
-                  justifyContent: 'center',
-                },
-                ports: [],
-                children: [],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: '58d44711-c688-c7ce-cdee-19824ebc79e9',
-        type: 'Expression',
-        x: 282.5,
-        y: 15,
-        parameters: { expression: 'width > 300' },
-        ports: [],
-        children: [],
-        metadata: { merge: { soureCodePorts: ['expression'] } },
-      },
-      {
-        id: 'fa2dc82a-10da-f34f-a1ed-3e4c328dc9a6',
-        type: 'States',
-        x: 283.5,
-        y: 161,
-        parameters: {
-          values: 'Layout String',
-          states: 'Is Single Column,Is Double Column',
-          useTransitions: false,
-          'type-Layout String': 'string',
-          'value-Is Single Column-Layout String': '1',
-          'value-Is Double Column-Layout String': '1 1',
-        },
-        ports: [],
-        children: [],
-      },
-    ],
-    connections: [
-      {
-        fromId: '58d44711-c688-c7ce-cdee-19824ebc79e9',
-        fromProperty: 'isTrueEv',
-        toId: 'fa2dc82a-10da-f34f-a1ed-3e4c328dc9a6',
-        toProperty: 'to-Is Double Column',
-      },
-      {
-        fromId: '58d44711-c688-c7ce-cdee-19824ebc79e9',
-        fromProperty: 'isFalseEv',
-        toId: 'fa2dc82a-10da-f34f-a1ed-3e4c328dc9a6',
-        toProperty: 'to-Is Single Column',
-      },
-      {
-        fromId: '9bb3b01d-56f0-2ad0-ded6-3db55487800f',
-        fromProperty: 'boundingWidth',
-        toId: '58d44711-c688-c7ce-cdee-19824ebc79e9',
-        toProperty: 'width',
-      },
-      {
-        fromId: 'fa2dc82a-10da-f34f-a1ed-3e4c328dc9a6',
-        fromProperty: 'Layout String',
-        toId: '2c51662f-1cc1-1fe7-fee7-f6c0a2805790',
-        toProperty: 'layoutString',
-      },
-    ],
-    comments: [],
-  }}
+  json={{"nodes":[{"id":"4b33f8cd-3c7d-d5fe-decd-7c4c6663d926","type":"Group","label":"Grid container","x":20,"y":46,"parameters":{},"ports":[],"children":[{"id":"9d143294-1d35-6701-b33e-2be10c58abb4","type":"net.noodl.visual.columns","x":40,"y":142,"parameters":{},"ports":[],"children":[{"id":"89c94d84-e25c-7a2d-d3c1-2344d6e3ecc1","type":"Group","x":60,"y":224,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"b0083ffd-e5a3-8a5e-e804-7c6cbb63ebe5","type":"Group","x":60,"y":270,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"035239e8-0c41-16a3-4d80-7a8ea012fa56","type":"Group","x":60,"y":316,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"49e140d7-87c7-6888-8a3b-1f00bc50790c","type":"Group","x":60,"y":362,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"27cf750f-d820-eab1-9ce6-c951efea5ca3","type":"Group","x":60,"y":408,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"d6ac84ba-52ae-54d5-e74d-67e148d5d5df","type":"Group","x":60,"y":454,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"12406866-fffe-dc50-03f9-331d69bf98ce","type":"Group","x":60,"y":500,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"34ee2798-f9c3-69d3-7e3d-1222e523f98c","type":"Group","x":60,"y":546,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"8f6a2bd9-370d-fd50-dd87-afcbccde39ef","type":"Group","x":60,"y":592,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]},{"id":"280f00c4-debb-3b0e-e5ba-ad8435c3fcec","type":"Group","x":60,"y":638,"parameters":{"height":{"value":300,"unit":"px"},"backgroundColor":"Primary","alignY":"bottom","justifyContent":"center"},"ports":[],"children":[]}]}]},{"id":"0f6a75fa-864e-a6b8-85b9-cc79d0745636","type":"States","x":295.14164213300387,"y":151.77522009327646,"parameters":{"values":"Layout String","states":"Is Single Column,Is Double Column","useTransitions":false,"type-Layout String":"string","value-Is Single Column-Layout String":"1","value-Is Double Column-Layout String":"1 1"},"ports":[],"children":[]},{"id":"c872f350-1079-b6e6-0b09-2d1944a2730d","type":"JavaScriptFunction","x":293.5727268856243,"y":29.906598303598514,"parameters":{"functionScript":"if (Inputs.Width > 300) {\n    Outputs.GreaterThan300()\n} else {\n    Outputs.LessThan300()\n}"},"ports":[],"children":[],"metadata":{"merge":{"soureCodePorts":["functionScript"]}}}],"connections":[{"fromId":"0f6a75fa-864e-a6b8-85b9-cc79d0745636","fromProperty":"Layout String","toId":"9d143294-1d35-6701-b33e-2be10c58abb4","toProperty":"layoutString"},{"fromId":"4b33f8cd-3c7d-d5fe-decd-7c4c6663d926","fromProperty":"boundingWidth","toId":"c872f350-1079-b6e6-0b09-2d1944a2730d","toProperty":"in-Width"},{"fromId":"c872f350-1079-b6e6-0b09-2d1944a2730d","fromProperty":"out-GreaterThan300","toId":"0f6a75fa-864e-a6b8-85b9-cc79d0745636","toProperty":"to-Is Double Column"},{"fromId":"c872f350-1079-b6e6-0b09-2d1944a2730d","fromProperty":"out-LessThan300","toId":"0f6a75fa-864e-a6b8-85b9-cc79d0745636","toProperty":"to-Is Single Column"}],"comments":[]}}
 />
 
 ![](/docs/guides/user-interfaces/responsive-design/container-query.png)
 
 </div>
+
+Here's the code running in the function node:
+
+```js
+if (Inputs.Width > 300) {
+    Outputs.GreaterThan300()
+} else {
+    Outputs.LessThan300()
+}
+```
 
 We can now use this item grid everywhere, without caring if it's in a page-wide or column-narrow container. It will always render in a layout we know works.
 
@@ -714,7 +507,7 @@ This is great for both responsivity and reusability. Here's an example of a prof
 
 <div className="ndl-image-with-background l">
   <CopyToClipboardButton
-  json={{"nodes":[{"id":"f249c883-27e1-75a2-61b4-ec99fb1d61ef","type":"Group","label":"User Card","x":-56,"y":-7,"parameters":{"sizeMode":"contentHeight"},"ports":[],"children":[{"id":"f90ec1a3-f3bd-e4d8-2b91-441d98c14390","type":"Group","label":"Container","x":-36,"y":89,"parameters":{"backgroundColor":"#EBE8FF","clip":true,"borderRadius":{"value":16,"unit":"px"},"boxShadowEnabled":true,"boxShadowBlurRadius":{"value":10,"unit":"px"},"boxShadowSpreadRadius":{"value":-5,"unit":"px"},"boxShadowColor":"#000000"},"ports":[],"children":[{"id":"bdc08a99-6875-c3b3-ef8f-46602117807b","type":"net.noodl.visual.columns","x":-16,"y":149,"parameters":{"marginX":{"value":0,"unit":"px"},"marginY":{"value":0,"unit":"px"}},"ports":[],"children":[{"id":"a2d62a44-50c0-31e5-6c93-3fadb629367d","type":"Group","label":"Profile image","x":4,"y":231,"parameters":{},"ports":[],"children":[{"id":"1fe019b7-2f49-8295-c113-25d05cc80e99","type":"Image","x":24,"y":291,"parameters":{"src":"generated-images/image-edf34931-7f05-697e-a686-6048623b9c26.png","sizeMode":"explicit","objectFit":"cover"},"ports":[],"children":[]}]},{"id":"24df50db-ba10-cc89-7aef-d2a534bbe517","type":"Group","label":"Details","x":4,"y":337,"parameters":{"paddingTop":{"value":16,"unit":"px"},"paddingBottom":{"value":16,"unit":"px"},"paddingRight":{"value":16,"unit":"px"},"paddingLeft":{"value":16,"unit":"px"}},"ports":[],"children":[{"id":"6ad5f879-fd56-4d60-6106-51f285dd155c","type":"Group","label":"Name + title container","x":24,"y":397,"parameters":{},"ports":[],"children":[{"id":"4ec2fb3a-ac56-736c-8e15-7ecbca03ec84","type":"Text","x":44,"y":471,"parameters":{"text":"Mr Alpaca","fontSize":{"value":24,"unit":"px"}},"ports":[],"children":[]},{"id":"756e68be-7588-9337-9e46-5284ca5d497f","type":"Text","x":44,"y":531,"parameters":{"text":"Head of Responsive Growth","fontSize":{"value":14,"unit":"px"},"lineHeight":{"value":1.1,"unit":""}},"ports":[],"children":[]}]},{"id":"91682046-a82f-fec9-adb7-1a9058ad03d0","type":"Text","x":24,"y":605,"parameters":{"fontSize":{"value":12,"unit":"px"},"marginTop":{"value":24,"unit":"px"},"textTransform":"none","text":"Last online 4h ago","color":"Grey - 600"},"ports":[],"children":[]}]}]}]}]},{"id":"a6a654ee-44c6-01f1-701a-bf8842b73d8b","type":"States","x":261,"y":142.90136517347258,"parameters":{"states":"Single Column,Double Column","useTransitions":false,"value-Desktop-Header Bottom Margin":32,"value-Tablet-Header Bottom Margin":16,"value-Mobile-Header Bottom Margin":8,"values":"Layout String","type-Layout String":"string","value-Tablet-Layout String":"2 1 1","value-Mobile-Layout String":"1 2","value-Single Column-Layout String":"1","value-Double Column-Layout String":"1 2"},"ports":[],"children":[]},{"id":"9a964091-4cad-4847-3389-e4484ebac77f","type":"Expression","x":261,"y":-1.098634826527416,"parameters":{"expression":"width > 300 "},"ports":[],"children":[],"metadata":{"merge":{"soureCodePorts":["expression"]}}}],"connections":[{"fromId":"9a964091-4cad-4847-3389-e4484ebac77f","fromProperty":"isTrueEv","toId":"a6a654ee-44c6-01f1-701a-bf8842b73d8b","toProperty":"to-Double Column"},{"fromId":"9a964091-4cad-4847-3389-e4484ebac77f","fromProperty":"isFalseEv","toId":"a6a654ee-44c6-01f1-701a-bf8842b73d8b","toProperty":"to-Single Column"},{"fromId":"f249c883-27e1-75a2-61b4-ec99fb1d61ef","fromProperty":"boundingWidth","toId":"9a964091-4cad-4847-3389-e4484ebac77f","toProperty":"width"},{"fromId":"a6a654ee-44c6-01f1-701a-bf8842b73d8b","fromProperty":"Layout String","toId":"bdc08a99-6875-c3b3-ef8f-46602117807b","toProperty":"layoutString"}],"comments":[]}}
+  json={{"nodes":[{"id":"d3d29aa3-87d2-361a-cb40-c77fd2048da4","type":"Group","label":"User Card","x":556,"y":587,"parameters":{"sizeMode":"contentHeight"},"ports":[],"children":[{"id":"32cb34de-ea7c-3ae9-5e43-79cfe5e548c0","type":"Group","label":"Container","x":576,"y":683,"parameters":{"backgroundColor":"#EBE8FF","clip":true,"borderRadius":{"value":16,"unit":"px"},"boxShadowEnabled":true,"boxShadowBlurRadius":{"value":10,"unit":"px"},"boxShadowSpreadRadius":{"value":-5,"unit":"px"},"boxShadowColor":"#000000"},"ports":[],"children":[{"id":"d0629fbe-04de-2225-3179-86a22ed1e074","type":"net.noodl.visual.columns","x":596,"y":743,"parameters":{"marginX":{"value":0,"unit":"px"},"marginY":{"value":0,"unit":"px"}},"ports":[],"children":[{"id":"d0193495-e2cd-a025-d688-a5091af54d8d","type":"Group","label":"Profile image","x":616,"y":825,"parameters":{},"ports":[],"children":[{"id":"d8b69324-dbdd-fdc3-7c92-a2c4c095cdcf","type":"Image","x":636,"y":885,"parameters":{"src":"generated-images/image-edf34931-7f05-697e-a686-6048623b9c26.png","sizeMode":"explicit","objectFit":"cover"},"ports":[],"children":[]}]},{"id":"ee548da5-0608-eb7e-12c0-0b9094502b9a","type":"Group","label":"Details","x":616,"y":931,"parameters":{"paddingTop":{"value":16,"unit":"px"},"paddingBottom":{"value":16,"unit":"px"},"paddingRight":{"value":16,"unit":"px"},"paddingLeft":{"value":16,"unit":"px"}},"ports":[],"children":[{"id":"db2284d8-bdc7-05a2-a16c-ad032bc7024c","type":"Group","label":"Name + title container","x":636,"y":991,"parameters":{},"ports":[],"children":[{"id":"5b53f5fe-64b7-8f6c-1820-0d9916d5c03d","type":"Text","x":656,"y":1065,"parameters":{"text":"Mr Alpaca","fontSize":{"value":24,"unit":"px"}},"ports":[],"children":[]},{"id":"a805000c-effa-c020-db50-edd6647d0a5f","type":"Text","x":656,"y":1125,"parameters":{"text":"Head of Responsive Growth","fontSize":{"value":14,"unit":"px"},"lineHeight":{"value":1.1,"unit":""}},"ports":[],"children":[]}]},{"id":"7fcbf4ad-e7e2-3615-614a-488adad6d1f8","type":"Text","x":636,"y":1199,"parameters":{"fontSize":{"value":12,"unit":"px"},"marginTop":{"value":24,"unit":"px"},"textTransform":"none","text":"Last online 4h ago","color":"Grey - 600"},"ports":[],"children":[]}]}]}]}]},{"id":"4c080ef9-5e6f-f8fa-4008-2fabb4652eb0","type":"States","x":873,"y":736,"parameters":{"states":"Single Column,Double Column","useTransitions":false,"value-Desktop-Header Bottom Margin":32,"value-Tablet-Header Bottom Margin":16,"value-Mobile-Header Bottom Margin":8,"values":"Layout String","type-Layout String":"string","value-Tablet-Layout String":"2 1 1","value-Mobile-Layout String":"1 2","value-Single Column-Layout String":"1","value-Double Column-Layout String":"1 2"},"ports":[],"children":[]},{"id":"8f070f26-c163-ad05-1ab0-9f09ca009d1c","type":"JavaScriptFunction","x":871,"y":614,"parameters":{"functionScript":"if (Inputs.Width > 300) {\n    Outputs.GreaterThan300()\n} else {\n    Outputs.LessThan300()\n}"},"ports":[],"children":[],"metadata":{"merge":{"soureCodePorts":["functionScript"]}}}],"connections":[{"fromId":"4c080ef9-5e6f-f8fa-4008-2fabb4652eb0","fromProperty":"Layout String","toId":"d0629fbe-04de-2225-3179-86a22ed1e074","toProperty":"layoutString"},{"fromId":"d3d29aa3-87d2-361a-cb40-c77fd2048da4","fromProperty":"boundingWidth","toId":"8f070f26-c163-ad05-1ab0-9f09ca009d1c","toProperty":"in-Width"},{"fromId":"8f070f26-c163-ad05-1ab0-9f09ca009d1c","fromProperty":"out-GreaterThan300","toId":"4c080ef9-5e6f-f8fa-4008-2fabb4652eb0","toProperty":"to-Double Column"},{"fromId":"8f070f26-c163-ad05-1ab0-9f09ca009d1c","fromProperty":"out-LessThan300","toId":"4c080ef9-5e6f-f8fa-4008-2fabb4652eb0","toProperty":"to-Single Column"}],"comments":[]}}
 />
 
 ![](/docs/guides/user-interfaces/responsive-design/responsive-card.png)
@@ -723,9 +516,9 @@ This is great for both responsivity and reusability. Here's an example of a prof
 
 ### Generating checks with AI
 
-In the container query example, we used an **Expression** node to check the size. It worked great because we only needed to switch between two states when the container was larger or smaller than 300px.
+In the container query example, we used a simple if-statement in a **Function** node to check the size. It worked great because we only needed to switch between two states when the container was larger or smaller than 300px.
 
-If we want to do more advanced queries we can use the **Function** node to output different signals. This can either be written by hand, or generated by the AI assistant, using the `/Function` command:
+This if-statement can be extended to output different signals. This can either be written by hand, or generated by the AI assistant, using the `/Function` command:
 
 <div className="ndl-image-with-background l">
 
