@@ -35,6 +35,19 @@
 
     &__items {
         align-items: stretch;
+
+        &:last-child > *:last-child {
+            // Hack to center search input
+            display: flex;
+
+            @media (max-width: 996px) {
+                & {
+                    position: relative;
+                    right: 0;
+                    padding-right: var(--ifm-navbar-padding-horizontal)
+                }
+            }
+        }
     }
 
     &__item {
@@ -42,6 +55,7 @@
             calc(var(--ifm-navbar-padding-vertical) + 5px);
         font-size: 16px;
         font-weight: var(--doc-font-semibold);
+        order: 1;
 
         &:not(.is-download-button) {
             -webkit-font-smoothing: antialiased;
@@ -77,6 +91,12 @@
             &:hover {
                 background-color: var(--doc-color-noodl-orange-140);
             }
+
+            @media (max-width: 996px) {
+                & {
+                    display: none;
+                }
+            }
         }
 
         &.is-discord {
@@ -100,6 +120,14 @@
                 width: 36px;
                 background-image: url('../../static/img/discord.svg');
             }
+
+            @media (max-width: 996px) {
+                & {
+                    padding: 0;
+                }
+            }
         }
     }
 }
+
+
