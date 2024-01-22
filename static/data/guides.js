@@ -444,6 +444,14 @@ const guides = [
         description:
           'Learn how to use Noodls powerful version control features based on Git',
       },
+      {
+        type: 'doc',
+        label: 'Migrating from Noodl hosted Git',
+        id: 'guides/collaboration/migrating-from-noodl-hosted-git',
+        imageUrl: '/img/featured-content-images/basic.png',
+        description:
+          'Projects created with closed source Noodl need to be migrated for collaboration to work',
+      },
     ],
   },
   {
