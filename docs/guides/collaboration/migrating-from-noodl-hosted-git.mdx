@@ -1,0 +1,55 @@
+import useBaseUrl from '@docusaurus/useBaseUrl'
+
+# Migrating from Noodl hosted Git
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/collaboration/version-control/migration-needed.png)
+
+</div>
+
+## Introduction
+
+Any Noodl projects created in the closed source (CS) version need to be migrated from Noodls hosted Git to an own Git repository. If you downloaded Noodl after January 2024 you are probaly running the open source (OS) version, and can disregard this guide.
+
+The process of migrating is as follows:
+
+## Get in sync
+
+To not lose any of your work you need to sync all the branches in your project. This makes sure that they are up to date on your computer.
+
+To do so, open your project in CS Noodl. Then open the Version Control panel, and pull any potential changes on every branch. If you have any local changes that are unpushed you will need to push them.
+
+:::tip
+Learn more about the Version Control panel in the [version control docs](/docs/guides/collaboration/version-control).
+:::
+
+## Gotta get Git
+
+With all branches synced it's time to give them a new home. For this you will be using Github.
+
+If you dont have a Github account already, now is the time to [create one](https://github.com/signup).
+
+Log in to Github and [create a new repository](https://github.com/new). In order to migrate the project you will need two pieces of information from Github:
+
+### Git Origin URL
+
+This is found in the repo in the "Quick Setup" section:
+
+<div className="ndl-image-with-background l">
+
+![](/docs/guides/collaboration/version-control/git-origin.png)
+
+</div>
+
+### Personal Access Token
+
+This is managed in your Github account settings. You can find a guide on it [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token). The token can be set up to access all your repos, or a select few. Usually, allowing access to all repos is fine, but there are some security benefits in creating separate tokens for each repo. Do what works best for you, but make sure your token is able to access your newly created repository.
+
+## Hooking it up
+
+When you have your Git Origin URL and Personal Access Token you can close CS Noodl and open OS Noodl. When you navigate to the Version Control panel you will now see a migration notice. Click the notice and follow the wizard in the popup:
+
+<div className="ndl-video">
+    <video width="100%" autoPlay muted loop src={useBaseUrl("/docs/guides/collaboration/version-control/migration-wizard.mp4")}/>
+</div>
