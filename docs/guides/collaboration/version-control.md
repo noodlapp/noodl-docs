@@ -15,13 +15,29 @@ Version control has three main use cases:
 </div>
 
 Noodl uses [Git](https://git-scm.com) as the underlying version control system. The project folder is a Git repository.
-Users comfortable with Git can use external git clients to view their Noodl projects.
+The most common way to interact with Git in Noodl is through the Version Control panel. Users comfortable with Git can use external git clients to view their Noodl projects as well.
 
 ## Enabling version control
 
-Noodl projects will automatically initiate a Git project in the Project Folder. To activate the Version Control sidepanel you will need to push the Project Folder to an external Git repo, with any Git provider of your choice. This can be done through the terminal, or with a Git client like [Github Desktop](https://desktop.github.com/).
+To start using the version control features you need to init Git for your project. This can be done by opening the Version Control panel and clicking the "Initialize Version Control" button.
+
+<div className="ndl-image-with-background">
+
+![](/docs/guides/collaboration/version-control/init-git.png)
+
+</div>
+
+This will set up all necessary files to run Git in your project. From here you can version control locally, or push it to an external Git repository. This is useful if you want to collaborate with others, or keep your project backed up on a remote server.
+
+Pushing to an external repo can be done by clicking the button labeled "To push changes set a git remote". You can also use the terminal, or a Git client like [Github Desktop](https://desktop.github.com/).
+
+:::note
+If you're new to Git, don't forget to push your changes regularly to prevent losing your work. A good rule of thumb is to do it everytime you finish or change a feature.
+:::
 
 Any project collaborators will have to clone the project from the repo, and then open the downloaded Project Folder in Noodl.
+
+> The easiest way to get started with Git is through Github. Read more about creating Github repos [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) or cloning Github repos [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 ## The version control panel
 
