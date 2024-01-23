@@ -31,13 +31,17 @@ This will set up all necessary files to run Git in your project. From here you c
 
 Pushing to an external repo can be done by clicking the button labeled "To push changes set a git remote". You can also use the terminal, or a Git client like [Github Desktop](https://desktop.github.com/).
 
-:::note
+:::tip
 If you're new to Git, don't forget to push your changes regularly to prevent losing your work. A good rule of thumb is to do it everytime you finish or change a feature.
 :::
 
 Any project collaborators will have to clone the project from the repo, and then open the downloaded Project Folder in Noodl.
 
-> The easiest way to get started with Git is through Github. Read more about creating Github repos [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) or cloning Github repos [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+The easiest way to get started with Git is through Github. Read more about creating Github repos [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) or cloning Github repos [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
+:::note
+Noodl will clear out the newly created repo when pushing for the first time. However, to be on the safe side, make sure to create the repo without any `README.md` or `.gitignore` files.
+:::
 
 ## The version control panel
 
