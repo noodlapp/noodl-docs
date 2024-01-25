@@ -72,8 +72,6 @@ More documentation to come later!
 ### General
 
 ```ts
-workspaceId: string;
-
 project: ProjectModel;
 
 environment: {
