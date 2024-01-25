@@ -11,6 +11,10 @@ Here you will learn about a few fundamental concepts in Noodl that are important
 
 <div style={{padding:'62.5% 0 0 0',position:'relative'}}><iframe width="100%" height="100%" src="https://www.youtube.com/embed/kD-Oz_M-IS4" style={{position:'absolute',top:0,left:0}} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
 
+:::note
+This video is from a deprecated commercial version of Noodl and includes some features not present in the open source version, notably workspaces and built-in Git hosting
+:::
+
 ## Nodes
 
 The main building blocks of Noodl are nodes. Every node has its own specific purpose and is very simple in itself, but together they become really powerful. There are a number of types of nodes, indicated by its color. **Blue** nodes are visual elements, such as buttons, or not immediately visible but related, such as groups. **Green** nodes are generally related to reading, writing and manipulating data. **Grey** nodes are utilities, and **Pink** nodes are related to custom code.

@@ -6,11 +6,11 @@ title: Create a Visual node with React
 
 # Create a Visual node with React
 
-Noodl is built with React which makes it easy for you to add custom or community React components to your workspace. This guide will help you create a React library from scratch and push it to your Noodl workspace.
+Noodl is built with React which makes it easy for you to add custom or community React components to your projects. This guide will help you create a React library from scratch and push it to a Noodl project.
 
 ## Setup
 
-In order to complete this guide you must install the _Noodl CLI_ and learn how to push the module to your workspace. Please review [this guide](/javascript/extending/create-lib) first.
+In order to complete this guide you must install the _Noodl CLI_ and learn how to push the module to a project. Please review [this guide](/javascript/extending/create-lib) first.
 
 With the CLI tool you can easily create a new react library module from a template:
 
@@ -34,12 +34,12 @@ my-react-lib/
 Just like in the introductory [guide](/javascript/extending/create-lib) the folder contains the **project** and **tests** subfolders that you may to import into Noodl. Especially the **tests** folder is a good place to play around with your library and create tests to make sure the component is working as expected.
 
 :::note
-It is important that you do not change the name of the **project** and **tests** folders. The build scripts in the _module_ folder is dependent on these names or it will not build the module properly and you cannot push to your workspace.
+It is important that you do not change the name of the **project** and **tests** folders. The build scripts in the _module_ folder is dependent on these names or it will not build the module properly making it unusable in your projects.
 :::
 
 ## A tour of the code
 
-Now you have created a new React library module from the template and you have pushed it to your Noodl workspace. Let's review the code a bit to get you up and running.
+Now you have created a new React library module from the template and you have pushed it to Noodl. Let's review the code a bit to get you up and running.
 
 The react code can be found in the **module** directory.
 
@@ -62,19 +62,19 @@ First a simple React component:
 
 ```javascript
 function MyCustomReactComponent(props) {
-    const style = {
-        color: props.textColor,
-        backgroundColor: props.backgroundColor,
-        borderRadius: '10px',
-        padding: '20px',
-        marginBottom: props.marginBottom,
-    }
+  const style = {
+    color: props.textColor,
+    backgroundColor: props.backgroundColor,
+    borderRadius: '10px',
+    padding: '20px',
+    marginBottom: props.marginBottom,
+  };
 
-    return (
-        <div style={style} onClick={props.onClick}>
-            {props.children}
-        </div>
-    )
+  return (
+    <div style={style} onClick={props.onClick}>
+      {props.children}
+    </div>
+  );
 }
 ```
 
@@ -82,22 +82,22 @@ Next the export of the component to Noodl:
 
 ```javascript
 const MyCustomReactComponentNode = Noodl.defineReactNode({
-    name: 'Custom React Component',
-    category: 'Tutorial',
-    getReactComponent() {
-        return MyCustomReactComponent
+  name: 'Custom React Component',
+  category: 'Tutorial',
+  getReactComponent() {
+    return MyCustomReactComponent;
+  },
+  inputProps: {
+    backgroundColor: { type: 'color', default: 'white' },
+    marginBottom: {
+      type: { name: 'number', units: ['px'], defaultUnit: 'px' },
+      default: 10,
     },
-    inputProps: {
-        backgroundColor: { type: 'color', default: 'white' },
-        marginBottom: {
-            type: { name: 'number', units: ['px'], defaultUnit: 'px' },
-            default: 10,
-        },
-    },
-    outputProps: {
-        onClick: { type: 'signal', displayName: 'Click' },
-    },
-})
+  },
+  outputProps: {
+    onClick: { type: 'signal', displayName: 'Click' },
+  },
+});
 ```
 
 In addition to how you would specify a simple Noodl node, as in the introductory [guide](/javascript/extending/create-lib), you must provide the _getReactComponent_ function that retuns the React component. You may also specify _inputProps_ and _outputProps_ that map to the properties of the React node and will become inputs and outputs of your Noodl node.
@@ -108,10 +108,10 @@ Finally the component is provided as part of your module declaration. Here you n
 
 ```javascript
 Noodl.defineModule({
-    reactNodes: [MyCustomReactComponentNode],
-    nodes: [],
-    setup() {
-        //this is called once on startup
-    },
-})
+  reactNodes: [MyCustomReactComponentNode],
+  nodes: [],
+  setup() {
+    //this is called once on startup
+  },
+});
 ```

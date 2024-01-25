@@ -29,8 +29,6 @@ Please note that the performance of the same AI command varies between the two m
 
 ## Setup Instructions
 
-Any version of the editor that is version 2.9 or higher comes with the generative features enabled. You can see your current version during login, or in the top right corner of the editor.
-
 When opening a project you should see the AI bar in the top left corner of the node canvas. In the Editor Settings (in the Sidepanel) you can find options for changing the AI model, or disabling all AI features.
 
 <div className="ndl-image-with-background l">
