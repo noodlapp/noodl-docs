@@ -9,7 +9,7 @@ title: Noodl.Objects
 One step above **Variable**s are **Object**s,
 this is a global data model of Noodl objects.
 Each object is referenced with an **Id** and can contain a set of properties.
-You can access all objects in your workspace through their **Id** and the `Noodl.Objects` prefix.
+You can access all objects in your project through their **Id** and the `Noodl.Objects` prefix.
 Change a property of an object will trigger all connections from object nodes with the corresponding **Id** and property.
 You can learn more about objects and how you use them in your Noodl applications [here](/docs/guides/data/objects).
 

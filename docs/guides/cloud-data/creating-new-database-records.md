@@ -2,6 +2,7 @@
 title: Creating new Database Records
 hide_title: true
 ---
+
 # Storing and fetching data in a database
 
 ## What you will learn in this guide
@@ -13,9 +14,9 @@ In this guide you will learn how to create and insert new entries - **Records** 
 
 We will go through the following steps in this guide:
 
--   Create a **Record** in the database
--   Retrieving the **Id** of the newly created **Record**
--   Setting initial values of the **Record**
+- Create a **Record** in the database
+- Retrieving the **Id** of the newly created **Record**
+- Setting initial values of the **Record**
 
 Before starting this guide, make sure you have Cloud Services enabled and have at least one **Class** in the database. You can learn how to do this in [this](/docs/guides/cloud-data/creating-a-backend) and [this](/docs/guides/cloud-data/creating-a-class) guide.
 
@@ -23,7 +24,7 @@ Before starting this guide, make sure you have Cloud Services enabled and have a
 
 If you tried out the **Dashboard** you could see how you could create **Records** from there. Now we will learn how to create **Records** from within an app.
 
-Start a new Noodl Project in your workspace. You can use any template, for example the `Hello World` template.
+Create a new Noodl Project. You can use any template, for example the `Hello World` template.
 
 Again, make sure you have **Cloud Services** enabled and an active **Cloud Service** set up with at least one **Class**. When opening your `Cloud Services` sidebar it should look something like the image below, with a `Used in editor` cloud service selected.
 

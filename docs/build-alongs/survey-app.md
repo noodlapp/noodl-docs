@@ -9,6 +9,10 @@ In this three parts video series, Johan walks your through the creation of a sim
 
 You can import the full project [here](/library/examples/survey-app).
 
+:::note
+These videos are from a deprecated commercial version of Noodl and include some features not present in the open source version, notably workspaces and built-in Git hosting
+:::
+
 ## Part 1 - Navigation & Components
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ntKTCC7eEk0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
