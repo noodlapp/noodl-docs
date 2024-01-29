@@ -48,6 +48,16 @@ const config = {
   plugins: [
     'docusaurus-plugin-sass',
 
+    // https://github.com/praveenn77/docusaurus-lunr-search
+    [
+      '@easyops-cn/docusaurus-search-local',
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        hashed: true,
+        searchBarPosition: 'left',
+      },
+    ],
+
     // Node reference docs
     [
       '@docusaurus/plugin-content-docs',

@@ -20,34 +20,55 @@
     );
 }
 
-.DocSearch {
-    padding: 0 !important;
+.search-bar-outer {
+    margin-bottom: 80px;
 
-    main & {
-        margin-bottom: 80px;
+    .navbar__search {
+        margin-left: 0;
+
+        & > :last-child {
+            // give keyboard shortcut some extra spacing
+            padding-right: 20px;
+        }
     }
 
-    .navbar & {
-        display: none;
+    span {
+        width: 100%;
+    }
+
+    & .navbar__search-input {
+        height: auto !important;
+        border-radius: 2px !important;
+        border: 1px solid var(--doc-color-noodl-black-light) !important;
+        width: 100% !important;
+        background-color: var(--doc-color-noodl-black-darker) !important;
+        font-size: 20px;
+        padding: 20px 100px 20px 40px !important;
+
+        @media (max-width: 576px) {
+            & {
+                padding: 20px 40px !important;
+            }
+        }
     }
 }
 
-.navbar__items--right :last-child {
-    display: none !important;
-}
+.navbar {
+    &__search {
+        align-self: center;
 
-.DocSearch-Button {
-    height: auto !important;
-    border-radius: 2px !important;
-    border: 1px solid var(--doc-color-noodl-black-light) !important;
-    width: 100% !important;
-    padding: 20px 24px !important;
-}
+        input {
+            background-color: var(--doc-color-logic-node);
+            color: var(--doc-color-noodl-white-85)
+        }
 
-.search-bar-outer > :first-child {
-    padding: 0;
-}
+        > div > span > span {
+            // the results box
+            right: auto !important;
+        }
 
-.DocSearch-Hit[aria-selected='true'] a {
-    background-color: var(--doc-color-noodl-blue-80) !important;
+        @media (min-width: 996px) {
+            margin-top: -4px;
+        }
+    }
 }
