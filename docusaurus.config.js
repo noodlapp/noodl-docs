@@ -193,7 +193,7 @@ const config = {
         },
         {
           label: 'Download',
-          to: 'https://console.noodl.net/#/signup',
+          to: 'https://github.com/noodlapp/noodl/releases',
           target: '_blank',
           position: 'right',
           className: 'is-download-button',
